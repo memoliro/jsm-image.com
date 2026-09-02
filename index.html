@@ -1,1475 +1,1689 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRVGX5R085"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRVGX5R085');
+</script>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://esm.sh https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: blob: https:; connect-src 'self' https://esm.sh https://cdnjs.cloudflare.com https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; font-src 'self' data:; worker-src 'self' blob:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+
+<!-- Consent Mode v2 defaults — analytics/ads load only after consent -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Convert, Rotate & Flip, Mute Video - Private and Free Online. No uploads, no tracking. Free MP4, MOV, MP3, WAV, AAC, FLAC converter.">
-<meta name="theme-color" content="#0b1120">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-<meta property="og:image" content="https://JSM-Video.com/og-image.png">
+<meta name="google-site-verification" content="ym1uw5zBp4xzP_r4PNgMzeH1i3P2y9vq7cSpA8OOSE8" />
+<!-- Comprehensive SEO Optimization -->
+<title>ResizeFlow.cc - Free Online Image Resizer, Converter & Batch Compressor</title>
+<meta name="description" content="Resize, crop, compress, rotate, and convert JPG, PNG, WebP, AVIF, GIF, SVG, and HEIC images instantly in your browser. Batch processing, privacy-focused local execution, and support for large images within browser-safe limits.">
+<meta name="keywords" content="image resizer, convert image online, batch image compressor, webp converter, crop photo, HEIC to JPG, free image optimizer, browser image editor">
+<meta name="author" content="ResizeFlow.cc">
+<meta name="robots" content="index, follow">
+<link rel="robots" href="robots.txt">
+<link rel="canonical" href="https://resizeflow.cc/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='Arial' font-weight='700' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='Arial' font-weight='700' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+
+
+<!-- Open Graph / Social Media SEO -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://resizeflow.cc/">
+<meta property="og:title" content="ResizeFlow - Free Online Image Resizer, Converter & Batch Compressor">
+<meta property="og:description" content="Resize, convert, and compress images locally in your browser with live preview and batch export. Fast, secure, and private.">
+<meta property="og:image" content="https://resizeflow.cc/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<title>Convert, Rotate & Flip, Mute Video - Private and Free Online | JSM-Video.com</title>
+<meta property="og:image:alt" content="ResizeFlow.cc — free online image resizer and converter">
 
-<link rel="canonical" href="https://JSM-Video.com/">
-<meta property="og:title" content="Free Private Video & Audio Converter — No Upload Needed">
-<meta property="og:description" content="Convert video and audio privately in your browser. No uploads, no tracking. MP4, MOV, MP3, WAV, WebP converter with resize, rotate, flip and compress.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://JSM-Video.com/">
-<meta property="og:site_name" content="JSM-Video.com">
+<!-- Twitter Card SEO -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free Private Video & Audio Converter">
-<meta name="twitter:description" content="100% private - files never leave your device. Free MP4, MOV, MP3, WAV converter.">
+<meta name="twitter:title" content="ResizeFlow - Free Online Image Resizer, Converter & Batch Compressor">
+<meta name="twitter:description" content="Fast, local, and private image resizing, cropping, and conversion in your browser.">
+<meta name="twitter:image" content="https://resizeflow.cc/og-image.jpg">
+
+<!-- Structured Data (JSON-LD) for Search Engines -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "JSM-Video.com",
-  "url": "https://JSM-Video.com/",
-  "description": "Convert video and audio privately in your browser. No uploads, no tracking. Free MP4, MOV, MP3, WAV, AAC, FLAC converter with resize, rotate, flip and compress.",
+  "@type": "WebApplication",
+  "name": "ResizeFlow.cc",
+  "@id": "https://resizeflow.cc/#app",
+  "url": "https://resizeflow.cc/",
+  "description": "Free web-based tool for resizing, converting, cropping, and compressing images locally in your browser.",
   "applicationCategory": "MultimediaApplication",
-  "operatingSystem": "Any",
-  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "featureList": ["private", "offline", "no upload", "ffmpeg wasm", "hardware acceleration", "rotate", "flip", "compress"],
-  "publisher": {"@type": "Organization", "name": "JSM-Video.com", "url": "https://JSM-Video.com/"}
+  "operatingSystem": "All",
+  "isAccessibleForFree": true,
+  "featureList": ["Image resizing", "Format conversion including AVIF", "Batch processing", "Cropping", "Rotation and flip", "Compression", "Local browser processing"],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
+
+<!-- Cropper.js & JSZip Libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" integrity="sha384-oMy41mb/qJnpJlpXOF57hSu2KGi47l/UV9+tPNrBOs7/ap5Vubj/3phrCtjutHMQ" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="styles.css">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question","name": "Are my files uploaded?","acceptedAnswer": {"@type": "Answer","text": "No. Everything runs locally in your browser using ffmpeg.wasm. Your files never leave your device."}},
-    {"@type": "Question","name": "What is the max file size?","acceptedAnswer": {"@type": "Answer","text": "Best under 500 MB. Hard limit is 1 GB for browser stability. Larger files may need a desktop app."}},
-    {"@type": "Question","name": "Is it really free?","acceptedAnswer": {"@type": "Answer","text": "Yes, free forever, no watermarks, no credits. We are supported by ads after your consent."}}
+  "@type": "HowTo",
+  "name": "How to resize an image online with ResizeFlow",
+  "description": "Resize, convert, crop, and compress images locally in your browser with ResizeFlow.",
+  "totalTime": "PT1M",
+  "tool": { "@type": "HowToTool", "name": "ResizeFlow web app" },
+  "step": [
+    { "@type": "HowToStep", "name": "Upload", "text": "Open ResizeFlow and upload one or more JPG, PNG, WebP, AVIF, GIF, SVG, or HEIC images." },
+    { "@type": "HowToStep", "name": "Adjust", "text": "Set width and height, choose a social preset, crop, rotate, or pick an output format such as WebP or AVIF." },
+    { "@type": "HowToStep", "name": "Preview", "text": "Review the live client-side preview and estimated file size." },
+    { "@type": "HowToStep", "name": "Download", "text": "Download the edited image or process a batch as a ZIP. Processing stays in your browser." }
   ]
 }
 </script>
 
-<link rel="manifest" href="/manifest.json">
-
-<script>
-// 1. Early theme to prevent flash - must be first
-(function(){
-  try{
-    var saved = localStorage.getItem('theme');
-    if(!saved){
-      saved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-theme', saved);
-  }catch(e){
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-})();
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Resize, Convert & Crop Images",
+  "description": "Complete guide to resizing, converting, cropping, compressing images with ResizeFlow - including presets, formats, and batch processing.",
+  "url": "https://resizeflow.cc/how-to-resize-convert-crop-images.html",
+  "author": {"@type": "Organization", "name": "ResizeFlow"},
+  "publisher": {"@type": "Organization", "name": "ResizeFlow", "logo": {"@type": "ImageObject", "url": "https://resizeflow.cc/og-image.jpg"}},
+  "mainEntityOfPage": "https://resizeflow.cc/how-to-resize-convert-crop-images.html"
+}
 </script>
 
-<script>
-// 2. Consent Mode v2 default - MUST be before gtag and adsbygoogle
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{
-    ad_storage:'denied',
-    ad_user_data:'denied',
-    ad_personalization:'denied',
-    analytics_storage:'denied',
-    functionality_storage:'granted',
-    security_storage:'granted'
-  });
-</script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6QJX3F5R3"></script>
-<script>
-  gtag('js', new Date());
-  gtag('config', 'G-Q6QJX3F5R3', { anonymize_ip: true });
-</script>
-
-<!-- AdSense - load ONCE only -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4747106371991816" crossorigin="anonymous"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f1f5f9;
-  --bg-elevated: #ffffff;
-  --card: #ffffff;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --text: #0f172a;
-  --text-secondary: #334155;
-  --muted: #64748b;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-soft: #eff6ff;
-  --primary-border: #93c5fd;
-  --success: #16a34a;
-  --success-soft: #dcfce7;
-  --success-text: #166534;
-  --danger: #dc2626;
-  --radius: 16px;
-  --radius-sm: 10px;
-  --radius-lg: 24px;
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-  --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-}
-
-[data-theme="dark"] {
-  --bg: #0b1120;
-  --bg-elevated: #111827;
-  --card: #1e293b;
-  --border: #334155;
-  --border-strong: #475569;
-  --text: #f8fafc;
-  --text-secondary: #e2e8f0;
-  --muted: #94a3b8;
-  --primary: #3b82f6;
-  --primary-hover: #60a5fa;
-  --primary-soft: #1e3a5f;
-  --primary-border: #3b82f6;
-  --success: #22c55e;
-  --success-soft: #14532d;
-  --success-text: #86efac;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -2px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-  min-height: 100vh;
-  transition: background 0.25s ease, color 0.25s ease;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--primary); text-decoration: none; transition: color 0.15s; }
-a:hover { color: var(--primary-hover); }
-
-.header {
-  background: color-mix(in srgb, var(--card) 92%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.hrow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.logoRow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.logo {
-  width: 40px; height: 40px;
-  background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-weight: 800; font-size: 18px;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
-}
-.brand { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.03em; color: var(--text); }
-.badge {
-  background: var(--success-soft); color: var(--success-text);
-  font-size: 0.6875rem; padding: 5px 12px; border-radius: 999px;
-  font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase;
-}
-.tabs {
-  display: flex; gap: 4px; background: var(--bg); padding: 4px;
-  border-radius: 12px; border: 1px solid var(--border);
-}
-.tabBtn {
-  padding: 8px 16px; border-radius: 8px; border: 0; background: transparent;
-  color: var(--muted); font-weight: 600; font-size: 0.875rem; cursor: pointer;
-  font-family: inherit; transition: all 0.15s ease; white-space: nowrap;
-}
-.tabBtn:hover { color: var(--text); }
-.tabBtn.active {
-  background: var(--card); color: var(--text);
-  box-shadow: var(--shadow-sm); border: 1px solid var(--border);
-}
-.themeBtn {
-  width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--border);
-  background: var(--card); cursor: pointer; font-size: 1.125rem;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.15s ease; box-shadow: var(--shadow-sm);
-}
-.themeBtn:hover { border-color: var(--border-strong); transform: translateY(-1px); }
-
-.card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow);
-}
-.grid2 {
-  display: grid; grid-template-columns: 1fr 300px; gap: 28px; align-items: start;
-}
-@media (max-width: 1024px) {
-  .grid2 { grid-template-columns: 1fr; }
-  .sidebar { display: flex; }
-}
-
-.hero-title {
-  font-size: clamp(1.5rem, 4vw, 1.875rem); font-weight: 800;
-  text-align: center; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 8px;
-}
-.hero-sub { text-align: center; color: var(--muted); font-size: 0.875rem; margin-bottom: 4px; }
-.privacy-pills {
-  display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 16px 0 24px;
-}
-.pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.75rem; font-weight: 600; color: var(--text-secondary);
-  background: var(--bg); border: 1px solid var(--border);
-  padding: 6px 12px; border-radius: 999px;
-}
-
-.drop {
-  border: 2px dashed var(--primary-border); background: var(--primary-soft);
-  border-radius: var(--radius-lg); padding: 48px 24px; text-align: center;
-  cursor: pointer; transition: all 0.2s ease; position: relative; overflow: hidden;
-}
-.drop:hover, .drop.dragover {
-  border-color: var(--primary);
-  background: color-mix(in srgb, var(--primary-soft) 80%, var(--primary) 8%);
-  transform: translateY(-2px); box-shadow: var(--shadow);
-}
-.drop.hidden { display: none; }
-.plus {
-  width: 64px; height: 64px;
-  background: linear-gradient(135deg, var(--primary), #1d4ed8);
-  border-radius: 50%; color: #fff; font-size: 1.75rem; font-weight: 300;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 16px; box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-}
-.drop-title { font-weight: 700; color: var(--primary); font-size: 1.0625rem; }
-.drop-hint { font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
-
-.btn {
-  padding: 10px 18px; border-radius: var(--radius-sm); border: 0; cursor: pointer;
-  font-weight: 600; font-size: 0.875rem; font-family: inherit;
-  transition: all 0.15s ease; display: inline-flex; align-items: center;
-  justify-content: center; gap: 6px; white-space: nowrap;
-}
-.btn:active { transform: scale(0.98); }
-.btn-blue {
-  background: var(--primary); color: #fff;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-}
-.btn-blue:hover { background: var(--primary-hover); }
-.btn-green {
-  background: var(--success); color: #fff;
-  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
-}
-.btn-green:hover { filter: brightness(1.08); }
-.btn-ghost {
-  background: var(--bg); border: 1px solid var(--border); color: var(--text);
-}
-.btn-ghost:hover { border-color: var(--border-strong); background: var(--card); }
-.btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
-
-select, input[type="number"], input[type="color"] {
-  border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 9px 12px; background: var(--card); color: var(--text);
-  font-size: 0.875rem; font-family: inherit;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-select:focus, input[type="number"]:focus {
-  outline: none; border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-input[type="color"] { padding: 2px; width: 44px; height: 38px; cursor: pointer; }
-
-.steps {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px;
-}
-@media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
-.step {
-  border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 20px 16px; background: var(--bg); text-align: center;
-  transition: border-color 0.15s, transform 0.15s;
-}
-.step:hover { border-color: var(--primary-border); transform: translateY(-2px); }
-.stepNum {
-  width: 36px; height: 36px;
-  background: linear-gradient(135deg, var(--primary), #1d4ed8);
-  color: #fff; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 12px; font-weight: 700; font-size: 0.875rem;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
-}
-.step b { display: block; margin-bottom: 6px; font-size: 0.9375rem; }
-.step p { font-size: 0.75rem; color: var(--muted); line-height: 1.45; }
-
-.ad {
-  border: 1px dashed var(--border); border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--muted); font-size: 0.75rem; background: var(--card); min-height: 90px;
-}
-
-.vPreviewArea {
+.crop-live-info {
   display: none;
-  margin-top: 8px;
-  animation: fadeUp 0.3s ease;
+  margin-top: 10px;
+  background: #eff6ff;
+  border: 1px dashed #2563eb;
+  color: #1e40af;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
 }
-.vPreviewArea.show { display: block; }
-
-.fileThumb { cursor: pointer; }
-.fileThumb:hover { outline: 2px solid var(--primary); outline-offset: 2px; }
-
-.fileCard {
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 16px 18px;
-  display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap;
-  transition: border-color 0.15s, box-shadow 0.15s;
-  animation: fadeUp 0.3s ease;
+body.dark-mode .crop-live-info {
+  background: #1e293b;
+  border-color: #3b82f6;
+  color: #93c5fd;
 }
-.fileCard:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.fileThumb {
-  width: 96px; height: 64px; border-radius: 8px; background: #0f172a;
-  object-fit: cover; flex-shrink: 0; border: 1px solid var(--border);
-}
-.fileThumb.audio {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; background: var(--primary-soft); color: var(--primary);
-}
-.fileMeta { flex: 1; min-width: 140px; }
-.fileMeta b {
-  display: block; font-size: 0.9375rem; font-weight: 600;
-  word-break: break-all; margin-bottom: 4px;
-}
-.fileMeta .meta {
-  font-size: 0.75rem; color: var(--muted);
-  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
-}
-.status-pill {
-  display: inline-flex; align-items: center; gap: 4px;
-  font-size: 0.6875rem; font-weight: 600; padding: 2px 8px;
-  border-radius: 999px; text-transform: capitalize;
-}
-.status-ready { background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
-.status-converting { background: var(--primary-soft); color: var(--primary); }
-.status-done { background: var(--success-soft); color: var(--success-text); }
-.status-error { background: #450a0a; color: #fca5a5; }
-[data-theme="light"] .status-error { background: #fef2f2; color: #b91c1c; }
-.fileActions {
-  display: flex; gap: 8px; align-items: center; flex-wrap: wrap; width: 100%;
-}
-@media (min-width: 640px) {
-  .fileActions { width: auto; margin-left: auto; }
-}
-
-.progress-wrap {
-  height: 6px; background: var(--border); border-radius: 999px;
-  overflow: hidden; margin-top: 12px; display: none;
-}
-.progress-wrap.show { display: block; }
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary), #60a5fa);
-  border-radius: 999px; width: 0%; transition: width 0.25s ease;
-}
-
-.playerModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: rgba(0,0,0,0.75);
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.playerModal.show { display: flex; }
-.playerModal-inner {
-  background: var(--card);
-  border-radius: var(--radius-lg);
-  padding: 16px;
-  max-width: min(920px, 100%);
-  width: 100%;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg);
-}
-.playerModal video {
-  width: 100%;
-  max-height: 70vh;
-  border-radius: 10px;
-  background: #000;
-}
-.playerModal-bar {
+#imageInfo.has-crop {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-top: 12px;
   flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
 }
-.playerModal-bar span {
-  font-size: 0.8125rem;
-  color: var(--muted);
-  word-break: break-all;
-}
-
-.status-line {
-  text-align: center; font-size: 0.8125rem; color: var(--muted);
-  margin-top: 14px; min-height: 1.25em;
-}
-
-.articles-section { margin-top: 40px; }
-.articles-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px; margin-top: 20px;
-}
-.article-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-sm);
-  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
-  display: flex; flex-direction: column; gap: 10px;
-}
-.article-card:hover {
-  border-color: var(--primary-border); transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-.article-card .tag {
-  font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.04em; color: var(--primary);
-}
-.article-card h3 {
-  font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;
-}
-.article-card p { font-size: 0.8125rem; color: var(--muted); line-height: 1.5; flex: 1; }
-.article-card a {
-  font-size: 0.8125rem; font-weight: 600; margin-top: 4px;
-}
-
-footer {
-  background: var(--card); border-top: 1px solid var(--border);
-  margin-top: 56px; padding: 36px 0; font-size: 0.8125rem; color: var(--muted);
-}
-.footer-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 16px;
-}
-.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-.footer-links a { color: var(--muted); font-weight: 500; }
-.footer-links a:hover { color: var(--text); }
-
-.section-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
-.mt-5 { margin-top: 20px; }
-.spinner {
-  width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3);
-  border-top-color: #fff; border-radius: 50%;
-  animation: spin 0.7s linear infinite; display: inline-block;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-button:focus:not(:focus-visible), select:focus:not(:focus-visible) { outline: none; }
-
-.navLinks { display: flex; gap: 16px; align-items: center; }
-.navLinks a {
-  font-size: 0.8125rem; font-weight: 600; color: var(--muted);
-}
-.navLinks a:hover { color: var(--text); }
-@media (max-width: 720px) {
-  .navLinks { display: none; }
-}
-
-.engineBanner{
-  display:flex;align-items:center;gap:12px;
-  padding:12px 16px;border-radius:12px;
-  border:1px solid var(--border);background:var(--bg);
-  font-size:0.8125rem;margin-bottom:16px;
-}
-.engineBanner.loading{border-color:var(--primary-border);background:var(--primary-soft)}
-.engineBanner.ready{border-color:#86efac;background:var(--success-soft);color:var(--success-text)}
-.engineBanner.error{border-color:#fca5a5;background:#450a0a;color:#fca5a5}
-[data-theme="light"] .engineBanner.error{background:#fef2f2;color:#991b1b}
-.engineBanner button{margin-left:auto}
-
-
-.logo{width:52px;height:52px;font-size:22px;border-radius:14px}
-@media(max-width:720px){.logo{width:44px;height:44px;font-size:19px;border-radius:12px} .brand{font-size:1.05rem}}
 </style>
+
 </head>
 <body>
-<header class="header">
-  <div class="wrap hrow">
-    <a href="/" class="logoRow" style="text-decoration:none;color:inherit;gap:14px">
-      <div class="logo" aria-hidden="true" style="width:52px;height:52px;font-size:22px;border-radius:14px">C</div>
-      <div style="display:flex;flex-direction:column;line-height:1.1">
-        <div style="display:flex;align-items:center;gap:10px">
-          <div class="brand">JSM-Video.com</div>
-          <span class="badge">100% PRIVATE</span>
-        </div>
-        <div style="font-size:0.8rem;color:var(--muted);font-weight:500;margin-top:2px;letter-spacing:-0.01em">Convert, Rotate & Flip, Mute Video - Private and Free Online</div>
-      </div>
-    </a>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="tabs" role="tablist" aria-label="Converter type" style="margin-right:12px">
-        <button class="tabBtn active" data-tab="video" role="tab" aria-selected="true">🎬 Video & Audio</button>
-      </div>
-      <nav class="navLinks">
-        <a href="#articles">Articles</a>
-        <a href="/about.html">About</a>
+<a class="skip-link" href="#mainContent">Skip to image editor</a>
+<div class="consent-banner" id="consentBanner" role="dialog" aria-labelledby="consentTitle" aria-live="polite">
+  <p id="consentTitle"><strong>Cookies &amp; ads</strong> — Image editing stays 100% local in your browser. Optional Google Analytics and AdSense help keep ResizeFlow free. Choose Accept to enable analytics and personalized ads, or Reject to keep them off.</p>
+  <div class="consent-actions">
+    <button type="button" class="primary" id="consentAccept">Accept</button>
+    <button type="button" id="consentReject">Reject</button>
+    <button type="button" data-legal="privacy">Privacy</button>
+  </div>
+</div>
+<header>
+  <div class="header-main">
+    <div class="logo">Resize<span>Flow.cc</span></div>
+    <h1 class="header-title">Resize &amp; Convert Images Online</h1>
+    <div class="header-actions">
+      <nav>
+        <a href="#uploadBox" data-nav-target="upload">Tool</a>
+        <a href="/compress-image.html">Compress</a>
+        <a href="/convert-to-webp.html">WebP</a>
+        <a href="/batch-resize.html">Batch</a>
+        <a href="/heic-to-jpg.html">HEIC</a>
+        <a href="/pdf-tools.html">PDF</a>
+        <a href="/how-to-resize-convert-crop-images.html" class="nav-details">Guide</a>
+        <a href="#faq" data-nav-target="faq">FAQ</a>
       </nav>
-      <button id="themeToggle" class="themeBtn" aria-label="Toggle light mode" title="Toggle theme">☀️</button>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color theme">☀ Light</button>
     </div>
   </div>
+  <div class="header-subtitle">Resize JPG, PNG, WebP, AVIF, GIF, SVG and HEIC images, convert formats, crop, rotate, flip, compress, and batch process instantly.</div>
 </header>
 
-<div class="wrap" style="padding-top: 20px">
-  <!-- freeonlineconverters - Header Banner -->
+<!-- Top AdSense Unit -->
+<div class="ad-slot ad-leaderboard ad-container" aria-label="Advertisement">
+  <!-- Replace 9686458296 with the AdSense ad unit slot ID before publishing. -->
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="ca-pub-4747106371991816"
-       data-ad-slot="6200944786"
+       data-ad-slot="9686458296"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
-  </div>
-
-<div class="wrap" style="padding: 28px 20px 0">
-  <div class="grid2">
-    <main>
-      <!-- VIDEO TAB -->
-      <div id="videoTab" style="display:block">
-        <div class="card">
-          <h1 class="hero-title">Video & Audio Converter</h1>
-          <p class="hero-sub">Convert formats entirely in your browser. Nothing leaves your device.</p>
-          
-          <div style="display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin:12px 0 8px;padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:12px;font-size:12px">
-            <label style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);padding:6px 10px;border-radius:8px;cursor:pointer"><input type="checkbox" id="webcodecsToggle" checked> <span>🚀 Hardware Acceleration</span></label>
-            <span style="font-weight:600">Speed:</span>
-            <select id="speedMode" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:12px">
-              <option value="fast" selected>⚡ Fast</option>
-              <option value="balanced">⚖️ Balanced</option>
-              <option value="quality">🎬 Quality</option>
-            </select>
-            <span style="font-weight:600">Resolution:</span>
-            <select id="vResolution" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:12px">
-              <option value="original" selected>Original</option>
-              <option value="2160">2160p 4K</option>
-              <option value="1080">1080p Full HD</option>
-              <option value="720">720p HD</option>
-              <option value="480">480p SD</option>
-              <option value="360">360p Low</option>
-              <option value="240">240p Tiny</option>
-            </select>
-          </div>
-          <div style="display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin:0 0 12px;padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:12px;font-size:12px">
-            <span style="font-weight:600">Rotate:</span>
-            <select id="vRotate" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:12px">
-              <option value="0" selected>0°</option>
-              <option value="90">90° ↻</option>
-              <option value="180">180°</option>
-              <option value="270">270° ↺</option>
-            </select>
-            <label style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);padding:6px 10px;border-radius:8px;cursor:pointer"><input type="checkbox" id="vFlipH"> <span>↔ Flip H</span></label>
-            <label style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);padding:6px 10px;border-radius:8px;cursor:pointer"><input type="checkbox" id="vFlipV"> <span>↕ Flip V</span></label>
-            <label style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);padding:6px 10px;border-radius:8px;cursor:pointer"><input type="checkbox" id="removeAudioToggle"> <span>🔇 Remove audio</span></label>
-          </div>
-          <div id="webcodecsStatus" style="text-align:center;font-size:11px;color:var(--muted);margin-bottom:8px"></div>
-          <div class="privacy-pills">
-            <span class="pill">🔒 No upload</span>
-            <span class="pill">Best under 500 MB</span>
-            <span class="pill">Files stay on device</span>
-          </div>
-
-          
-          <div id="engineBanner" class="engineBanner loading" role="status" aria-live="polite">
-            <span id="engineTitle">Preparing conversion engine…</span>
-            <span id="engineDesc" style="color:var(--muted)">Loading local engine (first use may take a moment)</span>
-            <button id="engineRetry" class="btn btn-ghost" style="display:none;font-size:12px;padding:6px 12px">Retry</button>
-          </div>
-
-          <div class="progress-wrap" id="vProgressWrap" style="margin-top:-8px;margin-bottom:16px"><div class="progress-bar" id="vProgressBar" style="width:0%"></div></div>
-
-          <div id="vDrop" class="drop" tabindex="0" role="button" aria-label="Drop video or audio files">
-            <div class="plus">+</div>
-            <div class="drop-title">Drop one video or audio file, or click to browse</div>
-            <div class="drop-hint">MP4 · MOV · MKV · WebM · MP3 · WAV · and more</div>
-            <input id="vInput" type="file" accept="video/*,audio/*" hidden>
-          </div>
-
-          <div id="vPreviewArea" class="vPreviewArea">
-            <div id="vList" style="display: flex; flex-direction: column; gap: 12px"></div>
-          </div>
-
-          <div id="vStatus" class="status-line" aria-live="polite"></div>
-        </div>
-
-        <div class="card mt-5" style="padding:16px;display:block">
-          <!-- Mobile / In-content Ad -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-4747106371991816"
-               data-ad-slot="6200944786"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-
-
-        <!-- Interactive video player modal -->
-        <div id="playerModal" class="playerModal" role="dialog" aria-modal="true" aria-label="Video preview">
-          <div class="playerModal-inner">
-            <video id="playerVideo" controls playsinline></video>
-            <div class="playerModal-bar">
-              <span id="playerName"></span>
-              <button type="button" id="playerClose" class="btn btn-ghost">Close</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mt-5">
-          <h2 class="section-title">How it works</h2>
-          <div class="steps">
-            <div class="step">
-              <div class="stepNum">1</div>
-              <b>Add files</b>
-              <p>Drop or select video/audio from your computer. The drop zone is replaced by a preview of your files. Nothing is uploaded.</p>
-            </div>
-            <div class="step">
-              <div class="stepNum">2</div>
-              <b>Wait, then convert</b>
-              <p>Wait until the green “Engine ready” banner appears. Convert stays disabled until then. Pick MP4, MOV, MP3 or WAV and click Convert.</p>
-            </div>
-            <div class="step">
-              <div class="stepNum">3</div>
-              <b>Download</b>
-              <p>When conversion finishes, the green Download button appears. Save the file instantly to your device.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-      <!-- FAQ for SEO rich results -->
-      <section class="card mt-5" id="faq">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div style="display:flex;flex-direction:column;gap:18px;margin-top:16px">
-          <div><strong>Are my files uploaded?</strong><p style="color:var(--muted);font-size:.875rem;margin-top:6px">No. 100% local processing with ffmpeg.wasm. No upload endpoint exists. Your video never leaves your device. Perfect for private files.</p></div>
-          <div><strong>Is it free? Any watermark?</strong><p style="color:var(--muted);font-size:.875rem;margin-top:6px">Free forever, no watermark, no account. We are supported by ads only after you click Accept. Reject = no ads cookies, limited ads.</p></div>
-          <div><strong>What is the max file size?</strong><p style="color:var(--muted);font-size:.875rem;margin-top:6px">Best under 500 MB. Hard limit 1 GB for browser stability. For larger files, use Handbrake or Shutter Encoder desktop tools.</p></div>
-          <div><strong>Which formats?</strong><p style="color:var(--muted);font-size:.875rem;margin-top:6px">Video: MP4, MOV, MKV, WebM, AVI, FLV, WMV, M4V, 3GP, MPG, TS, MTS, MXF, GIF. Audio: MP3, WAV, AAC, OGG, FLAC, M4A, WMA, OPUS, AIFF, ALAC. Plus rotate, flip, compress, mute.</p></div>
-          <div><strong>Why is first load slow?</strong><p style="color:var(--muted);font-size:.875rem;margin-top:6px">Engine is ~25 MB WASM, cached after first load. Second conversion starts instantly. We show progress bar.</p></div>
-        </div>
-      </section>
-
-      <!-- ARTICLES -->
-      <section id="articles" class="articles-section">
-        <div class="card">
-          <h2 class="hero-title" style="font-size: 1.5rem; text-align: left; margin-bottom: 6px">Learn & stay private</h2>
-          <p style="color: var(--muted); font-size: 0.875rem; margin-bottom: 16px">Short guides on formats, privacy, and best practices. All conversions stay on your device.</p>
-          <div class="articles-grid">
-            <article class="article-card">
-              <span class="tag">Privacy</span>
-              <h3>Why private conversion matters</h3>
-              <p>Most online converters upload your files to a server. That risks leaks, logs, and third-party access. JSM-Video.com runs FFmpeg and canvas processing only in your browser — your media never leaves the device.</p>
-              <a href="/articles/why-private-conversion.html">Read more →</a>
-            </article>
-            <article class="article-card">
-              <span class="tag">Video</span>
-              <h3>MP4 vs MOV vs GIF: which to choose</h3>
-              <p>MP4 is the universal web and phone format. MOV is common from Apple devices. GIF is for short, silent loops. Learn when each makes sense and what quality settings to use.</p>
-              <a href="/articles/mp4-vs-mov-vs-gif.html">Read more →</a>
-            </article>
-            <article class="article-card">
-              <span class="tag">Tips</span>
-              <h3>Faster conversions and smaller files</h3>
-              <p>Keep resolution reasonable, use MP4 with H.264 for video and MP3/AAC for audio. Browser conversion works best under a few hundred MB; very large files may need patience or a desktop tool.</p>
-              <a href="/articles/faster-smaller-files.html">Read more →</a>
-            </article>
-            <article class="article-card">
-              <span class="tag">Video</span>
-              <h3>How to remove audio from a video</h3>
-              <p>Muting a video shouldn't mean re-encoding the whole file. Learn when a silent video actually helps — and how to strip audio instantly, without quality loss, entirely in your browser.</p>
-              <a href="/articles/how-to-remove-audio.html">Read more →</a>
-            </article>
-            <article class="article-card">
-              <span class="tag">Audio</span>
-              <h3>How to convert MP4 to MP3 without uploading</h3>
-              <p>Extract audio from video privately for podcasts, ringtones, or music. Learn which bitrate to choose and how to do it 100% locally with ffmpeg.wasm - no server hears your audio.</p>
-              <a href="/articles/how-to-convert-mp4-to-mp3.html">Read more →</a>
-            </article>
-            <article class="article-card">
-              <span class="tag">Tips</span>
-              <h3>How to compress video to under 25MB</h3>
-              <p>Need to send via email, WhatsApp, or Discord? Learn how resolution, CRF, and audio removal get a 162MB video down to 25MB, 16MB, or 8MB without ugly quality loss.</p>
-              <a href="/articles/how-to-compress-video.html">Read more →</a>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <aside class="sidebar" style="display: flex; flex-direction: column; gap: 20px">
-      <div class="card" style="padding: 16px">
-        <!-- freeonlineconverters - Sidebar MPU -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4747106371991816"
-             data-ad-slot="8252393058"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-              </div>
-      <div class="card" style="padding: 16px">
-        <!-- JSM-Video.com - Sidebar 300x600 -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4747106371991816"
-             data-ad-slot="2533162514"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-              </div>
-    </aside>
-  </div>
 </div>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <div>© 2026 JSM-Video.com · Private by design — Video & Audio only</div>
-      <div class="footer-links">
-        <a href="/privacy-policy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="#articles">Articles</a>
+<main class="container main-container" id="mainContent">
+<div class="upload-layout" id="uploadWorkflow">
+  <!-- Left skyscraper ad intentionally disabled for a cleaner launch layout. -->
+
+  <!-- Central Card: Upload + How It Works -->
+  <div class="upload-card-wrapper">
+    <div class="upload-box" id="uploadBox">
+      <div class="upload-icon">🖼️</div>
+      <h2>Upload Image(s)</h2>
+      <p>Drag & drop JPG, PNG, WebP, AVIF, GIF, SVG or HEIC files (Batch supported)</p><div class="drop-feedback" id="dropFeedback" aria-live="polite">Drop, paste (Ctrl/Cmd+V), or select images.</div>
+      <button class="btn" type="button" id="selectBtn">Select Image(s)</button>
+      <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.png,.webp,.avif,.gif,.svg,.heic,.heif,image/jpeg,image/png,image/webp,image/avif,image/gif,image/svg+xml,image/heic,image/heif">
+    </div>
+
+    <!-- How It Works Inline -->
+    <div class="how-it-works-inline">
+      <h3 class="inline-title">How It Works <a href="https://resizeflow.cc/how-to-resize-convert-crop-images.html" style="font-size:0.8em; font-weight:400; margin-left:0.5rem; text-decoration:underline;">Full Guide</a></h3>
+      <div class="steps-grid-inline">
+        <div class="step-inline">
+          <div class="step-num-inline">1</div>
+          <h4>Upload</h4>
+          <p>Select single or multiple files.</p>
+        </div>
+        <div class="step-inline">
+          <div class="step-num-inline">2</div>
+          <h4>Adjust</h4>
+          <p>Customize dimensions & format.</p>
+        </div>
+        <div class="step-inline">
+          <div class="step-num-inline">3</div>
+          <h4>Preview</h4>
+          <p>Real-time client-side preview.</p>
+        </div>
+        <div class="step-inline">
+          <div class="step-num-inline">4</div>
+          <h4>Download</h4>
+          <p>Export individually or as ZIP.</p>
+        </div>
       </div>
     </div>
   </div>
-</footer>
 
-<script type="module">
-import { FFmpeg } from 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js';
-import { fetchFile, toBlobURL } from 'https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/esm/index.js';
+  <!-- Right skyscraper ad intentionally disabled for a cleaner launch layout. -->
+</div>
 
-// ——— Theme (synced across pages) ———
-const themeBtn = document.getElementById('themeToggle');
-function applyTheme(t){
-  document.documentElement.setAttribute('data-theme', t);
-  localStorage.setItem('theme', t);
-  themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
-  themeBtn.setAttribute('aria-label', t === 'dark' ? 'Toggle light mode' : 'Toggle dark mode');
-  var mc = document.querySelector('meta[name="theme-color"]');
-  if(mc) mc.setAttribute('content', t === 'dark' ? '#0b1120' : '#f1f5f9');
-}
-var current = document.documentElement.getAttribute('data-theme') || 'dark';
-themeBtn.textContent = current === 'dark' ? '☀️' : '🌙';
-themeBtn.setAttribute('aria-label', current === 'dark' ? 'Toggle light mode' : 'Toggle dark mode');
-themeBtn.onclick = () => {
-  var cur = document.documentElement.getAttribute('data-theme');
-  applyTheme(cur === 'dark' ? 'light' : 'dark');
-};
+<div id="notification" class="notification"></div>
 
-// ——— Tabs ——— (Video & Audio only)
-document.querySelectorAll('.tabBtn').forEach(b => {
-  b.onclick = () => {
-    document.querySelectorAll('.tabBtn').forEach(x => {
-      x.classList.remove('active');
-      x.setAttribute('aria-selected', 'false');
-    });
-    b.classList.add('active');
-    b.setAttribute('aria-selected', 'true');
-    document.getElementById('videoTab').style.display = 'block';
-  };
-});
-
-// ——— VIDEO ———
-let ffmpeg = null;
-let loaded = false;
-let loadingPromise = null;
-let ffmpegBlobURLs = [];
-let ffmpegMultiThreaded = false;
-const vFiles = [];
-const vDrop = document.getElementById('vDrop');
-const vInput = document.getElementById('vInput');
-const vList = document.getElementById('vList');
-const vStatus = document.getElementById('vStatus');
-const vProgressWrap = document.getElementById('vProgressWrap');
-const vProgressBar = document.getElementById('vProgressBar');
-const vPreviewArea = document.getElementById('vPreviewArea');
-const engineBanner = document.getElementById('engineBanner');
-const engineTitle = document.getElementById('engineTitle');
-const engineDesc = document.getElementById('engineDesc');
-const engineRetry = document.getElementById('engineRetry');
-const playerModal = document.getElementById('playerModal');
-const playerVideo = document.getElementById('playerVideo');
-const playerName = document.getElementById('playerName');
-
-const MIME = { mp4: 'video/mp4', mov: 'video/quicktime', mp3: 'audio/mpeg', gif: 'image/gif', wav: 'audio/wav', mkv: 'video/x-matroska', webm: 'video/webm', m4a: 'audio/mp4', aac: 'audio/aac' };
-const MAX_RECOMMENDED_BYTES = 500 * 1024 * 1024;
-const MAX_HARD_BYTES = 1024 * 1024 * 1024;
-
-function setEngineUI(state, title, desc) {
-  if (engineBanner) engineBanner.className = 'engineBanner ' + state;
-  if (engineTitle) engineTitle.textContent = title;
-  if (engineDesc) engineDesc.innerHTML = desc;
-  if (engineRetry) engineRetry.style.display = state === 'error' ? 'inline-flex' : 'none';
-  if (typeof vStatus !== 'undefined' && vStatus) {
-    if (state === 'loading') vStatus.textContent = title;
-    else if (state === 'ready') vStatus.textContent = '';
-    else if (state === 'error') vStatus.textContent = title + ': ' + (desc || '').replace(/<[^>]*>/g,'').slice(0,100);
-  }
-  if (state === 'loading') vProgressWrap.classList.add('show');
-  else if (state === 'ready') {
-    vProgressBar.style.width = '100%';
-    setTimeout(() => { vProgressWrap.classList.remove('show'); vProgressBar.style.width = '0%'; }, 500);
-  } else vProgressWrap.classList.remove('show');
-  renderV();
-}
-
-async function resetFFmpeg() {
-  if (ffmpeg) { try { ffmpeg.terminate(); } catch (_) {} }
-  ffmpeg = null;
-  loaded = false;
-  // revoke previous blob URLs to free memory
-  try {
-    ffmpegBlobURLs.forEach(u => { try { URL.revokeObjectURL(u); } catch {} });
-  } catch {}
-  ffmpegBlobURLs = [];
-}
-
-async function checkWorkerAssetsPresent() {
-  const files = ['worker.js', 'const.js', 'errors.js'];
-  const missing = [];
-  for (const f of files) {
-    const url = new URL(`/ffmpeg/${f}`, location.origin).href;
-    try {
-      const res = await fetch(url, { method: 'HEAD', cache: 'no-store' });
-      if (!res.ok) {
-        missing.push(`${f} HTTP ${res.status}`);
-        continue;
-      }
-      const ct = (res.headers.get('content-type') || '').toLowerCase();
-      if (ct.includes('text/html')) {
-        missing.push(`${f} served as HTML (SPA fallback)`);
-      }
-    } catch (e) {
-      missing.push(`${f} unreachable: ${e.message}`);
-    }
-  }
-  if (missing.length) {
-    throw new Error(`Missing /ffmpeg/ assets: ${missing.join(', ')}. Fix: copy worker.js, const.js, errors.js from node_modules/@ffmpeg/ffmpeg/dist/esm/ to public/ffmpeg/ and redeploy.`);
-  }
-}
-
-function withTimeout(promise, ms, label) {
-  let timer;
-  const timeout = new Promise((_, reject) => {
-    timer = setTimeout(() => reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s. Check your network connection or whether cdn.jsdelivr.net is reachable/blocked.`)), ms);
-  });
-  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
-}
-
-async function tryLoadCoreFromBase(base, useMultiThread, classWorkerURL) {
-  console.log('[FFmpeg] Trying core base:', base);
-  const coreUrls = [
-    toBlobURL(`${base}/ffmpeg-core.js`, 'text/javascript'),
-    toBlobURL(`${base}/ffmpeg-core.wasm`, 'application/wasm'),
-  ];
-  if (useMultiThread) {
-    coreUrls.push(toBlobURL(`${base}/ffmpeg-core.worker.js`, 'text/javascript'));
-  }
-  const [coreURL, wasmURL, workerURL] = await withTimeout(
-    Promise.all(coreUrls),
-    60000,
-    `Downloading FFmpeg core from ${base}`
-  );
-  const loadOpts = { coreURL, wasmURL, classWorkerURL };
-  if (useMultiThread) loadOpts.workerURL = workerURL;
-  await withTimeout(
-    ffmpeg.load(loadOpts),
-    40000,
-    `FFmpeg engine load from ${base}`
-  );
-  // keep track for cleanup
-  ffmpegBlobURLs.push(coreURL, wasmURL);
-  if (workerURL) ffmpegBlobURLs.push(workerURL);
-}
-
-async function loadCoreFrom() {
-  await checkWorkerAssetsPresent();
-  const classWorkerURL = new URL('/ffmpeg/worker.js', location.origin).href;
-  const useMultiThread = window.crossOriginIsolated === true;
-  const corePkg = useMultiThread ? '@ffmpeg/core-mt' : '@ffmpeg/core';
-  const bases = [
-    `https://cdn.jsdelivr.net/npm/${corePkg}@0.12.6/dist/esm`,
-    `https://unpkg.com/${corePkg}@0.12.6/dist/esm`,
-    `https://esm.sh/${corePkg}@0.12.6/dist/esm`,
-    `${location.origin}/ffmpeg`
-  ];
-  let lastErr = null;
-  for (const base of bases) {
-    try {
-      await resetFFmpeg();
-      ffmpeg = new FFmpeg();
-      ffmpeg.on('progress', ({ progress }) => {
-        const pct = Math.min(99, Math.round(progress * 100));
-        vStatus.textContent = `Converting ${pct}%…`;
-        vProgressBar.style.width = pct + '%';
-        vProgressWrap.classList.add('show');
-      });
-      await tryLoadCoreFromBase(base, useMultiThread, classWorkerURL);
-      ffmpegMultiThreaded = useMultiThread;
-      console.log('[FFmpeg] Loaded from', base);
-      return;
-    } catch (e) {
-      console.warn('[FFmpeg] Failed from', base, e);
-      lastErr = e;
-      await resetFFmpeg();
-      // small delay before next CDN
-      await new Promise(r => setTimeout(r, 500));
-    }
-  }
-  throw lastErr || new Error('All FFmpeg CDN fallbacks failed. Check if cdn.jsdelivr.net / unpkg.com are blocked by adblocker.');
-}
-
-async function loadFFmpeg(forceFresh = false) {
-  if (loaded && !forceFresh) return;
-  if (loadingPromise && !forceFresh) return loadingPromise;
-  if (location.protocol === 'file:') {
-    setEngineUI('error', 'Cannot run from a local file', 'Open this page over <strong>https://</strong> (your live site) or a local server.');
-    throw new Error('file:// protocol not supported');
-  }
-  if (forceFresh) await resetFFmpeg();
-
-  loadingPromise = (async () => {
-    setEngineUI('loading', 'Preparing conversion engine…', 'Loading the local conversion engine. This may take a moment on the first use.');
-    vProgressBar.style.width = '35%';
-    try {
-      await resetFFmpeg();
-      ffmpeg = new FFmpeg();
-      ffmpeg.on('progress', ({ progress }) => {
-        const pct = Math.min(99, Math.round(progress * 100));
-        vStatus.textContent = `Converting ${pct}%…`;
-        vProgressBar.style.width = pct + '%';
-        vProgressWrap.classList.add('show');
-      });
-      await loadCoreFrom();
-      loaded = true;
-      loadingPromise = null;
-      setEngineUI('ready', 'Engine ready', ffmpegMultiThreaded
-        ? 'Multi-threaded acceleration active — conversions will use multiple CPU cores.'
-        : 'You can convert your file now. Large files may take several minutes depending on your device.');
-      vStatus.textContent = '';
-    } catch (err) {
-      const detail = (err && err.message) ? err.message : String(err);
-      console.error('FFmpeg load error:', err);
-      await resetFFmpeg();
-      loadingPromise = null;
-      setEngineUI('error', 'Engine failed to load', escapeHtml(detail).slice(0, 220) + ' — make sure all files in /ffmpeg/ are deployed, then click Retry.');
-      throw err;
-    }
-  })();
-  return loadingPromise;
-}
-
-if (engineRetry) engineRetry.onclick = () => { loadingPromise = null; loadFFmpeg(true).catch(() => {}); };
-
-function clearCurrentVFile() {
-  const item = vFiles[0];
-  if (!item) return;
-  if (item.previewUrl) URL.revokeObjectURL(item.previewUrl);
-  if (item.downloadUrl) URL.revokeObjectURL(item.downloadUrl);
-  vFiles.length = 0;
-}
-
-function addVFiles(list) {
-  const f = list?.[0];
-  if (!f) return;
-  if (!f.type.startsWith('video/') && !f.type.startsWith('audio/')) {
-    vStatus.textContent = 'Please choose a supported video or audio file.';
-    return;
-  }
-  if (f.size > MAX_HARD_BYTES) {
-    vStatus.textContent = 'This file is over 1 GB. Please use a smaller file for browser-based conversion.';
-    return;
-  }
-  clearCurrentVFile();
-  const isAudio = f.type.startsWith('audio/');
-  vFiles.push({
-    id: (crypto.randomUUID?.() || Math.random().toString(36).slice(2)), file: f,
-    out: isAudio ? 'mp3' : 'mp4', status: 'ready', previewUrl: URL.createObjectURL(f), isAudio
-  });
-  vStatus.textContent = f.size > MAX_RECOMMENDED_BYTES
-    ? 'Large file warning: this may use significant memory and take longer on this device.'
-    : '';
-  loadFFmpeg().catch(() => {});
-  renderV();
-}
-
-function renderV() {
-  vList.innerHTML = '';
-  const item = vFiles[0];
-  if (!item) { vDrop.classList.remove('hidden'); vPreviewArea.classList.remove('show'); return; }
-  vDrop.classList.add('hidden');
-  vPreviewArea.classList.add('show');
-  const sizeMB = (item.file.size / 1024 / 1024).toFixed(1);
-  const div = document.createElement('div');
-  div.className = 'fileCard';
-  const statusClass = `status-${item.status}`;
-  const thumbHtml = item.isAudio
-    ? '<div class="fileThumb audio" aria-hidden="true" title="Audio file">🎵</div>'
-    : `<video class="fileThumb" src="${item.previewUrl}" muted playsinline preload="metadata" data-preview="${item.previewUrl}" data-name="${escapeHtml(item.file.name)}" title="Click to play preview"></video>`;
-  const downloadVisible = item.status === 'done' && item.downloadUrl;
-  const skipsEngine = item.out === 'wav';
-  const canConvert = (loaded || skipsEngine) && item.status !== 'converting';
-  const convLabel = item.status === 'converting' ? '<span class="spinner"></span> Converting…' : ((!loaded && !skipsEngine) ? 'Preparing engine…' : 'Convert');
-  div.innerHTML = `
-    ${thumbHtml}
-    <div class="fileMeta"><b>${escapeHtml(item.file.name)}</b><div class="meta"><span>${sizeMB} MB</span><span class="status-pill ${statusClass}">${item.status}</span>${!item.isAudio ? '<span style="font-size:11px;color:var(--primary)">Click preview to play</span>' : ''}</div></div>
-    <div class="fileActions">
-      <select data-id="${item.id}" class="vOut" style="min-width:140px">
-          <optgroup label="🎬 Video">
-            <option value="mp4" ${item.out==='mp4'?'selected':''}>MP4 - Universal</option>
-            <option value="mov" ${item.out==='mov'?'selected':''}>MOV - Apple QuickTime</option>
-            <option value="mkv" ${item.out==='mkv'?'selected':''}>MKV - Matroska</option>
-            <option value="webm" ${item.out==='webm'?'selected':''}>WebM - Web</option>
-            <option value="avi" ${item.out==='avi'?'selected':''}>AVI - Old Windows</option>
-            <option value="flv" ${item.out==='flv'?'selected':''}>FLV - Flash</option>
-            <option value="wmv" ${item.out==='wmv'?'selected':''}>WMV - Windows Media</option>
-            <option value="m4v" ${item.out==='m4v'?'selected':''}>M4V - iTunes</option>
-            <option value="3gp" ${item.out==='3gp'?'selected':''}>3GP - Mobile</option>
-            <option value="mpg" ${item.out==='mpg'?'selected':''}>MPG - MPEG-1</option>
-            <option value="mpeg" ${item.out==='mpeg'?'selected':''}>MPEG - MPEG-2</option>
-            <option value="ts" ${item.out==='ts'?'selected':''}>TS - Transport Stream</option>
-            <option value="mts" ${item.out==='mts'?'selected':''}>MTS - AVCHD</option>
-            <option value="mxf" ${item.out==='mxf'?'selected':''}>MXF - Broadcast</option>
-            <option value="gif" ${item.out==='gif'?'selected':''}>GIF - Animation</option>
-          </optgroup>
-          <optgroup label="🎵 Audio">
-            <option value="mp3" ${item.out==='mp3'?'selected':''}>MP3 - Audio</option>
-            <option value="wav" ${item.out==='wav'?'selected':''}>WAV - Uncompressed (Instant ⚡)</option>
-            <option value="aac" ${item.out==='aac'?'selected':''}>AAC - Advanced Audio</option>
-            <option value="ogg" ${item.out==='ogg'?'selected':''}>OGG - Vorbis</option>
-            <option value="flac" ${item.out==='flac'?'selected':''}>FLAC - Lossless</option>
-            <option value="m4a" ${item.out==='m4a'?'selected':''}>M4A - Apple Audio</option>
-            <option value="wma" ${item.out==='wma'?'selected':''}>WMA - Windows Audio</option>
-            <option value="opus" ${item.out==='opus'?'selected':''}>OPUS - Low latency</option>
-            <option value="aiff" ${item.out==='aiff'?'selected':''}>AIFF - Apple Lossless</option>
-            <option value="alac" ${item.out==='alac'?'selected':''}>ALAC - Apple Lossless</option>
-          </optgroup>
-        </select>
-      <button data-id="${item.id}" class="vConv btn btn-blue" ${canConvert ? '' : 'disabled'}>${convLabel}</button>
-      <a id="vdl-${item.id}" class="btn btn-green" style="display:${downloadVisible ? 'inline-flex' : 'none'}" download>⬇️ Download</a>
-      <button data-id="${item.id}" class="vReplace btn btn-ghost" aria-label="Choose another file" ${item.status === 'converting' ? 'disabled' : ''}>Replace</button>
-    </div>`;
-  vList.appendChild(div);
-  if (downloadVisible) { const a = document.getElementById(`vdl-${item.id}`); if (a) { a.href = item.downloadUrl; a.download = item.downloadName || `converted.${item.out}`; } }
-  document.querySelector('.vOut').onchange = e => { item.out = e.target.value; item.status = 'ready'; renderV(); };
-  document.querySelector('.vConv').onclick = e => {
-    const it = vFiles.find(f => f.id === e.currentTarget.dataset.id);
-    if (loaded || it?.out === 'wav') convertV(e.currentTarget.dataset.id);
-  };
-  document.querySelector('.vReplace').onclick = () => { vInput.value = ''; vInput.click(); };
-  const preview = document.querySelector('.fileThumb[data-preview]');
-  if (preview) preview.onclick = () => { playerVideo.src = preview.dataset.preview; playerName.textContent = preview.dataset.name || 'Preview'; playerModal.classList.add('show'); playerVideo.play().catch(() => {}); };
-  setTimeout(updateVPreviewTransform, 50);
-}
-
-document.getElementById('playerClose').onclick = closePlayer;
-playerModal.onclick = e => { if (e.target === playerModal) closePlayer(); };
-function closePlayer() { playerVideo.pause(); playerVideo.removeAttribute('src'); playerVideo.load(); playerModal.classList.remove('show'); }
-
-function updateVPreviewTransform(){
-  const rot = document.getElementById('vRotate')?.value || '0';
-  const fh = document.getElementById('vFlipH')?.checked;
-  const fv = document.getElementById('vFlipV')?.checked;
-  const thumbs = document.querySelectorAll('.fileThumb');
-  thumbs.forEach(th => {
-    let transforms = [];
-    if (fh) transforms.push('scaleX(-1)');
-    if (fv) transforms.push('scaleY(-1)');
-    if (rot !== '0') transforms.push(`rotate(${rot}deg)`);
-    th.style.transform = transforms.join(' ');
-    th.style.transition = 'transform 0.25s ease';
-  });
-  const modalVid = document.getElementById('playerVideo');
-  if (modalVid){
-    let mT = [];
-    if (fh) mT.push('scaleX(-1)');
-    if (fv) mT.push('scaleY(-1)');
-    if (rot !== '0') mT.push(`rotate(${rot}deg)`);
-    modalVid.style.transform = mT.join(' ');
-  }
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && playerModal.classList.contains('show')) closePlayer(); });
-function escapeHtml(str) { const d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
-
-function writeAsciiString(view, offset, str) {
-  for (let i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
-}
-
-function audioBufferToWavBlob(buffer) {
-  const numChannels = buffer.numberOfChannels;
-  const sampleRate = buffer.sampleRate;
-  const bitDepth = 16;
-  const bytesPerSample = bitDepth / 8;
-  const blockAlign = numChannels * bytesPerSample;
-  const dataLength = buffer.length * blockAlign;
-  const arrayBuffer = new ArrayBuffer(44 + dataLength);
-  const view = new DataView(arrayBuffer);
-
-  writeAsciiString(view, 0, 'RIFF');
-  view.setUint32(4, 36 + dataLength, true);
-  writeAsciiString(view, 8, 'WAVE');
-  writeAsciiString(view, 12, 'fmt ');
-  view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);
-  view.setUint16(22, numChannels, true);
-  view.setUint32(24, sampleRate, true);
-  view.setUint32(28, sampleRate * blockAlign, true);
-  view.setUint16(32, blockAlign, true);
-  view.setUint16(34, bitDepth, true);
-  writeAsciiString(view, 36, 'data');
-  view.setUint32(40, dataLength, true);
-
-  const channels = [];
-  for (let ch = 0; ch < numChannels; ch++) channels.push(buffer.getChannelData(ch));
-
-  let offset = 44;
-  const len = buffer.length;
-  for (let i = 0; i < len; i++) {
-    for (let ch = 0; ch < numChannels; ch++) {
-      let sample = Math.max(-1, Math.min(1, channels[ch][i]));
-      sample = sample < 0 ? sample * 0x8000 : sample * 0x7fff;
-      view.setInt16(offset, sample, true);
-      offset += 2;
-    }
-  }
-
-  return new Blob([arrayBuffer], { type: 'audio/wav' });
-}
-
-async function convertToWavNative(file) {
-  const AudioCtx = window.AudioContext || window.webkitAudioContext;
-  if (!AudioCtx) throw new Error('Web Audio API not supported in this browser');
-  const arrayBuffer = await file.arrayBuffer();
-  const audioCtx = new AudioCtx();
-  try {
-    const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-    return audioBufferToWavBlob(audioBuffer);
-  } finally {
-    audioCtx.close().catch(() => {});
-  }
-}
-
-async function convertV(id) {
-  const item = vFiles.find(f=>f.id===id);
-  if (!item || item.id !== id || item.status === 'converting') return;
-
-  if (item.out === 'wav') {
-    try {
-      item.status = 'converting';
-      if (item.downloadUrl) { URL.revokeObjectURL(item.downloadUrl); item.downloadUrl = null; }
-      renderV();
-      vProgressWrap.classList.add('show'); vProgressBar.style.width = '40%';
-      vStatus.textContent = '⚡ Decoding audio natively — no 31MB engine needed...';
-      const blob = await convertToWavNative(item.file);
-      vProgressBar.style.width = '100%';
-      item.downloadUrl = URL.createObjectURL(blob);
-      item.status = 'done';
-      item.downloadName = `converted-${Date.now()}.wav`;
-      renderV();
-      vStatus.textContent = '✅ Done instantly via native browser decode!';
-      setTimeout(() => { vProgressWrap.classList.remove('show'); vProgressBar.style.width = '0%'; }, 600);
-      return;
-    } catch (e) {
-      console.warn('Native WAV decode failed, falling back to FFmpeg', e);
-      vStatus.textContent = `Native decode unavailable (${e.message || 'unsupported format'}), using conversion engine...`;
-    }
-  }
-
-  const vRotHW = (document.getElementById('vRotate')?.value) || '0'; const vFlipHHW = document.getElementById('vFlipH')?.checked; const vFlipVHW = document.getElementById('vFlipV')?.checked; const useHardware = document.getElementById('webcodecsToggle')?.checked && typeof MediaRecorder !== 'undefined' && item.file.type.startsWith('video/') && item.file.name.toLowerCase().endsWith('.mp4') && item.out === 'webm' && vRotHW === '0' && !vFlipHHW && !vFlipVHW;
-  if (useHardware) {
-    try {
-      vStatus.textContent = '🚀 Hardware acceleration (GPU) encoding to WebM...';
-      item.status = 'converting';
-      if (item.downloadUrl) { URL.revokeObjectURL(item.downloadUrl); item.downloadUrl = null; }
-      renderV();
-      
-      const video = document.createElement('video');
-      video.muted = true;
-      video.playsInline = true;
-      video.preload = 'metadata';
-      const url = URL.createObjectURL(item.file);
-      video.src = url;
-      
-      await new Promise((res, rej) => {
-        video.onloadedmetadata = res;
-        video.onerror = () => rej(new Error('Video load failed'));
-        setTimeout(() => rej(new Error('Load timeout')), 8000);
-      });
-      
-      const canvas = document.createElement('canvas');
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const ctx = canvas.getContext('2d');
-      const stream = canvas.captureStream(30);
-      
-      const removeAudioHW = document.getElementById('removeAudioToggle')?.checked ?? false;
-      if (!removeAudioHW) {
-        try {
-          if (video.captureStream) {
-            const vs = video.captureStream();
-            vs.getAudioTracks().forEach(tr => stream.addTrack(tr));
-          }
-        } catch(e) {}
-      }
-      
-      const chunks = [];
-      const mime = MediaRecorder.isTypeSupported('video/webm;codecs=vp9') ? 'video/webm;codecs=vp9' : 'video/webm';
-      const recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 2500000 });
-      
-      const recordingDone = new Promise((res, rej) => {
-        recorder.ondataavailable = ev => { if (ev.data && ev.data.size > 0) chunks.push(ev.data); };
-        recorder.onstop = () => {
-          URL.revokeObjectURL(url);
-          if (chunks.length === 0) rej(new Error('No data'));
-          else res(new Blob(chunks, { type: mime }));
-        };
-        recorder.onerror = ev => rej(ev.error || new Error('Recorder error'));
-      });
-      
-      recorder.start(100);
-      video.currentTime = 0;
-      await video.play().catch(()=>{});
-      
-      const draw = () => {
-        if (video.ended || video.paused) return;
-        if (recorder.state === 'recording') {
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-          requestAnimationFrame(draw);
-        }
-      };
-      draw();
-      
-      video.onended = () => { try{recorder.stop();}catch{} };
-      setTimeout(() => { try{ if(recorder.state==='recording') recorder.stop(); }catch{} }, (video.duration||30)*1000 + 8000);
-      
-      const blob = await recordingDone;
-      item.downloadUrl = URL.createObjectURL(blob);
-      item.status = 'done';
-      item.downloadName = `converted-${Date.now()}.webm`;
-      renderV();
-      vStatus.textContent = '✅ Done via hardware (GPU) - 3-5x faster than WASM!';
-      vProgressWrap.classList.remove('show');
-      setTimeout(()=>{const a=document.getElementById(`vdl-${id}`); if(a){a.href=item.downloadUrl;a.download=item.downloadName;a.style.display='inline-block'}},100);
-      return;
-    } catch(e) {
-      console.warn('Hardware path failed, fallback to WASM', e);
-      vStatus.textContent = `Hardware failed (${e.message}), using WASM...`;
-    }
-  }
-
-  try { await loadFFmpeg(); } catch { vStatus.textContent = 'Engine not ready. Use Retry in the banner above.'; renderV(); return; }
-  item.status = 'converting';
-  if (item.downloadUrl) { URL.revokeObjectURL(item.downloadUrl); item.downloadUrl = null; }
-  renderV(); vProgressWrap.classList.add('show'); vProgressBar.style.width = '5%'; vStatus.textContent = 'Starting conversion…';
-  let inName = '', outName = '';
-  try {
-    const safeName = item.file.name.replace(/[^\w.-]/g, '_').slice(0, 80);
-    inName = `in-${id}-${safeName}`; outName = `converted-${Date.now()}.${item.out}`;
-    await ffmpeg.writeFile(inName, await fetchFile(item.file));
-    const speedMode = (document.getElementById('speedMode')?.value) || 'fast';
-    const resolution = (document.getElementById('vResolution')?.value) || 'original';
-    const vRotate = (document.getElementById('vRotate')?.value) || '0';
-    const vFlipH = document.getElementById('vFlipH')?.checked || false;
-    const vFlipV = document.getElementById('vFlipV')?.checked || false;
-    const getVideoFilters = () => {
-      const filters = [];
-      if (vRotate === '90') filters.push('transpose=1');
-      else if (vRotate === '180') { filters.push('transpose=1'); filters.push('transpose=1'); }
-      else if (vRotate === '270') filters.push('transpose=2');
-      if (vFlipH) filters.push('hflip');
-      if (vFlipV) filters.push('vflip');
-      if (resolution !== 'original') {
-        const h = parseInt(resolution, 10);
-        if (h) filters.push(`scale=-2:${h}`);
-      }
-      return filters.length ? filters.join(',') : null;
-    };
-    const scaleFilter = getVideoFilters();
-    const preset = speedMode === 'fast' ? 'ultrafast' : speedMode === 'quality' ? 'medium' : 'veryfast';
-    const crf = speedMode === 'fast' ? '28' : speedMode === 'quality' ? '20' : '23';
-    const audioBR = speedMode === 'fast' ? '128k' : '192k';
-    const videoExts = ['mp4','mov','mkv','webm','avi','flv','wmv','m4v','3gp','mpg','mpeg','ts','mts','mxf','gif'];
-    const audioExts = ['mp3','wav','aac','ogg','flac','m4a','wma','opus','aiff','alac'];
-    const isVideoOut = videoExts.includes(item.out);
-    const isAudioOut = audioExts.includes(item.out);
-    const removeAudio = isVideoOut && (document.getElementById('removeAudioToggle')?.checked ?? false);
-    let usedFastCopy = false;
-    let args = [];
-    
-    const remuxable = ['mp4','mov','mkv','avi','m4v','3gp','mpg','mpeg','ts','mts'];
-    const needsReencode = resolution !== 'original' || vRotate !== '0' || vFlipH || vFlipV;
-    if (isVideoOut && remuxable.includes(item.out) && !needsReencode) {
-      try {
-        vStatus.textContent = removeAudio ? 'Trying fast remux without audio (instant)...' : 'Trying fast remux (instant)...';
-        const copyArgs = removeAudio
-          ? ['-i', inName, '-c:v', 'copy', '-an', '-movflags', '+faststart', outName]
-          : ['-i', inName, '-c', 'copy', '-movflags', '+faststart', outName];
-        await ffmpeg.exec(copyArgs);
-        const test = await ffmpeg.readFile(outName);
-        if (test && test.length > 1000) usedFastCopy = true;
-        else { await ffmpeg.deleteFile(outName); throw new Error('copy too small'); }
-      } catch(e) {
-        vStatus.textContent = `Fast copy not possible, encoding with ${preset}...`;
-        try{await ffmpeg.deleteFile(outName);}catch{}
-      }
-    }
-    
-    if (!usedFastCopy) {
-      args = ['-i', inName];
-      if (isAudioOut) {
-        args.push('-vn');
-        if (item.out === 'mp3') args.push('-c:a', 'libmp3lame', '-q:a', speedMode==='fast'?'4':'2');
-        else if (item.out === 'wav' || item.out === 'aiff') args.push('-c:a', 'pcm_s16le');
-        else if (item.out === 'aac' || item.out === 'm4a') args.push('-c:a', 'aac', '-b:a', audioBR);
-        else if (item.out === 'ogg' || item.out === 'opus') args.push('-c:a', item.out==='opus'?'libopus':'libvorbis', '-b:a', audioBR);
-        else if (item.out === 'flac') args.push('-c:a', 'flac');
-        else if (item.out === 'wma') args.push('-c:a', 'wmav2', '-b:a', audioBR);
-        else if (item.out === 'alac') args.push('-c:a', 'alac');
-        else args.push('-c:a', 'aac', '-b:a', audioBR);
-      } else {
-        if (item.out === 'gif') {
-          const gifBase = [];
-          if (vRotate === '90') gifBase.push('transpose=1');
-          else if (vRotate === '180') { gifBase.push('transpose=1'); gifBase.push('transpose=1'); }
-          else if (vRotate === '270') gifBase.push('transpose=2');
-          if (vFlipH) gifBase.push('hflip');
-          if (vFlipV) gifBase.push('vflip');
-          gifBase.push('fps=10','scale=480:-1:flags=lanczos');
-          args.push('-vf', gifBase.join(','), '-c:v', 'gif', '-t', '15');
-        } else if (item.out === 'webm') {
-          if (scaleFilter) args.push('-vf', scaleFilter);
-          args.push('-c:v', 'libvpx', '-crf', crf, '-b:v', '0', '-deadline', 'realtime', '-cpu-used', '8');
-          if (removeAudio) args.push('-an'); else args.push('-c:a', 'libvorbis', '-b:a', audioBR);
-        } else if (item.out === 'wmv') {
-          if (scaleFilter) args.push('-vf', scaleFilter);
-          args.push('-c:v', 'wmv2', '-b:v', '2000k');
-          if (removeAudio) args.push('-an'); else args.push('-c:a', 'wmav2', '-b:a', audioBR);
-        } else if (item.out === 'flv') {
-          if (scaleFilter) args.push('-vf', scaleFilter);
-          args.push('-c:v', 'libx264', '-crf', crf, '-preset', preset);
-          if (removeAudio) args.push('-an'); else args.push('-c:a', 'aac', '-b:a', audioBR, '-ar', '44100');
-        } else if (['mpg','mpeg','ts','mts','mxf'].includes(item.out)) {
-          if (scaleFilter) args.push('-vf', scaleFilter);
-          args.push('-c:v', 'libx264', '-crf', crf, '-preset', preset);
-          if (removeAudio) args.push('-an'); else args.push('-c:a', 'mp2', '-b:a', audioBR);
-        } else {
-          if (scaleFilter) args.push('-vf', scaleFilter);
-          args.push('-c:v', 'libx264', '-crf', crf, '-preset', preset);
-          if (removeAudio) args.push('-an'); else args.push('-c:a', 'aac', '-b:a', audioBR);
-          args.push('-movflags', '+faststart');
-        }
-      }
-      args.push(outName);
-    }
-    let data;
-    if (!usedFastCopy) {
-      await ffmpeg.exec(args);
-      data = await ffmpeg.readFile(outName);
-    } else {
-      data = await ffmpeg.readFile(outName);
-      vStatus.textContent = 'Done via fast remux (instant)!';
-    }
-    item.downloadUrl = URL.createObjectURL(new Blob([data.buffer], { type: MIME[item.out] || 'application/octet-stream' }));
-    item.status = 'done'; item.downloadName = outName; renderV(); vStatus.textContent = 'Done — click Download'; vProgressBar.style.width = '100%';
-    setTimeout(() => { vProgressWrap.classList.remove('show'); vProgressBar.style.width = '0%'; }, 600);
-  } catch (e) {
-    console.error(e); item.status = 'error'; vStatus.textContent = 'Conversion failed: ' + (e.message || 'please try another format or smaller file'); vProgressWrap.classList.remove('show'); renderV();
-  } finally {
-    for (const name of [inName, outName]) if (name) { try { await ffmpeg?.deleteFile(name); } catch (_) {} }
-  }
-}
-
-function setupDrop(el, input, handler) {
-  el.onclick = () => input.click();
-  el.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } };
-  el.ondragover = e => { e.preventDefault(); el.classList.add('dragover'); };
-  el.ondragleave = () => el.classList.remove('dragover');
-  el.ondrop = e => { e.preventDefault(); el.classList.remove('dragover'); handler(e.dataTransfer.files); };
-  input.onchange = e => handler(e.target.files);
-}
-
-document.getElementById('vRotate')?.addEventListener('change', updateVPreviewTransform);
-document.getElementById('vFlipH')?.addEventListener('change', updateVPreviewTransform);
-document.getElementById('vFlipV')?.addEventListener('change', updateVPreviewTransform);
-
-setupDrop(vDrop, vInput, addVFiles);
-</script>
-
-<!-- Consent Banner - Simple -->
-<div id="consentBanner" style="display:none;position:fixed;bottom:16px;left:16px;right:16px;max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:9999;gap:12px;align-items:center;flex-wrap:wrap">
-  <div style="flex:1;min-width:220px;font-size:0.9rem">We use cookies for analytics and ads if you accept. <a href="/privacy-policy.html">Privacy policy</a><span class="badge" style="margin-left:12px">100% Private</span></div>
-  <div style="display:flex;gap:8px">
-    <button id="consentReject" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;color:var(--text)">Reject</button>
-    <button id="consentAccept" style="padding:8px 14px;border-radius:8px;border:0;background:var(--primary);color:white;cursor:pointer">Accept</button>
+<section class="editor" id="editor">
+<div class="card">
+<div class="preview-container">
+  <div class="compare-stage" id="compareStage">
+    <img id="preview" alt="Edited image preview">
   </div>
 </div>
-<script>
-(function(){
-  function loadAllAds(){
-    try{
-      var ads = document.querySelectorAll('.adsbygoogle');
-      ads.forEach(function(){
-        if(!this.getAttribute('data-adsbygoogle-status')){
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        }
-      });
-    }catch(e){ console.warn('ads load', e); }
-  }
-  // If consent already given, load ads immediately
-  if(localStorage.getItem('consent_choice')==='accepted'){
-    loadAllAds();
-  }
-  var banner = document.getElementById('consentBanner');
-  if(!localStorage.getItem('consent_choice') && banner){
-    banner.style.display='flex';
-  }
-  function setConsent(granted){
-    var v = granted ? 'granted' : 'denied';
-    gtag('consent','update',{ad_storage:v, ad_user_data:v, ad_personalization:v, analytics_storage:v});
-    localStorage.setItem('consent_choice', granted ? 'accepted' : 'rejected');
-    if(banner) banner.style.display='none';
-    if(granted){ loadAllAds(); }
-  }
-  var acc = document.getElementById('consentAccept');
-  var rej = document.getElementById('consentReject');
-  if(acc) acc.onclick = function(){ setConsent(true); };
-  if(rej) rej.onclick = function(){ setConsent(false); };
-  // Expose for Funding Choices later
-  window.__setConsent = setConsent;
-})();
-</script>
+<div class="compare-toggle" id="compareToggle" role="group" aria-label="Preview version" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px;">
+  <button type="button" id="replaceImageBtn">Replace Image</button>
+  <button type="button" id="beforeBtn" aria-pressed="false" disabled>Show Original</button>
+  <button type="button" id="afterBtn" class="active" aria-pressed="true" disabled>Show Edited</button>
+</div>
+<div class="info" id="imageInfo">Upload an image to begin.</div>
+<div class="info crop-live-info" id="cropLiveInfo" style="display:none; margin-top:10px; background:#eff6ff; border:1px dashed #2563eb; color:#1e40af; font-weight:600;"></div>
+<div class="file-meta" id="fileMeta" aria-live="polite"></div>
+<div class="history-actions" aria-label="Edit history"><button type="button" class="tool-btn" id="undoBtn" disabled>↶ Undo</button><button type="button" class="tool-btn" id="redoBtn" disabled>↷ Redo</button></div>
+<div class="batch-list" id="batchList"></div>
+<div class="batch-results" id="batchResults" aria-live="polite"><h3>Batch Results</h3><div class="batch-summary" id="batchSummary"></div><div class="batch-result-list" id="batchResultList"></div></div>
+</div>
+
+<div class="card settings">
+<h2>Image Settings</h2>
+
+<div class="tabs">
+<button class="tab-btn active" type="button" data-tab="resize">Resize & Convert</button>
+<button class="tab-btn" type="button" data-tab="crop">Crop</button>
+<button class="tab-btn" type="button" data-tab="transform">Transform</button>
+<button class="tab-btn" type="button" data-tab="compression">Compression</button>
+<button class="tab-btn" type="button" data-tab="enhance">Enhance</button>
+</div>
+
+<!-- Tab Panels -->
+<div class="tab-panel active" data-panel="resize">
+<label class="aspect-lock-card" id="aspectLockCard" for="lockRatio" title="Recommended: changing one dimension automatically adjusts the other.">
+  <input type="checkbox" id="lockRatio" checked>
+  <span class="aspect-lock-content">
+    <span class="aspect-lock-title">🔒 Keep Aspect Ratio <span class="aspect-lock-badge" id="aspectLockBadge">Recommended</span></span>
+    <span id="aspectLockHelp">Keeps your image proportions correct. Change Width or Height and the other value adjusts automatically.</span>
+  </span>
+</label>
+<div class="field"><label>Resize Dimensions</label><div class="input-row">
+<input type="number" id="width" placeholder="Width" min="1" aria-label="Output width in pixels">
+<input type="number" id="height" placeholder="Height" min="1" aria-label="Output height in pixels">
+</div></div>
+
+<div class="fit-options" id="fitOptions">
+<div class="fit-options-title">Image Fit</div>
+<label class="fit-option"><input type="radio" name="fitMode" value="background" checked><div class="fit-option-content"><strong>Background Fill</strong><span>Keep the entire image visible and fill empty space.</span>
+<div class="color-row">
+  <input type="color" id="backgroundColor" value="#000000">
+  <span id="colorValue">#000000</span>
+  <button type="button" class="eyedropper-btn" id="eyedropperBtn">Pick Color</button>
+</div></div></label>
+<label class="fit-option transparent-option" id="transparentOption"><input type="radio" name="fitMode" value="transparent"><div class="fit-option-content"><strong>Transparent</strong><span>Keep image visible with transparent background (PNG, WebP, AVIF, SVG).</span></div></label>
+<label class="fit-option"><input type="radio" name="fitMode" value="crop"><div class="fit-option-content"><strong>Crop</strong><span>Fill area while preserving proportions. Excess image will be cropped.</span></div></label>
+</div>
+
+<div class="field"><label>Social & Standard Presets</label><div class="presets">
+<button class="preset" type="button" data-width="1920" data-height="1080">YouTube 1920×1080</button>
+<button class="preset" type="button" data-width="1080" data-height="1920" data-preset="shorts" title="9:16 vertical - YouTube Shorts, Instagram Reels & TikTok. Auto-crops to fill, no black bars.">Shorts / Reels / TikTok 1080×1920</button>
+<button class="preset" type="button" data-width="1080" data-height="1080" data-preset="square" title="Square - Instagram post. Auto-crops to fill.">Instagram 1080×1080</button>
+<button class="preset" type="button" data-width="400" data-height="400" data-preset="profile" title="Profile Photo 400×400 - YouTube, Instagram, Facebook avatar. Auto-crops to center, high quality.">Profile Photo 400×400</button>
+<button class="preset" type="button" data-width="1200" data-height="628">FB / LinkedIn 1200×628</button>
+<button class="preset" type="button" data-width="1200" data-height="675">Twitter/X 1200×675</button>
+<button class="preset" type="button" data-width="3840" data-height="2160">4K UHD 3840×2160</button>
+<button class="preset" type="button" data-width="2160" data-height="3840" data-preset="shorts-4k" title="4K Vertical for Shorts/Reels/TikTok">4K Vertical 2160×3840</button>
+</div></div>
+
+<div class="field format-section"><label>Convert Image Format</label><p class="field-description">Resize and convert formats seamlessly.</p>
+<select id="format">
+<option value="image/jpeg">Convert to JPG</option>
+<option value="image/png">Convert to PNG</option>
+<option value="image/webp">Convert to WebP</option>
+<option value="image/avif">Convert to AVIF</option>
+<option value="image/svg+xml">SVG (wrapped PNG — not vector)</option>
+</select>
+<div class="note">Privacy Notice: EXIF metadata (GPS, camera info) is automatically stripped upon conversion for security and reduced file size. Animated GIFs are flattened to a single frame. AVIF uses a local WASM encoder (slower, often much smaller files).</div>
+</div>
+<button type="button" class="tool-btn reset-section" data-reset-section="resize">↺ Reset Resize & Format</button></div>
+
+<div class="tab-panel" data-panel="crop">
+<div class="field">
+  <label>Aspect Ratio Presets</label>
+  <div class="presets" id="cropPresets">
+    <button class="preset" type="button" data-ratio="free">Freeform</button>
+    <button class="preset" type="button" data-ratio="1:1">1:1 (Square)</button>
+    <button class="preset" type="button" data-ratio="16:9">16:9 (Landscape)</button>
+    <button class="preset" type="button" data-ratio="9:16">9:16 (Story/Reel)</button>
+    <button class="preset" type="button" data-ratio="4:3">4:3 (Standard)</button>
+    <button class="preset" type="button" data-ratio="2:3">2:3 (Portrait)</button>
+  </div>
+</div>
+<div class="field">
+  <div class="btn-row">
+    <button type="button" class="btn" id="applyCropBtn">Apply Crop</button>
+    <button type="button" class="tool-btn" id="resetCropBtn">Cancel / Reset Crop</button>
+  </div>
+</div>
+
+</div>
+
+<div class="tab-panel" data-panel="transform">
+<div class="field">
+<label>Rotation</label>
+<div class="btn-row">
+<button type="button" class="tool-btn" id="rotateCCW">⟲ Counterclockwise</button>
+<button type="button" class="tool-btn" id="rotateStraight">Straight (0°)</button>
+<button type="button" class="tool-btn" id="rotateCW">⟳ Clockwise</button>
+</div>
+<div class="tool-status" id="rotationStatus">Current rotation: 0°</div><div class="field-description" style="margin-top:14px">Fine Straighten</div><div class="straighten-row"><input type="range" id="straightenSlider" min="-45" max="45" value="0" step="1"><span class="straighten-value" id="straightenValue">0°</span></div>
+</div>
+
+<div class="field">
+<label>Flip</label>
+<div class="btn-row">
+<button type="button" class="tool-btn toggle" id="flipVBtn">⇅ Upside-Down</button>
+<button type="button" class="tool-btn toggle" id="flipHBtn">⇄ Left-Right</button>
+</div>
+</div>
+
+<div class="field">
+<label>Smoothing Mode</label>
+<div class="ratio">
+  <input type="checkbox" id="pixelArtMode">
+  <label for="pixelArtMode">Pixel Art Mode (Disable Smoothing)</label>
+</div>
+</div>
+
+<div class="field">
+<label>Enlarger</label>
+<div class="presets" id="enlargePresets">
+<button class="preset" type="button" data-scale="1.25">125%</button>
+<button class="preset" type="button" data-scale="1.5">150%</button>
+<button class="preset" type="button" data-scale="2">200%</button>
+<button class="preset" type="button" data-scale="3">300%</button>
+<button class="preset" type="button" data-scale="4">400%</button>
+<button class="preset" type="button" data-scale="1">Reset 100%</button>
+</div><div class="enlarge-custom"><input type="number" id="customScale" min="1" max="1000" value="100" placeholder="Custom %"><button class="btn" type="button" id="applyCustomScale">Apply</button></div>
+</div>
+<button type="button" class="tool-btn reset-section" data-reset-section="transform">↺ Reset Transform</button></div>
+
+<div class="tab-panel" data-panel="compression">
+<div class="field">
+<div class="quality-row"><label style="margin-bottom:0" id="qualityRowLabel">Compression Quality</label><span id="qualityValue">92%</span></div>
+<input type="range" id="qualitySlider" min="10" max="100" value="92" step="1">
+<p class="field-description" id="qualityHint" style="margin-top:10px;margin-bottom:0">Lower quality reduces file size. Applies to JPG and WebP.</p>
+</div>
+<div class="estimate" id="estimatedSize">Preview file size: —</div>
+<div class="file-size-compare" id="fileSizeCompare">
+  <div class="size-card">Original file<strong id="originalSizeValue">—</strong></div>
+  <div class="size-card">Estimated output<strong id="outputSizeValue">—</strong></div>
+  <div class="size-saving" id="savingValue">Savings: —</div>
+</div>
+<button type="button" class="tool-btn reset-section" data-reset-section="compression">↺ Reset Compression</button></div>
+
+<div class="tab-panel" data-panel="enhance">
+  <div class="control-group">
+    <label for="sharpenSlider">Sharpen</label>
+    <input type="range" id="sharpenSlider" min="0" max="100" value="0">
+  </div>
+  
+  <div class="control-group">
+    <label for="contrastSlider">Contrast</label>
+    <input type="range" id="contrastSlider" min="-100" max="100" value="0">
+  </div>
+
+  <div class="control-group">
+    <label for="brightnessSlider">Brightness</label>
+    <input type="range" id="brightnessSlider" min="-100" max="100" value="0">
+  </div>
+<button type="button" class="tool-btn reset-section" data-reset-section="enhance">↺ Reset Enhance</button></div>
 
 
+<div class="processing-status" id="processingStatus" role="status" aria-live="polite">
+  <div id="processingText">Preparing...</div><div class="progress-track"><div class="progress-bar" id="progressBar" role="progressbar" aria-label="Processing progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
+  <div class="progress-meta"><span id="progressDetail">Please wait</span><span id="progressPercent">0%</span></div>
+</div>
+<div class="actions">
+  <button id="downloadBtn" class="download-btn" type="button">Download Image (Enter)</button>
+  <label id="batchCropWrap" class="ratio" style="display:none;margin:4px 0 0;align-items:flex-start">
+    <input type="checkbox" id="applyBatchCrop">
+    <span>Apply current crop to all batch images (relative region)</span>
+  </label>
+  <button id="batchBtn" class="batch-btn" type="button">Process & Download All as ZIP</button>
+</div>
+<button type="button" class="btn reset-btn" id="resetAllBtn">↺ Reset All Changes</button>
+</div>
+</section>
+</main>
+
+<!-- Main In-Content AdSense Unit -->
+<div class="ad-slot ad-rectangle ad-container" aria-label="Advertisement">
+  <!-- Replace 5747213281 with the AdSense ad unit slot ID before publishing. -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4747106371991816"
+       data-ad-slot="5747213281"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<section class="features" id="features">
+<div class="feature"><div class="emoji">⚡</div><h3>Web Worker Accelerated</h3><p>Offloads heavy image processing and compression off the main UI thread for max speed.</p></div>
+<div class="feature"><div class="emoji">📦</div><h3>Batch Processing</h3><p>Resize, convert, and compress multiple images simultaneously and download as a ZIP.</p></div>
+<div class="feature"><div class="emoji">🔒</div><h3>100% Private</h3><p>Files are processed purely in local browser memory. Zero server uploads.</p></div>
+<div class="feature"><div class="emoji">📄</div><h3>PDF Tools</h3><p>Turn images into a PDF, PDF pages into JPG/PNG/WebP, or merge PDFs — all in your browser. <a href="/pdf-tools.html">Open PDF Tools →</a></p></div>
+
+<!-- How-To Guide CTA -->
+
+<!-- Bottom content: stacked full-width (guide → FAQ → ad → footer) -->
+<section class="guide-cta" id="guide">
+  <div class="guide-cta-inner">
+    <h2 class="section-title">Learn How to Resize, Convert &amp; Crop Like a Pro</h2>
+    <p class="section-subtitle">Step-by-step tutorial with examples, tips for social media sizes, format comparison (JPG vs PNG vs WebP vs AVIF), and batch workflow.</p>
+    <a href="https://resizeflow.cc/how-to-resize-convert-crop-images.html" class="btn">Read the Complete Guide →</a>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-subtitle">Common answers regarding functionality and privacy.</p>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Is ResizeFlow completely free?</summary>
+<p>Yes, all single and batch editing features are 100% free with no hidden fees or sign-ups.</p>
+</details>
+<details class="faq-item">
+<summary>Are my images uploaded to any server?</summary>
+<p>No. Operations run entirely within your local browser memory via HTML5 Canvas and Web Workers.</p>
+</details>
+<details class="faq-item">
+<summary>Can I convert multiple HEIC files at once?</summary>
+<p>Yes. You can batch upload HEIC photos from iOS devices and convert them all directly into JPG, WebP, or AVIF.</p>
+</details>
+<details class="faq-item">
+<summary>Do animated GIFs keep their animation?</summary>
+<p>No. Editing runs through HTML5 Canvas, so animated GIFs are processed as a single static frame.</p>
+</details>
+<details class="faq-item">
+<summary>What is AVIF and why is it slower?</summary>
+<p>AVIF often produces files 40–50% smaller than JPEG at similar quality. Encoding runs locally via WebAssembly, which is slower than JPG or WebP but keeps processing private in your browser.</p>
+</details>
+</div>
+<div class="compatibility-note"><strong>Browser compatibility:</strong> ResizeFlow works best in current Chrome, Edge, Firefox, and Safari. HEIC/HEIF conversion and some features may depend on browser support and memory. Animated GIFs export as a single frame. AVIF export loads a WASM encoder on first use. New to image editing? <a href="https://resizeflow.cc/how-to-resize-convert-crop-images.html">See our how to resize, convert & crop guide</a>.</div>
+</section>
+
+<!-- Bottom AdSense Unit -->
+<div class="ad-slot ad-banner ad-container" aria-label="Advertisement">
+  <!-- Replace 9737645367 with the AdSense ad unit slot ID before publishing. -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4747106371991816"
+       data-ad-slot="9737645367"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<footer>
+
+  <div>Copyright © 2026 ResizeFlow.cc — All Rights Reserved. Free Online Image Resizer, Converter &amp; Batch Compressor</div>
+  <div class="footer-links">
+    <a class="footer-link" href="/how-to-resize-convert-crop-images.html">Guide</a>
+    <a class="footer-link" href="/pdf-tools.html">PDF Tools</a>
+    <a class="footer-link" href="/compress-image.html">Compress</a>
+    <a class="footer-link" href="/batch-resize.html">Batch</a>
+    <a class="footer-link" href="/about.html">About</a>
+    <a class="footer-link" href="/contact.html">Contact</a>
+    <a class="footer-link" href="/privacy.html">Privacy</a>
+    <button class="footer-link" type="button" data-legal="terms">Terms</button>
+    <button class="footer-link" type="button" id="cookieSettingsBtn">Cookie settings</button>
+  </div>
+</footer>
+
+<div class="legal-modal" id="legalModal" aria-hidden="true" role="presentation"><div class="legal-dialog" role="dialog" aria-modal="true" aria-labelledby="legalTitle"><button class="legal-close" id="legalClose" type="button" aria-label="Close legal information">Close</button><div id="legalContent"></div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js" integrity="sha384-r+ljwOAhwY4/kdyzMnuBg7MEVoWpTMp5EYUDntB/E9qzNwL9dAEcNrb2XaV+mJc2" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
-// PWA install
-if('serviceWorker' in navigator){
-  // Optional: you can add sw.js later
+let processingWorker;
+try {
+  processingWorker = new Worker(new URL('worker.js', window.location.href));
+} catch (e) {
+  processingWorker = null;
 }
-// GA4 custom events already in converter pages
-</script>
+if (!processingWorker) {
+  // Fallback for environments that cannot load external workers
+  const workerCodeFallback = `self.onmessage=function(e){const{imgData,width,height,amount}=e.data;const data=imgData.data;const copy=new Uint8ClampedArray(data);const kernel=[0,-1,0,-1,5,-1,0,-1,0];for(let y=1;y<height-1;y++){for(let x=1;x<width-1;x++){for(let c=0;c<3;c++){let val=0;for(let ky=-1;ky<=1;ky++){for(let kx=-1;kx<=1;kx++){val+=copy[((y+ky)*width+(x+kx))*4+c]*kernel[(ky+1)*3+(kx+1)];}}const idx=(y*width+x)*4+c;data[idx]=Math.min(255,Math.max(0,copy[idx]*(1-amount)+val*amount));}}}self.postMessage({imgData},{transfer:[imgData.data.buffer]});};`;
+  const workerBlob = new Blob([workerCodeFallback], { type: 'application/javascript' });
+  processingWorker = new Worker(URL.createObjectURL(workerBlob));
+}
 
+
+let workerRequestId = 0;
+const workerRequests = new Map();
+processingWorker.onmessage = function(e) {
+  const pending = workerRequests.get(e.data.id);
+  if (!pending) return;
+  workerRequests.delete(e.data.id);
+  if (e.data.type === 'error') pending.reject(new Error(e.data.message));
+  else pending.resolve(e.data);
+};
+processingWorker.onerror = function(e) {
+  const error = new Error(e.message || 'Image processing worker failed.');
+  workerRequests.forEach(({reject}) => reject(error));
+  workerRequests.clear();
+};
+function sharpenInWorker(imgData, w, h, mix) {
+  return new Promise((resolve, reject) => {
+    const id = ++workerRequestId;
+    workerRequests.set(id, {resolve, reject});
+    processingWorker.postMessage({ id, type: 'sharpen', data: {imgData, w, h, mix} });
+  });
+}
+
+const fileInput=document.getElementById("fileInput");
+const uploadBox=document.getElementById("uploadBox");
+const selectBtn=document.getElementById("selectBtn");
+const editor=document.getElementById("editor");
+const preview=document.getElementById("preview");
+const compareStage=document.getElementById("compareStage");
+const beforeBtn=document.getElementById("beforeBtn");
+const afterBtn=document.getElementById("afterBtn");
+const widthInput=document.getElementById("width");
+const heightInput=document.getElementById("height");
+const lockRatio=document.getElementById("lockRatio");
+const fitOptions=document.getElementById("fitOptions");
+const backgroundColor=document.getElementById("backgroundColor");
+const colorValue=document.getElementById("colorValue");
+const eyedropperBtn=document.getElementById("eyedropperBtn");
+const transparentOption=document.getElementById("transparentOption");
+const formatSelect=document.getElementById("format");
+const downloadBtn=document.getElementById("downloadBtn");
+const batchBtn=document.getElementById("batchBtn");
+const imageInfo=document.getElementById("imageInfo");
+const batchList=document.getElementById("batchList");
+const notification=document.getElementById("notification");
+
+const rotateCCW=document.getElementById("rotateCCW");
+const rotateCW=document.getElementById("rotateCW");
+const rotateStraight=document.getElementById("rotateStraight");
+const rotationStatus=document.getElementById("rotationStatus");
+const flipHBtn=document.getElementById("flipHBtn");
+const flipVBtn=document.getElementById("flipVBtn");
+const pixelArtMode=document.getElementById("pixelArtMode");
+const enlargePresets=document.getElementById("enlargePresets");
+
+const qualitySlider=document.getElementById("qualitySlider");
+const qualityValue=document.getElementById("qualityValue");
+const qualityRowLabel=document.getElementById("qualityRowLabel");
+const qualityHint=document.getElementById("qualityHint");
+const estimatedSize=document.getElementById("estimatedSize");
+const originalSizeValue=document.getElementById("originalSizeValue");
+const outputSizeValue=document.getElementById("outputSizeValue");
+const savingValue=document.getElementById("savingValue");
+const processingStatus=document.getElementById("processingStatus");
+const processingText=document.getElementById("processingText");
+const progressBar=document.getElementById("progressBar");
+const progressDetail=document.getElementById("progressDetail");
+const progressPercent=document.getElementById("progressPercent");
+const dropFeedback=document.getElementById("dropFeedback");
+const themeToggle=document.getElementById("themeToggle");
+const straightenSlider=document.getElementById("straightenSlider");
+const straightenValue=document.getElementById("straightenValue");
+const customScale=document.getElementById("customScale");
+const applyCustomScale=document.getElementById("applyCustomScale");
+const resetAllBtn=document.getElementById("resetAllBtn");
+const fileMeta=document.getElementById("fileMeta");
+const undoBtn=document.getElementById("undoBtn");
+const redoBtn=document.getElementById("redoBtn");
+const batchResults=document.getElementById("batchResults");
+const batchSummary=document.getElementById("batchSummary");
+const batchResultList=document.getElementById("batchResultList");
+
+const sharpenSlider = document.getElementById('sharpenSlider');
+const contrastSlider = document.getElementById('contrastSlider');
+const brightnessSlider = document.getElementById('brightnessSlider');
+
+let batchFiles = [];
+let originalFileSize = 0;
+let originalImage=null, originalWidth=0, originalHeight=0, originalFileType="", previewTimer=null;
+let transformedSource=null, transformedW=0, transformedH=0;
+let croppedCanvasSource=null, cropper=null;
+let cropperInitVersion=0;
+let rotation=0, fineRotation=0, flipH=false, flipV=false;
+let previewObjectURL=null, originalObjectURL=null;
+let showingOriginal = false;
+let previewRequestVersion = 0;
+let historyStack=[], redoStack=[], restoringHistory=false, historyTimer=null;
+const HISTORY_LIMIT=30;
+
+const maxFileSize=50*1024*1024;
+const maxInputDimension=10000;
+const maxInputPixels=50000000; // ~50 MP — safer for mobile Safari canvas limits
+const isLikelySafari=/^((?!chrome|android).)*safari/i.test(navigator.userAgent)||(/iPad|iPhone|iPod/.test(navigator.userAgent));               
+
+if ('EyeDropper' in window) {
+  eyedropperBtn.addEventListener('click', async () => {
+    try {
+      const eyeDropper = new EyeDropper();
+      const result = await eyeDropper.open();
+      backgroundColor.value = result.sRGBHex;
+      colorValue.textContent = result.sRGBHex.toUpperCase();
+      updatePreview();
+    } catch (e) {}
+  });
+} else {
+  eyedropperBtn.style.display = 'none';
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.key.toLowerCase() === 'r') {
+    e.preventDefault();
+    if (originalImage) setRotation(rotation + 90);
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (downloadBtn.style.display !== 'none' && !downloadBtn.disabled) downloadBtn.click();
+  }
+});
+
+window.addEventListener('paste', (e) => {
+  const items = e.clipboardData && e.clipboardData.items;
+  if (!items) return;
+  const files = [];
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].type && items[i].type.indexOf('image') !== -1) {
+      const f = items[i].getAsFile();
+      if (f) files.push(f);
+    }
+  }
+  if (files.length) {
+    e.preventDefault();
+    handleFiles(files);
+    showNotification(files.length === 1 ? 'Image pasted from clipboard.' : files.length + ' images pasted from clipboard.', 'success');
+  }
+});
+
+window.addEventListener('pagehide', () => {
+  try {
+    if (previewObjectURL) URL.revokeObjectURL(previewObjectURL);
+    if (originalObjectURL) URL.revokeObjectURL(originalObjectURL);
+  } catch (err) {}
+});
+window.addEventListener('beforeunload', () => {
+  try {
+    if (previewObjectURL) URL.revokeObjectURL(previewObjectURL);
+    if (originalObjectURL) URL.revokeObjectURL(originalObjectURL);
+  } catch (err) {}
+});
+
+
+function getFileExtension(name){const m=(name||'').match(/\.([^.]+)$/);return m?m[1].toUpperCase():'Unknown';}
+function updateUploadedFileMeta(file){if(!file){fileMeta.style.display='none';return;} fileMeta.style.display='block';fileMeta.innerHTML=`<strong>Uploaded file</strong><br>Name: ${escapeHtml(file.name)}<br>Extension: ${escapeHtml(getFileExtension(file.name))} · Size: ${formatBytes(file.size)}`;}
+function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+// Crop is stored as a single shared canvas ref (not base64 in every history entry) to avoid memory bombs.
+let lastAppliedCropCanvas=null;
+let cropRelative=null; // {x,y,w,h} fractions of transformed source at apply time
+function getHistorySnapshot(){return {width:widthInput.value,height:heightInput.value,lock:lockRatio.checked,format:formatSelect.value,fit:document.querySelector('input[name="fitMode"]:checked')?.value||'background',bg:backgroundColor.value,rotation,fineRotation,flipH,flipV,pixel:pixelArtMode.checked,quality:qualitySlider.value,sharpen:sharpenSlider.value,contrast:contrastSlider.value,brightness:brightnessSlider.value,custom:customScale.value,hasCrop:!!croppedCanvasSource};}
+function sameSnapshot(a,b){return JSON.stringify(a)===JSON.stringify(b)}
+function updateHistoryButtons(){undoBtn.disabled=!historyStack.length;redoBtn.disabled=!redoStack.length;}
+function pushHistory(){if(restoringHistory||!originalImage)return;const snap=getHistorySnapshot();const last=historyStack[historyStack.length-1];if(last&&sameSnapshot(last,snap))return;historyStack.push(snap);if(historyStack.length>HISTORY_LIMIT)historyStack.shift();redoStack=[];updateHistoryButtons();}
+function scheduleHistory(){clearTimeout(historyTimer);historyTimer=setTimeout(pushHistory,120);}
+async function restoreSnapshot(snap){if(!snap||!originalImage)return;restoringHistory=true;destroyCropper();widthInput.value=snap.width;heightInput.value=snap.height;lockRatio.checked=snap.lock;formatSelect.value=snap.format;backgroundColor.value=snap.bg;colorValue.textContent=snap.bg.toUpperCase();document.querySelector(`input[name="fitMode"][value="${snap.fit}"]`)?.click();rotation=snap.rotation;fineRotation=snap.fineRotation;flipH=snap.flipH;flipV=snap.flipV;pixelArtMode.checked=snap.pixel;qualitySlider.value=snap.quality;sharpenSlider.value=snap.sharpen;contrastSlider.value=snap.contrast;brightnessSlider.value=snap.brightness;customScale.value=snap.custom;straightenSlider.value=snap.fineRotation;straightenValue.textContent=`${snap.fineRotation}°`;flipHBtn.classList.toggle('active',flipH);flipVBtn.classList.toggle('active',flipV);rotationStatus.textContent=`Current rotation: ${rotation+fineRotation}°`;
+  if(snap.hasCrop && lastAppliedCropCanvas){croppedCanvasSource=lastAppliedCropCanvas;}
+  else {croppedCanvasSource=null;}
+  rebuildTransformedSource();updateTransparentOption();updateCompressionUI();updatePreview();restoringHistory=false;}
+undoBtn.addEventListener('click',async()=>{if(!historyStack.length)return;const current=getHistorySnapshot();if(historyStack.length&&sameSnapshot(historyStack[historyStack.length-1],current))historyStack.pop();const target=historyStack[historyStack.length-1];if(!target){historyStack.push(current);return updateHistoryButtons();}redoStack.push(current);await restoreSnapshot(target);updateHistoryButtons();});
+redoBtn.addEventListener('click',async()=>{if(!redoStack.length)return;const current=getHistorySnapshot();const target=redoStack.pop();historyStack.push(current);await restoreSnapshot(target);updateHistoryButtons();});
+function resetHistory(){historyStack=[];redoStack=[];updateHistoryButtons();}
+function showBatchResults(results){batchResults.classList.add('active');const ok=results.filter(r=>r.ok).length, fail=results.length-ok;batchSummary.innerHTML=`<span class="result-chip">${results.length} total</span><span class="result-chip">${ok} successful</span>${fail?`<span class="result-chip">${fail} failed</span>`:''}`;batchResultList.innerHTML=results.map(r=>`<div class="batch-result-row ${r.ok?'ok':'error'}"><strong>${escapeHtml(r.name)}</strong>${r.ok?` — ${escapeHtml(r.detail||'Processed')}`:` — ${escapeHtml(r.error||'Failed')}`}</div>`).join('');}
+
+
+document.addEventListener('input',e=>{if(restoringHistory)return;if(e.target.closest('#editor'))scheduleHistory();},true);
+document.addEventListener('change',e=>{if(restoringHistory)return;if(e.target.closest('#editor'))scheduleHistory();},true);
+document.addEventListener('click',e=>{if(restoringHistory)return;if(e.target.closest('#editor')&&!e.target.closest('#undoBtn,#redoBtn'))setTimeout(pushHistory,0);},true);
+
+function setTheme(theme){
+  const dark=theme!=="light";
+  document.body.classList.toggle("dark-mode",dark);
+  themeToggle.textContent=dark?"☀ Light":"🌙 Dark";
+  try{localStorage.setItem("resizeflow-theme",dark?"dark":"light");}catch(e){}
+}
+let savedTheme=null;
+try{savedTheme=localStorage.getItem("resizeflow-theme");}catch(e){}
+if(!savedTheme){
+  savedTheme=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+}
+setTheme(savedTheme);
+themeToggle.addEventListener("click",()=>setTheme(document.body.classList.contains("dark-mode")?"light":"dark"));
+
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".tab-panel").forEach(p=>p.classList.remove("active"));
+    btn.classList.add("active");
+    document.querySelector(`.tab-panel[data-panel="${btn.dataset.tab}"]`).classList.add("active");
+
+    if (window.innerWidth<=800) btn.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
+    if (btn.dataset.tab === "crop" && originalImage) {
+      initCropper();
+    } else {
+      destroyCropper();
+    }
+  });
+});
+
+function updateCropLiveInfo() {
+  const el = document.getElementById('cropLiveInfo');
+  if (!el) return;
+  if (!cropper) {
+    el.style.display = 'none';
+    el.textContent = '';
+    return;
+  }
+  try {
+    const data = cropper.getData(true);
+    const w = Math.max(1, Math.round(data.width));
+    const h = Math.max(1, Math.round(data.height));
+    el.textContent = `✂️ Crop area: ${w.toLocaleString()} × ${h.toLocaleString()} px — click Apply Crop to confirm`;
+    el.style.display = 'block';
+  } catch(e) {
+    el.style.display = 'none';
+  }
+}
+
+function initCropper() {
+  try { clearTimeout(previewTimer); } catch(e){}
+  if (!originalImage || !transformedSource || !transformedW || !transformedH) return;
+
+  const initVersion = ++cropperInitVersion;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+  if (previewObjectURL) { try { URL.revokeObjectURL(previewObjectURL); } catch(e){} previewObjectURL=null; }
+
+  const tempCanvas = document.createElement("canvas");
+  tempCanvas.width = transformedW;
+  tempCanvas.height = transformedH;
+  const ctx = tempCanvas.getContext("2d");
+  ctx.drawImage(transformedSource, 0, 0);
+
+  const startCropper = () => {
+    if (initVersion !== cropperInitVersion) return;
+    const tab = document.querySelector('.tab-btn.active')?.dataset.tab;
+    if (tab !== 'crop') return;
+    if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+    requestAnimationFrame(() => {
+      if (initVersion !== cropperInitVersion) return;
+      if (document.querySelector('.tab-btn.active')?.dataset.tab !== 'crop') return;
+      cropper = new Cropper(preview, {
+        viewMode: 1, dragMode: 'crop', autoCropArea: 0.8, restore: false,
+        guides: true, center: true, highlight: false, cropBoxMovable: true,
+        cropBoxResizable: true, toggleDragModeOnDblclick: false,
+        crop: function() { updateCropLiveInfo(); },
+        ready: function() { updateCropLiveInfo(); }
+      });
+    });
+  };
+
+  preview.onload = startCropper;
+  preview.onerror = () => { if (initVersion === cropperInitVersion) showNotification("Unable to reopen the crop editor."); };
+  preview.src = tempCanvas.toDataURL();
+  if (preview.complete && preview.naturalWidth) startCropper();
+}
+
+function destroyCropper() {
+  cropperInitVersion++;
+  preview.onload = null;
+  preview.onerror = null;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+  const cropEl = document.getElementById('cropLiveInfo');
+  if (cropEl) { cropEl.style.display='none'; cropEl.textContent=''; }
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
+  if(activeTab !== 'crop'){
+    try { clearTimeout(previewTimer); } catch(e){}
+    updatePreview();
+  }
+}
+
+document.querySelectorAll('#cropPresets .preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (!cropper) return;
+    const ratio = btn.dataset.ratio;
+    if (ratio === 'free') cropper.setAspectRatio(NaN);
+    else { const [w, h] = ratio.split(':').map(Number); cropper.setAspectRatio(w / h); }
+    setActivePreset(document.getElementById('cropPresets'), btn);
+  });
+});
+
+document.getElementById('applyCropBtn').addEventListener('click', () => {
+  if (!cropper) return;
+  try {
+    const data = cropper.getData(true);
+    const nw = cropper.getImageData().naturalWidth || transformedW;
+    const nh = cropper.getImageData().naturalHeight || transformedH;
+    cropRelative = { x: Math.max(0, data.x / nw), y: Math.max(0, data.y / nh), w: Math.min(1, data.width / nw), h: Math.min(1, data.height / nh) };
+  } catch (e) { cropRelative = null; }
+  try { croppedCanvasSource = cropper.getCroppedCanvas({imageSmoothingEnabled:true, imageSmoothingQuality:'high'}); } catch(e){ croppedCanvasSource = cropper.getCroppedCanvas(); }
+  lastAppliedCropCanvas = croppedCanvasSource;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+  try { clearTimeout(previewTimer); } catch(e){}
+  if (previewObjectURL) { try { URL.revokeObjectURL(previewObjectURL); } catch(e){} previewObjectURL=null; }
+  rebuildTransformedSource();
+  widthInput.value = transformedW; heightInput.value = transformedH;
+  const wrap=document.getElementById('batchCropWrap'); if(wrap && batchFiles.length>1) wrap.style.display='flex';
+  initCropper();
+  showNotification("Crop applied. You can crop again immediately.", "success");
+});
+
+
+document.getElementById('resetCropBtn').addEventListener('click', () => {
+  croppedCanvasSource = null; lastAppliedCropCanvas = null; cropRelative = null;
+  const wrap=document.getElementById('batchCropWrap'); if(wrap) wrap.style.display='none';
+  const cb=document.getElementById('applyBatchCrop'); if(cb) cb.checked=false;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper=null; }
+  try { clearTimeout(previewTimer); } catch(e){}
+  if (previewObjectURL) { try { URL.revokeObjectURL(previewObjectURL); } catch(e){} previewObjectURL=null; }
+  rebuildTransformedSource();
+  widthInput.value = transformedW; heightInput.value = transformedH;
+  initCropper();
+  showNotification("Crop cleared. You can crop again.", "success");
+});
+
+
+
+
+
+
+function activateTab(tabName){
+  const btn=document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  const panel=document.querySelector(`.tab-panel[data-panel="${tabName}"]`);
+  if(!btn||!panel)return;
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".tab-panel").forEach(p=>p.classList.remove("active"));
+  btn.classList.add("active"); panel.classList.add("active");
+  if(tabName === "crop" && originalImage) initCropper();
+  else destroyCropper();
+}
+document.querySelectorAll("nav a[data-nav-target]").forEach(link=>{
+  link.addEventListener("click",e=>{
+    const target=link.dataset.navTarget;
+    if(target==="upload"){
+      e.preventDefault();
+      const uploadWorkflow=document.getElementById("uploadWorkflow");
+      if(originalImage && editor && editor.classList.contains("is-open")){
+        editor.scrollIntoView({behavior:"smooth",block:"start"});
+      } else if(uploadWorkflow){
+        uploadWorkflow.scrollIntoView({behavior:"smooth",block:"center"});
+      } else {
+        uploadBox.scrollIntoView({behavior:"smooth",block:"center"});
+      }
+      return;
+    }
+    if(target==="faq"){ e.preventDefault(); document.getElementById("faq").scrollIntoView({behavior:"smooth",block:"start"}); return; }
+    e.preventDefault();
+    if(!originalImage){ uploadBox.scrollIntoView({behavior:"smooth",block:"center"}); showNotification("Upload an image first."); return; }
+    activateTab(target); editor.scrollIntoView({behavior:"smooth",block:"start"});
+  });
+});
+
+function showNotification(message,type="error"){ notification.textContent=message; notification.className=`notification show ${type}`; }
+function hideNotification(){ notification.textContent=""; notification.className="notification"; }
+
+function getOutputName(){
+  switch(formatSelect.value){
+    case "image/jpeg": return "JPG"; case "image/webp": return "WebP";
+    case "image/avif": return "AVIF"; case "image/svg+xml": return "SVG";
+    default: return "PNG";
+  }
+}
+function getOutputExtension(){
+  switch(formatSelect.value){
+    case "image/jpeg": return "jpg"; case "image/webp": return "webp";
+    case "image/avif": return "avif"; case "image/svg+xml": return "svg";
+    default: return "png";
+  }
+}
+function normalizeOutputFormat(mime){
+  if(mime==="image/jpeg"||mime==="image/png"||mime==="image/webp"||mime==="image/avif"||mime==="image/svg+xml") return mime;
+  return "image/png";
+}
+let avifEncodeModule=null;
+async function getAvifEncoder(){
+  if(avifEncodeModule) return avifEncodeModule;
+  const mod=await import("https://esm.sh/@jsquash/avif@2.1.1");
+  avifEncodeModule=mod;
+  return mod;
+}
+async function encodeCanvasToAvif(canvas, quality, options={}){
+  const srcW=canvas.width, srcH=canvas.height;
+  const mp=(srcW*srcH)/1e6;
+  // Adaptive encode canvas: cap encode resolution for very large images to avoid multi-minute WASM encodes
+  const maxEncodeSide = options.preview ? 1600 : (mp > 16 ? 4096 : (mp > 8 ? 5120 : 8192));
+  let encodeCanvas=canvas;
+  if(srcW>maxEncodeSide || srcH>maxEncodeSide){
+    const scale=Math.min(maxEncodeSide/srcW, maxEncodeSide/srcH);
+    const w=Math.max(1,Math.round(srcW*scale));
+    const h=Math.max(1,Math.round(srcH*scale));
+    encodeCanvas=document.createElement("canvas");
+    encodeCanvas.width=w; encodeCanvas.height=h;
+    const sctx=encodeCanvas.getContext("2d",{alpha:true});
+    sctx.imageSmoothingEnabled=true; sctx.imageSmoothingQuality="high";
+    sctx.drawImage(canvas,0,0,w,h);
+  }
+  const ctx=encodeCanvas.getContext("2d",{willReadFrequently:true});
+  const imageData=ctx.getImageData(0,0,encodeCanvas.width,encodeCanvas.height);
+  const {encode}=await getAvifEncoder();
+  const q=Math.max(0,Math.min(1,Number(quality)||0.75));
+  // Map quality 0..1 → cqLevel 0 (best) .. 63 (smallest). Bias slightly toward quality.
+  const cqLevel=Math.round((1-q)*63);
+  // Higher speed = faster, slightly larger files. Use faster settings for large images / previews.
+  const encodeMp=(encodeCanvas.width*encodeCanvas.height)/1e6;
+  let speed=6;
+  if(options.preview) speed=10;
+  else if(encodeMp>8) speed=9;
+  else if(encodeMp>4) speed=8;
+  else if(encodeMp>2) speed=7;
+  // Enable tiles on large images for better parallel encode behavior in WASM
+  let tileColsLog2=0, tileRowsLog2=0;
+  if(encodeMp>3){ tileColsLog2=1; tileRowsLog2=1; }
+  if(encodeMp>8){ tileColsLog2=2; tileRowsLog2=1; }
+  const buffer=await encode(imageData,{
+    cqLevel,
+    cqAlphaLevel:-1,
+    speed,
+    subsample:1, // 4:2:0 — best size/quality for photos
+    chromaDeltaQ:false,
+    sharpness:0,
+    denoiseLevel:0,
+    tileColsLog2,
+    tileRowsLog2,
+    tune:0 // auto
+  });
+  return new Blob([buffer],{type:"image/avif"});
+}
+function formatBytes(n){
+  if(n<1024) return `${n} B`; if(n<1024*1024) return `${(n/1024).toFixed(1)} KB`;
+  return `${(n/1024/1024).toFixed(2)} MB`;
+}
+function updateFileSizeComparison(outputSize){
+  originalSizeValue.textContent=originalFileSize?formatBytes(originalFileSize):"—";
+  outputSizeValue.textContent=Number.isFinite(outputSize)?formatBytes(outputSize):"—";
+  if(!originalFileSize||!Number.isFinite(outputSize)){savingValue.textContent="Savings: —";return;}
+  const diff=originalFileSize-outputSize, pct=(diff/originalFileSize)*100;
+  savingValue.textContent=diff>=0?`Estimated savings: ${formatBytes(diff)} (${pct.toFixed(1)}%)`:`Estimated size increase: ${formatBytes(Math.abs(diff))} (${Math.abs(pct).toFixed(1)}%)`;
+}
+function setProcessing(active,text="Processing...",percent=0,detail="Please wait"){
+  const safePercent=Math.max(0,Math.min(100,percent));
+  processingStatus.classList.toggle("active",active); processingText.textContent=text; progressBar.style.width=`${safePercent}%`; progressBar.setAttribute("aria-valuenow",String(Math.round(safePercent))); progressPercent.textContent=`${Math.round(safePercent)}%`; progressDetail.textContent=detail;
+}
+function updateAspectLockUI(){
+  const locked=lockRatio.checked;
+  document.getElementById("aspectLockCard")?.classList.toggle("unlocked",!locked);
+  const badge=document.getElementById("aspectLockBadge"), help=document.getElementById("aspectLockHelp");
+  if(badge) badge.textContent=locked?"Recommended":"Unlocked";
+  if(help) help.textContent=locked?"Keeps your image proportions correct. Change Width or Height and the other value adjusts automatically.":"Width and Height can now change independently. Your image may stretch or distort.";
+}
+lockRatio.addEventListener("change",()=>{ updateAspectLockUI(); scheduleHistory(); updatePreview(); });
+updateAspectLockUI();
+function setActivePreset(group,active){group.querySelectorAll('.preset').forEach(b=>b.classList.toggle('active',b===active));}
+
+beforeBtn.addEventListener("click", () => {
+  if (!originalObjectURL) return;
+  showingOriginal = true;
+  beforeBtn.classList.add("active"); afterBtn.classList.remove("active");
+  preview.src = originalObjectURL;
+});
+afterBtn.addEventListener("click", () => {
+  showingOriginal = false;
+  afterBtn.classList.add("active"); beforeBtn.classList.remove("active");
+  if (previewObjectURL) preview.src = previewObjectURL;
+});
+
+selectBtn.addEventListener("click",e=>{e.stopPropagation();fileInput.click();});
+uploadBox.addEventListener("click",e=>{
+  if(e.target===fileInput||e.target.closest("button")) return;
+  fileInput.click();
+});
+fileInput.addEventListener("change",e=>handleFiles(e.target.files));
+
+const replaceImageBtn=document.getElementById("replaceImageBtn");
+if(replaceImageBtn){
+  replaceImageBtn.addEventListener("click",()=>{
+    fileInput.value="";
+    fileInput.click();
+  });
+}
+
+["dragenter","dragover"].forEach(type=>uploadBox.addEventListener(type,e=>{e.preventDefault();uploadBox.classList.add("dragover");dropFeedback.textContent="Release to add image files.";}));
+uploadBox.addEventListener("dragleave",e=>{if(!uploadBox.contains(e.relatedTarget)){uploadBox.classList.remove("dragover");dropFeedback.textContent="Drop, paste (Ctrl/Cmd+V), or select images.";}});
+uploadBox.addEventListener("drop",e=>{e.preventDefault();uploadBox.classList.remove("dragover");const count=e.dataTransfer.files.length;dropFeedback.textContent=count?`${count} image${count===1?"":"s"} dropped — loading...`:"Drop, paste (Ctrl/Cmd+V), or select images.";if(count)handleFiles(e.dataTransfer.files);});
+
+function handleFiles(files) {
+  if (!files.length) return;
+  batchFiles = Array.from(files);
+  dropFeedback.textContent=`${batchFiles.length} image${batchFiles.length===1?"":"s"} selected.`;
+  const batchCropWrap=document.getElementById("batchCropWrap");
+  if (batchFiles.length > 1) {
+    batchBtn.style.display = "inline-block";
+    batchList.textContent = `Batch loaded: ${batchFiles.length} files (${batchFiles.map(f=>f.name).join(', ')})`;
+    if(batchCropWrap) batchCropWrap.style.display = croppedCanvasSource ? "flex" : "none";
+  } else {
+    batchBtn.style.display = "none";
+    batchList.textContent = "";
+    if(batchCropWrap) batchCropWrap.style.display = "none";
+  }
+  loadImage(batchFiles[0]);
+}
+
+function detectKind(file){
+  const name=file.name||""; const m=name.toLowerCase().match(/\.([a-z0-9]+)$/);
+  const ext=m?m[1]:""; const type=file.type;
+  if(type==="image/heic"||type==="image/heif"||ext==="heic"||ext==="heif")return "heic";
+  if(type==="image/svg+xml"||ext==="svg")return "svg";
+  if(type==="image/gif"||ext==="gif")return "gif";
+  if(type==="image/jpeg"||ext==="jpg"||ext==="jpeg")return "jpeg";
+  if(type==="image/png"||ext==="png")return "png";
+  if(type==="image/webp"||ext==="webp")return "webp";
+  if(type==="image/avif"||ext==="avif")return "avif";
+  return null;
+}
+function kindToMime(kind){
+  switch(kind){
+    case "jpeg": return "image/jpeg"; case "png": return "image/png";
+    case "webp": return "image/webp"; case "gif": return "image/gif";
+    case "avif": return "image/avif"; case "svg": return "image/svg+xml";
+    default: return "image/jpeg";
+  }
+}
+
+function validateFile(file){
+  const kind=detectKind(file);
+  if(!kind) return {ok:false, error:"Unsupported format. Use JPG, PNG, WebP, AVIF, GIF, SVG, or HEIC/HEIF."};
+  if(file.size>maxFileSize) return {ok:false, error:"File exceeds the 50 MB limit."};
+  return {ok:true, kind};
+}
+
+async function decodeFileToImage(file){
+  const validation=validateFile(file);
+  if(!validation.ok) throw new Error(validation.error);
+  let workingFile=file;
+  if(validation.kind==="heic"){
+    try{
+      const mod=await import("https://esm.sh/heic2any@0.0.4");
+      const fn=mod.default||mod;
+      workingFile=await fn({blob:file,toType:"image/jpeg",quality:0.92});
+      if(Array.isArray(workingFile)) workingFile=workingFile[0];
+    }catch(heicErr){
+      throw new Error("Could not decode HEIC/HEIF. Try Chrome or Edge, or convert to JPG on your device first. (Firefox may need the .heic extension on the filename.)");
+    }
+  }
+  const url=URL.createObjectURL(workingFile);
+  try{
+    const img=await new Promise((resolve,reject)=>{
+      const image=new Image();
+      image.onload=()=>resolve(image);
+      image.onerror=()=>reject(new Error("Image could not be decoded."));
+      image.src=url;
+    });
+    const w=img.naturalWidth||img.width, h=img.naturalHeight||img.height;
+    if(w>maxInputDimension||h>maxInputDimension||w*h>maxInputPixels){
+      const safariNote=isLikelySafari?" On iPhone/iPad, Safari often limits canvas around 4096–8192 px; try a smaller export size.":"";
+      throw new Error("Image dimensions are too large (maximum 10,000 px per side / ~50 MP)."+safariNote);
+    }
+    return {img, kind:validation.kind, mime:kindToMime(validation.kind), w, h, workingFile};
+  } finally { URL.revokeObjectURL(url); }
+}
+
+async function loadImage(file){
+  hideNotification();
+  try{
+    const decoded=await decodeFileToImage(file);
+    if(originalObjectURL) URL.revokeObjectURL(originalObjectURL);
+    originalObjectURL=URL.createObjectURL(decoded.workingFile);
+    originalImage=decoded.img; originalWidth=decoded.w; originalHeight=decoded.h;
+    originalFileType=decoded.mime; originalFileSize=file.size; updateFileSizeComparison(NaN); updateUploadedFileMeta(file); resetHistory(); batchResults.classList.remove("active");
+    croppedCanvasSource=null; destroyCropper();
+    beforeBtn.disabled=false; afterBtn.disabled=false;
+    showingOriginal=false; afterBtn.classList.add("active"); beforeBtn.classList.remove("active");
+    rotation=0; fineRotation=0; flipH=false; flipV=false;
+    sharpenSlider.value=0; contrastSlider.value=0; brightnessSlider.value=0;
+    straightenSlider.value=0; straightenValue.textContent="0°"; customScale.value=100;
+    flipHBtn.classList.remove("active"); flipVBtn.classList.remove("active");
+    rotationStatus.textContent="Current rotation: 0°";
+    rebuildTransformedSource();
+    widthInput.value=transformedW; heightInput.value=transformedH;
+    formatSelect.value=normalizeOutputFormat(originalFileType);
+    lockRatio.checked=true; fitOptions.classList.remove("active");
+    updateTransparentOption(); updateCompressionUI();
+    const uploadWorkflow=document.getElementById("uploadWorkflow");
+    if(uploadWorkflow) uploadWorkflow.style.display="none";
+    editor.classList.add("is-open");
+    editor.style.display="grid";
+    updatePreview();
+    setTimeout(pushHistory,0);
+    if(decoded.kind==="gif"){
+      showNotification(`Loaded: ${transformedW} × ${transformedH} px — GIF animation is not preserved (single frame only).`, "success");
+    } else {
+      showNotification(`Loaded: ${transformedW} × ${transformedH} px`, "success");
+    }
+  } catch(err) { showNotification(err.message || "Image loading failed."); }
+}
+
+function setRotation(newRotation){
+  newRotation=((newRotation%360)+360)%360;
+  if(originalImage&&(newRotation%180!==rotation%180)){
+    const w=widthInput.value, h=heightInput.value;
+    widthInput.value=h; heightInput.value=w;
+  }
+  rotation=newRotation; fineRotation=0; straightenSlider.value=0; straightenValue.textContent="0°";
+  rotationStatus.textContent=`Current rotation: ${rotation}°`;
+  rebuildTransformedSource(); updatePreview();
+}
+rotateCW.addEventListener("click",()=>{ if(originalImage) setRotation(rotation+90); });
+rotateCCW.addEventListener("click",()=>{ if(originalImage) setRotation(rotation-90); });
+rotateStraight.addEventListener("click",()=>{ if(originalImage) setRotation(0); });
+straightenSlider.addEventListener("input",()=>{
+  if(!originalImage)return;
+  fineRotation=Number(straightenSlider.value)||0;
+  straightenValue.textContent=`${fineRotation}°`;
+  rebuildTransformedSource(); updatePreview();
+});
+pixelArtMode.addEventListener("change", updatePreview);
+
+flipHBtn.addEventListener("click",()=>{ if(!originalImage)return; flipH=!flipH; flipHBtn.classList.toggle("active",flipH); rebuildTransformedSource(); updatePreview(); });
+flipVBtn.addEventListener("click",()=>{ if(!originalImage)return; flipV=!flipV; flipVBtn.classList.toggle("active",flipV); rebuildTransformedSource(); updatePreview(); });
+
+enlargePresets.querySelectorAll(".preset").forEach(button=>{
+  button.addEventListener("click",()=>{
+    if(!originalImage)return;
+    const scale=parseFloat(button.dataset.scale);
+    widthInput.value=Math.max(1,Math.round(transformedW*scale));
+    heightInput.value=Math.max(1,Math.round(transformedH*scale));
+    lockRatio.checked=true; fitOptions.classList.remove("active"); setActivePreset(enlargePresets,button); updatePreview();
+  });
+});
+applyCustomScale.addEventListener("click",()=>{
+  if(!originalImage)return;
+  const pct=Math.min(1000,Math.max(1,Number(customScale.value)||100));
+  customScale.value=Math.round(pct); const scale=pct/100;
+  widthInput.value=Math.max(1,Math.round(transformedW*scale));
+  heightInput.value=Math.max(1,Math.round(transformedH*scale));
+  lockRatio.checked=true; fitOptions.classList.remove("active"); setActivePreset(enlargePresets,null); updatePreview();
+});
+
+function rebuildTransformedSource(){
+  const activeSource = croppedCanvasSource || originalImage;
+  if (!activeSource) return;
+  const srcW = croppedCanvasSource ? croppedCanvasSource.width : originalWidth;
+  const srcH = croppedCanvasSource ? croppedCanvasSource.height : originalHeight;
+  const totalRotation=rotation+fineRotation; const angle=totalRotation*Math.PI/180;
+  const cos=Math.abs(Math.cos(angle)), sin=Math.abs(Math.sin(angle));
+  const w=Math.max(1,Math.ceil(srcW*cos+srcH*sin));
+  const h=Math.max(1,Math.ceil(srcW*sin+srcH*cos));
+  
+  const c=document.createElement("canvas"); c.width=w; c.height=h;
+  const ctx=c.getContext("2d",{alpha:true});
+  ctx.save(); ctx.translate(w/2,h/2); ctx.rotate(angle);
+  ctx.scale(flipH?-1:1, flipV?-1:1);
+  ctx.drawImage(activeSource,-srcW/2,-srcH/2); ctx.restore();
+  transformedSource=c; transformedW=w; transformedH=h;
+}
+
+
+document.querySelectorAll('[data-reset-section]').forEach(btn=>btn.addEventListener('click',()=>{
+  if(!originalImage) return;
+  const section=btn.dataset.resetSection;
+  if(section==='resize'){widthInput.value=transformedW;heightInput.value=transformedH;lockRatio.checked=true;fitOptions.classList.remove('active');document.querySelector('input[name="fitMode"][value="background"]').checked=true;backgroundColor.value='#000000';colorValue.textContent='#000000';formatSelect.value=normalizeOutputFormat(originalFileType);setActivePreset(document.querySelector('.tab-panel[data-panel="resize"] .presets'),null);updateTransparentOption();updateCompressionUI();}
+  if(section==='crop'){croppedCanvasSource=null;destroyCropper();rebuildTransformedSource();widthInput.value=transformedW;heightInput.value=transformedH;}
+  if(section==='transform'){rotation=0;fineRotation=0;flipH=false;flipV=false;pixelArtMode.checked=false;straightenSlider.value=0;straightenValue.textContent='0°';rotationStatus.textContent='Current rotation: 0°';flipHBtn.classList.remove('active');flipVBtn.classList.remove('active');customScale.value=100;setActivePreset(enlargePresets,null);rebuildTransformedSource();}
+  if(section==='compression'){qualitySlider.value=92;updateCompressionUI();}
+  if(section==='enhance'){sharpenSlider.value=0;contrastSlider.value=0;brightnessSlider.value=0;}
+  updatePreview();showNotification(`${section.charAt(0).toUpperCase()+section.slice(1)} settings reset.`, 'success');
+}));
+
+resetAllBtn.addEventListener("click", () => {
+  if (!originalImage) return;
+
+  // 1. Destroy current cropper and reset image state
+  croppedCanvasSource = null; 
+  destroyCropper();
+  rotation = 0; fineRotation = 0; flipH = false; flipV = false;
+  sharpenSlider.value = 0; contrastSlider.value = 0; brightnessSlider.value = 0;
+  straightenSlider.value = 0; straightenValue.textContent = "0°";
+  pixelArtMode.checked = false;
+  flipHBtn.classList.remove("active"); flipVBtn.classList.remove("active");
+  rotationStatus.textContent = "Current rotation: 0°";
+  
+  rebuildTransformedSource();
+  widthInput.value = transformedW; 
+  heightInput.value = transformedH;
+  lockRatio.checked = true; 
+  fitOptions.classList.remove("active");
+  document.querySelector('input[name="fitMode"][value="background"]').checked = true;
+  backgroundColor.value = "#000000"; 
+  colorValue.textContent = "#000000";
+  formatSelect.value = normalizeOutputFormat(originalFileType); 
+  qualitySlider.value = 92; 
+  customScale.value = 100;
+  document.querySelectorAll(".preset.active").forEach(b=>b.classList.remove("active"));
+
+  updateTransparentOption(); 
+  updateCompressionUI();
+
+  // 2. Check active tab: If user is on Crop tab, immediately restart Cropper
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
+  if (activeTab === "crop") {
+    initCropper();
+  } else {
+    updatePreview();
+  }
+
+  showNotification("All settings reset.", "success");
+});
+
+widthInput.addEventListener("input",()=>{
+  setActivePreset(document.querySelector('.tab-panel[data-panel="resize"] .presets'),null);
+  if(lockRatio.checked&&originalImage&&Number(widthInput.value)>0)
+    heightInput.value=Math.round(Number(widthInput.value)*transformedH/transformedW);
+  syncDownloadEnabled();
+  updatePreview();
+});
+heightInput.addEventListener("input",()=>{
+  setActivePreset(document.querySelector('.tab-panel[data-panel="resize"] .presets'),null);
+  if(lockRatio.checked&&originalImage&&Number(heightInput.value)>0)
+    widthInput.value=Math.round(Number(heightInput.value)*transformedW/transformedH);
+  syncDownloadEnabled();
+  updatePreview();
+});
+widthInput.addEventListener("blur",()=>{const v=Math.max(1,Math.min(30000,Number(widthInput.value)||1));widthInput.value=v;
+  if(lockRatio.checked&&originalImage) heightInput.value=Math.round(v*transformedH/transformedW); syncDownloadEnabled(); updatePreview();});
+heightInput.addEventListener("blur",()=>{const v=Math.max(1,Math.min(30000,Number(heightInput.value)||1));heightInput.value=v;
+  if(lockRatio.checked&&originalImage) widthInput.value=Math.round(v*transformedW/transformedH); syncDownloadEnabled(); updatePreview();});
+
+lockRatio.addEventListener("change",()=>{ fitOptions.classList.toggle("active",!lockRatio.checked); updatePreview(); });
+document.querySelectorAll('input[name="fitMode"]').forEach(r=>r.addEventListener("change", (e)=>{
+  if(e.target.value === 'background'){
+    // When Background Fill is enabled, default to black as requested
+    try {
+      backgroundColor.value = '#000000';
+      colorValue.textContent = '#000000';
+    } catch(err){}
+  }
+  updatePreview();
+}));
+backgroundColor.addEventListener("input",()=>{colorValue.textContent=backgroundColor.value.toUpperCase();updatePreview();});
+
+function updateTransparentOption(){
+  const radio=document.querySelector('input[name="fitMode"][value="transparent"]');
+  const available=formatSelect.value==="image/png"||formatSelect.value==="image/svg+xml"||formatSelect.value==="image/avif"||formatSelect.value==="image/webp";
+  radio.disabled=!available; transparentOption.classList.toggle("disabled",!available);
+  if(!available&&radio.checked)document.querySelector('input[name="fitMode"][value="background"]').checked=true;
+}
+
+document.querySelectorAll(".field .presets .preset").forEach(button=>{
+  if(button.closest("#enlargePresets") || button.closest("#cropPresets")) return; 
+  button.addEventListener("click",()=>{
+    const w=Number(button.dataset.width), h=Number(button.dataset.height);
+    widthInput.value=w; heightInput.value=h;
+    const presetType = button.dataset.preset || '';
+    const isVertical = (h > w) || ['shorts','shorts-4k','vertical'].includes(presetType);
+    const isSquareProfile = (w===h) || ['profile','square'].includes(presetType);
+    const shouldCrop = isVertical || isSquareProfile; // Same logic for Shorts/Reels/TikTok AND Profile 400x400
+    lockRatio.checked=false;
+    fitOptions.classList.add("active");
+    const bgRadio=document.querySelector('input[name="fitMode"][value="background"]');
+    const cropRadio=document.querySelector('input[name="fitMode"][value="crop"]');
+    // For Shorts/Reels/TikTok and Profile/Square: auto-switch to Crop to avoid black bars and keep quality. Same logic.
+    if(shouldCrop && cropRadio){
+      cropRadio.checked=true;
+      if(bgRadio) bgRadio.checked=false;
+      // Ensure Crop UI is marked active
+      document.querySelectorAll('.fit-option').forEach(el=>el.classList.remove('active'));
+      const cropOption = cropRadio.closest('.fit-option');
+      if(cropOption) cropOption.classList.add('active');
+    } else if(bgRadio) { 
+      bgRadio.checked=true; 
+      try { backgroundColor.value='#000000'; colorValue.textContent='#000000'; } catch(e){}
+    } else if(cropRadio) cropRadio.checked=true;
+    // Prefer higher JPEG/WebP quality for small outputs to avoid visible softness from over-compression
+    if(Math.max(w,h)<=512 && Number(qualitySlider.value)<92){
+      qualitySlider.value=95;
+      qualityValue.textContent=`${qualitySlider.value}%`;
+    }
+    setActivePreset(button.parentElement,button); updatePreview();
+  });
+});
+
+function updateCompressionUI(){
+  const format=formatSelect.value;
+  const supportsQuality=format==="image/jpeg"||format==="image/webp"||format==="image/avif";
+  qualitySlider.disabled=!supportsQuality;
+  qualityValue.textContent=qualitySlider.disabled?"N/A":`${qualitySlider.value}%`;
+  if(typeof qualityHint!=="undefined" && qualityHint){
+    if(format==="image/avif") qualityHint.textContent="Lower quality reduces file size. AVIF is often much smaller than JPG/WebP; encoding uses local WASM (faster on smaller images).";
+    else if(supportsQuality) qualityHint.textContent="Lower quality reduces file size. Applies to JPG, WebP, and AVIF.";
+    else qualityHint.textContent="Lossless formats (PNG, SVG) ignore quality settings.";
+  }
+}
+qualitySlider.addEventListener("input",()=>{ qualityValue.textContent=`${qualitySlider.value}%`; updatePreview(); });
+formatSelect.addEventListener("change",()=>{ updateTransparentOption(); updateCompressionUI(); updatePreview(); });
+
+[sharpenSlider, contrastSlider, brightnessSlider].forEach(s => s.addEventListener('input', updatePreview));
+
+function createTransformedCanvas(source, srcW, srcH, options={}){
+  const totalRotation=(options.rotation||0)+(options.fineRotation||0);
+  const angle=totalRotation*Math.PI/180;
+  const cos=Math.abs(Math.cos(angle)), sin=Math.abs(Math.sin(angle));
+  const w=Math.max(1,Math.ceil(srcW*cos+srcH*sin));
+  const h=Math.max(1,Math.ceil(srcW*sin+srcH*cos));
+  const canvas=document.createElement("canvas"); canvas.width=w; canvas.height=h;
+  const ctx=canvas.getContext("2d",{alpha:true});
+  ctx.save(); ctx.translate(w/2,h/2); ctx.rotate(angle);
+  ctx.scale(options.flipH?-1:1, options.flipV?-1:1);
+  ctx.drawImage(source,-srcW/2,-srcH/2); ctx.restore();
+  return canvas;
+}
+
+function getProcessingSettings(){
+  return {
+    width:Number(widthInput.value), height:Number(heightInput.value),
+    lockRatio:lockRatio.checked,
+    fitMode:document.querySelector('input[name="fitMode"]:checked')?.value||"background",
+    backgroundColor:backgroundColor.value,
+    pixelArt:pixelArtMode.checked,
+    brightness:Number(brightnessSlider.value), contrast:Number(contrastSlider.value),
+    sharpen:Number(sharpenSlider.value), rotation, fineRotation, flipH, flipV,
+    format:formatSelect.value, quality:Number(qualitySlider.value)/100
+  };
+}
+
+/** Step-down scale for large reductions — sharper than one big drawImage shrink */
+function highQualityScaleTo(source, targetW, targetH, pixelArt){
+  const srcW=source.width||source.naturalWidth, srcH=source.height||source.naturalHeight;
+  if(!srcW||!srcH) return source;
+  const scale=Math.min(targetW/srcW, targetH/srcH);
+  // Upscale or mild downscale: single pass is fine
+  if(pixelArt || scale>=0.5){
+    const c=document.createElement("canvas");
+    c.width=Math.max(1,Math.round(targetW));
+    c.height=Math.max(1,Math.round(targetH));
+    const cx=c.getContext("2d",{alpha:true});
+    cx.imageSmoothingEnabled=!pixelArt;
+    cx.imageSmoothingQuality="high";
+    cx.drawImage(source,0,0,c.width,c.height);
+    return c;
+  }
+  // Progressive downscale by ~50% steps (much less blurry for 3000px → 400px)
+  let w=srcW, h=srcH, cur=source;
+  while(w*0.5 > targetW*1.1 && h*0.5 > targetH*1.1){
+    w=Math.max(1,Math.round(w*0.5));
+    h=Math.max(1,Math.round(h*0.5));
+    const step=document.createElement("canvas");
+    step.width=w; step.height=h;
+    const sctx=step.getContext("2d",{alpha:true});
+    sctx.imageSmoothingEnabled=true;
+    sctx.imageSmoothingQuality="high";
+    sctx.drawImage(cur,0,0,w,h);
+    cur=step;
+  }
+  const out=document.createElement("canvas");
+  out.width=Math.max(1,Math.round(targetW));
+  out.height=Math.max(1,Math.round(targetH));
+  const octx=out.getContext("2d",{alpha:true});
+  octx.imageSmoothingEnabled=true;
+  octx.imageSmoothingQuality="high";
+  octx.drawImage(cur,0,0,out.width,out.height);
+  return out;
+}
+
+function drawSourceToCanvas(canvas, source, srcW, srcH, settings){
+  const ctx=canvas.getContext("2d",{alpha:true});
+  ctx.imageSmoothingEnabled=!settings.pixelArt; ctx.imageSmoothingQuality="high";
+  const mode=settings.lockRatio?"stretch":settings.fitMode;
+  ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+  if(mode==="stretch"){
+    // High-quality path when shrinking a lot into the output box
+    if(!settings.pixelArt && (srcW>canvas.width*1.8 || srcH>canvas.height*1.8)){
+      const scaled=highQualityScaleTo(source, canvas.width, canvas.height, false);
+      ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+      ctx.drawImage(scaled,0,0,canvas.width,canvas.height);
+    } else {
+      ctx.drawImage(source,0,0,canvas.width,canvas.height);
+    }
+  } else {
+    const scale=Math.min(canvas.width/srcW,canvas.height/srcH);
+    const cropScale=Math.max(canvas.width/srcW,canvas.height/srcH);
+    const activeScale=mode==="crop"?cropScale:scale;
+    const drawW=srcW*activeScale, drawH=srcH*activeScale;
+    const x=(canvas.width-drawW)/2, y=(canvas.height-drawH)/2;
+    if(mode==="background"||mode==="transparent"){
+      if(mode==="background"){
+        ctx.save(); ctx.filter="none"; ctx.fillStyle=settings.backgroundColor;
+        ctx.fillRect(0,0,canvas.width,canvas.height); ctx.restore();
+        ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+      }
+    }
+    // For large downscales into crop/fit, pre-scale with step-down then draw
+    const needsHQ=!settings.pixelArt && activeScale < 0.5;
+    if(needsHQ && mode==="crop"){
+      // Cover-crop: scale so image covers canvas, then center-crop via draw positions
+      const scaled=highQualityScaleTo(source, drawW, drawH, false);
+      ctx.drawImage(scaled,x,y,drawW,drawH);
+    } else if(needsHQ){
+      const scaled=highQualityScaleTo(source, drawW, drawH, false);
+      ctx.drawImage(scaled,x,y,drawW,drawH);
+    } else {
+      ctx.drawImage(source,x,y,drawW,drawH);
+    }
+  }
+  ctx.filter="none";
+}
+
+function drawImageToCanvas(canvas, outputW, outputH){
+  drawSourceToCanvas(canvas, transformedSource, transformedW, transformedH, getProcessingSettings());
+}
+
+function canvasToBlobSafe(canvas, type, quality){
+  return new Promise((resolve,reject)=>{
+    try {
+      canvas.toBlob(blob=>{
+        if(!blob) return reject(new Error("The browser could not encode this image. Try a smaller size or another format."));
+        if(type && blob.type && blob.type!==type) return reject(new Error(`Requested ${type} output, but the browser returned ${blob.type}.`));
+        resolve(blob);
+      },type,quality);
+    } catch(err){ reject(err); }
+  });
+}
+
+async function processCanvasFiltersAndExport(canvas, format, quality, sharpenAmount=Number(sharpenSlider.value), options={}) {
+  if(sharpenAmount>0){
+    const ctx=canvas.getContext('2d');
+    const imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
+    const result=await sharpenInWorker(imgData,canvas.width,canvas.height,sharpenAmount/100);
+    ctx.putImageData(result.imgData,0,0);
+  }
+  if(format==="image/svg+xml"){
+    const dataUrl=canvas.toDataURL("image/png");
+    const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}"><image width="${canvas.width}" height="${canvas.height}" href="${dataUrl}"/></svg>`;
+    return new Blob([svg],{type:"image/svg+xml"});
+  }
+  if(format==="image/avif"){
+    try{
+      // Previews use a faster approximate encode (or WebP fallback) so the UI stays responsive
+      if(options && options.preview){
+        try{ return await encodeCanvasToAvif(canvas, quality, {preview:true}); }
+        catch(e){ return canvasToBlobSafe(canvas, "image/webp", quality); }
+      }
+      return await encodeCanvasToAvif(canvas, quality, {preview:false});
+    }catch(err){ throw new Error(err?.message || "AVIF encoding failed. Try JPG or WebP, or a smaller image."); }
+  }
+  const q=(format==="image/jpeg"||format==="image/webp")?quality:undefined;
+  return canvasToBlobSafe(canvas,format,q);
+}
+
+async function renderProcessedBlob(source, srcW, srcH, settings, options={}){
+  if(!dimensionsValid(settings.width,settings.height)) throw new Error("Please enter valid output dimensions (min 1 × 1 px).");
+  const transformed=options.alreadyTransformed ? source : createTransformedCanvas(source,srcW,srcH,settings);
+  const transformedW=options.alreadyTransformed ? srcW : transformed.width;
+  const transformedH=options.alreadyTransformed ? srcH : transformed.height;
+  const canvas=document.createElement("canvas");
+  canvas.width=options.preview ? Math.max(1,Math.round(settings.width*options.previewScale)) : settings.width;
+  canvas.height=options.preview ? Math.max(1,Math.round(settings.height*options.previewScale)) : settings.height;
+  drawSourceToCanvas(canvas,transformed,transformedW,transformedH,settings);
+  return processCanvasFiltersAndExport(canvas,settings.format,settings.quality,settings.sharpen,options);
+}
+
+function dimensionsValid(w,h){
+  const W=Number(w), H=Number(h);
+  return Number.isFinite(W)&&Number.isFinite(H)&&W>=1&&H>=1&&W<=30000&&H<=30000;
+}
+function syncDownloadEnabled(){
+  const ok=originalImage&&dimensionsValid(widthInput.value,heightInput.value);
+  downloadBtn.disabled=!ok;
+  downloadBtn.style.opacity=ok?'1':'.45';
+  downloadBtn.style.pointerEvents=ok?'auto':'none';
+  if(batchBtn.style.display!=='none'){
+    batchBtn.disabled=!ok;
+    batchBtn.style.opacity=ok?'1':'.45';
+    batchBtn.style.pointerEvents=ok?'auto':'none';
+  }
+}
+function updatePreview(){
+  if(!originalImage||cropper) return;
+  const settings=getProcessingSettings();
+  if(!dimensionsValid(settings.width,settings.height)){
+    downloadBtn.style.display="inline-block";
+    syncDownloadEnabled();
+    imageInfo.textContent="Enter valid width and height (min 1 px).";
+    return;
+  }
+  clearTimeout(previewTimer);
+  const requestVersion=++previewRequestVersion;
+  previewTimer=setTimeout(async()=>{
+    try{ setProcessing(true,"Updating preview...",35,"Applying your changes");
+      const scale=Math.min(1600/settings.width,1600/settings.height,1);
+      const blob=await renderProcessedBlob(transformedSource,transformedW,transformedH,settings,{alreadyTransformed:true,preview:true,previewScale:scale});
+      if(requestVersion!==previewRequestVersion) return;
+      if(previewObjectURL) URL.revokeObjectURL(previewObjectURL);
+      previewObjectURL=URL.createObjectURL(blob);
+      if(!showingOriginal) preview.src=previewObjectURL;
+      estimatedSize.textContent=`Preview file size (approx.): ${formatBytes(blob.size)}`; updateFileSizeComparison(blob.size); setProcessing(false,"Ready",100,"Preview updated");
+      imageInfo.textContent=`Size/ Format: ${settings.width.toLocaleString()} × ${settings.height.toLocaleString()} px | ${getOutputName()}`;
+      downloadBtn.textContent=`Download ${getOutputName()}`; downloadBtn.style.display="inline-block"; syncDownloadEnabled();
+    } catch(err){ estimatedSize.textContent="Preview unavailable"; setProcessing(false); showNotification(err.message||"Preview processing failed."); }
+  },120);
+}
+
+downloadBtn.addEventListener("click",async e=>{
+  e.preventDefault(); if(!originalImage)return;
+  downloadBtn.textContent="Processing..."; downloadBtn.style.pointerEvents="none"; setProcessing(true,"Processing image...",45,"Preparing download");
+  try{
+    const settings=getProcessingSettings();
+    const blob=await renderProcessedBlob(transformedSource,transformedW,transformedH,settings,{alreadyTransformed:true});
+    const url=URL.createObjectURL(blob), a=document.createElement("a");
+    a.href=url; a.download=`image-${settings.width}x${settings.height}.${getOutputExtension()}`;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+    setProcessing(true,"Download ready",100,formatBytes(blob.size)); setTimeout(()=>setProcessing(false),900); showNotification("Image downloaded successfully.","success");
+  } catch(err){ showNotification(err.message||"Image download failed."); }
+  finally { downloadBtn.style.pointerEvents="auto"; downloadBtn.textContent=`Download ${getOutputName()}`; updatePreview(); }
+});
+
+batchBtn.addEventListener("click",async()=>{
+  if(!batchFiles.length) return;
+  const settings=getProcessingSettings();
+  batchBtn.style.pointerEvents="none";
+  const zip=new JSZip(), failures=[]; const batchResultsData=[]; let completed=0; batchResults.classList.remove("active"); setProcessing(true,`Processing 0 of ${batchFiles.length}`,0,"Starting batch...");
+  const applyCropToBatch=document.getElementById("applyBatchCrop")?.checked && cropRelative;
+  if(croppedCanvasSource && !applyCropToBatch) showNotification("Batch uses shared resize, transform and enhancement settings. Enable “Apply current crop to all” to use the relative crop region.");
+  try{
+    for(let i=0;i<batchFiles.length;i++){
+      const file=batchFiles[i]; batchBtn.textContent=`Processing ${i+1} of ${batchFiles.length}...`; setProcessing(true,`Processing ${i+1} of ${batchFiles.length}`,Math.round((i/batchFiles.length)*90),file.name);
+      try{
+        const decoded=await decodeFileToImage(file);
+        let srcImg=decoded.img, srcW=decoded.w, srcH=decoded.h;
+        if(applyCropToBatch && cropRelative){
+          const sx=Math.round(cropRelative.x*srcW), sy=Math.round(cropRelative.y*srcH);
+          const sw=Math.max(1,Math.round(cropRelative.w*srcW)), sh=Math.max(1,Math.round(cropRelative.h*srcH));
+          const cc=document.createElement("canvas"); cc.width=sw; cc.height=sh;
+          cc.getContext("2d").drawImage(srcImg,sx,sy,sw,sh,0,0,sw,sh);
+          srcImg=cc; srcW=sw; srcH=sh;
+        }
+        const blob=await renderProcessedBlob(srcImg,srcW,srcH,settings);
+        const cleanName=file.name.substring(0,file.name.lastIndexOf('.'))||file.name;
+        zip.file(`${cleanName}_resized.${getOutputExtension()}`,blob); completed++; batchResultsData.push({name:file.name,ok:true,detail:formatBytes(blob.size)});
+      } catch(err){ const message=err.message||"processing failed"; failures.push(`${file.name}: ${message}`); batchResultsData.push({name:file.name,ok:false,error:message}); }
+    }
+    if(!completed) throw new Error("No images could be processed. Please check the selected files.");
+    batchBtn.textContent="Creating ZIP..."; setProcessing(true,"Creating ZIP...",95,`${completed} image${completed===1?"":"s"} ready`);
+    const zipBlob=await zip.generateAsync({type:"blob"});
+    const url=URL.createObjectURL(zipBlob), a=document.createElement("a");
+    a.href=url; a.download="ResizeFlow_Batch_Images.zip"; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const message=failures.length ? `Batch complete: ${completed} succeeded, ${failures.length} failed. ${failures.slice(0,3).join(" | ")}` : `Batch processing complete: ${completed} image${completed===1?"":"s"}.`;
+    batchList.textContent=message; showBatchResults(batchResultsData); setProcessing(true,"Batch complete",100,message); setTimeout(()=>setProcessing(false),1600); showNotification(message,failures.length?"error":"success");
+  } catch(err){ showNotification(err.message||"Batch processing failed."); }
+  finally { batchBtn.textContent="Process & Download All as ZIP"; batchBtn.style.pointerEvents="auto"; }
+});
+
+
+const legalModal=document.getElementById("legalModal"), legalContent=document.getElementById("legalContent"), legalClose=document.getElementById("legalClose");
+const legalText={
+privacy:`<h2 id="legalTitle">Privacy</h2><p><strong>ResizeFlow.cc processes image edits locally in your browser.</strong> Images are not intentionally uploaded to a ResizeFlow server for resizing, cropping, conversion, compression, or enhancement. <strong>We do not have access to your images.</strong></p><h3>What stays local</h3><ul><li>Image editing and processing are performed in your browser memory.</li><li>Converted output is generated locally and downloaded by your browser.</li><li>Image metadata may be removed during canvas-based export.</li></ul><h3>Analytics and advertising</h3><p>Optional Google Analytics and Google AdSense help measure usage and keep the free tool available. These load only after you Accept cookies in the consent banner. Until then, Consent Mode keeps ad_storage, analytics_storage, ad_user_data, and ad_personalization denied.</p><p>When enabled, Google and its partners may use cookies or similar technologies subject to applicable law and your choices. Clear site data for resizeflow.cc to see the banner again.</p><h3>Third-party resources</h3><p>The app may load libraries from CDNs (Cropper.js, JSZip, HEIC/AVIF tools). Those providers may receive ordinary connection data such as IP address. Your image files are not sent to ResizeFlow servers for processing.</p><h3>Your choices</h3><p>Use Accept or Reject on the consent banner. Reject keeps analytics and ads off. Essential site functionality does not require advertising cookies.</p><h3>Changes</h3><p>This notice may be updated as features evolve. Continued use after an update applies the updated notice to future visits.</p>`,
+terms:`<h2 id="legalTitle">Terms of Use</h2><p>ResizeFlow.cc is provided as a free browser-based image utility. You are responsible for ensuring that you have the rights and permissions needed to edit and process the images you use.</p><h3>Service availability</h3><p>The service is provided without a guarantee of uninterrupted availability, compatibility, or suitability for every image, browser, or device.</p><h3>Your responsibility</h3><ul><li>Keep backup copies of important original files.</li><li>Review exported images before publishing or using them in critical workflows.</li><li>Do not use the service for unlawful purposes or to violate the rights of others.</li></ul><h3>Changes</h3><p>Features and these terms may be updated as the service evolves.</p>`
+};
+function openLegal(kind){legalContent.innerHTML=legalText[kind];legalModal.classList.add("active");legalModal.setAttribute("aria-hidden","false");legalClose.focus();}
+function closeLegal(){legalModal.classList.remove("active");legalModal.setAttribute("aria-hidden","true");}
+document.querySelectorAll("[data-legal]").forEach(b=>b.addEventListener("click",()=>openLegal(b.dataset.legal)));
+legalClose?.addEventListener("click",closeLegal);legalModal?.addEventListener("click",e=>{if(e.target===legalModal)closeLegal();});
+window.addEventListener("keydown",e=>{if(e.key==="Escape"&&legalModal?.classList.contains("active"))closeLegal();});
+window.addEventListener("error",e=>{if(e.error) { console.error(e.error); if(originalImage) showNotification("Something unexpected happened. Your image is still loaded—please try the action again.","error"); }});
+window.addEventListener("unhandledrejection",e=>{console.error(e.reason); if(originalImage) showNotification("Processing could not be completed. Please try again or use a smaller image.","error");});
+
+
+// --- ResizeFlow: Shorts/Reels/TikTok safe zone helper (Option 1) ---
+(function(){
+  const safeZoneInfo = {
+    shorts: { name: 'Shorts/Reels/TikTok', top: 150, bottom: 200, tip: 'Works for YouTube Shorts, IG Reels & TikTok. Keep text centered, avoid bottom 200px. Auto-cropped, no black bars.' },
+    reels: { name: 'Instagram Reels', top: 180, bottom: 220, tip: 'Reels UI covers bottom. Keep text above lower 220px.' },
+    tiktok: { name: 'TikTok', top: 150, bottom: 250, tip: 'TikTok UI covers right side + bottom. Keep text centered.' },
+    'shorts-4k': { name: '4K Vertical', top: 300, bottom: 300, tip: '4K 2160x3840 for highest quality Shorts/Reels/TikTok' },
+    profile: { name: 'Profile Photo', top: 0, bottom: 0, tip: '400×400 avatar - center your face, auto-cropped for best quality.' },
+    square: { name: 'Instagram Square', top: 0, bottom: 0, tip: '1080×1080 square - auto-cropped to fill.' }
+  };
+  document.querySelectorAll('.preset[data-preset]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const preset = btn.dataset.preset;
+      const info = safeZoneInfo[preset];
+      if(info && typeof showNotification === 'function'){
+        showNotification(`✓ ${info.name} 1080×1920 set. ${info.tip}`, 'success');
+      }
+    });
+  });
+})();
+
+/* ---- Consent Mode v2 + deferred Analytics / GTM / AdSense ---- */
+(function(){
+  const CONSENT_KEY='resizeflow-consent-v1';
+  const banner=document.getElementById('consentBanner');
+  const acceptBtn=document.getElementById('consentAccept');
+  const rejectBtn=document.getElementById('consentReject');
+  let tagsLoaded=false;
+  function loadScript(src, attrs){
+    return new Promise((resolve,reject)=>{
+      const s=document.createElement('script');
+      s.src=src; s.async=true;
+      if(attrs) Object.entries(attrs).forEach(([k,v])=>s.setAttribute(k,v));
+      s.onload=()=>resolve(); s.onerror=()=>reject(new Error('Failed to load '+src));
+      document.head.appendChild(s);
+    });
+  }
+  async function loadMarketingTags(){
+    if(tagsLoaded) return;
+    tagsLoaded=true;
+    try{
+      await loadScript('https://www.googletagmanager.com/gtag/js?id=G-RRVGX5R085');
+      gtag('js', new Date());
+      gtag('config', 'G-RRVGX5R085');
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N3RC4QVX');
+      await loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4747106371991816',{crossorigin:'anonymous'});
+      document.querySelectorAll('ins.adsbygoogle').forEach(()=>{
+        try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}
+      });
+    }catch(e){console.warn('Marketing tags failed to load',e);}
+  }
+  function grantConsent(){
+    gtag('consent','update',{ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted'});
+    try{localStorage.setItem(CONSENT_KEY,'granted');}catch(e){}
+    if(banner) banner.classList.remove('active');
+    loadMarketingTags();
+  }
+  function denyConsent(){
+    gtag('consent','update',{ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', analytics_storage:'denied'});
+    try{localStorage.setItem(CONSENT_KEY,'denied');}catch(e){}
+    if(banner) banner.classList.remove('active');
+  }
+  acceptBtn?.addEventListener('click',grantConsent);
+  rejectBtn?.addEventListener('click',denyConsent);
+  let stored=null;
+  try{stored=localStorage.getItem(CONSENT_KEY);}catch(e){}
+  if(stored==='granted'){ grantConsent(); }
+  else if(stored==='denied'){ denyConsent(); }
+  else if(banner){ banner.classList.add('active'); }
+
+  document.getElementById('cookieSettingsBtn')?.addEventListener('click', () => {
+    try { localStorage.removeItem(CONSENT_KEY); } catch (e) {}
+    if (banner) banner.classList.add('active');
+    showNotification('Cookie settings reset. Choose Accept or Reject.', 'success');
+  });
+})();
+
+</script>
 </body>
 </html>
