@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRVGX5R085"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRVGX5R085');
+</script>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://esm.sh https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: blob: https:; connect-src 'self' https://esm.sh https://cdnjs.cloudflare.com https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; font-src 'self' data:; worker-src 'self' blob:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+
+<!-- Consent Mode v2 defaults — analytics/ads load only after consent -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="ym1uw5zBp4xzP_r4PNgMzeH1i3P2y9vq7cSpA8OOSE8" />
+<!-- Comprehensive SEO Optimization -->
+<title>ResizeFlow.cc - Free Online Image Resizer, Converter & Batch Compressor</title>
+<meta name="description" content="Resize, crop, compress, rotate, and convert JPG, PNG, WebP, AVIF, GIF, SVG, and HEIC images instantly in your browser. Batch processing, privacy-focused local execution, and support for large images within browser-safe limits.">
+<meta name="keywords" content="image resizer, convert image online, batch image compressor, webp converter, crop photo, HEIC to JPG, free image optimizer, browser image editor">
+<meta name="author" content="ResizeFlow.cc">
+<meta name="robots" content="index, follow">
+<link rel="robots" href="robots.txt">
+<link rel="canonical" href="https://resizeflow.cc/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='Arial' font-weight='700' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='Arial' font-weight='700' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+
+
+<!-- Open Graph / Social Media SEO -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://resizeflow.cc/">
+<meta property="og:title" content="ResizeFlow - Free Online Image Resizer, Converter & Batch Compressor">
+<meta property="og:description" content="Resize, convert, and compress images locally in your browser with live preview and batch export. Fast, secure, and private.">
+<meta property="og:image" content="https://resizeflow.cc/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ResizeFlow.cc — free online image resizer and converter">
+
+<!-- Twitter Card SEO -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ResizeFlow - Free Online Image Resizer, Converter & Batch Compressor">
+<meta name="twitter:description" content="Fast, local, and private image resizing, cropping, and conversion in your browser.">
+<meta name="twitter:image" content="https://resizeflow.cc/og-image.jpg">
+
+<!-- Structured Data (JSON-LD) for Search Engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ResizeFlow.cc",
+  "@id": "https://resizeflow.cc/#app",
+  "url": "https://resizeflow.cc/",
+  "description": "Free web-based tool for resizing, converting, cropping, and compressing images locally in your browser.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "All",
+  "isAccessibleForFree": true,
+  "featureList": ["Image resizing", "Format conversion including AVIF", "Batch processing", "Cropping", "Rotation and flip", "Compression", "Local browser processing"],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- Cropper.js & JSZip Libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" integrity="sha384-oMy41mb/qJnpJlpXOF57hSu2KGi47l/UV9+tPNrBOs7/ap5Vubj/3phrCtjutHMQ" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to resize an image online with ResizeFlow",
+  "description": "Resize, convert, crop, and compress images locally in your browser with ResizeFlow.",
+  "totalTime": "PT1M",
+  "tool": { "@type": "HowToTool", "name": "ResizeFlow web app" },
+  "step": [
+    { "@type": "HowToStep", "name": "Upload", "text": "Open ResizeFlow and upload one or more JPG, PNG, WebP, AVIF, GIF, SVG, or HEIC images." },
+    { "@type": "HowToStep", "name": "Adjust", "text": "Set width and height, choose a social preset, crop, rotate, or pick an output format such as WebP or AVIF." },
+    { "@type": "HowToStep", "name": "Preview", "text": "Review the live client-side preview and estimated file size." },
+    { "@type": "HowToStep", "name": "Download", "text": "Download the edited image or process a batch as a ZIP. Processing stays in your browser." }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Resize, Convert & Crop Images",
+  "description": "Complete guide to resizing, converting, cropping, compressing images with ResizeFlow - including presets, formats, and batch processing.",
+  "url": "https://resizeflow.cc/how-to-resize-convert-crop-images.html",
+  "author": {"@type": "Organization", "name": "ResizeFlow"},
+  "publisher": {"@type": "Organization", "name": "ResizeFlow", "logo": {"@type": "ImageObject", "url": "https://resizeflow.cc/og-image.jpg"}},
+  "mainEntityOfPage": "https://resizeflow.cc/how-to-resize-convert-crop-images.html"
+}
+</script>
+
+
+<style>
+.crop-live-info {
+  display: none;
+  margin-top: 10px;
+  background: #eff6ff;
+  border: 1px dashed #2563eb;
+  color: #1e40af;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+body.dark-mode .crop-live-info {
+  background: #1e293b;
+  border-color: #3b82f6;
+  color: #93c5fd;
+}
+#imageInfo.has-crop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+</style>
+
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to image editor</a>
+<div class="consent-banner" id="consentBanner" role="dialog" aria-labelledby="consentTitle" aria-live="polite">
+  <p id="consentTitle"><strong>Cookies &amp; ads</strong> — Image editing stays 100% local in your browser. Optional Google Analytics and AdSense help keep ResizeFlow free. Choose Accept to enable analytics and personalized ads, or Reject to keep them off.</p>
+  <div class="consent-actions">
+    <button type="button" class="primary" id="consentAccept">Accept</button>
+    <button type="button" id="consentReject">Reject</button>
+    <button type="button" data-legal="privacy">Privacy</button>
+  </div>
+</div>
+<header>
+  <div class="header-main">
+    <div class="logo">Resize<span>Flow.cc</span></div>
+    <h1 class="header-title">Resize &amp; Convert Images Online</h1>
+    <div class="header-actions">
+      <nav>
+        <a href="#uploadBox" data-nav-target="upload">Tool</a>
+        <a href="/compress-image.html">Compress</a>
+        <a href="/convert-to-webp.html">WebP</a>
+        <a href="/batch-resize.html">Batch</a>
+        <a href="/heic-to-jpg.html">HEIC</a>
+        <a href="/pdf-tools.html">PDF</a>
+        <a href="/how-to-resize-convert-crop-images.html" class="nav-details">Guide</a>
+        <a href="#faq" data-nav-target="faq">FAQ</a>
+      </nav>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color theme">☀ Light</button>
+    </div>
+  </div>
+  <div class="header-subtitle">Resize JPG, PNG, WebP, AVIF, GIF, SVG and HEIC images, convert formats, crop, rotate, flip, compress, and batch process instantly.</div>
+</header>
+
+<!-- Top AdSense Unit -->
+<div class="ad-slot ad-leaderboard ad-container" aria-label="Advertisement">
+  <!-- Replace 9686458296 with the AdSense ad unit slot ID before publishing. -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4747106371991816"
+       data-ad-slot="9686458296"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<main class="container main-container" id="mainContent">
+<div class="upload-layout" id="uploadWorkflow">
+  <!-- Left skyscraper ad intentionally disabled for a cleaner launch layout. -->
+
+  <!-- Central Card: Upload + How It Works -->
+  <div class="upload-card-wrapper">
+    <div class="upload-box" id="uploadBox">
+      <div class="upload-icon">🖼️</div>
+      <h2>Upload Image(s)</h2>
+      <p>Drag & drop JPG, PNG, WebP, AVIF, GIF, SVG or HEIC files (Batch supported)</p><div class="drop-feedback" id="dropFeedback" aria-live="polite">Drop, paste (Ctrl/Cmd+V), or select images.</div>
+      <button class="btn" type="button" id="selectBtn">Select Image(s)</button>
+      <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.png,.webp,.avif,.gif,.svg,.heic,.heif,image/jpeg,image/png,image/webp,image/avif,image/gif,image/svg+xml,image/heic,image/heif">
+    </div>
+
+    <!-- How It Works Inline -->
+    <div class="how-it-works-inline">
+      <h3 class="inline-title">How It Works <a href="https://resizeflow.cc/how-to-resize-convert-crop-images.html" style="font-size:0.8em; font-weight:400; margin-left:0.5rem; text-decoration:underline;">Full Guide</a></h3>
+      <div class="steps-grid-inline">
+        <div class="step-inline">
+          <div class="step-num-inline">1</div>
+          <h4>Upload</h4>
+          <p>Select single or multiple files.</p>
+        </div>
+        <div class="step-inline">
+          <div class="step-num-inline">2</div>
+          <h4>Adjust</h4>
+          <p>Customize dimensions & format.</p>
+        </div>
+        <div class="step-inline">
+          <div class="step-num-inline">3</div>
+          <h4>Preview</h4>
+          <p>Real-time client-side preview.</p>
+        </div>
+        <div class="step-inline">
+          <div class="step-num-inline">4</div>
+          <h4>Download</h4>
+          <p>Export individually or as ZIP.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right skyscraper ad intentionally disabled for a cleaner launch layout. -->
+</div>
+
+<div id="notification" class="notification"></div>
+
+<section class="editor" id="editor">
+<div class="card">
+<div class="preview-container">
+  <div class="compare-stage" id="compareStage">
+    <img id="preview" alt="Edited image preview">
+  </div>
+</div>
+<div class="compare-toggle" id="compareToggle" role="group" aria-label="Preview version" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px;">
+  <button type="button" id="replaceImageBtn">Replace Image</button>
+  <button type="button" id="beforeBtn" aria-pressed="false" disabled>Show Original</button>
+  <button type="button" id="afterBtn" class="active" aria-pressed="true" disabled>Show Edited</button>
+</div>
+<div class="info" id="imageInfo">Upload an image to begin.</div>
+<div class="info crop-live-info" id="cropLiveInfo" style="display:none; margin-top:10px; background:#eff6ff; border:1px dashed #2563eb; color:#1e40af; font-weight:600;"></div>
+<div class="file-meta" id="fileMeta" aria-live="polite"></div>
+<div class="history-actions" aria-label="Edit history"><button type="button" class="tool-btn" id="undoBtn" disabled>↶ Undo</button><button type="button" class="tool-btn" id="redoBtn" disabled>↷ Redo</button></div>
+<div class="batch-list" id="batchList"></div>
+<div class="batch-results" id="batchResults" aria-live="polite"><h3>Batch Results</h3><div class="batch-summary" id="batchSummary"></div><div class="batch-result-list" id="batchResultList"></div></div>
+</div>
+
+<div class="card settings">
+<h2>Image Settings</h2>
+
+<div class="tabs">
+<button class="tab-btn active" type="button" data-tab="resize">Resize & Convert</button>
+<button class="tab-btn" type="button" data-tab="crop">Crop</button>
+<button class="tab-btn" type="button" data-tab="transform">Transform</button>
+<button class="tab-btn" type="button" data-tab="compression">Compression</button>
+<button class="tab-btn" type="button" data-tab="enhance">Enhance</button>
+</div>
+
+<!-- Tab Panels -->
+<div class="tab-panel active" data-panel="resize">
+<label class="aspect-lock-card" id="aspectLockCard" for="lockRatio" title="Recommended: changing one dimension automatically adjusts the other.">
+  <input type="checkbox" id="lockRatio" checked>
+  <span class="aspect-lock-content">
+    <span class="aspect-lock-title">🔒 Keep Aspect Ratio <span class="aspect-lock-badge" id="aspectLockBadge">Recommended</span></span>
+    <span id="aspectLockHelp">Keeps your image proportions correct. Change Width or Height and the other value adjusts automatically.</span>
+  </span>
+</label>
+<div class="field"><label>Resize Dimensions</label><div class="input-row">
+<input type="number" id="width" placeholder="Width" min="1" aria-label="Output width in pixels">
+<input type="number" id="height" placeholder="Height" min="1" aria-label="Output height in pixels">
+</div></div>
+
+<div class="fit-options" id="fitOptions">
+<div class="fit-options-title">Image Fit</div>
+<label class="fit-option"><input type="radio" name="fitMode" value="background" checked><div class="fit-option-content"><strong>Background Fill</strong><span>Keep the entire image visible and fill empty space.</span>
+<div class="color-row">
+  <input type="color" id="backgroundColor" value="#000000">
+  <span id="colorValue">#000000</span>
+  <button type="button" class="eyedropper-btn" id="eyedropperBtn">Pick Color</button>
+</div></div></label>
+<label class="fit-option transparent-option" id="transparentOption"><input type="radio" name="fitMode" value="transparent"><div class="fit-option-content"><strong>Transparent</strong><span>Keep image visible with transparent background (PNG, WebP, AVIF, SVG).</span></div></label>
+<label class="fit-option"><input type="radio" name="fitMode" value="crop"><div class="fit-option-content"><strong>Crop</strong><span>Fill area while preserving proportions. Excess image will be cropped.</span></div></label>
+</div>
+
+<div class="field"><label>Social & Standard Presets</label><div class="presets">
+<button class="preset" type="button" data-width="1920" data-height="1080">YouTube 1920×1080</button>
+<button class="preset" type="button" data-width="1080" data-height="1920" data-preset="shorts" title="9:16 vertical - YouTube Shorts, Instagram Reels & TikTok. Auto-crops to fill, no black bars.">Shorts / Reels / TikTok 1080×1920</button>
+<button class="preset" type="button" data-width="1080" data-height="1080" data-preset="square" title="Square - Instagram post. Auto-crops to fill.">Instagram 1080×1080</button>
+<button class="preset" type="button" data-width="400" data-height="400" data-preset="profile" title="Profile Photo 400×400 - YouTube, Instagram, Facebook avatar. Auto-crops to center, high quality.">Profile Photo 400×400</button>
+<button class="preset" type="button" data-width="1200" data-height="628">FB / LinkedIn 1200×628</button>
+<button class="preset" type="button" data-width="1200" data-height="675">Twitter/X 1200×675</button>
+<button class="preset" type="button" data-width="3840" data-height="2160">4K UHD 3840×2160</button>
+<button class="preset" type="button" data-width="2160" data-height="3840" data-preset="shorts-4k" title="4K Vertical for Shorts/Reels/TikTok">4K Vertical 2160×3840</button>
+</div></div>
+
+<div class="field format-section"><label>Convert Image Format</label><p class="field-description">Resize and convert formats seamlessly.</p>
+<select id="format">
+<option value="image/jpeg">Convert to JPG</option>
+<option value="image/png">Convert to PNG</option>
+<option value="image/webp">Convert to WebP</option>
+<option value="image/avif">Convert to AVIF</option>
+<option value="image/svg+xml">SVG (wrapped PNG — not vector)</option>
+</select>
+<div class="note">Privacy Notice: EXIF metadata (GPS, camera info) is automatically stripped upon conversion for security and reduced file size. Animated GIFs are flattened to a single frame. AVIF uses a local WASM encoder (slower, often much smaller files).</div>
+</div>
+<button type="button" class="tool-btn reset-section" data-reset-section="resize">↺ Reset Resize & Format</button></div>
+
+<div class="tab-panel" data-panel="crop">
+<div class="field">
+  <label>Aspect Ratio Presets</label>
+  <div class="presets" id="cropPresets">
+    <button class="preset" type="button" data-ratio="free">Freeform</button>
+    <button class="preset" type="button" data-ratio="1:1">1:1 (Square)</button>
+    <button class="preset" type="button" data-ratio="16:9">16:9 (Landscape)</button>
+    <button class="preset" type="button" data-ratio="9:16">9:16 (Story/Reel)</button>
+    <button class="preset" type="button" data-ratio="4:3">4:3 (Standard)</button>
+    <button class="preset" type="button" data-ratio="2:3">2:3 (Portrait)</button>
+  </div>
+</div>
+<div class="field">
+  <div class="btn-row">
+    <button type="button" class="btn" id="applyCropBtn">Apply Crop</button>
+    <button type="button" class="tool-btn" id="resetCropBtn">Cancel / Reset Crop</button>
+  </div>
+</div>
+
+</div>
+
+<div class="tab-panel" data-panel="transform">
+<div class="field">
+<label>Rotation</label>
+<div class="btn-row">
+<button type="button" class="tool-btn" id="rotateCCW">⟲ Counterclockwise</button>
+<button type="button" class="tool-btn" id="rotateStraight">Straight (0°)</button>
+<button type="button" class="tool-btn" id="rotateCW">⟳ Clockwise</button>
+</div>
+<div class="tool-status" id="rotationStatus">Current rotation: 0°</div><div class="field-description" style="margin-top:14px">Fine Straighten</div><div class="straighten-row"><input type="range" id="straightenSlider" min="-45" max="45" value="0" step="1"><span class="straighten-value" id="straightenValue">0°</span></div>
+</div>
+
+<div class="field">
+<label>Flip</label>
+<div class="btn-row">
+<button type="button" class="tool-btn toggle" id="flipVBtn">⇅ Upside-Down</button>
+<button type="button" class="tool-btn toggle" id="flipHBtn">⇄ Left-Right</button>
+</div>
+</div>
+
+<div class="field">
+<label>Smoothing Mode</label>
+<div class="ratio">
+  <input type="checkbox" id="pixelArtMode">
+  <label for="pixelArtMode">Pixel Art Mode (Disable Smoothing)</label>
+</div>
+</div>
+
+<div class="field">
+<label>Enlarger</label>
+<div class="presets" id="enlargePresets">
+<button class="preset" type="button" data-scale="1.25">125%</button>
+<button class="preset" type="button" data-scale="1.5">150%</button>
+<button class="preset" type="button" data-scale="2">200%</button>
+<button class="preset" type="button" data-scale="3">300%</button>
+<button class="preset" type="button" data-scale="4">400%</button>
+<button class="preset" type="button" data-scale="1">Reset 100%</button>
+</div><div class="enlarge-custom"><input type="number" id="customScale" min="1" max="1000" value="100" placeholder="Custom %"><button class="btn" type="button" id="applyCustomScale">Apply</button></div>
+</div>
+<button type="button" class="tool-btn reset-section" data-reset-section="transform">↺ Reset Transform</button></div>
+
+<div class="tab-panel" data-panel="compression">
+<div class="field">
+<div class="quality-row"><label style="margin-bottom:0" id="qualityRowLabel">Compression Quality</label><span id="qualityValue">92%</span></div>
+<input type="range" id="qualitySlider" min="10" max="100" value="92" step="1">
+<p class="field-description" id="qualityHint" style="margin-top:10px;margin-bottom:0">Lower quality reduces file size. Applies to JPG and WebP.</p>
+</div>
+<div class="estimate" id="estimatedSize">Preview file size: —</div>
+<div class="file-size-compare" id="fileSizeCompare">
+  <div class="size-card">Original file<strong id="originalSizeValue">—</strong></div>
+  <div class="size-card">Estimated output<strong id="outputSizeValue">—</strong></div>
+  <div class="size-saving" id="savingValue">Savings: —</div>
+</div>
+<button type="button" class="tool-btn reset-section" data-reset-section="compression">↺ Reset Compression</button></div>
+
+<div class="tab-panel" data-panel="enhance">
+  <div class="control-group">
+    <label for="sharpenSlider">Sharpen</label>
+    <input type="range" id="sharpenSlider" min="0" max="100" value="0">
+  </div>
+  
+  <div class="control-group">
+    <label for="contrastSlider">Contrast</label>
+    <input type="range" id="contrastSlider" min="-100" max="100" value="0">
+  </div>
+
+  <div class="control-group">
+    <label for="brightnessSlider">Brightness</label>
+    <input type="range" id="brightnessSlider" min="-100" max="100" value="0">
+  </div>
+<button type="button" class="tool-btn reset-section" data-reset-section="enhance">↺ Reset Enhance</button></div>
+
+
+<div class="processing-status" id="processingStatus" role="status" aria-live="polite">
+  <div id="processingText">Preparing...</div><div class="progress-track"><div class="progress-bar" id="progressBar" role="progressbar" aria-label="Processing progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
+  <div class="progress-meta"><span id="progressDetail">Please wait</span><span id="progressPercent">0%</span></div>
+</div>
+<div class="actions">
+  <button id="downloadBtn" class="download-btn" type="button">Download Image (Enter)</button>
+  <label id="batchCropWrap" class="ratio" style="display:none;margin:4px 0 0;align-items:flex-start">
+    <input type="checkbox" id="applyBatchCrop">
+    <span>Apply current crop to all batch images (relative region)</span>
+  </label>
+  <button id="batchBtn" class="batch-btn" type="button">Process & Download All as ZIP</button>
+</div>
+<button type="button" class="btn reset-btn" id="resetAllBtn">↺ Reset All Changes</button>
+</div>
+</section>
+</main>
+
+<!-- Main In-Content AdSense Unit -->
+<div class="ad-slot ad-rectangle ad-container" aria-label="Advertisement">
+  <!-- Replace 5747213281 with the AdSense ad unit slot ID before publishing. -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4747106371991816"
+       data-ad-slot="5747213281"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<section class="features" id="features">
+<div class="feature"><div class="emoji">⚡</div><h3>Web Worker Accelerated</h3><p>Offloads heavy image processing and compression off the main UI thread for max speed.</p></div>
+<div class="feature"><div class="emoji">📦</div><h3>Batch Processing</h3><p>Resize, convert, and compress multiple images simultaneously and download as a ZIP.</p></div>
+<div class="feature"><div class="emoji">🔒</div><h3>100% Private</h3><p>Files are processed purely in local browser memory. Zero server uploads.</p></div>
+<div class="feature"><div class="emoji">📄</div><h3>PDF Tools</h3><p>Turn images into a PDF, PDF pages into JPG/PNG/WebP, or merge PDFs — all in your browser. <a href="/pdf-tools.html">Open PDF Tools →</a></p></div>
+
+<!-- How-To Guide CTA -->
+
+<!-- Bottom content: stacked full-width (guide → FAQ → ad → footer) -->
+<section class="guide-cta" id="guide">
+  <div class="guide-cta-inner">
+    <h2 class="section-title">Learn How to Resize, Convert &amp; Crop Like a Pro</h2>
+    <p class="section-subtitle">Step-by-step tutorial with examples, tips for social media sizes, format comparison (JPG vs PNG vs WebP vs AVIF), and batch workflow.</p>
+    <a href="https://resizeflow.cc/how-to-resize-convert-crop-images.html" class="btn">Read the Complete Guide →</a>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-subtitle">Common answers regarding functionality and privacy.</p>
+<div class="faq-list">
+<details class="faq-item">
+<summary>Is ResizeFlow completely free?</summary>
+<p>Yes, all single and batch editing features are 100% free with no hidden fees or sign-ups.</p>
+</details>
+<details class="faq-item">
+<summary>Are my images uploaded to any server?</summary>
+<p>No. Operations run entirely within your local browser memory via HTML5 Canvas and Web Workers.</p>
+</details>
+<details class="faq-item">
+<summary>Can I convert multiple HEIC files at once?</summary>
+<p>Yes. You can batch upload HEIC photos from iOS devices and convert them all directly into JPG, WebP, or AVIF.</p>
+</details>
+<details class="faq-item">
+<summary>Do animated GIFs keep their animation?</summary>
+<p>No. Editing runs through HTML5 Canvas, so animated GIFs are processed as a single static frame.</p>
+</details>
+<details class="faq-item">
+<summary>What is AVIF and why is it slower?</summary>
+<p>AVIF often produces files 40–50% smaller than JPEG at similar quality. Encoding runs locally via WebAssembly, which is slower than JPG or WebP but keeps processing private in your browser.</p>
+</details>
+</div>
+<div class="compatibility-note"><strong>Browser compatibility:</strong> ResizeFlow works best in current Chrome, Edge, Firefox, and Safari. HEIC/HEIF conversion and some features may depend on browser support and memory. Animated GIFs export as a single frame. AVIF export loads a WASM encoder on first use. New to image editing? <a href="https://resizeflow.cc/how-to-resize-convert-crop-images.html">See our how to resize, convert & crop guide</a>.</div>
+</section>
+
+<!-- Bottom AdSense Unit -->
+<div class="ad-slot ad-banner ad-container" aria-label="Advertisement">
+  <!-- Replace 9737645367 with the AdSense ad unit slot ID before publishing. -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4747106371991816"
+       data-ad-slot="9737645367"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
+<footer>
+
+  <div>Copyright © 2026 ResizeFlow.cc — All Rights Reserved. Free Online Image Resizer, Converter &amp; Batch Compressor</div>
+  <div class="footer-links">
+    <a class="footer-link" href="/how-to-resize-convert-crop-images.html">Guide</a>
+    <a class="footer-link" href="/pdf-tools.html">PDF Tools</a>
+    <a class="footer-link" href="/compress-image.html">Compress</a>
+    <a class="footer-link" href="/batch-resize.html">Batch</a>
+    <a class="footer-link" href="/about.html">About</a>
+    <a class="footer-link" href="/contact.html">Contact</a>
+    <a class="footer-link" href="/privacy.html">Privacy</a>
+    <button class="footer-link" type="button" data-legal="terms">Terms</button>
+    <button class="footer-link" type="button" id="cookieSettingsBtn">Cookie settings</button>
+  </div>
+</footer>
+
+<div class="legal-modal" id="legalModal" aria-hidden="true" role="presentation"><div class="legal-dialog" role="dialog" aria-modal="true" aria-labelledby="legalTitle"><button class="legal-close" id="legalClose" type="button" aria-label="Close legal information">Close</button><div id="legalContent"></div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js" integrity="sha384-r+ljwOAhwY4/kdyzMnuBg7MEVoWpTMp5EYUDntB/E9qzNwL9dAEcNrb2XaV+mJc2" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+let processingWorker;
+try {
+  processingWorker = new Worker(new URL('worker.js', window.location.href));
+} catch (e) {
+  processingWorker = null;
+}
+if (!processingWorker) {
+  // Fallback for environments that cannot load external workers
+  const workerCodeFallback = `self.onmessage=function(e){const{imgData,width,height,amount}=e.data;const data=imgData.data;const copy=new Uint8ClampedArray(data);const kernel=[0,-1,0,-1,5,-1,0,-1,0];for(let y=1;y<height-1;y++){for(let x=1;x<width-1;x++){for(let c=0;c<3;c++){let val=0;for(let ky=-1;ky<=1;ky++){for(let kx=-1;kx<=1;kx++){val+=copy[((y+ky)*width+(x+kx))*4+c]*kernel[(ky+1)*3+(kx+1)];}}const idx=(y*width+x)*4+c;data[idx]=Math.min(255,Math.max(0,copy[idx]*(1-amount)+val*amount));}}}self.postMessage({imgData},{transfer:[imgData.data.buffer]});};`;
+  const workerBlob = new Blob([workerCodeFallback], { type: 'application/javascript' });
+  processingWorker = new Worker(URL.createObjectURL(workerBlob));
+}
+
+
+let workerRequestId = 0;
+const workerRequests = new Map();
+processingWorker.onmessage = function(e) {
+  const pending = workerRequests.get(e.data.id);
+  if (!pending) return;
+  workerRequests.delete(e.data.id);
+  if (e.data.type === 'error') pending.reject(new Error(e.data.message));
+  else pending.resolve(e.data);
+};
+processingWorker.onerror = function(e) {
+  const error = new Error(e.message || 'Image processing worker failed.');
+  workerRequests.forEach(({reject}) => reject(error));
+  workerRequests.clear();
+};
+function sharpenInWorker(imgData, w, h, mix) {
+  return new Promise((resolve, reject) => {
+    const id = ++workerRequestId;
+    workerRequests.set(id, {resolve, reject});
+    processingWorker.postMessage({ id, type: 'sharpen', data: {imgData, w, h, mix} });
+  });
+}
+
+const fileInput=document.getElementById("fileInput");
+const uploadBox=document.getElementById("uploadBox");
+const selectBtn=document.getElementById("selectBtn");
+const editor=document.getElementById("editor");
+const preview=document.getElementById("preview");
+const compareStage=document.getElementById("compareStage");
+const beforeBtn=document.getElementById("beforeBtn");
+const afterBtn=document.getElementById("afterBtn");
+const widthInput=document.getElementById("width");
+const heightInput=document.getElementById("height");
+const lockRatio=document.getElementById("lockRatio");
+const fitOptions=document.getElementById("fitOptions");
+const backgroundColor=document.getElementById("backgroundColor");
+const colorValue=document.getElementById("colorValue");
+const eyedropperBtn=document.getElementById("eyedropperBtn");
+const transparentOption=document.getElementById("transparentOption");
+const formatSelect=document.getElementById("format");
+const downloadBtn=document.getElementById("downloadBtn");
+const batchBtn=document.getElementById("batchBtn");
+const imageInfo=document.getElementById("imageInfo");
+const batchList=document.getElementById("batchList");
+const notification=document.getElementById("notification");
+
+const rotateCCW=document.getElementById("rotateCCW");
+const rotateCW=document.getElementById("rotateCW");
+const rotateStraight=document.getElementById("rotateStraight");
+const rotationStatus=document.getElementById("rotationStatus");
+const flipHBtn=document.getElementById("flipHBtn");
+const flipVBtn=document.getElementById("flipVBtn");
+const pixelArtMode=document.getElementById("pixelArtMode");
+const enlargePresets=document.getElementById("enlargePresets");
+
+const qualitySlider=document.getElementById("qualitySlider");
+const qualityValue=document.getElementById("qualityValue");
+const qualityRowLabel=document.getElementById("qualityRowLabel");
+const qualityHint=document.getElementById("qualityHint");
+const estimatedSize=document.getElementById("estimatedSize");
+const originalSizeValue=document.getElementById("originalSizeValue");
+const outputSizeValue=document.getElementById("outputSizeValue");
+const savingValue=document.getElementById("savingValue");
+const processingStatus=document.getElementById("processingStatus");
+const processingText=document.getElementById("processingText");
+const progressBar=document.getElementById("progressBar");
+const progressDetail=document.getElementById("progressDetail");
+const progressPercent=document.getElementById("progressPercent");
+const dropFeedback=document.getElementById("dropFeedback");
+const themeToggle=document.getElementById("themeToggle");
+const straightenSlider=document.getElementById("straightenSlider");
+const straightenValue=document.getElementById("straightenValue");
+const customScale=document.getElementById("customScale");
+const applyCustomScale=document.getElementById("applyCustomScale");
+const resetAllBtn=document.getElementById("resetAllBtn");
+const fileMeta=document.getElementById("fileMeta");
+const undoBtn=document.getElementById("undoBtn");
+const redoBtn=document.getElementById("redoBtn");
+const batchResults=document.getElementById("batchResults");
+const batchSummary=document.getElementById("batchSummary");
+const batchResultList=document.getElementById("batchResultList");
+
+const sharpenSlider = document.getElementById('sharpenSlider');
+const contrastSlider = document.getElementById('contrastSlider');
+const brightnessSlider = document.getElementById('brightnessSlider');
+
+let batchFiles = [];
+let originalFileSize = 0;
+let originalImage=null, originalWidth=0, originalHeight=0, originalFileType="", previewTimer=null;
+let transformedSource=null, transformedW=0, transformedH=0;
+let croppedCanvasSource=null, cropper=null;
+let cropperInitVersion=0;
+let rotation=0, fineRotation=0, flipH=false, flipV=false;
+let previewObjectURL=null, originalObjectURL=null;
+let showingOriginal = false;
+let previewRequestVersion = 0;
+let historyStack=[], redoStack=[], restoringHistory=false, historyTimer=null;
+const HISTORY_LIMIT=30;
+
+const maxFileSize=50*1024*1024;
+const maxInputDimension=10000;
+const maxInputPixels=50000000; // ~50 MP — safer for mobile Safari canvas limits
+const isLikelySafari=/^((?!chrome|android).)*safari/i.test(navigator.userAgent)||(/iPad|iPhone|iPod/.test(navigator.userAgent));               
+
+if ('EyeDropper' in window) {
+  eyedropperBtn.addEventListener('click', async () => {
+    try {
+      const eyeDropper = new EyeDropper();
+      const result = await eyeDropper.open();
+      backgroundColor.value = result.sRGBHex;
+      colorValue.textContent = result.sRGBHex.toUpperCase();
+      updatePreview();
+    } catch (e) {}
+  });
+} else {
+  eyedropperBtn.style.display = 'none';
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.key.toLowerCase() === 'r') {
+    e.preventDefault();
+    if (originalImage) setRotation(rotation + 90);
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (downloadBtn.style.display !== 'none' && !downloadBtn.disabled) downloadBtn.click();
+  }
+});
+
+window.addEventListener('paste', (e) => {
+  const items = e.clipboardData && e.clipboardData.items;
+  if (!items) return;
+  const files = [];
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].type && items[i].type.indexOf('image') !== -1) {
+      const f = items[i].getAsFile();
+      if (f) files.push(f);
+    }
+  }
+  if (files.length) {
+    e.preventDefault();
+    handleFiles(files);
+    showNotification(files.length === 1 ? 'Image pasted from clipboard.' : files.length + ' images pasted from clipboard.', 'success');
+  }
+});
+
+window.addEventListener('pagehide', () => {
+  try {
+    if (previewObjectURL) URL.revokeObjectURL(previewObjectURL);
+    if (originalObjectURL) URL.revokeObjectURL(originalObjectURL);
+  } catch (err) {}
+});
+window.addEventListener('beforeunload', () => {
+  try {
+    if (previewObjectURL) URL.revokeObjectURL(previewObjectURL);
+    if (originalObjectURL) URL.revokeObjectURL(originalObjectURL);
+  } catch (err) {}
+});
+
+
+function getFileExtension(name){const m=(name||'').match(/\.([^.]+)$/);return m?m[1].toUpperCase():'Unknown';}
+function updateUploadedFileMeta(file){if(!file){fileMeta.style.display='none';return;} fileMeta.style.display='block';fileMeta.innerHTML=`<strong>Uploaded file</strong><br>Name: ${escapeHtml(file.name)}<br>Extension: ${escapeHtml(getFileExtension(file.name))} · Size: ${formatBytes(file.size)}`;}
+function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+// Crop is stored as a single shared canvas ref (not base64 in every history entry) to avoid memory bombs.
+let lastAppliedCropCanvas=null;
+let cropRelative=null; // {x,y,w,h} fractions of transformed source at apply time
+function getHistorySnapshot(){return {width:widthInput.value,height:heightInput.value,lock:lockRatio.checked,format:formatSelect.value,fit:document.querySelector('input[name="fitMode"]:checked')?.value||'background',bg:backgroundColor.value,rotation,fineRotation,flipH,flipV,pixel:pixelArtMode.checked,quality:qualitySlider.value,sharpen:sharpenSlider.value,contrast:contrastSlider.value,brightness:brightnessSlider.value,custom:customScale.value,hasCrop:!!croppedCanvasSource};}
+function sameSnapshot(a,b){return JSON.stringify(a)===JSON.stringify(b)}
+function updateHistoryButtons(){undoBtn.disabled=!historyStack.length;redoBtn.disabled=!redoStack.length;}
+function pushHistory(){if(restoringHistory||!originalImage)return;const snap=getHistorySnapshot();const last=historyStack[historyStack.length-1];if(last&&sameSnapshot(last,snap))return;historyStack.push(snap);if(historyStack.length>HISTORY_LIMIT)historyStack.shift();redoStack=[];updateHistoryButtons();}
+function scheduleHistory(){clearTimeout(historyTimer);historyTimer=setTimeout(pushHistory,120);}
+async function restoreSnapshot(snap){if(!snap||!originalImage)return;restoringHistory=true;destroyCropper();widthInput.value=snap.width;heightInput.value=snap.height;lockRatio.checked=snap.lock;formatSelect.value=snap.format;backgroundColor.value=snap.bg;colorValue.textContent=snap.bg.toUpperCase();document.querySelector(`input[name="fitMode"][value="${snap.fit}"]`)?.click();rotation=snap.rotation;fineRotation=snap.fineRotation;flipH=snap.flipH;flipV=snap.flipV;pixelArtMode.checked=snap.pixel;qualitySlider.value=snap.quality;sharpenSlider.value=snap.sharpen;contrastSlider.value=snap.contrast;brightnessSlider.value=snap.brightness;customScale.value=snap.custom;straightenSlider.value=snap.fineRotation;straightenValue.textContent=`${snap.fineRotation}°`;flipHBtn.classList.toggle('active',flipH);flipVBtn.classList.toggle('active',flipV);rotationStatus.textContent=`Current rotation: ${rotation+fineRotation}°`;
+  if(snap.hasCrop && lastAppliedCropCanvas){croppedCanvasSource=lastAppliedCropCanvas;}
+  else {croppedCanvasSource=null;}
+  rebuildTransformedSource();updateTransparentOption();updateCompressionUI();updatePreview();restoringHistory=false;}
+undoBtn.addEventListener('click',async()=>{if(!historyStack.length)return;const current=getHistorySnapshot();if(historyStack.length&&sameSnapshot(historyStack[historyStack.length-1],current))historyStack.pop();const target=historyStack[historyStack.length-1];if(!target){historyStack.push(current);return updateHistoryButtons();}redoStack.push(current);await restoreSnapshot(target);updateHistoryButtons();});
+redoBtn.addEventListener('click',async()=>{if(!redoStack.length)return;const current=getHistorySnapshot();const target=redoStack.pop();historyStack.push(current);await restoreSnapshot(target);updateHistoryButtons();});
+function resetHistory(){historyStack=[];redoStack=[];updateHistoryButtons();}
+function showBatchResults(results){batchResults.classList.add('active');const ok=results.filter(r=>r.ok).length, fail=results.length-ok;batchSummary.innerHTML=`<span class="result-chip">${results.length} total</span><span class="result-chip">${ok} successful</span>${fail?`<span class="result-chip">${fail} failed</span>`:''}`;batchResultList.innerHTML=results.map(r=>`<div class="batch-result-row ${r.ok?'ok':'error'}"><strong>${escapeHtml(r.name)}</strong>${r.ok?` — ${escapeHtml(r.detail||'Processed')}`:` — ${escapeHtml(r.error||'Failed')}`}</div>`).join('');}
+
+
+document.addEventListener('input',e=>{if(restoringHistory)return;if(e.target.closest('#editor'))scheduleHistory();},true);
+document.addEventListener('change',e=>{if(restoringHistory)return;if(e.target.closest('#editor'))scheduleHistory();},true);
+document.addEventListener('click',e=>{if(restoringHistory)return;if(e.target.closest('#editor')&&!e.target.closest('#undoBtn,#redoBtn'))setTimeout(pushHistory,0);},true);
+
+function setTheme(theme){
+  const dark=theme!=="light";
+  document.body.classList.toggle("dark-mode",dark);
+  themeToggle.textContent=dark?"☀ Light":"🌙 Dark";
+  try{localStorage.setItem("resizeflow-theme",dark?"dark":"light");}catch(e){}
+}
+let savedTheme=null;
+try{savedTheme=localStorage.getItem("resizeflow-theme");}catch(e){}
+if(!savedTheme){
+  savedTheme=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+}
+setTheme(savedTheme);
+themeToggle.addEventListener("click",()=>setTheme(document.body.classList.contains("dark-mode")?"light":"dark"));
+
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".tab-panel").forEach(p=>p.classList.remove("active"));
+    btn.classList.add("active");
+    document.querySelector(`.tab-panel[data-panel="${btn.dataset.tab}"]`).classList.add("active");
+
+    if (window.innerWidth<=800) btn.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
+    if (btn.dataset.tab === "crop" && originalImage) {
+      initCropper();
+    } else {
+      destroyCropper();
+    }
+  });
+});
+
+function updateCropLiveInfo() {
+  const el = document.getElementById('cropLiveInfo');
+  if (!el) return;
+  if (!cropper) {
+    el.style.display = 'none';
+    el.textContent = '';
+    return;
+  }
+  try {
+    const data = cropper.getData(true);
+    const w = Math.max(1, Math.round(data.width));
+    const h = Math.max(1, Math.round(data.height));
+    el.textContent = `✂️ Crop area: ${w.toLocaleString()} × ${h.toLocaleString()} px — click Apply Crop to confirm`;
+    el.style.display = 'block';
+  } catch(e) {
+    el.style.display = 'none';
+  }
+}
+
+function initCropper() {
+  try { clearTimeout(previewTimer); } catch(e){}
+  if (!originalImage || !transformedSource || !transformedW || !transformedH) return;
+
+  const initVersion = ++cropperInitVersion;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+  if (previewObjectURL) { try { URL.revokeObjectURL(previewObjectURL); } catch(e){} previewObjectURL=null; }
+
+  const tempCanvas = document.createElement("canvas");
+  tempCanvas.width = transformedW;
+  tempCanvas.height = transformedH;
+  const ctx = tempCanvas.getContext("2d");
+  ctx.drawImage(transformedSource, 0, 0);
+
+  const startCropper = () => {
+    if (initVersion !== cropperInitVersion) return;
+    const tab = document.querySelector('.tab-btn.active')?.dataset.tab;
+    if (tab !== 'crop') return;
+    if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+    requestAnimationFrame(() => {
+      if (initVersion !== cropperInitVersion) return;
+      if (document.querySelector('.tab-btn.active')?.dataset.tab !== 'crop') return;
+      cropper = new Cropper(preview, {
+        viewMode: 1, dragMode: 'crop', autoCropArea: 0.8, restore: false,
+        guides: true, center: true, highlight: false, cropBoxMovable: true,
+        cropBoxResizable: true, toggleDragModeOnDblclick: false,
+        crop: function() { updateCropLiveInfo(); },
+        ready: function() { updateCropLiveInfo(); }
+      });
+    });
+  };
+
+  preview.onload = startCropper;
+  preview.onerror = () => { if (initVersion === cropperInitVersion) showNotification("Unable to reopen the crop editor."); };
+  preview.src = tempCanvas.toDataURL();
+  if (preview.complete && preview.naturalWidth) startCropper();
+}
+
+function destroyCropper() {
+  cropperInitVersion++;
+  preview.onload = null;
+  preview.onerror = null;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+  const cropEl = document.getElementById('cropLiveInfo');
+  if (cropEl) { cropEl.style.display='none'; cropEl.textContent=''; }
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
+  if(activeTab !== 'crop'){
+    try { clearTimeout(previewTimer); } catch(e){}
+    updatePreview();
+  }
+}
+
+document.querySelectorAll('#cropPresets .preset').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (!cropper) return;
+    const ratio = btn.dataset.ratio;
+    if (ratio === 'free') cropper.setAspectRatio(NaN);
+    else { const [w, h] = ratio.split(':').map(Number); cropper.setAspectRatio(w / h); }
+    setActivePreset(document.getElementById('cropPresets'), btn);
+  });
+});
+
+document.getElementById('applyCropBtn').addEventListener('click', () => {
+  if (!cropper) return;
+  try {
+    const data = cropper.getData(true);
+    const nw = cropper.getImageData().naturalWidth || transformedW;
+    const nh = cropper.getImageData().naturalHeight || transformedH;
+    cropRelative = { x: Math.max(0, data.x / nw), y: Math.max(0, data.y / nh), w: Math.min(1, data.width / nw), h: Math.min(1, data.height / nh) };
+  } catch (e) { cropRelative = null; }
+  try { croppedCanvasSource = cropper.getCroppedCanvas({imageSmoothingEnabled:true, imageSmoothingQuality:'high'}); } catch(e){ croppedCanvasSource = cropper.getCroppedCanvas(); }
+  lastAppliedCropCanvas = croppedCanvasSource;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper = null; }
+  try { clearTimeout(previewTimer); } catch(e){}
+  if (previewObjectURL) { try { URL.revokeObjectURL(previewObjectURL); } catch(e){} previewObjectURL=null; }
+  rebuildTransformedSource();
+  widthInput.value = transformedW; heightInput.value = transformedH;
+  const wrap=document.getElementById('batchCropWrap'); if(wrap && batchFiles.length>1) wrap.style.display='flex';
+  initCropper();
+  showNotification("Crop applied. You can crop again immediately.", "success");
+});
+
+
+document.getElementById('resetCropBtn').addEventListener('click', () => {
+  croppedCanvasSource = null; lastAppliedCropCanvas = null; cropRelative = null;
+  const wrap=document.getElementById('batchCropWrap'); if(wrap) wrap.style.display='none';
+  const cb=document.getElementById('applyBatchCrop'); if(cb) cb.checked=false;
+  if (cropper) { try { cropper.destroy(); } catch(e){} cropper=null; }
+  try { clearTimeout(previewTimer); } catch(e){}
+  if (previewObjectURL) { try { URL.revokeObjectURL(previewObjectURL); } catch(e){} previewObjectURL=null; }
+  rebuildTransformedSource();
+  widthInput.value = transformedW; heightInput.value = transformedH;
+  initCropper();
+  showNotification("Crop cleared. You can crop again.", "success");
+});
+
+
+
+
+
+
+function activateTab(tabName){
+  const btn=document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  const panel=document.querySelector(`.tab-panel[data-panel="${tabName}"]`);
+  if(!btn||!panel)return;
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".tab-panel").forEach(p=>p.classList.remove("active"));
+  btn.classList.add("active"); panel.classList.add("active");
+  if(tabName === "crop" && originalImage) initCropper();
+  else destroyCropper();
+}
+document.querySelectorAll("nav a[data-nav-target]").forEach(link=>{
+  link.addEventListener("click",e=>{
+    const target=link.dataset.navTarget;
+    if(target==="upload"){
+      e.preventDefault();
+      const uploadWorkflow=document.getElementById("uploadWorkflow");
+      if(originalImage && editor && editor.classList.contains("is-open")){
+        editor.scrollIntoView({behavior:"smooth",block:"start"});
+      } else if(uploadWorkflow){
+        uploadWorkflow.scrollIntoView({behavior:"smooth",block:"center"});
+      } else {
+        uploadBox.scrollIntoView({behavior:"smooth",block:"center"});
+      }
+      return;
+    }
+    if(target==="faq"){ e.preventDefault(); document.getElementById("faq").scrollIntoView({behavior:"smooth",block:"start"}); return; }
+    e.preventDefault();
+    if(!originalImage){ uploadBox.scrollIntoView({behavior:"smooth",block:"center"}); showNotification("Upload an image first."); return; }
+    activateTab(target); editor.scrollIntoView({behavior:"smooth",block:"start"});
+  });
+});
+
+function showNotification(message,type="error"){ notification.textContent=message; notification.className=`notification show ${type}`; }
+function hideNotification(){ notification.textContent=""; notification.className="notification"; }
+
+function getOutputName(){
+  switch(formatSelect.value){
+    case "image/jpeg": return "JPG"; case "image/webp": return "WebP";
+    case "image/avif": return "AVIF"; case "image/svg+xml": return "SVG";
+    default: return "PNG";
+  }
+}
+function getOutputExtension(){
+  switch(formatSelect.value){
+    case "image/jpeg": return "jpg"; case "image/webp": return "webp";
+    case "image/avif": return "avif"; case "image/svg+xml": return "svg";
+    default: return "png";
+  }
+}
+function normalizeOutputFormat(mime){
+  if(mime==="image/jpeg"||mime==="image/png"||mime==="image/webp"||mime==="image/avif"||mime==="image/svg+xml") return mime;
+  return "image/png";
+}
+let avifEncodeModule=null;
+async function getAvifEncoder(){
+  if(avifEncodeModule) return avifEncodeModule;
+  const mod=await import("https://esm.sh/@jsquash/avif@2.1.1");
+  avifEncodeModule=mod;
+  return mod;
+}
+async function encodeCanvasToAvif(canvas, quality, options={}){
+  const srcW=canvas.width, srcH=canvas.height;
+  const mp=(srcW*srcH)/1e6;
+  // Adaptive encode canvas: cap encode resolution for very large images to avoid multi-minute WASM encodes
+  const maxEncodeSide = options.preview ? 1600 : (mp > 16 ? 4096 : (mp > 8 ? 5120 : 8192));
+  let encodeCanvas=canvas;
+  if(srcW>maxEncodeSide || srcH>maxEncodeSide){
+    const scale=Math.min(maxEncodeSide/srcW, maxEncodeSide/srcH);
+    const w=Math.max(1,Math.round(srcW*scale));
+    const h=Math.max(1,Math.round(srcH*scale));
+    encodeCanvas=document.createElement("canvas");
+    encodeCanvas.width=w; encodeCanvas.height=h;
+    const sctx=encodeCanvas.getContext("2d",{alpha:true});
+    sctx.imageSmoothingEnabled=true; sctx.imageSmoothingQuality="high";
+    sctx.drawImage(canvas,0,0,w,h);
+  }
+  const ctx=encodeCanvas.getContext("2d",{willReadFrequently:true});
+  const imageData=ctx.getImageData(0,0,encodeCanvas.width,encodeCanvas.height);
+  const {encode}=await getAvifEncoder();
+  const q=Math.max(0,Math.min(1,Number(quality)||0.75));
+  // Map quality 0..1 → cqLevel 0 (best) .. 63 (smallest). Bias slightly toward quality.
+  const cqLevel=Math.round((1-q)*63);
+  // Higher speed = faster, slightly larger files. Use faster settings for large images / previews.
+  const encodeMp=(encodeCanvas.width*encodeCanvas.height)/1e6;
+  let speed=6;
+  if(options.preview) speed=10;
+  else if(encodeMp>8) speed=9;
+  else if(encodeMp>4) speed=8;
+  else if(encodeMp>2) speed=7;
+  // Enable tiles on large images for better parallel encode behavior in WASM
+  let tileColsLog2=0, tileRowsLog2=0;
+  if(encodeMp>3){ tileColsLog2=1; tileRowsLog2=1; }
+  if(encodeMp>8){ tileColsLog2=2; tileRowsLog2=1; }
+  const buffer=await encode(imageData,{
+    cqLevel,
+    cqAlphaLevel:-1,
+    speed,
+    subsample:1, // 4:2:0 — best size/quality for photos
+    chromaDeltaQ:false,
+    sharpness:0,
+    denoiseLevel:0,
+    tileColsLog2,
+    tileRowsLog2,
+    tune:0 // auto
+  });
+  return new Blob([buffer],{type:"image/avif"});
+}
+function formatBytes(n){
+  if(n<1024) return `${n} B`; if(n<1024*1024) return `${(n/1024).toFixed(1)} KB`;
+  return `${(n/1024/1024).toFixed(2)} MB`;
+}
+function updateFileSizeComparison(outputSize){
+  originalSizeValue.textContent=originalFileSize?formatBytes(originalFileSize):"—";
+  outputSizeValue.textContent=Number.isFinite(outputSize)?formatBytes(outputSize):"—";
+  if(!originalFileSize||!Number.isFinite(outputSize)){savingValue.textContent="Savings: —";return;}
+  const diff=originalFileSize-outputSize, pct=(diff/originalFileSize)*100;
+  savingValue.textContent=diff>=0?`Estimated savings: ${formatBytes(diff)} (${pct.toFixed(1)}%)`:`Estimated size increase: ${formatBytes(Math.abs(diff))} (${Math.abs(pct).toFixed(1)}%)`;
+}
+function setProcessing(active,text="Processing...",percent=0,detail="Please wait"){
+  const safePercent=Math.max(0,Math.min(100,percent));
+  processingStatus.classList.toggle("active",active); processingText.textContent=text; progressBar.style.width=`${safePercent}%`; progressBar.setAttribute("aria-valuenow",String(Math.round(safePercent))); progressPercent.textContent=`${Math.round(safePercent)}%`; progressDetail.textContent=detail;
+}
+function updateAspectLockUI(){
+  const locked=lockRatio.checked;
+  document.getElementById("aspectLockCard")?.classList.toggle("unlocked",!locked);
+  const badge=document.getElementById("aspectLockBadge"), help=document.getElementById("aspectLockHelp");
+  if(badge) badge.textContent=locked?"Recommended":"Unlocked";
+  if(help) help.textContent=locked?"Keeps your image proportions correct. Change Width or Height and the other value adjusts automatically.":"Width and Height can now change independently. Your image may stretch or distort.";
+}
+lockRatio.addEventListener("change",()=>{ updateAspectLockUI(); scheduleHistory(); updatePreview(); });
+updateAspectLockUI();
+function setActivePreset(group,active){group.querySelectorAll('.preset').forEach(b=>b.classList.toggle('active',b===active));}
+
+beforeBtn.addEventListener("click", () => {
+  if (!originalObjectURL) return;
+  showingOriginal = true;
+  beforeBtn.classList.add("active"); afterBtn.classList.remove("active");
+  preview.src = originalObjectURL;
+});
+afterBtn.addEventListener("click", () => {
+  showingOriginal = false;
+  afterBtn.classList.add("active"); beforeBtn.classList.remove("active");
+  if (previewObjectURL) preview.src = previewObjectURL;
+});
+
+selectBtn.addEventListener("click",e=>{e.stopPropagation();fileInput.click();});
+uploadBox.addEventListener("click",e=>{
+  if(e.target===fileInput||e.target.closest("button")) return;
+  fileInput.click();
+});
+fileInput.addEventListener("change",e=>handleFiles(e.target.files));
+
+const replaceImageBtn=document.getElementById("replaceImageBtn");
+if(replaceImageBtn){
+  replaceImageBtn.addEventListener("click",()=>{
+    fileInput.value="";
+    fileInput.click();
+  });
+}
+
+["dragenter","dragover"].forEach(type=>uploadBox.addEventListener(type,e=>{e.preventDefault();uploadBox.classList.add("dragover");dropFeedback.textContent="Release to add image files.";}));
+uploadBox.addEventListener("dragleave",e=>{if(!uploadBox.contains(e.relatedTarget)){uploadBox.classList.remove("dragover");dropFeedback.textContent="Drop, paste (Ctrl/Cmd+V), or select images.";}});
+uploadBox.addEventListener("drop",e=>{e.preventDefault();uploadBox.classList.remove("dragover");const count=e.dataTransfer.files.length;dropFeedback.textContent=count?`${count} image${count===1?"":"s"} dropped — loading...`:"Drop, paste (Ctrl/Cmd+V), or select images.";if(count)handleFiles(e.dataTransfer.files);});
+
+function handleFiles(files) {
+  if (!files.length) return;
+  batchFiles = Array.from(files);
+  dropFeedback.textContent=`${batchFiles.length} image${batchFiles.length===1?"":"s"} selected.`;
+  const batchCropWrap=document.getElementById("batchCropWrap");
+  if (batchFiles.length > 1) {
+    batchBtn.style.display = "inline-block";
+    batchList.textContent = `Batch loaded: ${batchFiles.length} files (${batchFiles.map(f=>f.name).join(', ')})`;
+    if(batchCropWrap) batchCropWrap.style.display = croppedCanvasSource ? "flex" : "none";
+  } else {
+    batchBtn.style.display = "none";
+    batchList.textContent = "";
+    if(batchCropWrap) batchCropWrap.style.display = "none";
+  }
+  loadImage(batchFiles[0]);
+}
+
+function detectKind(file){
+  const name=file.name||""; const m=name.toLowerCase().match(/\.([a-z0-9]+)$/);
+  const ext=m?m[1]:""; const type=file.type;
+  if(type==="image/heic"||type==="image/heif"||ext==="heic"||ext==="heif")return "heic";
+  if(type==="image/svg+xml"||ext==="svg")return "svg";
+  if(type==="image/gif"||ext==="gif")return "gif";
+  if(type==="image/jpeg"||ext==="jpg"||ext==="jpeg")return "jpeg";
+  if(type==="image/png"||ext==="png")return "png";
+  if(type==="image/webp"||ext==="webp")return "webp";
+  if(type==="image/avif"||ext==="avif")return "avif";
+  return null;
+}
+function kindToMime(kind){
+  switch(kind){
+    case "jpeg": return "image/jpeg"; case "png": return "image/png";
+    case "webp": return "image/webp"; case "gif": return "image/gif";
+    case "avif": return "image/avif"; case "svg": return "image/svg+xml";
+    default: return "image/jpeg";
+  }
+}
+
+function validateFile(file){
+  const kind=detectKind(file);
+  if(!kind) return {ok:false, error:"Unsupported format. Use JPG, PNG, WebP, AVIF, GIF, SVG, or HEIC/HEIF."};
+  if(file.size>maxFileSize) return {ok:false, error:"File exceeds the 50 MB limit."};
+  return {ok:true, kind};
+}
+
+async function decodeFileToImage(file){
+  const validation=validateFile(file);
+  if(!validation.ok) throw new Error(validation.error);
+  let workingFile=file;
+  if(validation.kind==="heic"){
+    try{
+      const mod=await import("https://esm.sh/heic2any@0.0.4");
+      const fn=mod.default||mod;
+      workingFile=await fn({blob:file,toType:"image/jpeg",quality:0.92});
+      if(Array.isArray(workingFile)) workingFile=workingFile[0];
+    }catch(heicErr){
+      throw new Error("Could not decode HEIC/HEIF. Try Chrome or Edge, or convert to JPG on your device first. (Firefox may need the .heic extension on the filename.)");
+    }
+  }
+  const url=URL.createObjectURL(workingFile);
+  try{
+    const img=await new Promise((resolve,reject)=>{
+      const image=new Image();
+      image.onload=()=>resolve(image);
+      image.onerror=()=>reject(new Error("Image could not be decoded."));
+      image.src=url;
+    });
+    const w=img.naturalWidth||img.width, h=img.naturalHeight||img.height;
+    if(w>maxInputDimension||h>maxInputDimension||w*h>maxInputPixels){
+      const safariNote=isLikelySafari?" On iPhone/iPad, Safari often limits canvas around 4096–8192 px; try a smaller export size.":"";
+      throw new Error("Image dimensions are too large (maximum 10,000 px per side / ~50 MP)."+safariNote);
+    }
+    return {img, kind:validation.kind, mime:kindToMime(validation.kind), w, h, workingFile};
+  } finally { URL.revokeObjectURL(url); }
+}
+
+async function loadImage(file){
+  hideNotification();
+  try{
+    const decoded=await decodeFileToImage(file);
+    if(originalObjectURL) URL.revokeObjectURL(originalObjectURL);
+    originalObjectURL=URL.createObjectURL(decoded.workingFile);
+    originalImage=decoded.img; originalWidth=decoded.w; originalHeight=decoded.h;
+    originalFileType=decoded.mime; originalFileSize=file.size; updateFileSizeComparison(NaN); updateUploadedFileMeta(file); resetHistory(); batchResults.classList.remove("active");
+    croppedCanvasSource=null; destroyCropper();
+    beforeBtn.disabled=false; afterBtn.disabled=false;
+    showingOriginal=false; afterBtn.classList.add("active"); beforeBtn.classList.remove("active");
+    rotation=0; fineRotation=0; flipH=false; flipV=false;
+    sharpenSlider.value=0; contrastSlider.value=0; brightnessSlider.value=0;
+    straightenSlider.value=0; straightenValue.textContent="0°"; customScale.value=100;
+    flipHBtn.classList.remove("active"); flipVBtn.classList.remove("active");
+    rotationStatus.textContent="Current rotation: 0°";
+    rebuildTransformedSource();
+    widthInput.value=transformedW; heightInput.value=transformedH;
+    formatSelect.value=normalizeOutputFormat(originalFileType);
+    lockRatio.checked=true; fitOptions.classList.remove("active");
+    updateTransparentOption(); updateCompressionUI();
+    const uploadWorkflow=document.getElementById("uploadWorkflow");
+    if(uploadWorkflow) uploadWorkflow.style.display="none";
+    editor.classList.add("is-open");
+    editor.style.display="grid";
+    updatePreview();
+    setTimeout(pushHistory,0);
+    if(decoded.kind==="gif"){
+      showNotification(`Loaded: ${transformedW} × ${transformedH} px — GIF animation is not preserved (single frame only).`, "success");
+    } else {
+      showNotification(`Loaded: ${transformedW} × ${transformedH} px`, "success");
+    }
+  } catch(err) { showNotification(err.message || "Image loading failed."); }
+}
+
+function setRotation(newRotation){
+  newRotation=((newRotation%360)+360)%360;
+  if(originalImage&&(newRotation%180!==rotation%180)){
+    const w=widthInput.value, h=heightInput.value;
+    widthInput.value=h; heightInput.value=w;
+  }
+  rotation=newRotation; fineRotation=0; straightenSlider.value=0; straightenValue.textContent="0°";
+  rotationStatus.textContent=`Current rotation: ${rotation}°`;
+  rebuildTransformedSource(); updatePreview();
+}
+rotateCW.addEventListener("click",()=>{ if(originalImage) setRotation(rotation+90); });
+rotateCCW.addEventListener("click",()=>{ if(originalImage) setRotation(rotation-90); });
+rotateStraight.addEventListener("click",()=>{ if(originalImage) setRotation(0); });
+straightenSlider.addEventListener("input",()=>{
+  if(!originalImage)return;
+  fineRotation=Number(straightenSlider.value)||0;
+  straightenValue.textContent=`${fineRotation}°`;
+  rebuildTransformedSource(); updatePreview();
+});
+pixelArtMode.addEventListener("change", updatePreview);
+
+flipHBtn.addEventListener("click",()=>{ if(!originalImage)return; flipH=!flipH; flipHBtn.classList.toggle("active",flipH); rebuildTransformedSource(); updatePreview(); });
+flipVBtn.addEventListener("click",()=>{ if(!originalImage)return; flipV=!flipV; flipVBtn.classList.toggle("active",flipV); rebuildTransformedSource(); updatePreview(); });
+
+enlargePresets.querySelectorAll(".preset").forEach(button=>{
+  button.addEventListener("click",()=>{
+    if(!originalImage)return;
+    const scale=parseFloat(button.dataset.scale);
+    widthInput.value=Math.max(1,Math.round(transformedW*scale));
+    heightInput.value=Math.max(1,Math.round(transformedH*scale));
+    lockRatio.checked=true; fitOptions.classList.remove("active"); setActivePreset(enlargePresets,button); updatePreview();
+  });
+});
+applyCustomScale.addEventListener("click",()=>{
+  if(!originalImage)return;
+  const pct=Math.min(1000,Math.max(1,Number(customScale.value)||100));
+  customScale.value=Math.round(pct); const scale=pct/100;
+  widthInput.value=Math.max(1,Math.round(transformedW*scale));
+  heightInput.value=Math.max(1,Math.round(transformedH*scale));
+  lockRatio.checked=true; fitOptions.classList.remove("active"); setActivePreset(enlargePresets,null); updatePreview();
+});
+
+function rebuildTransformedSource(){
+  const activeSource = croppedCanvasSource || originalImage;
+  if (!activeSource) return;
+  const srcW = croppedCanvasSource ? croppedCanvasSource.width : originalWidth;
+  const srcH = croppedCanvasSource ? croppedCanvasSource.height : originalHeight;
+  const totalRotation=rotation+fineRotation; const angle=totalRotation*Math.PI/180;
+  const cos=Math.abs(Math.cos(angle)), sin=Math.abs(Math.sin(angle));
+  const w=Math.max(1,Math.ceil(srcW*cos+srcH*sin));
+  const h=Math.max(1,Math.ceil(srcW*sin+srcH*cos));
+  
+  const c=document.createElement("canvas"); c.width=w; c.height=h;
+  const ctx=c.getContext("2d",{alpha:true});
+  ctx.save(); ctx.translate(w/2,h/2); ctx.rotate(angle);
+  ctx.scale(flipH?-1:1, flipV?-1:1);
+  ctx.drawImage(activeSource,-srcW/2,-srcH/2); ctx.restore();
+  transformedSource=c; transformedW=w; transformedH=h;
+}
+
+
+document.querySelectorAll('[data-reset-section]').forEach(btn=>btn.addEventListener('click',()=>{
+  if(!originalImage) return;
+  const section=btn.dataset.resetSection;
+  if(section==='resize'){widthInput.value=transformedW;heightInput.value=transformedH;lockRatio.checked=true;fitOptions.classList.remove('active');document.querySelector('input[name="fitMode"][value="background"]').checked=true;backgroundColor.value='#000000';colorValue.textContent='#000000';formatSelect.value=normalizeOutputFormat(originalFileType);setActivePreset(document.querySelector('.tab-panel[data-panel="resize"] .presets'),null);updateTransparentOption();updateCompressionUI();}
+  if(section==='crop'){croppedCanvasSource=null;destroyCropper();rebuildTransformedSource();widthInput.value=transformedW;heightInput.value=transformedH;}
+  if(section==='transform'){rotation=0;fineRotation=0;flipH=false;flipV=false;pixelArtMode.checked=false;straightenSlider.value=0;straightenValue.textContent='0°';rotationStatus.textContent='Current rotation: 0°';flipHBtn.classList.remove('active');flipVBtn.classList.remove('active');customScale.value=100;setActivePreset(enlargePresets,null);rebuildTransformedSource();}
+  if(section==='compression'){qualitySlider.value=92;updateCompressionUI();}
+  if(section==='enhance'){sharpenSlider.value=0;contrastSlider.value=0;brightnessSlider.value=0;}
+  updatePreview();showNotification(`${section.charAt(0).toUpperCase()+section.slice(1)} settings reset.`, 'success');
+}));
+
+resetAllBtn.addEventListener("click", () => {
+  if (!originalImage) return;
+
+  // 1. Destroy current cropper and reset image state
+  croppedCanvasSource = null; 
+  destroyCropper();
+  rotation = 0; fineRotation = 0; flipH = false; flipV = false;
+  sharpenSlider.value = 0; contrastSlider.value = 0; brightnessSlider.value = 0;
+  straightenSlider.value = 0; straightenValue.textContent = "0°";
+  pixelArtMode.checked = false;
+  flipHBtn.classList.remove("active"); flipVBtn.classList.remove("active");
+  rotationStatus.textContent = "Current rotation: 0°";
+  
+  rebuildTransformedSource();
+  widthInput.value = transformedW; 
+  heightInput.value = transformedH;
+  lockRatio.checked = true; 
+  fitOptions.classList.remove("active");
+  document.querySelector('input[name="fitMode"][value="background"]').checked = true;
+  backgroundColor.value = "#000000"; 
+  colorValue.textContent = "#000000";
+  formatSelect.value = normalizeOutputFormat(originalFileType); 
+  qualitySlider.value = 92; 
+  customScale.value = 100;
+  document.querySelectorAll(".preset.active").forEach(b=>b.classList.remove("active"));
+
+  updateTransparentOption(); 
+  updateCompressionUI();
+
+  // 2. Check active tab: If user is on Crop tab, immediately restart Cropper
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
+  if (activeTab === "crop") {
+    initCropper();
+  } else {
+    updatePreview();
+  }
+
+  showNotification("All settings reset.", "success");
+});
+
+widthInput.addEventListener("input",()=>{
+  setActivePreset(document.querySelector('.tab-panel[data-panel="resize"] .presets'),null);
+  if(lockRatio.checked&&originalImage&&Number(widthInput.value)>0)
+    heightInput.value=Math.round(Number(widthInput.value)*transformedH/transformedW);
+  syncDownloadEnabled();
+  updatePreview();
+});
+heightInput.addEventListener("input",()=>{
+  setActivePreset(document.querySelector('.tab-panel[data-panel="resize"] .presets'),null);
+  if(lockRatio.checked&&originalImage&&Number(heightInput.value)>0)
+    widthInput.value=Math.round(Number(heightInput.value)*transformedW/transformedH);
+  syncDownloadEnabled();
+  updatePreview();
+});
+widthInput.addEventListener("blur",()=>{const v=Math.max(1,Math.min(30000,Number(widthInput.value)||1));widthInput.value=v;
+  if(lockRatio.checked&&originalImage) heightInput.value=Math.round(v*transformedH/transformedW); syncDownloadEnabled(); updatePreview();});
+heightInput.addEventListener("blur",()=>{const v=Math.max(1,Math.min(30000,Number(heightInput.value)||1));heightInput.value=v;
+  if(lockRatio.checked&&originalImage) widthInput.value=Math.round(v*transformedW/transformedH); syncDownloadEnabled(); updatePreview();});
+
+lockRatio.addEventListener("change",()=>{ fitOptions.classList.toggle("active",!lockRatio.checked); updatePreview(); });
+document.querySelectorAll('input[name="fitMode"]').forEach(r=>r.addEventListener("change", (e)=>{
+  if(e.target.value === 'background'){
+    // When Background Fill is enabled, default to black as requested
+    try {
+      backgroundColor.value = '#000000';
+      colorValue.textContent = '#000000';
+    } catch(err){}
+  }
+  updatePreview();
+}));
+backgroundColor.addEventListener("input",()=>{colorValue.textContent=backgroundColor.value.toUpperCase();updatePreview();});
+
+function updateTransparentOption(){
+  const radio=document.querySelector('input[name="fitMode"][value="transparent"]');
+  const available=formatSelect.value==="image/png"||formatSelect.value==="image/svg+xml"||formatSelect.value==="image/avif"||formatSelect.value==="image/webp";
+  radio.disabled=!available; transparentOption.classList.toggle("disabled",!available);
+  if(!available&&radio.checked)document.querySelector('input[name="fitMode"][value="background"]').checked=true;
+}
+
+document.querySelectorAll(".field .presets .preset").forEach(button=>{
+  if(button.closest("#enlargePresets") || button.closest("#cropPresets")) return; 
+  button.addEventListener("click",()=>{
+    const w=Number(button.dataset.width), h=Number(button.dataset.height);
+    widthInput.value=w; heightInput.value=h;
+    const presetType = button.dataset.preset || '';
+    const isVertical = (h > w) || ['shorts','shorts-4k','vertical'].includes(presetType);
+    const isSquareProfile = (w===h) || ['profile','square'].includes(presetType);
+    const shouldCrop = isVertical || isSquareProfile; // Same logic for Shorts/Reels/TikTok AND Profile 400x400
+    lockRatio.checked=false;
+    fitOptions.classList.add("active");
+    const bgRadio=document.querySelector('input[name="fitMode"][value="background"]');
+    const cropRadio=document.querySelector('input[name="fitMode"][value="crop"]');
+    // For Shorts/Reels/TikTok and Profile/Square: auto-switch to Crop to avoid black bars and keep quality. Same logic.
+    if(shouldCrop && cropRadio){
+      cropRadio.checked=true;
+      if(bgRadio) bgRadio.checked=false;
+      // Ensure Crop UI is marked active
+      document.querySelectorAll('.fit-option').forEach(el=>el.classList.remove('active'));
+      const cropOption = cropRadio.closest('.fit-option');
+      if(cropOption) cropOption.classList.add('active');
+    } else if(bgRadio) { 
+      bgRadio.checked=true; 
+      try { backgroundColor.value='#000000'; colorValue.textContent='#000000'; } catch(e){}
+    } else if(cropRadio) cropRadio.checked=true;
+    // Prefer higher JPEG/WebP quality for small outputs to avoid visible softness from over-compression
+    if(Math.max(w,h)<=512 && Number(qualitySlider.value)<92){
+      qualitySlider.value=95;
+      qualityValue.textContent=`${qualitySlider.value}%`;
+    }
+    setActivePreset(button.parentElement,button); updatePreview();
+  });
+});
+
+function updateCompressionUI(){
+  const format=formatSelect.value;
+  const supportsQuality=format==="image/jpeg"||format==="image/webp"||format==="image/avif";
+  qualitySlider.disabled=!supportsQuality;
+  qualityValue.textContent=qualitySlider.disabled?"N/A":`${qualitySlider.value}%`;
+  if(typeof qualityHint!=="undefined" && qualityHint){
+    if(format==="image/avif") qualityHint.textContent="Lower quality reduces file size. AVIF is often much smaller than JPG/WebP; encoding uses local WASM (faster on smaller images).";
+    else if(supportsQuality) qualityHint.textContent="Lower quality reduces file size. Applies to JPG, WebP, and AVIF.";
+    else qualityHint.textContent="Lossless formats (PNG, SVG) ignore quality settings.";
+  }
+}
+qualitySlider.addEventListener("input",()=>{ qualityValue.textContent=`${qualitySlider.value}%`; updatePreview(); });
+formatSelect.addEventListener("change",()=>{ updateTransparentOption(); updateCompressionUI(); updatePreview(); });
+
+[sharpenSlider, contrastSlider, brightnessSlider].forEach(s => s.addEventListener('input', updatePreview));
+
+function createTransformedCanvas(source, srcW, srcH, options={}){
+  const totalRotation=(options.rotation||0)+(options.fineRotation||0);
+  const angle=totalRotation*Math.PI/180;
+  const cos=Math.abs(Math.cos(angle)), sin=Math.abs(Math.sin(angle));
+  const w=Math.max(1,Math.ceil(srcW*cos+srcH*sin));
+  const h=Math.max(1,Math.ceil(srcW*sin+srcH*cos));
+  const canvas=document.createElement("canvas"); canvas.width=w; canvas.height=h;
+  const ctx=canvas.getContext("2d",{alpha:true});
+  ctx.save(); ctx.translate(w/2,h/2); ctx.rotate(angle);
+  ctx.scale(options.flipH?-1:1, options.flipV?-1:1);
+  ctx.drawImage(source,-srcW/2,-srcH/2); ctx.restore();
+  return canvas;
+}
+
+function getProcessingSettings(){
+  return {
+    width:Number(widthInput.value), height:Number(heightInput.value),
+    lockRatio:lockRatio.checked,
+    fitMode:document.querySelector('input[name="fitMode"]:checked')?.value||"background",
+    backgroundColor:backgroundColor.value,
+    pixelArt:pixelArtMode.checked,
+    brightness:Number(brightnessSlider.value), contrast:Number(contrastSlider.value),
+    sharpen:Number(sharpenSlider.value), rotation, fineRotation, flipH, flipV,
+    format:formatSelect.value, quality:Number(qualitySlider.value)/100
+  };
+}
+
+/** Step-down scale for large reductions — sharper than one big drawImage shrink */
+function highQualityScaleTo(source, targetW, targetH, pixelArt){
+  const srcW=source.width||source.naturalWidth, srcH=source.height||source.naturalHeight;
+  if(!srcW||!srcH) return source;
+  const scale=Math.min(targetW/srcW, targetH/srcH);
+  // Upscale or mild downscale: single pass is fine
+  if(pixelArt || scale>=0.5){
+    const c=document.createElement("canvas");
+    c.width=Math.max(1,Math.round(targetW));
+    c.height=Math.max(1,Math.round(targetH));
+    const cx=c.getContext("2d",{alpha:true});
+    cx.imageSmoothingEnabled=!pixelArt;
+    cx.imageSmoothingQuality="high";
+    cx.drawImage(source,0,0,c.width,c.height);
+    return c;
+  }
+  // Progressive downscale by ~50% steps (much less blurry for 3000px → 400px)
+  let w=srcW, h=srcH, cur=source;
+  while(w*0.5 > targetW*1.1 && h*0.5 > targetH*1.1){
+    w=Math.max(1,Math.round(w*0.5));
+    h=Math.max(1,Math.round(h*0.5));
+    const step=document.createElement("canvas");
+    step.width=w; step.height=h;
+    const sctx=step.getContext("2d",{alpha:true});
+    sctx.imageSmoothingEnabled=true;
+    sctx.imageSmoothingQuality="high";
+    sctx.drawImage(cur,0,0,w,h);
+    cur=step;
+  }
+  const out=document.createElement("canvas");
+  out.width=Math.max(1,Math.round(targetW));
+  out.height=Math.max(1,Math.round(targetH));
+  const octx=out.getContext("2d",{alpha:true});
+  octx.imageSmoothingEnabled=true;
+  octx.imageSmoothingQuality="high";
+  octx.drawImage(cur,0,0,out.width,out.height);
+  return out;
+}
+
+function drawSourceToCanvas(canvas, source, srcW, srcH, settings){
+  const ctx=canvas.getContext("2d",{alpha:true});
+  ctx.imageSmoothingEnabled=!settings.pixelArt; ctx.imageSmoothingQuality="high";
+  const mode=settings.lockRatio?"stretch":settings.fitMode;
+  ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+  if(mode==="stretch"){
+    // High-quality path when shrinking a lot into the output box
+    if(!settings.pixelArt && (srcW>canvas.width*1.8 || srcH>canvas.height*1.8)){
+      const scaled=highQualityScaleTo(source, canvas.width, canvas.height, false);
+      ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+      ctx.drawImage(scaled,0,0,canvas.width,canvas.height);
+    } else {
+      ctx.drawImage(source,0,0,canvas.width,canvas.height);
+    }
+  } else {
+    const scale=Math.min(canvas.width/srcW,canvas.height/srcH);
+    const cropScale=Math.max(canvas.width/srcW,canvas.height/srcH);
+    const activeScale=mode==="crop"?cropScale:scale;
+    const drawW=srcW*activeScale, drawH=srcH*activeScale;
+    const x=(canvas.width-drawW)/2, y=(canvas.height-drawH)/2;
+    if(mode==="background"||mode==="transparent"){
+      if(mode==="background"){
+        ctx.save(); ctx.filter="none"; ctx.fillStyle=settings.backgroundColor;
+        ctx.fillRect(0,0,canvas.width,canvas.height); ctx.restore();
+        ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+      }
+    }
+    // For large downscales into crop/fit, pre-scale with step-down then draw
+    const needsHQ=!settings.pixelArt && activeScale < 0.5;
+    if(needsHQ && mode==="crop"){
+      // Cover-crop: scale so image covers canvas, then center-crop via draw positions
+      const scaled=highQualityScaleTo(source, drawW, drawH, false);
+      ctx.drawImage(scaled,x,y,drawW,drawH);
+    } else if(needsHQ){
+      const scaled=highQualityScaleTo(source, drawW, drawH, false);
+      ctx.drawImage(scaled,x,y,drawW,drawH);
+    } else {
+      ctx.drawImage(source,x,y,drawW,drawH);
+    }
+  }
+  ctx.filter="none";
+}
+
+function drawImageToCanvas(canvas, outputW, outputH){
+  drawSourceToCanvas(canvas, transformedSource, transformedW, transformedH, getProcessingSettings());
+}
+
+function canvasToBlobSafe(canvas, type, quality){
+  return new Promise((resolve,reject)=>{
+    try {
+      canvas.toBlob(blob=>{
+        if(!blob) return reject(new Error("The browser could not encode this image. Try a smaller size or another format."));
+        if(type && blob.type && blob.type!==type) return reject(new Error(`Requested ${type} output, but the browser returned ${blob.type}.`));
+        resolve(blob);
+      },type,quality);
+    } catch(err){ reject(err); }
+  });
+}
+
+async function processCanvasFiltersAndExport(canvas, format, quality, sharpenAmount=Number(sharpenSlider.value), options={}) {
+  if(sharpenAmount>0){
+    const ctx=canvas.getContext('2d');
+    const imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
+    const result=await sharpenInWorker(imgData,canvas.width,canvas.height,sharpenAmount/100);
+    ctx.putImageData(result.imgData,0,0);
+  }
+  if(format==="image/svg+xml"){
+    const dataUrl=canvas.toDataURL("image/png");
+    const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}"><image width="${canvas.width}" height="${canvas.height}" href="${dataUrl}"/></svg>`;
+    return new Blob([svg],{type:"image/svg+xml"});
+  }
+  if(format==="image/avif"){
+    try{
+      // Previews use a faster approximate encode (or WebP fallback) so the UI stays responsive
+      if(options && options.preview){
+        try{ return await encodeCanvasToAvif(canvas, quality, {preview:true}); }
+        catch(e){ return canvasToBlobSafe(canvas, "image/webp", quality); }
+      }
+      return await encodeCanvasToAvif(canvas, quality, {preview:false});
+    }catch(err){ throw new Error(err?.message || "AVIF encoding failed. Try JPG or WebP, or a smaller image."); }
+  }
+  const q=(format==="image/jpeg"||format==="image/webp")?quality:undefined;
+  return canvasToBlobSafe(canvas,format,q);
+}
+
+async function renderProcessedBlob(source, srcW, srcH, settings, options={}){
+  if(!dimensionsValid(settings.width,settings.height)) throw new Error("Please enter valid output dimensions (min 1 × 1 px).");
+  const transformed=options.alreadyTransformed ? source : createTransformedCanvas(source,srcW,srcH,settings);
+  const transformedW=options.alreadyTransformed ? srcW : transformed.width;
+  const transformedH=options.alreadyTransformed ? srcH : transformed.height;
+  const canvas=document.createElement("canvas");
+  canvas.width=options.preview ? Math.max(1,Math.round(settings.width*options.previewScale)) : settings.width;
+  canvas.height=options.preview ? Math.max(1,Math.round(settings.height*options.previewScale)) : settings.height;
+  drawSourceToCanvas(canvas,transformed,transformedW,transformedH,settings);
+  return processCanvasFiltersAndExport(canvas,settings.format,settings.quality,settings.sharpen,options);
+}
+
+function dimensionsValid(w,h){
+  const W=Number(w), H=Number(h);
+  return Number.isFinite(W)&&Number.isFinite(H)&&W>=1&&H>=1&&W<=30000&&H<=30000;
+}
+function syncDownloadEnabled(){
+  const ok=originalImage&&dimensionsValid(widthInput.value,heightInput.value);
+  downloadBtn.disabled=!ok;
+  downloadBtn.style.opacity=ok?'1':'.45';
+  downloadBtn.style.pointerEvents=ok?'auto':'none';
+  if(batchBtn.style.display!=='none'){
+    batchBtn.disabled=!ok;
+    batchBtn.style.opacity=ok?'1':'.45';
+    batchBtn.style.pointerEvents=ok?'auto':'none';
+  }
+}
+function updatePreview(){
+  if(!originalImage||cropper) return;
+  const settings=getProcessingSettings();
+  if(!dimensionsValid(settings.width,settings.height)){
+    downloadBtn.style.display="inline-block";
+    syncDownloadEnabled();
+    imageInfo.textContent="Enter valid width and height (min 1 px).";
+    return;
+  }
+  clearTimeout(previewTimer);
+  const requestVersion=++previewRequestVersion;
+  previewTimer=setTimeout(async()=>{
+    try{ setProcessing(true,"Updating preview...",35,"Applying your changes");
+      const scale=Math.min(1600/settings.width,1600/settings.height,1);
+      const blob=await renderProcessedBlob(transformedSource,transformedW,transformedH,settings,{alreadyTransformed:true,preview:true,previewScale:scale});
+      if(requestVersion!==previewRequestVersion) return;
+      if(previewObjectURL) URL.revokeObjectURL(previewObjectURL);
+      previewObjectURL=URL.createObjectURL(blob);
+      if(!showingOriginal) preview.src=previewObjectURL;
+      estimatedSize.textContent=`Preview file size (approx.): ${formatBytes(blob.size)}`; updateFileSizeComparison(blob.size); setProcessing(false,"Ready",100,"Preview updated");
+      imageInfo.textContent=`Size/ Format: ${settings.width.toLocaleString()} × ${settings.height.toLocaleString()} px | ${getOutputName()}`;
+      downloadBtn.textContent=`Download ${getOutputName()}`; downloadBtn.style.display="inline-block"; syncDownloadEnabled();
+    } catch(err){ estimatedSize.textContent="Preview unavailable"; setProcessing(false); showNotification(err.message||"Preview processing failed."); }
+  },120);
+}
+
+downloadBtn.addEventListener("click",async e=>{
+  e.preventDefault(); if(!originalImage)return;
+  downloadBtn.textContent="Processing..."; downloadBtn.style.pointerEvents="none"; setProcessing(true,"Processing image...",45,"Preparing download");
+  try{
+    const settings=getProcessingSettings();
+    const blob=await renderProcessedBlob(transformedSource,transformedW,transformedH,settings,{alreadyTransformed:true});
+    const url=URL.createObjectURL(blob), a=document.createElement("a");
+    a.href=url; a.download=`image-${settings.width}x${settings.height}.${getOutputExtension()}`;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+    setProcessing(true,"Download ready",100,formatBytes(blob.size)); setTimeout(()=>setProcessing(false),900); showNotification("Image downloaded successfully.","success");
+  } catch(err){ showNotification(err.message||"Image download failed."); }
+  finally { downloadBtn.style.pointerEvents="auto"; downloadBtn.textContent=`Download ${getOutputName()}`; updatePreview(); }
+});
+
+batchBtn.addEventListener("click",async()=>{
+  if(!batchFiles.length) return;
+  const settings=getProcessingSettings();
+  batchBtn.style.pointerEvents="none";
+  const zip=new JSZip(), failures=[]; const batchResultsData=[]; let completed=0; batchResults.classList.remove("active"); setProcessing(true,`Processing 0 of ${batchFiles.length}`,0,"Starting batch...");
+  const applyCropToBatch=document.getElementById("applyBatchCrop")?.checked && cropRelative;
+  if(croppedCanvasSource && !applyCropToBatch) showNotification("Batch uses shared resize, transform and enhancement settings. Enable “Apply current crop to all” to use the relative crop region.");
+  try{
+    for(let i=0;i<batchFiles.length;i++){
+      const file=batchFiles[i]; batchBtn.textContent=`Processing ${i+1} of ${batchFiles.length}...`; setProcessing(true,`Processing ${i+1} of ${batchFiles.length}`,Math.round((i/batchFiles.length)*90),file.name);
+      try{
+        const decoded=await decodeFileToImage(file);
+        let srcImg=decoded.img, srcW=decoded.w, srcH=decoded.h;
+        if(applyCropToBatch && cropRelative){
+          const sx=Math.round(cropRelative.x*srcW), sy=Math.round(cropRelative.y*srcH);
+          const sw=Math.max(1,Math.round(cropRelative.w*srcW)), sh=Math.max(1,Math.round(cropRelative.h*srcH));
+          const cc=document.createElement("canvas"); cc.width=sw; cc.height=sh;
+          cc.getContext("2d").drawImage(srcImg,sx,sy,sw,sh,0,0,sw,sh);
+          srcImg=cc; srcW=sw; srcH=sh;
+        }
+        const blob=await renderProcessedBlob(srcImg,srcW,srcH,settings);
+        const cleanName=file.name.substring(0,file.name.lastIndexOf('.'))||file.name;
+        zip.file(`${cleanName}_resized.${getOutputExtension()}`,blob); completed++; batchResultsData.push({name:file.name,ok:true,detail:formatBytes(blob.size)});
+      } catch(err){ const message=err.message||"processing failed"; failures.push(`${file.name}: ${message}`); batchResultsData.push({name:file.name,ok:false,error:message}); }
+    }
+    if(!completed) throw new Error("No images could be processed. Please check the selected files.");
+    batchBtn.textContent="Creating ZIP..."; setProcessing(true,"Creating ZIP...",95,`${completed} image${completed===1?"":"s"} ready`);
+    const zipBlob=await zip.generateAsync({type:"blob"});
+    const url=URL.createObjectURL(zipBlob), a=document.createElement("a");
+    a.href=url; a.download="ResizeFlow_Batch_Images.zip"; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const message=failures.length ? `Batch complete: ${completed} succeeded, ${failures.length} failed. ${failures.slice(0,3).join(" | ")}` : `Batch processing complete: ${completed} image${completed===1?"":"s"}.`;
+    batchList.textContent=message; showBatchResults(batchResultsData); setProcessing(true,"Batch complete",100,message); setTimeout(()=>setProcessing(false),1600); showNotification(message,failures.length?"error":"success");
+  } catch(err){ showNotification(err.message||"Batch processing failed."); }
+  finally { batchBtn.textContent="Process & Download All as ZIP"; batchBtn.style.pointerEvents="auto"; }
+});
+
+
+const legalModal=document.getElementById("legalModal"), legalContent=document.getElementById("legalContent"), legalClose=document.getElementById("legalClose");
+const legalText={
+privacy:`<h2 id="legalTitle">Privacy</h2><p><strong>ResizeFlow.cc processes image edits locally in your browser.</strong> Images are not intentionally uploaded to a ResizeFlow server for resizing, cropping, conversion, compression, or enhancement. <strong>We do not have access to your images.</strong></p><h3>What stays local</h3><ul><li>Image editing and processing are performed in your browser memory.</li><li>Converted output is generated locally and downloaded by your browser.</li><li>Image metadata may be removed during canvas-based export.</li></ul><h3>Analytics and advertising</h3><p>Optional Google Analytics and Google AdSense help measure usage and keep the free tool available. These load only after you Accept cookies in the consent banner. Until then, Consent Mode keeps ad_storage, analytics_storage, ad_user_data, and ad_personalization denied.</p><p>When enabled, Google and its partners may use cookies or similar technologies subject to applicable law and your choices. Clear site data for resizeflow.cc to see the banner again.</p><h3>Third-party resources</h3><p>The app may load libraries from CDNs (Cropper.js, JSZip, HEIC/AVIF tools). Those providers may receive ordinary connection data such as IP address. Your image files are not sent to ResizeFlow servers for processing.</p><h3>Your choices</h3><p>Use Accept or Reject on the consent banner. Reject keeps analytics and ads off. Essential site functionality does not require advertising cookies.</p><h3>Changes</h3><p>This notice may be updated as features evolve. Continued use after an update applies the updated notice to future visits.</p>`,
+terms:`<h2 id="legalTitle">Terms of Use</h2><p>ResizeFlow.cc is provided as a free browser-based image utility. You are responsible for ensuring that you have the rights and permissions needed to edit and process the images you use.</p><h3>Service availability</h3><p>The service is provided without a guarantee of uninterrupted availability, compatibility, or suitability for every image, browser, or device.</p><h3>Your responsibility</h3><ul><li>Keep backup copies of important original files.</li><li>Review exported images before publishing or using them in critical workflows.</li><li>Do not use the service for unlawful purposes or to violate the rights of others.</li></ul><h3>Changes</h3><p>Features and these terms may be updated as the service evolves.</p>`
+};
+function openLegal(kind){legalContent.innerHTML=legalText[kind];legalModal.classList.add("active");legalModal.setAttribute("aria-hidden","false");legalClose.focus();}
+function closeLegal(){legalModal.classList.remove("active");legalModal.setAttribute("aria-hidden","true");}
+document.querySelectorAll("[data-legal]").forEach(b=>b.addEventListener("click",()=>openLegal(b.dataset.legal)));
+legalClose?.addEventListener("click",closeLegal);legalModal?.addEventListener("click",e=>{if(e.target===legalModal)closeLegal();});
+window.addEventListener("keydown",e=>{if(e.key==="Escape"&&legalModal?.classList.contains("active"))closeLegal();});
+window.addEventListener("error",e=>{if(e.error) { console.error(e.error); if(originalImage) showNotification("Something unexpected happened. Your image is still loaded—please try the action again.","error"); }});
+window.addEventListener("unhandledrejection",e=>{console.error(e.reason); if(originalImage) showNotification("Processing could not be completed. Please try again or use a smaller image.","error");});
+
+
+// --- ResizeFlow: Shorts/Reels/TikTok safe zone helper (Option 1) ---
+(function(){
+  const safeZoneInfo = {
+    shorts: { name: 'Shorts/Reels/TikTok', top: 150, bottom: 200, tip: 'Works for YouTube Shorts, IG Reels & TikTok. Keep text centered, avoid bottom 200px. Auto-cropped, no black bars.' },
+    reels: { name: 'Instagram Reels', top: 180, bottom: 220, tip: 'Reels UI covers bottom. Keep text above lower 220px.' },
+    tiktok: { name: 'TikTok', top: 150, bottom: 250, tip: 'TikTok UI covers right side + bottom. Keep text centered.' },
+    'shorts-4k': { name: '4K Vertical', top: 300, bottom: 300, tip: '4K 2160x3840 for highest quality Shorts/Reels/TikTok' },
+    profile: { name: 'Profile Photo', top: 0, bottom: 0, tip: '400×400 avatar - center your face, auto-cropped for best quality.' },
+    square: { name: 'Instagram Square', top: 0, bottom: 0, tip: '1080×1080 square - auto-cropped to fill.' }
+  };
+  document.querySelectorAll('.preset[data-preset]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const preset = btn.dataset.preset;
+      const info = safeZoneInfo[preset];
+      if(info && typeof showNotification === 'function'){
+        showNotification(`✓ ${info.name} 1080×1920 set. ${info.tip}`, 'success');
+      }
+    });
+  });
+})();
+
+/* ---- Consent Mode v2 + deferred Analytics / GTM / AdSense ---- */
+(function(){
+  const CONSENT_KEY='resizeflow-consent-v1';
+  const banner=document.getElementById('consentBanner');
+  const acceptBtn=document.getElementById('consentAccept');
+  const rejectBtn=document.getElementById('consentReject');
+  let tagsLoaded=false;
+  function loadScript(src, attrs){
+    return new Promise((resolve,reject)=>{
+      const s=document.createElement('script');
+      s.src=src; s.async=true;
+      if(attrs) Object.entries(attrs).forEach(([k,v])=>s.setAttribute(k,v));
+      s.onload=()=>resolve(); s.onerror=()=>reject(new Error('Failed to load '+src));
+      document.head.appendChild(s);
+    });
+  }
+  async function loadMarketingTags(){
+    if(tagsLoaded) return;
+    tagsLoaded=true;
+    try{
+      await loadScript('https://www.googletagmanager.com/gtag/js?id=G-RRVGX5R085');
+      gtag('js', new Date());
+      gtag('config', 'G-RRVGX5R085');
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N3RC4QVX');
+      await loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4747106371991816',{crossorigin:'anonymous'});
+      document.querySelectorAll('ins.adsbygoogle').forEach(()=>{
+        try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}
+      });
+    }catch(e){console.warn('Marketing tags failed to load',e);}
+  }
+  function grantConsent(){
+    gtag('consent','update',{ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted'});
+    try{localStorage.setItem(CONSENT_KEY,'granted');}catch(e){}
+    if(banner) banner.classList.remove('active');
+    loadMarketingTags();
+  }
+  function denyConsent(){
+    gtag('consent','update',{ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', analytics_storage:'denied'});
+    try{localStorage.setItem(CONSENT_KEY,'denied');}catch(e){}
+    if(banner) banner.classList.remove('active');
+  }
+  acceptBtn?.addEventListener('click',grantConsent);
+  rejectBtn?.addEventListener('click',denyConsent);
+  let stored=null;
+  try{stored=localStorage.getItem(CONSENT_KEY);}catch(e){}
+  if(stored==='granted'){ grantConsent(); }
+  else if(stored==='denied'){ denyConsent(); }
+  else if(banner){ banner.classList.add('active'); }
+
+  document.getElementById('cookieSettingsBtn')?.addEventListener('click', () => {
+    try { localStorage.removeItem(CONSENT_KEY); } catch (e) {}
+    if (banner) banner.classList.add('active');
+    showNotification('Cookie settings reset. Choose Accept or Reject.', 'success');
+  });
+})();
+
+</script>
+</body>
+</html>
