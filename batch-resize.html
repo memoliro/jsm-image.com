@@ -12,7 +12,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Batch Resize Images Online Free — ZIP Export | ResizeFlow</title>
+<title>Batch Resize Images Online Free — ZIP Export | JSM-Image.com</title>
 <meta name="description" content="Batch resize and convert multiple images in your browser. Apply the same settings to many files and download one ZIP. Private, free, no upload server.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://JSM-Image.com/batch-resize.html">
@@ -21,11 +21,11 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://JSM-Image.com/batch-resize.html">
-<meta property="og:title" content="Batch Resize Images Online Free — ZIP Export | ResizeFlow">
+<meta property="og:title" content="Batch Resize Images Online Free — ZIP Export | JSM-Image.com">
 <meta property="og:description" content="Batch resize and convert multiple images in your browser. Apply the same settings to many files and download one ZIP. Private, free, no upload server.">
 <meta property="og:image" content="https://JSM-Image.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Batch Resize Images Online Free — ZIP Export | ResizeFlow">
+<meta name="twitter:title" content="Batch Resize Images Online Free — ZIP Export | JSM-Image.com">
 <meta name="twitter:description" content="Batch resize and convert multiple images in your browser. Apply the same settings to many files and download one ZIP. Private, free, no upload server.">
 <meta name="twitter:image" content="https://JSM-Image.com/og-image.jpg">
 <link rel="stylesheet" href="styles.css">
@@ -56,7 +56,11 @@ body.dark-mode .content-page a{color:#93c5fd}
 <body>
 <header>
   <div class="header-main">
-    <div class="logo"><a href="/">Resize<span>Flow.cc</span></a></div>
+    <div class="logo"> 
+   <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+    <img src="/assets/favicon.svg" alt="logo" width="40" height="40" style="border-radius:10px">
+    <span style="font-weight:800;font-size:20px;color:var(--text)">JSM-Image.com</span>
+  </a></div>
     <div class="header-title" style="font-size:1rem">Free Online Image Tools</div>
     <div class="header-actions">
       <nav>
@@ -111,13 +115,13 @@ body.dark-mode .content-page a{color:#93c5fd}
 (function(){
   const t=document.getElementById('themeToggle');
   let saved=null;
-  try{saved=localStorage.getItem('resizeflow-theme');}catch(e){}
+  try{saved=localStorage.getItem('JSM-Image.com-theme');}catch(e){}
   if(!saved) saved=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
   function setTheme(theme){
     const dark=theme!=='light';
     document.body.classList.toggle('dark-mode',dark);
     if(t) t.textContent=dark?'☀ Light':'🌙 Dark';
-    try{localStorage.setItem('resizeflow-theme',dark?'dark':'light');}catch(e){}
+    try{localStorage.setItem('JSM-Image.com-theme',dark?'dark':'light');}catch(e){}
   }
   setTheme(saved);
   t&&t.addEventListener('click',()=>setTheme(document.body.classList.contains('dark-mode')?'light':'dark'));
