@@ -46,7 +46,7 @@ input,select{width:100%;padding:13px;border:1px solid #dbe1ea;border-radius:9px;
 .info{margin-top:20px;padding:14px;background:#f8fafc;border-radius:10px;color:#475569;font-size:13px;line-height:1.6}.actions{margin-top:25px;display:flex;flex-direction:column;gap:10px}.download-btn{display:none;background:#16a34a;text-decoration:none;text-align:center;padding:13px 25px;border-radius:10px;color:#fff;font-weight:bold;cursor:pointer;border:0;width:100%;font-size:15px}.download-btn:hover{background:#15803d}
 .batch-btn{display:none;background:#7c3aed;color:#fff;text-align:center;padding:13px 25px;border-radius:10px;font-weight:bold;cursor:pointer;border:0;width:100%;font-size:15px}.batch-btn:hover{background:#6d28d9}
 
-.features{max-width:1000px;margin:60px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+.features{max-width:1000px;margin:36px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
 .feature a{color:#2563eb;text-decoration:none;font-weight:700}
 .feature a:hover{text-decoration:underline}.feature{background:#fff;padding:28px;border-radius:16px;text-align:center;box-shadow:0 5px 25px rgba(0,0,0,.04)}.feature .emoji{font-size:35px;margin-bottom:15px}.feature h3{margin-bottom:10px}.feature p{color:#64748b;font-size:14px;line-height:1.6}
 /* footer base replaced */
@@ -90,10 +90,11 @@ input[type=range]:disabled{opacity:.4;cursor:not-allowed;accent-color:#94a3b8}
 
 /* --- Optimized Ad Placeholders --- */
 .ad-slot{display:block;width:100%;margin:20px auto;text-align:center;overflow:hidden;background:transparent}
+.ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none}
 .ad-slot span.ad-size{font-size:11px;letter-spacing:.03em;text-transform:none;color:#b0b9c6;font-weight:normal}
-.ad-leaderboard{min-height:90px;height:90px;max-width:970px}
-.ad-rectangle{min-height:250px;height:250px;max-width:336px}
-.ad-banner{min-height:90px;height:90px;max-width:970px}
+.ad-leaderboard{max-width:970px}
+.ad-rectangle{max-width:336px}
+.ad-banner{max-width:970px}
 .ad-vertical{height:100%;min-height:360px;max-height:500px;width:100%;margin:0}
 
 
@@ -117,7 +118,12 @@ body.dark-mode{
   --upload-hover:#1e3a5f;
 }
 header{display:block;padding:0;background:var(--header);border-color:var(--border)}
-.header-main{min-height:70px;padding:14px 8%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+.header-main{min-height:64px;padding:12px 8%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px}
+
+/* ===== Hero: compact title block above the tool (moved out of header) ===== */
+.hero{text-align:center;padding:30px 20px 4px;max-width:780px;margin:0 auto}
+.hero h1{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin:0 0 10px;color:var(--text)}
+.hero p{color:var(--muted);font-size:15px;line-height:1.6;margin:0}
 .logo{color:#3b82f6}.logo span{color:var(--text)}
 .header-title{font-size:clamp(18px,2vw,28px);font-weight:800;text-align:center;white-space:nowrap}
 .header-actions{display:flex;justify-content:flex-end;align-items:center;gap:18px}nav{gap:18px}nav a{color:var(--muted)}
@@ -270,7 +276,7 @@ body.dark-mode .header-actions nav a.nav-details{color:#93c5fd;background:rgba(5
   display:block;
   width:100%;
   max-width:720px;
-  margin:48px auto 28px;
+  margin:32px auto 24px;
   padding:0 20px;
   box-sizing:border-box;
   text-align:center;
