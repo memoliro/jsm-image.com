@@ -210,12 +210,13 @@ body.dark-mode .details-btn:hover{background:#2563eb}
 
 /* Mobile nav: show & wrap to ~3 lines instead of hiding */
 .header-actions nav{
-  display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:flex-end;
-  max-width:min(420px,70vw);
+  display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;justify-content:flex-end;
+  max-width:min(560px,70vw);
 }
-.header-actions nav a{font-size:13px;line-height:1.25;white-space:nowrap}
-.header-actions nav a.nav-details{font-weight:700;color:#2563eb}
-body.dark-mode .header-actions nav a.nav-details{color:#60a5fa}
+.header-actions nav a{font-size:13px;font-weight:bold;line-height:1.25;white-space:nowrap;text-decoration:none;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:9px;padding:9px 11px}
+.header-actions nav a:hover{border-color:#2563eb;color:#60a5fa}
+.header-actions nav a.nav-details{font-weight:700;color:#2563eb;border-color:#2563eb}
+body.dark-mode .header-actions nav a.nav-details{color:#60a5fa;border-color:#60a5fa}
 
 @media(max-width:900px){
   .header-actions nav{
@@ -226,7 +227,7 @@ body.dark-mode .header-actions nav a.nav-details{color:#60a5fa}
     gap:6px 10px;
     margin-top:4px;
   }
-  .header-actions nav a{font-size:12px;padding:4px 2px}
+  .header-actions nav a{font-size:12px;padding:7px 10px}
   .header-main{align-items:start}
 }
 @media(max-width:800px){
