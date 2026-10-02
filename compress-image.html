@@ -38,6 +38,8 @@
 .content-page h3{font-size:1.05rem;margin:20px 0 8px;color:var(--text)}
 .content-page p,.content-page li{color:var(--muted);line-height:1.65;font-size:15px}
 .content-page ul{padding-left:1.2rem;margin:0 0 16px}
+.content-page ol{padding-left:1.2rem;margin:0 0 16px}
+.content-page ol li{margin-bottom:10px}
 .content-page li{margin-bottom:6px}
 .content-page a{color:#2563eb}
 body.dark-mode .content-page a{color:#93c5fd}
@@ -82,22 +84,42 @@ body.dark-mode .content-page a{color:#93c5fd}
   <h1>Compress Images Online — Free &amp; Private</h1>
   <p class="lead">Shrink photo and graphic file sizes before you upload to a site, send email, or post on social media. JSM-Image.com compresses locally so originals never leave your device.</p>
   <div class="cta-box"><a class="btn" href="/#editor">Compress an image now</a></div>
-  <h2>How compression works here</h2>
-  <ul>
-    <li>Upload one or many images</li>
-    <li>Open the <strong>Compression</strong> tab</li>
-    <li>Lower the quality slider for JPG, WebP, or AVIF</li>
-    <li>Check the estimated output size, then download</li>
-  </ul>
+  <h2>How to compress an image in four steps</h2>
+  <ol>
+    <li><strong>Add your images.</strong> Drag files onto the tool or use the file picker — a single photo or a whole folder. Files are read directly by your browser; nothing is uploaded to a server, so personal photos, client work, and large camera exports never leave your device.</li>
+    <li><strong>Open the Compression tab.</strong> The tool detects each image's format and shows its current size next to it, so you can see exactly what you are starting from before changing anything.</li>
+    <li><strong>Move the quality slider.</strong> This is the main control. For JPG, values around 80–85 typically shrink a photo to roughly a third of its original size with no visible difference on screen. Lower values save more space but gradually introduce blocky artifacts, especially in smooth gradients like skies.</li>
+    <li><strong>Check the live size estimate, then download.</strong> The tool shows the estimated output size before you commit. If it is still too big, lower the quality a notch or resize the dimensions first — fewer pixels often saves more space than the quality slider alone. Download individually or grab everything as a ZIP in batch mode.</li>
+  </ol>
+  <h2>Lossy vs. lossless: what the slider actually changes</h2>
+  <p>Most photo formats use <strong>lossy</strong> compression: the encoder deliberately throws away visual detail the human eye barely notices — subtle color variations, fine noise, high-frequency texture. The quality slider controls how aggressive that process is. At 90+ the changes are mathematically real but visually invisible; at 60 and below you start seeing banding in gradients and halos around sharp edges.</p>
+  <p><strong>Lossless</strong> formats like PNG keep every pixel exactly. That is why the quality slider does not apply to PNG here — there is no quality to trade away, only the encoding efficiency. PNG is the right choice for screenshots, logos, and graphics with flat colors or text, where even tiny artifacts look bad. For photos, lossy formats win on size by a wide margin.</p>
   <h2>Which format should you use?</h2>
   <ul>
-    <li><strong>JPG</strong> — universal for photos</li>
-    <li><strong>WebP</strong> — usually smaller than JPG for the web</li>
-    <li><strong>AVIF</strong> — often smallest; encoding is slower (local WASM)</li>
-    <li><strong>PNG</strong> — lossless; quality slider does not apply</li>
+    <li><strong>JPG</strong> — the universal choice for photos. Opens everywhere, and quality 80–85 is the sweet spot for web uploads, email attachments, and social media.</li>
+    <li><strong>WebP</strong> — usually 25–35% smaller than JPG at the same visual quality. Supported by all modern browsers; the best default for website images today.</li>
+    <li><strong>AVIF</strong> — often the smallest of all, sometimes half the size of JPG. Encoding runs locally via WASM, so it is slower — worth it for hero images and portfolios, overkill for quick shares.</li>
+    <li><strong>PNG</strong> — lossless. Use it for screenshots, interface captures, and graphics with text or sharp lines. Do not expect the quality slider to change its size.</li>
   </ul>
-  <h2>Tips</h2>
-  <p>Resize dimensions first if the image is larger than you need — fewer pixels often saves more space than quality alone. For bulk jobs, use batch mode and download a ZIP.</p>
+  <h2>How small can your files realistically get?</h2>
+  <p>It depends on the image content. A detailed 12&nbsp;MP phone photo (around 4–6&nbsp;MB) usually compresses to 800&nbsp;KB–1.5&nbsp;MB at JPG 82 with no visible loss. A simple graphic with large flat areas can shrink 80–90%. Noisy low-light photos compress the worst, because noise looks like detail to the encoder — a light denoise before compressing helps more than dropping quality.</p>
+  <p>Two levers multiply: <strong>dimensions first, quality second.</strong> A 4000&nbsp;px photo displayed at 1200&nbsp;px is carrying more than ten times the pixels it needs. Resizing to the display size before compressing routinely beats even aggressive quality settings, and the result looks better.</p>
+  <h2>Mistakes that ruin image quality</h2>
+  <ul>
+    <li><strong>Compressing a JPG twice.</strong> Every lossy save discards more detail. Always compress from the highest-quality original you have, not from an already-compressed copy.</li>
+    <li><strong>Using JPG for text and logos.</strong> The artifacts cluster around sharp edges — exactly where text lives. Use PNG for anything with words or line art.</li>
+    <li><strong>Chasing the smallest number.</strong> Below quality 60 most photos look visibly degraded on modern screens. The last 10% of size savings usually costs more in visible quality than it is worth.</li>
+    <li><strong>Forgetting the dimensions.</strong> Uploading a 6000&nbsp;px image to a site that displays it at 800&nbsp;px wastes bandwidth and slows the page for zero visual gain.</li>
+  </ul>
+  <h2>Frequently asked questions</h2>
+  <h3>Is my image uploaded to a server?</h3>
+  <p>No. Compression runs entirely in your browser using local code. Your files never leave your device, which also means there is no queue, no waiting for uploads, and no privacy policy to worry about for the files themselves.</p>
+  <h3>Will compressing reduce the visible quality?</h3>
+  <p>At sensible settings (JPG 80–90, WebP 80–85), no — the difference is invisible in normal viewing. Quality loss only becomes noticeable when you push the slider very low or recompress an already-compressed file.</p>
+  <h3>Why is PNG compression so limited here?</h3>
+  <p>PNG is lossless by design: it must reproduce every pixel exactly, so the only savings come from better encoding. If a PNG is too big, the real fix is usually switching a photographic PNG to JPG or WebP, or reducing dimensions.</p>
+  <h3>Can I compress many images at once?</h3>
+  <p>Yes — add a batch, pick one quality setting, and download everything as a single ZIP. Useful for prepping a whole gallery or a set of product photos with consistent settings.</p>
   
 <div class="related">
   <a href="/">Open Image Tool<span>Resize, crop, convert in browser</span></a>
