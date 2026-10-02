@@ -93,7 +93,7 @@ const CDN = {
   upscale:"https://cdn.jsdelivr.net/npm/upscaler@1.0.0/dist/browser/umd/upscaler.min.js",
   model:  "https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-slim@1.0.0/dist/umd/models/esrgan-slim/src/x2/index.min.js"
 };
-const AI_MAX_INPUT = 1024; // cap longest side fed to the model (speed guard)
+const AI_MAX_INPUT = 512; // cap longest side fed to the model (speed + GPU-memory guard)
 
 const $ = id => document.getElementById(id);
 const state = { img:null, name:"image", mode:"crop", crop:{x:0,y:0,w:0,h:0}, dispScale:1 };
@@ -234,12 +234,25 @@ $("go").onclick=async ()=>{
     if(!upscaler) upscaler=new Upscaler({ model: ESRGANSlim2x });
     setStatus("AI upscaling on your device — this can take 30–90s on CPU…");
     const t0=performance.now();
-    let result;
+    const runUpscale=async (u)=>{
+      try{
+        return await u.upscale(input,{ output:"base64",
+          progress:p=>{ if(typeof p==="number") setBar(0.25+p*0.6); } });
+      }catch(e){ return await u.upscale(input); } // retry without options
+    };
+    let result, secs;
     try{
-      result=await upscaler.upscale(input,{ output:"base64",
-        progress:p=>{ if(typeof p==="number") setBar(0.25+p*0.6); } });
-    }catch(e){ result=await upscaler.upscale(input); } // retry without options
-    const secs=Math.round((performance.now()-t0)/1000);
+      result=await runUpscale(upscaler);
+    }catch(e1){
+      // GPU/WebGL limits (e.g. max texture size on weak GPUs): fall back to CPU
+      console.warn("WebGL upscale failed, retrying on CPU:", e1);
+      setStatus("WebGL hit this device's GPU limit — retrying on CPU (slower, but works everywhere)…");
+      setBar(0.25);
+      await tf.setBackend("cpu"); await tf.ready();
+      upscaler=new Upscaler({ model: ESRGANSlim2x });
+      result=await runUpscale(upscaler);
+    }
+    secs=Math.round((performance.now()-t0)/1000);
     setBar(0.9); setStatus(`Upscaled in ${secs}s. Rendering final output…`);
 
     const upImg=await imgFromResult(result);
