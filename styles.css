@@ -89,8 +89,8 @@ input[type=range]:disabled{opacity:.4;cursor:not-allowed;accent-color:#94a3b8}
 .faq-item p{margin-top:12px;color:#64748b;font-size:14px;line-height:1.65}
 
 /* --- Optimized Ad Placeholders --- */
-.ad-slot{display:block;width:100%;margin:20px auto;text-align:center;overflow:hidden;background:transparent}
-.ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none}
+.ad-slot{display:none;width:100%;margin:20px auto;text-align:center;overflow:hidden;background:transparent}
+.ad-slot.ad-filled{display:block}
 .ad-slot span.ad-size{font-size:11px;letter-spacing:.03em;text-transform:none;color:#b0b9c6;font-weight:normal}
 .ad-leaderboard{max-width:970px}
 .ad-rectangle{max-width:336px}
@@ -319,12 +319,16 @@ body.dark-mode .header-actions nav a.nav-details{color:#93c5fd;background:rgba(5
 .faq{
   display:block;
   width:100%;
-  max-width:720px;
+  max-width:1000px;
   margin:0 auto 32px;
   padding:0 20px;
   box-sizing:border-box;
   float:none;
   clear:both;
+}
+/* FAQ: two columns on desktop instead of a single tall tower */
+@media(min-width:861px){
+  .faq-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 }
 .faq .section-title{
   text-align:center;

@@ -24,6 +24,19 @@
 <script>
 (function(){
   function loadAds(){try{document.querySelectorAll('.adsbygoogle').forEach(function(el){if(!el.getAttribute('data-adsbygoogle-status')){(adsbygoogle=window.adsbygoogle||[]).push({})}})}catch(e){}}
+  /* Reveal an ad slot only when a real ad fills it (no 1-second gap-then-collapse jump). */
+  function watchAdSlots(){try{document.querySelectorAll('.ad-slot').forEach(function(slot){
+    var ins=slot.querySelector('ins.adsbygoogle');
+    if(!ins||slot.classList.contains('ad-filled'))return;
+    function filled(){return !!ins.querySelector('iframe');}
+    if(filled()){slot.classList.add('ad-filled');return;}
+    var obs=new MutationObserver(function(){
+      if(ins.getAttribute('data-ad-status')==='unfilled'){obs.disconnect();return;}
+      if(filled()){slot.classList.add('ad-filled');obs.disconnect();}
+    });
+    obs.observe(ins,{childList:true,attributes:true,attributeFilter:['data-ad-status']});
+  });}catch(e){}}
+  watchAdSlots();
   var banner=document.getElementById('consentBanner');
   var btn=document.getElementById('consentAccept');
   if(localStorage.getItem('consent_accepted')==='1'){
