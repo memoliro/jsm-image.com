@@ -461,3 +461,15 @@ body.dark-mode .fit-option:has(input:checked) .fit-option-content span {
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22) !important;
 }
 
+
+/* ===== Contact form (same pattern as jsm-options.com/contact/) ===== */
+.contact-form{margin:18px 0 8px;display:flex;flex-direction:column;gap:8px;max-width:640px}
+.contact-form label{font-size:14px;font-weight:700;color:var(--text);margin-top:6px}
+.contact-form select,.contact-form textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font:inherit;box-sizing:border-box}
+.contact-form textarea{min-height:150px;resize:vertical;line-height:1.5}
+.contact-form .hp-field{position:absolute;left:-9999px;height:0;width:0;opacity:0}
+.contact-send{align-self:flex-start;margin-top:8px}
+.contact-status{min-height:1.2em;font-size:13px;color:var(--muted);margin:6px 0 0}
+.contact-fineprint{font-size:12px;color:var(--muted);line-height:1.5;margin:8px 0 0}
+.contact-fineprint a{color:#2563eb}
+.char-meta{font-size:12px;color:var(--muted);margin-top:2px}

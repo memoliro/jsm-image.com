@@ -29,7 +29,7 @@
 <meta name="twitter:title" content="Contact | JSM-Image.com">
 <meta name="twitter:description" content="Contact JSM-Image.com - get help, report bugs, or request features">
 <meta name="twitter:image" content="https://JSM-Image.com/og-image.jpg">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261002c">
 <style>
 .content-page{max-width:800px;margin:0 auto;padding:28px 20px 60px}
 .content-page h1{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.25;margin:0 0 12px;color:var(--text)}
@@ -70,11 +70,30 @@ body.dark-mode .content-page a{color:#93c5fd}
 <main class="content-page">
 
 <h1>Contact Us</h1>
-<p class="lead">Have a question, bug report, or feature request? We typically reply within 48 hours.</p>
-<h2>Email</h2>
-<p>Primary contact: <strong>contact@JSM-Image.com</strong><br>
-Privacy inquiries: <strong>privacy@JSM-Image.com</strong></p>
-<p>You can also reach us via our GitHub or social links if you prefer.</p>
+<p class="lead">Have a question, bug report, or feature request? Send a message below — we typically reply within 48 hours.</p>
+<form id="contactForm" class="contact-form" method="POST" action="#">
+  <label for="topic">Topic</label>
+  <select id="topic" name="topic">
+    <option value="">Select a topic (optional)</option>
+    <option value="Site or tool question">Site or tool question</option>
+    <option value="Bug report">Bug report</option>
+    <option value="Feature request">Feature request</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="7" required minlength="10" maxlength="5000" placeholder="Write your message here… If it’s about a specific tool, mention which one (e.g. batch resize, HEIC to JPG)."></textarea>
+  <div class="char-meta"><span id="charCount">0</span> / 5000 · Minimum 10 characters</div>
+
+  <input type="text" name="_gotcha" id="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-field">
+  <input type="hidden" name="_subject" value="JSM-Image contact form">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit" class="btn contact-send" id="contactSubmit">Send Message</button>
+  <p id="contactStatus" class="contact-status" role="status" aria-live="polite"></p>
+  <p class="contact-fineprint">No personal information is asked or stored. Your message is anonymous. Please don’t include passwords or sensitive data. If you want a reply, you can optionally include a contact method inside your message. See <a href="/privacy.html">Privacy</a>.</p>
+</form>
 <h2>What to include</h2>
 <ul>
 <li>Your browser and OS version</li>
@@ -119,6 +138,36 @@ Privacy inquiries: <strong>privacy@JSM-Image.com</strong></p>
   }
   setTheme(saved);
   t&&t.addEventListener('click',()=>setTheme(document.body.classList.contains('dark-mode')?'light':'dark'));
+})();
+</script>
+<script>
+(function(){
+  var form=document.getElementById('contactForm');
+  if(!form)return;
+  var status=document.getElementById('contactStatus');
+  var btn=document.getElementById('contactSubmit');
+  var ta=document.getElementById('message');
+  var count=document.getElementById('charCount');
+  function updateCount(){if(count&&ta)count.textContent=String(ta.value.length);}
+  if(ta)ta.addEventListener('input',updateCount);
+  updateCount();
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var honey=document.getElementById('gotcha');
+    if(honey&&honey.value)return;
+    var msg=((document.getElementById('message')||{}).value||'');
+    if(msg.trim().length<10){if(status)status.textContent='Please write at least 10 characters.';return;}
+    var parts=['contact','@','jsm-image','.com'];
+    var endpoint='https://formsubmit.co/ajax/'+parts.join('');
+    if(btn){btn.disabled=true;btn.textContent='Sending…';}
+    if(status)status.textContent='';
+    var data=new FormData(form);
+    fetch(endpoint,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json().catch(function(){return {};});})
+      .then(function(){form.reset();updateCount();if(status)status.textContent='Message sent. Thank you.';})
+      .catch(function(){if(status)status.textContent='Could not send right now. Try again later.';})
+      .finally(function(){if(btn){btn.disabled=false;btn.textContent='Send Message';}});
+  });
 })();
 </script>
 </body>

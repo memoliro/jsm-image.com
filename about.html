@@ -14,22 +14,22 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | JSM-Image.com</title>
-<meta name="description" content="About JSM-Image.com - free private browser-based image resizer and converter">
+<title>About — Free Online Image Tools That Run in Your Browser</title>
+<meta name="description" content="Free online image tools for resizing, converting, compressing, cropping images and handling PDFs. Everything runs in your browser — no uploads, no account, no watermarks.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://JSM-Image.com/about.html">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.svg"><meta property="og:type" content="website">
 <meta property="og:url" content="https://JSM-Image.com/about.html">
-<meta property="og:title" content="About Us | JSM-Image.com">
+<meta property="og:title" content="About — Free Online Image Tools That Run in Your Browser">
 <meta property="og:description" content="About JSM-Image.com - free private browser-based image resizer and converter">
 <meta property="og:image" content="https://JSM-Image.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About Us | JSM-Image.com">
 <meta name="twitter:description" content="About JSM-Image.com - free private browser-based image resizer and converter">
 <meta name="twitter:image" content="https://JSM-Image.com/og-image.jpg">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261002c">
 <style>
 .content-page{max-width:800px;margin:0 auto;padding:28px 20px 60px}
 .content-page h1{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.25;margin:0 0 12px;color:var(--text)}
@@ -73,10 +73,16 @@ body.dark-mode .content-page a{color:#93c5fd}
 </header>
 <main class="content-page">
 
-<h1>About JSM-Image.com</h1>
+<h1>About Our Free Online Image Tools</h1>
 <p class="lead"><strong>JSM-Image.com is a free, private, browser-based image toolkit.</strong> It resizes, converts, compresses, crops and handles PDFs without uploading your files to a server.</p>
+<h2>What it is and who it is for</h2>
+<p>JSM-Image.com is a set of free online image tools for everyday jobs: shrinking a photo before emailing it, converting HEIC pictures from an iPhone into JPGs anyone can open, preparing product images at exact dimensions, turning a stack of scans into one PDF. There is nothing to install and no account to create — you open the page, drop in your files, and download the results.</p>
+<p>It is built for bloggers sizing images for posts, sellers preparing marketplace photos, students and office workers converting files between formats, and anyone who needs a quick, honest edit without handing personal photos to a stranger's server.</p>
 <h2>Why we built it</h2>
 <p>Most online image tools upload your photos to a cloud server. We wanted the opposite: everything runs locally in your browser using HTML5 Canvas, Web Workers and WebAssembly. Your images never leave your device. That makes it faster, more private, and usable even offline after first load.</p>
+<h2>How the tools work</h2>
+<p>When you add a file, your browser reads it from your disk straight into memory — no upload, no queue, no waiting room. Resizing, cropping, and format conversion run on HTML5 Canvas; heavy work is pushed to Web Workers so the page stays responsive while a batch processes; AVIF encoding and HEIC decoding run through WebAssembly modules loaded with the page.</p>
+<p>The result is written back to your device as a download. Because there is no round trip to a server, a batch of fifty photos that would take minutes on an upload-based tool typically finishes in seconds here, and it works the same on a laptop or a phone.</p>
 <h2>Who is behind it</h2>
 <p>JSM-Image.com is maintained by an independent developer based in Montreal, Canada. It started as a personal need to batch-resize photos for the web without losing quality and without trusting third-party servers with private images.</p>
 <h2>What makes it different</h2>
@@ -87,6 +93,37 @@ body.dark-mode .content-page a{color:#93c5fd}
 <li>Privacy-focused: no account, no watermark</li>
 <li>Free forever, supported by optional ads after consent</li>
 </ul>
+<h2>The tools</h2>
+<ul>
+<li><a href="/">Image resizer &amp; converter</a> — the main tool: resize, crop, rotate, flip, convert, and compress single images or whole batches, with ZIP export.</li>
+<li><a href="/compress-image.html">Compress image</a> — shrink JPG, WebP, and AVIF file sizes with a quality slider and live size estimate.</li>
+<li><a href="/convert-to-webp.html">Convert to WebP</a> — modern, smaller web images from JPG, PNG, and other formats.</li>
+<li><a href="/batch-resize.html">Batch resize</a> — resize many images at once with one set of settings.</li>
+<li><a href="/heic-to-jpg.html">HEIC to JPG</a> — convert iPhone photos locally so anyone can open them.</li>
+<li><a href="/pdf-tools.html">PDF tools</a> — turn images into a PDF, convert PDF pages to JPG/PNG/WebP, or merge PDFs.</li>
+<li><a href="/how-to-resize-convert-crop-images.html">Full guide</a> — step-by-step tutorial on resizing, converting, and cropping.</li>
+</ul>
+<h2>Why it is free</h2>
+<p>There are no accounts, no subscriptions, and no feature paywalls. The site is supported by ads that load only after you accept cookies — decline, and you still get the full tools. Running costs stay minimal because there are no image-processing servers to pay for: your device does the work. Free here means free, not a trial.</p>
+<h2>Privacy stance</h2>
+<p>No uploads means there is nothing to leak, store, or hand over: your images simply never reach us. No account means no personal data is collected to use the tools. Analytics and advertising scripts load only after cookie consent, and the banner choice is respected. If you want the full details, the privacy page explains what little is collected and why.</p>
+<h2>Limitations, honestly stated</h2>
+<ul>
+<li><strong>Browser-dependent features.</strong> HEIC conversion and some advanced options depend on your browser's capabilities and available memory — very old browsers may struggle.</li>
+<li><strong>AVIF is slower.</strong> Its encoder runs in WebAssembly locally, so it takes longer than JPG or WebP. Worth it for final images, not for quick drafts.</li>
+<li><strong>Animated GIFs export as a single frame.</strong> Animation is not preserved through conversion.</li>
+<li><strong>Very large files are limited by device RAM.</strong> A phone can run out of memory on huge panoramas; a desktop handles them better.</li>
+<li><strong>Not a photo editor.</strong> There are no filters, layers, retouching, or AI tools — the focus is deliberately narrow: resize, convert, compress, crop, and PDF handling done well.</li>
+</ul>
+<h2>Frequently asked questions</h2>
+<h3>Is it really free, with no catch?</h3>
+<p>Yes. Every tool is fully usable without paying, registering, or accepting cookies. Optional ads after consent are the only revenue, and there are no watermarks or export limits.</p>
+<h3>Do I need to create an account?</h3>
+<p>No. There are no accounts at all — open the page and start working. Nothing to sign up for also means nothing to cancel.</p>
+<h3>Are my images uploaded to a server?</h3>
+<p>No. All processing happens locally in your browser; files go from your disk into browser memory and back out as downloads. This is also why the tools work offline after the first load.</p>
+<h3>Does it work on phones and tablets?</h3>
+<p>Yes. The tools run in any modern mobile browser. For very large batches or huge files a desktop is more comfortable, but everyday resizing and converting works fine on a phone.</p>
 <h2>Our commitment</h2>
 <p>We keep the tool simple, fast, and honest. No dark patterns, no forced uploads, no hidden fees. If you have feedback, please reach out via our contact page.</p>
 
