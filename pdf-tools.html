@@ -88,6 +88,54 @@ body.dark-mode .content-page a{color:#93c5fd}
 .pdf-field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 #i2pInput,#p2iInput,#mrgInput{display:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is converting JPG to PDF really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — all three tools (images to PDF, PDF to images, merge PDFs) are free with no account and no per-file limits. Processing happens on your device, so there is no server cost to pass on to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my PDFs uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The PDF libraries run locally in your browser; your files are read from your disk, processed in memory, and the result is downloaded straight back to you. Nothing is transmitted anywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What page size should I choose for scanned documents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A4 for most of the world, Letter for US documents. Choose Original (fit to image) when the content is photos or screenshots rather than documents — it avoids white borders and keeps the original aspect ratio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do my exported JPG pages look blurry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The render scale was probably too low. Re-render at 2x or 3x: 1x (72 dpi) is only meant for screen thumbnails, while 2x–3x gives you sharp, printable pages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I merge password-protected PDFs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly — encrypted PDFs must be unlocked with their password first. Once unlocked and saved without protection, they merge like any other file."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>

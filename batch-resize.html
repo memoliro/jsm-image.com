@@ -54,6 +54,54 @@ body.dark-mode .content-page a{color:#93c5fd}
 @media(max-width:600px){.mini-header-sub{padding:0 16px 12px}}
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many images can I resize at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no fixed cap — the practical limit is your device's memory. Most desktops handle 30–50 photos per batch comfortably; very large batches are better split into smaller groups."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my images uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The entire batch is processed locally in your browser. Files never leave your device, which is also why there is no upload wait and no queue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the resized files keep their original names?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Output files keep the original file names, with only the extension updated if you change format — so they stay matched to your catalog, SKUs, or gallery order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I resize and convert the format in the same batch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Set the output format once — for example WebP — and every resized image is converted as it is processed. One run, one ZIP, done."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my browser slow down during a large batch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each image is decoded into memory while it is processed, and hundreds of large photos add up. Split the batch into smaller groups and close other heavy tabs; the tool continues fine with the next group."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>

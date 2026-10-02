@@ -55,6 +55,46 @@ body.dark-mode .content-page a{color:#93c5fd}
 @media(max-width:600px){.mini-header-sub{padding:0 16px 12px}}
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Compression runs entirely in your browser using local code. Your files never leave your device, which also means there is no queue, no waiting for uploads, and no privacy policy to worry about for the files themselves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will compressing reduce the visible quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At sensible settings (JPG 80–90, WebP 80–85), no — the difference is invisible in normal viewing. Quality loss only becomes noticeable when you push the slider very low or recompress an already-compressed file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is PNG compression so limited here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PNG is lossless by design: it must reproduce every pixel exactly, so the only savings come from better encoding. If a PNG is too big, the real fix is usually switching a photographic PNG to JPG or WebP, or reducing dimensions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compress many images at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — add a batch, pick one quality setting, and download everything as a single ZIP. Useful for prepping a whole gallery or a set of product photos with consistent settings."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>
