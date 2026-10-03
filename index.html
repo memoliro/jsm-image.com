@@ -318,6 +318,7 @@ body.dark-mode .crop-live-info {
   <button type="button" class="eyedropper-btn" id="eyedropperBtn">Pick Color</button>
 </div></div></label>
 <label class="fit-option transparent-option" id="transparentOption"><input type="radio" name="fitMode" value="transparent"><div class="fit-option-content"><strong>Transparent</strong><span>Keep image visible with transparent background (PNG, WebP, AVIF, SVG).</span></div></label>
+<label class="fit-option"><input type="radio" name="fitMode" value="blur"><div class="fit-option-content"><strong>Blurred Background</strong><span>Keep the entire image visible and fill empty space with a blurred copy — like Instagram &amp; YouTube. Nothing gets cropped.</span></div></label>
 <label class="fit-option"><input type="radio" name="fitMode" value="crop"><div class="fit-option-content"><strong>Crop</strong><span>Fill area while preserving proportions. Excess image will be cropped.</span></div></label>
 </div>
 
@@ -1568,10 +1569,22 @@ function drawSourceToCanvas(canvas, source, srcW, srcH, settings){
     const activeScale=mode==="crop"?cropScale:scale;
     const drawW=srcW*activeScale, drawH=srcH*activeScale;
     const x=(canvas.width-drawW)/2, y=(canvas.height-drawH)/2;
-    if(mode==="background"||mode==="transparent"){
+    if(mode==="background"||mode==="transparent"||mode==="blur"){
       if(mode==="background"){
         ctx.save(); ctx.filter="none"; ctx.fillStyle=settings.backgroundColor;
         ctx.fillRect(0,0,canvas.width,canvas.height); ctx.restore();
+        ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+      } else if(mode==="blur"){
+        // Blurred cover backdrop (Instagram/YouTube style): whole image stays
+        // visible, no stretch of the subject, no solid fill color.
+        const coverScale=Math.max(canvas.width/srcW,canvas.height/srcH);
+        const bw=srcW*coverScale, bh=srcH*coverScale;
+        const bx=(canvas.width-bw)/2, by=(canvas.height-bh)/2;
+        const blurPx=Math.max(8,Math.round(Math.min(canvas.width,canvas.height)/28));
+        ctx.save();
+        ctx.filter=`blur(${blurPx}px) brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
+        ctx.drawImage(source,bx,by,bw,bh);
+        ctx.restore();
         ctx.filter=`brightness(${100+settings.brightness}%) contrast(${100+settings.contrast}%)`;
       }
     }
