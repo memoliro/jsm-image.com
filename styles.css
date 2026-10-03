@@ -501,3 +501,11 @@ body.dark-mode .fit-option:has(input:checked) .fit-option-content span {
 .ba-tag-left{left:12px}
 .ba-tag-right{right:12px}
 .ba-tag b{font-weight:700}
+
+/* --- Support the site --- */
+.support-section{max-width:760px;margin:40px auto;padding:0 20px;text-align:center}
+.support-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 24px;box-shadow:var(--shadow)}
+.support-card h2{font-size:22px;margin-bottom:10px}
+.support-card p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:18px}
+.bmc-btn{display:inline-flex;align-items:center;gap:8px;background:#FFDD00;color:#000!important;font-weight:700;font-size:15px;padding:12px 24px;border-radius:999px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.bmc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.15)}

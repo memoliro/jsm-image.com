@@ -109,7 +109,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" integrity="sha384-oMy41mb/qJnpJlpXOF57hSu2KGi47l/UV9+tPNrBOs7/ap5Vubj/3phrCtjutHMQ" crossorigin="anonymous" referrerpolicy="no-referrer">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<link rel="stylesheet" href="styles.css?v=20261002d">
+<link rel="stylesheet" href="styles.css?v=20261003a">
 
 <script type="application/ld+json">
 {
@@ -546,6 +546,15 @@ body.dark-mode .crop-live-info {
 <div class="compatibility-note"><strong>Browser compatibility:</strong> JSM-Image.com works best in current Chrome, Edge, Firefox, and Safari. HEIC/HEIF conversion and some features may depend on browser support and memory. Animated GIFs export as a single frame. AVIF export loads a WASM encoder on first use. New to image editing? <a href="https://JSM-Image.com/how-to-resize-convert-crop-images.html">See our how to resize, convert & crop guide</a>.</div>
 </section>
 
+
+<section class="support-section" aria-label="Support the site">
+  <div class="support-card">
+    <h2>Support the site</h2>
+    <p>JSM-Image.com stays free. If it helps, you can buy a coffee.</p>
+    <a class="bmc-btn" href="https://www.buymeacoffee.com/memoliro" target="_blank" rel="noopener">&#9749; Buy me a coffee</a>
+  </div>
+</section>
+
 <!-- Bottom AdSense Unit -->
 <div class="ad-slot ad-banner ad-container" aria-label="Advertisement">
   <!-- Replace 9737645367 with the AdSense ad unit slot ID before publishing. -->
@@ -793,7 +802,7 @@ function setTheme(theme){
 let savedTheme=null;
 try{savedTheme=localStorage.getItem("JSM-Image.com-theme");}catch(e){}
 if(!savedTheme){
-  savedTheme=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+  savedTheme="light";
 }
 setTheme(savedTheme);
 themeToggle.addEventListener("click",()=>setTheme(document.body.classList.contains("dark-mode")?"light":"dark"));

@@ -34,7 +34,7 @@
 <meta name="twitter:title" content="Convert to WebP Online Free — JPG to WebP & PNG to WebP | JSM-Image.com">
 <meta name="twitter:description" content="Convert to WebP free in your browser. Change JPG to WebP or PNG to WebP with a quality slider — smaller files, transparency support, no uploads, no account.">
 <meta name="twitter:image" content="https://JSM-Image.com/og-image.jpg">
-<link rel="stylesheet" href="styles.css?v=20261002d">
+<link rel="stylesheet" href="styles.css?v=20261003a">
 <style>
 .content-page{max-width:800px;margin:0 auto;padding:28px 20px 60px}
 .content-page h1{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.25;margin:0 0 12px;color:var(--text)}
@@ -222,7 +222,7 @@ body.dark-mode .content-page a{color:#93c5fd}
   const t=document.getElementById('themeToggle');
   let saved=null;
   try{saved=localStorage.getItem('JSM-Image.com-theme');}catch(e){}
-  if(!saved) saved=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  if(!saved) saved='light';
   function setTheme(theme){
     const dark=theme!=='light';
     document.body.classList.toggle('dark-mode',dark);
