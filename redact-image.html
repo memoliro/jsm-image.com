@@ -543,6 +543,9 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
 
   /* ---------- buttons ---------- */
   undoBtn.addEventListener('click',()=>{ regions.pop(); syncChips(); render(); });
+  document.addEventListener('keydown',e=>{
+    if((e.ctrlKey||e.metaKey)&&!e.shiftKey&&e.key.toLowerCase()==='z'){ e.preventDefault(); undoBtn.click(); }
+  });
   clearBtn.addEventListener('click',()=>{ regions=[]; syncChips(); render(); });
   if(master) master.addEventListener('input',()=>{
     masterVal.textContent=master.value+'px';
