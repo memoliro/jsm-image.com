@@ -69,6 +69,12 @@ body.dark-mode .content-page a{color:#93c5fd}
 .fileline b{color:var(--text)}
 #thumb{max-width:220px;border-radius:10px;border:1px solid var(--border);margin-top:12px;display:block}
 .result-line{font-size:14px;color:var(--text);margin-top:12px;font-weight:600}
+.btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--border-strong)}
+.btn-secondary:hover{border-color:#2563eb}
+#detailsWrap{margin-top:14px}
+#detailsBox{display:none;margin-top:8px}
+.detail-group td{font-weight:700;background:rgba(37,99,235,.06);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.coord-dec{color:var(--muted);font-size:13px}
 </style>
 <script type="application/ld+json">
 {
@@ -105,6 +111,14 @@ body.dark-mode .content-page a{color:#93c5fd}
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "No. The file is read and processed entirely in your browser. Given that the whole point is removing location data, uploading it anywhere would defeat the purpose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see exactly what metadata is in my photo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After uploading, the 'Show metadata details' section lists every field: camera model, timestamps, exposure settings, and GPS coordinates. Coordinates are shown as plain text only and are never sent to a map service."
       }
     }
   ]
@@ -156,6 +170,10 @@ body.dark-mode .content-page a{color:#93c5fd}
       <img id="thumb" alt="Uploaded photo preview">
       <div id="gpsBox"></div>
       <table class="meta-table"><thead><tr><th>Metadata found</th><th>Details</th></tr></thead><tbody id="metaBody"></tbody></table>
+      <div id="detailsWrap" hidden>
+        <button class="btn btn-secondary" id="detailsBtn" type="button">🔍 Show metadata details</button>
+        <div id="detailsBox"></div>
+      </div>
       <div class="tool-row">
         <button class="btn btn-primary" id="stripBtn" type="button">🧹 Remove metadata &amp; download</button>
       </div>
@@ -193,6 +211,8 @@ body.dark-mode .content-page a{color:#93c5fd}
   <p>No. For JPEGs only the metadata segments are removed; every pixel stays byte-identical.</p>
   <h3>Is my photo uploaded to a server?</h3>
   <p>No. Everything runs in your browser — uploading a photo to remove its location data would defeat the purpose.</p>
+  <h3>Can I see exactly what metadata is in my photo?</h3>
+  <p>Yes. After uploading, click "Show metadata details" to inspect every field: camera model, timestamps, exposure settings, and GPS coordinates. Coordinates are shown as plain text only — they are never sent to a map service.</p>
 
 <div class="related">
   <a href="/redact-image.html">Redact Image<span>Black out sensitive areas</span></a>
@@ -231,13 +251,19 @@ body.dark-mode .content-page a{color:#93c5fd}
     <a href="https://lyricprep.com/" target="_blank" rel="noopener">LyricPrep</a>
   </div>
 </footer>
+<!-- exif-js 2.3.0 (MIT License, https://github.com/exif-js/exif-js) vendored locally
+     for the "Show metadata details" section. Helpers: /assets/exif-details.js -->
+<script src="/assets/exif.min.js?v=20261005a"></script>
+<script src="/assets/exif-details.js?v=20261005a"></script>
 <script>
 (function(){
   const drop=document.getElementById('drop'), file=document.getElementById('file'),
         report=document.getElementById('report'), fileline=document.getElementById('fileline'),
         thumb=document.getElementById('thumb'), metaBody=document.getElementById('metaBody'),
         gpsBox=document.getElementById('gpsBox'), stripBtn=document.getElementById('stripBtn'),
-        resultLine=document.getElementById('resultLine');
+        resultLine=document.getElementById('resultLine'),
+        detailsWrap=document.getElementById('detailsWrap'), detailsBtn=document.getElementById('detailsBtn'),
+        detailsBox=document.getElementById('detailsBox');
   let fileBuf=null, fileName='', fileType='', stripInfo=null;
 
   drop.addEventListener('click',()=>file.click());
@@ -275,6 +301,8 @@ body.dark-mode .content-page a{color:#93c5fd}
   }
   function analyze(){
     metaBody.innerHTML=''; gpsBox.innerHTML=''; resultLine.hidden=true;
+    detailsWrap.hidden=true; detailsBox.style.display='none';
+    detailsBtn.textContent='🔍 Show metadata details';
     fileline.innerHTML=`<b>${escapeHtml(fileName)}</b> — ${(fileBuf.byteLength/1024).toFixed(1)} KB, ${escapeHtml(fileType||'unknown type')}`;
     stripInfo=null;
     if(fileType==='image/jpeg'){
@@ -319,6 +347,8 @@ body.dark-mode .content-page a{color:#93c5fd}
         : `<div class="gps-ok">No GPS coordinates found in this file.${stripInfo&&stripInfo.hasMeta?' Other metadata is listed above.':''}</div>`;
       stripBtn.disabled=!(stripInfo&&stripInfo.hasMeta);
       stripBtn.textContent = stripInfo&&stripInfo.hasMeta ? '🧹 Remove metadata & download' : '✓ Already clean — nothing to strip';
+      // Detailed per-tag view is only meaningful when EXIF was actually found.
+      detailsWrap.hidden = !(exifBytes>0 && window.EXIF && window.ExifDetails);
     }else{
       metaBody.innerHTML='<tr><td colspan="2">Detailed metadata inspection is available for JPEG. PNG/WebP rarely carry EXIF — re-saving the file below strips everything anyway.</td></tr>';
       gpsBox.innerHTML='';
@@ -359,6 +389,27 @@ body.dark-mode .content-page a{color:#93c5fd}
     resultLine.hidden=false;
     resultLine.textContent=`Removed ${(stripInfo.removed/1024).toFixed(1)} KB of metadata. Pixels untouched — byte-identical image data.`;
     downloadBlob(new Blob([clean],{type:'image/jpeg'}), 'noexif');
+  };
+  detailsBtn.onclick=()=>{
+    if(!fileBuf) return;
+    if(detailsBox.style.display==='block'){
+      detailsBox.style.display='none';
+      detailsBtn.textContent='🔍 Show metadata details';
+      return;
+    }
+    let html;
+    try{
+      const tags=window.EXIF.readFromBinaryFile(fileBuf);
+      const r=window.ExifDetails.renderDetails(tags);
+      html = r.count
+        ? `<table class="meta-table"><tbody>${r.html}</tbody></table><p class="fileline">${r.count} metadata fields, shown for inspection — removing them does not alter the image.</p>`
+        : '<p class="fileline">No readable metadata values found in this file.</p>';
+    }catch(e){
+      html='<p class="fileline">Could not parse the detailed metadata.</p>';
+    }
+    detailsBox.innerHTML=html;
+    detailsBox.style.display='block';
+    detailsBtn.textContent='🔍 Hide metadata details';
   };
   function downloadBlob(blob, suffix){
     const base=(fileName.replace(/\.[^.]+$/,'')||'photo');
