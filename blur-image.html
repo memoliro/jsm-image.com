@@ -62,10 +62,18 @@ body.dark-mode .content-page a{color:#93c5fd}
 .btn-primary:hover{background:#1d4ed8}
 .btn-ghost{background:var(--bg);color:var(--text);border:1px solid var(--border)}
 .btn:disabled{opacity:.45;cursor:default}
-#regionList{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.region-chip{font-size:12px;font-weight:700;background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:6px 8px 6px 12px;color:var(--text)}
-.region-chip button{border:0;background:transparent;color:var(--muted);cursor:pointer;font-weight:800;margin-left:6px}
+#regionList{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.region-chip{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:8px 10px;color:var(--text);flex-wrap:wrap}
+.region-chip .chip-slider{flex:1;min-width:120px;accent-color:#2563eb}
+.region-chip .chip-val{min-width:44px;text-align:right}
+.region-chip button{border:0;background:transparent;color:var(--muted);cursor:pointer;font-weight:800}
+
+
 .hint{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5}
+.shape-row{display:flex;gap:8px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.shape-label{font-size:14px;font-weight:600;color:var(--muted)}
+.shape-btn.active{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+.shape-btn:disabled{opacity:.45;cursor:default}
 select{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:14px}
 .slider-row{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:14px;font-weight:600;color:var(--text)}
 .slider-row input[type=range]{flex:1;max-width:280px;accent-color:#2563eb}
@@ -127,6 +135,10 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         <a href="/batch-resize.html">Batch</a>
         <a href="/heic-to-jpg.html">HEIC</a>
         <a href="/pdf-tools.html">PDF</a>
+        <a href="/redact-image.html">Redact</a>
+        <a href="/blur-image.html" class="nav-details">Blur</a>
+        <a href="/pixelate-image.html">Pixelate</a>
+        <a href="/remove-exif.html">EXIF</a>
         <a href="/how-to-resize-convert-crop-images.html">Guide</a>
       </nav>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color theme">☀ Light</button>
@@ -142,16 +154,25 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     <div class="drop" id="drop">📷 Drop an image here, or click to choose one<input type="file" id="file" accept="image/*"></div>
     <div id="stage">
       <canvas id="cv"></canvas>
-      <p class="hint">Drag on the image to mark areas to blur. Tune the strength until text is unreadable.</p>
+      <p class="hint" id="hint">Drag on the image to mark areas to blur. Tune the strength until text is unreadable.</p>
+      <div class="shape-row" role="group" aria-label="Selection shape">
+        <span class="shape-label">Shape:</span>
+        <button type="button" class="btn btn-ghost shape-btn active" data-shape="rect">▢ Box</button>
+        <button type="button" class="btn btn-ghost shape-btn" data-shape="circle">◯ Circle</button>
+        <button type="button" class="btn btn-ghost shape-btn" data-shape="free">✎ Free</button>
+      </div>
+      <div class="slider-row"><label for="master">Blur strength — all areas</label><input type="range" id="master" min="2" max="30" value="12"><span id="masterVal">12px</span></div>
       <div class="slider-row"><label for="strength">Blur strength</label><input type="range" id="strength" min="2" max="30" value="12"><span id="strengthVal">12px</span></div>
       <div id="regionList"></div>
       <div class="tool-row">
-        <button class="btn btn-ghost" id="undoBtn" type="button">↩ Undo last box</button>
+        <button class="btn btn-ghost" id="undoBtn" type="button">↩ Undo</button>
         <button class="btn btn-ghost" id="clearBtn" type="button">Clear all</button>
+        <button class="btn btn-ghost" id="doneBtn" type="button">✓ Done</button>
         <select id="fmt" aria-label="Output format">
           <option value="image/png">PNG</option>
           <option value="image/jpeg">JPG</option>
         </select>
+        <button class="btn btn-ghost" id="replaceBtn" type="button">🔄 Replace image</button>
         <button class="btn btn-primary" id="dlBtn" type="button" disabled>⬇ Download blurred image</button>
       </div>
     </div>
@@ -223,109 +244,291 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
 </footer>
 <script>
 (function(){
-  const drop=document.getElementById('drop'), file=document.getElementById('file'),
-        stage=document.getElementById('stage'), cv=document.getElementById('cv'),
-        ctx=cv.getContext('2d'), regionList=document.getElementById('regionList'),
-        undoBtn=document.getElementById('undoBtn'), clearBtn=document.getElementById('clearBtn'),
-        dlBtn=document.getElementById('dlBtn'), fmt=document.getElementById('fmt'),
-        strength=document.getElementById('strength'), strengthVal=document.getElementById('strengthVal');
-  let img=null, regions=[], drawing=null, baseName='blurred';
+  const TOOL={mode:'blur',hasValue:true,min:2,max:30,def:12,unit:'Blur strength',suffix:'blurred'};
+  const $=id=>document.getElementById(id);
+  const drop=$('drop'), file=$('file'), stage=$('stage'), cv=$('cv'), ctx=cv.getContext('2d');
+  const regionList=$('regionList'), undoBtn=$('undoBtn'), clearBtn=$('clearBtn'),
+        dlBtn=$('dlBtn'), fmt=$('fmt'), replaceBtn=$('replaceBtn'), doneBtn=$('doneBtn'), hint=$('hint');
+  const master=TOOL.hasValue?$('master'):null, masterVal=TOOL.hasValue?$('masterVal'):null;
+  let img=null, regions=[], drawState=null, shape='rect', previewMode=false, baseName='image', seq=0;
 
+  const HINTS={
+    rect:'Drag on the image to draw a box. Drag an existing shape to move it.',
+    circle:'Drag on the image to draw a circle. Drag an existing shape to move it.',
+    free:'Draw freely on the image to outline an area. Drag an existing shape to move it.'
+  };
+
+  /* ---------- file loading ---------- */
   drop.addEventListener('click',()=>file.click());
-  file.addEventListener('change',()=>{ if(file.files[0]) loadFile(file.files[0]); });
+  file.addEventListener('change',()=>{ if(file.files[0]) loadFile(file.files[0]); file.value=''; });
   ['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();}));
   drop.addEventListener('drop',e=>{e.preventDefault(); const f=e.dataTransfer.files[0]; if(f) loadFile(f);});
   document.addEventListener('paste',e=>{const f=[...(e.clipboardData?.files||[])][0]; if(f&&f.type.startsWith('image/')) loadFile(f);});
-  strength.addEventListener('input',()=>{strengthVal.textContent=strength.value+'px'; render();});
+  replaceBtn.addEventListener('click',()=>file.click());
 
   function loadFile(f){
     if(!f.type.startsWith('image/')){alert('Please choose an image file.');return;}
-    baseName=(f.name.replace(/\.[^.]+$/,'')||'blurred');
+    baseName=(f.name.replace(/\.[^.]+$/,'')||'image');
     const url=URL.createObjectURL(f), im=new Image();
-    im.onload=()=>{URL.revokeObjectURL(url); img=im; regions=[]; render(); stage.style.display='block'; dlBtn.disabled=false;
-      stage.scrollIntoView({behavior:'smooth',block:'center'});};
+    im.onload=()=>{
+      URL.revokeObjectURL(url); img=im; regions=[]; seq=0; previewMode=false;
+      doneBtn.textContent='✓ Done'; setPreviewUI(false);
+      syncChips(); render(); stage.style.display='block';
+      stage.scrollIntoView({behavior:'smooth',block:'center'});
+    };
     im.onerror=()=>alert('Could not read that image.');
     im.src=url;
   }
+
+  /* ---------- shape mode ---------- */
+  document.querySelectorAll('.shape-btn').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.shape-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); shape=b.dataset.shape; hint.textContent=HINTS[shape];
+  }));
+
+  /* ---------- geometry ---------- */
+  function bbox(r){
+    if(r.kind==='circle') return {x:r.cx-r.rx, y:r.cy-r.ry, w:r.rx*2, h:r.ry*2};
+    if(r.kind==='poly'){
+      const xs=r.pts.map(p=>p.x), ys=r.pts.map(p=>p.y);
+      const x0=Math.min.apply(null,xs), y0=Math.min.apply(null,ys);
+      return {x:x0, y:y0, w:Math.max.apply(null,xs)-x0, h:Math.max.apply(null,ys)-y0};
+    }
+    return {x:r.x, y:r.y, w:r.w, h:r.h};
+  }
+  function tracePath(c,r){
+    c.beginPath();
+    if(r.kind==='circle') c.ellipse(r.cx,r.cy,Math.max(0.5,r.rx),Math.max(0.5,r.ry),0,0,Math.PI*2);
+    else if(r.kind==='poly'){ c.moveTo(r.pts[0].x,r.pts[0].y); for(let i=1;i<r.pts.length;i++) c.lineTo(r.pts[i].x,r.pts[i].y); c.closePath(); }
+    else c.rect(r.x,r.y,r.w,r.h);
+  }
+  function hit(r,x,y){
+    if(r.kind==='circle'){ const dx=(x-r.cx)/r.rx, dy=(y-r.cy)/r.ry; return dx*dx+dy*dy<=1; }
+    if(r.kind==='poly'){
+      let inside=false; const p=r.pts;
+      for(let i=0,j=p.length-1;i<p.length;j=i++){
+        if(((p[i].y>y)!==(p[j].y>y))&&(x<(p[j].x-p[i].x)*(y-p[i].y)/(p[j].y-p[i].y)+p[i].x)) inside=!inside;
+      }
+      return inside;
+    }
+    return x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h;
+  }
+  function moveRegion(r,dx,dy){
+    if(r.kind==='circle'){ r.cx+=dx; r.cy+=dy; }
+    else if(r.kind==='poly'){ r.pts.forEach(p=>{p.x+=dx;p.y+=dy;}); }
+    else { r.x+=dx; r.y+=dy; }
+  }
+
+  /* ---------- effects ---------- */
+  function blurInto(tc,srcCanvas,sx,sy,w,h,v){
+    if('filter' in tc){
+      try{ tc.filter='blur('+v+'px)'; tc.drawImage(srcCanvas,sx,sy,w,h,0,0,w,h); tc.filter='none'; return; }catch(e){}
+    }
+    const f=Math.max(2,Math.round(v/2));
+    const tw=Math.max(1,Math.round(w/f)), th=Math.max(1,Math.round(h/f));
+    const t2=document.createElement('canvas'); t2.width=tw; t2.height=th;
+    t2.getContext('2d').drawImage(srcCanvas,sx,sy,w,h,0,0,tw,th);
+    tc.imageSmoothingEnabled=true;
+    tc.drawImage(t2,0,0,tw,th,0,0,w,h);
+  }
+  function paintRegions(x,imgW,imgH,k){
+    regions.forEach(r=>{
+      const v=TOOL.hasValue?Math.max(0.5,r.value*k):0;
+      if(TOOL.mode==='redact'){
+        x.save(); x.setTransform(k,0,0,k,0,0);
+        x.fillStyle='#000'; tracePath(x,r); x.fill(); x.restore();
+        return;
+      }
+      const b=bbox(r);
+      const pad=TOOL.mode==='blur'?Math.ceil(v*2.5)+2:0;
+      const sx=Math.max(0,Math.floor(b.x*k-pad)), sy=Math.max(0,Math.floor(b.y*k-pad));
+      const ex=Math.min(Math.round(imgW*k),Math.ceil(b.x*k+b.w*k+pad));
+      const ey=Math.min(Math.round(imgH*k),Math.ceil(b.y*k+b.h*k+pad));
+      const w=ex-sx, h=ey-sy;
+      if(w<2||h<2) return;
+      const t=document.createElement('canvas'); t.width=w; t.height=h;
+      const tc=t.getContext('2d');
+      if(TOOL.mode==='blur') blurInto(tc,x.canvas,sx,sy,w,h,v);
+      else{
+        const bs=Math.max(2,v);
+        const tw=Math.max(1,Math.round(w/bs)), th=Math.max(1,Math.round(h/bs));
+        const t2=document.createElement('canvas'); t2.width=tw; t2.height=th;
+        t2.getContext('2d').drawImage(x.canvas,sx,sy,w,h,0,0,tw,th);
+        tc.imageSmoothingEnabled=false;
+        tc.drawImage(t2,0,0,tw,th,0,0,w,h);
+      }
+      tc.globalCompositeOperation='destination-in';
+      tc.setTransform(k,0,0,k,-sx,-sy);
+      tracePath(tc,r); tc.fill();
+      tc.setTransform(1,0,0,1,0,0);
+      tc.globalCompositeOperation='source-over';
+      x.save(); x.setTransform(1,0,0,1,0,0);
+      x.drawImage(t,sx,sy);
+      x.restore();
+    });
+  }
+
+  /* ---------- render ---------- */
   function render(){
     if(!img) return;
     const maxW=860, s=Math.min(1,maxW/img.naturalWidth);
     cv.width=Math.round(img.naturalWidth*s); cv.height=Math.round(img.naturalHeight*s);
+    ctx.setTransform(1,0,0,1,0,0);
     ctx.drawImage(img,0,0,cv.width,cv.height);
-    const k=cv.width/img.naturalWidth, r=Number(strength.value);
-    regions.forEach((rg,i)=>{
-      const x=rg.x*k, y=rg.y*k, w=rg.w*k, h=rg.h*k;
-      // blur the region: draw it through a canvas filter
-      ctx.save();
-      ctx.filter=`blur(${Math.max(1,r*k)}px)`;
-      ctx.drawImage(cv, x, y, w, h, x, y, w, h);
+    paintRegions(ctx,img.naturalWidth,img.naturalHeight,s);
+    if(!previewMode){
+      ctx.save(); ctx.setTransform(s,0,0,s,0,0);
+      regions.forEach((r,i)=>{
+        ctx.strokeStyle='rgba(255,255,255,.95)'; ctx.lineWidth=2/s; ctx.setLineDash([7/s,5/s]);
+        tracePath(ctx,r); ctx.stroke(); ctx.setLineDash([]);
+        const b=bbox(r);
+        ctx.fillStyle='#fff'; ctx.font='700 '+(14/s)+'px sans-serif';
+        ctx.fillText(String(i+1), b.x+8/s, b.y+20/s);
+      });
+      if(drawState) drawInProgress(ctx,s);
       ctx.restore();
-      ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.setLineDash([6,4]);
-      ctx.strokeRect(x,y,w,h); ctx.setLineDash([]);
-      ctx.fillStyle='#fff'; ctx.font='bold 13px sans-serif';
-      ctx.fillText(String(i+1), x+6, y+18);
-    });
-    if(drawing){
-      const rr=normRect(drawing);
-      ctx.strokeStyle='#2563eb'; ctx.lineWidth=2;
-      ctx.strokeRect(rr.x*k,rr.y*k,rr.w*k,rr.h*k);
     }
-    drawChips();
+    updateCounts();
   }
-  function normRect(d){
-    return { x:Math.min(d.x0,d.x1), y:Math.min(d.y0,d.y1),
-             w:Math.abs(d.x1-d.x0), h:Math.abs(d.y1-d.y0) };
+  function drawInProgress(c,s){
+    const d=drawState;
+    c.strokeStyle='#2563eb'; c.lineWidth=2/s; c.setLineDash([6/s,4/s]);
+    c.beginPath();
+    if(d.mode==='free'&&d.pts.length>1){
+      c.moveTo(d.pts[0].x,d.pts[0].y);
+      for(let i=1;i<d.pts.length;i++) c.lineTo(d.pts[i].x,d.pts[i].y);
+      c.stroke();
+    }else if(d.mode==='rect'||d.mode==='circle'){
+      const x=Math.min(d.x0,d.x1), y=Math.min(d.y0,d.y1),
+            w=Math.abs(d.x1-d.x0), h=Math.abs(d.y1-d.y0);
+      if(d.mode==='rect') c.rect(x,y,w,h);
+      else c.ellipse(x+w/2,y+h/2,Math.max(0.5,w/2),Math.max(0.5,h/2),0,0,Math.PI*2);
+      c.stroke();
+    }
+    c.setLineDash([]);
   }
-  function pos(e){
-    const r=cv.getBoundingClientRect(), k=img.naturalWidth/r.width;
-    return { x:(e.clientX-r.left)*k, y:(e.clientY-r.top)*k };
+  function updateCounts(){
+    const n=regions.length;
+    dlBtn.disabled=!img||!n;
+    undoBtn.disabled=!n; clearBtn.disabled=!n;
   }
-  cv.addEventListener('pointerdown',e=>{ if(!img)return; cv.setPointerCapture(e.pointerId); const p=pos(e); drawing={x0:p.x,y0:p.y,x1:p.x,y1:p.y}; });
-  cv.addEventListener('pointermove',e=>{ if(!drawing)return; const p=pos(e); drawing.x1=p.x; drawing.y1=p.y; render(); });
-  cv.addEventListener('pointerup',()=>{ if(!drawing)return; const r=normRect(drawing); drawing=null;
-    if(r.w>6&&r.h>6){ regions.push(r); } render(); });
-  function drawChips(){
+
+  /* ---------- region chips (with per-area sliders) ---------- */
+  function syncChips(){
     regionList.innerHTML='';
     regions.forEach((r,i)=>{
-      const s=document.createElement('span'); s.className='region-chip';
-      s.textContent=`Area ${i+1} (${Math.round(r.w)}×${Math.round(r.h)})`;
-      const x=document.createElement('button'); x.type='button'; x.textContent='✕'; x.setAttribute('aria-label','Remove area '+(i+1));
-      x.onclick=()=>{regions.splice(i,1);render();};
-      s.appendChild(x); regionList.appendChild(s);
+      const b=bbox(r);
+      const chip=document.createElement('div'); chip.className='region-chip';
+      const label=document.createElement('span');
+      const kindName=r.kind==='rect'?'Box':r.kind==='circle'?'Circle':'Free';
+      label.textContent=(i+1)+' · '+kindName+' · '+Math.round(b.w)+'×'+Math.round(b.h);
+      chip.appendChild(label);
+      if(TOOL.hasValue){
+        const sl=document.createElement('input');
+        sl.type='range'; sl.min=TOOL.min; sl.max=TOOL.max; sl.value=r.value; sl.className='chip-slider';
+        sl.setAttribute('aria-label',TOOL.unit+' for area '+(i+1));
+        const vv=document.createElement('span'); vv.className='chip-val'; vv.textContent=r.value+'px';
+        sl.addEventListener('input',()=>{ r.value=Number(sl.value); vv.textContent=sl.value+'px'; render(); });
+        chip.appendChild(sl); chip.appendChild(vv);
+      }
+      const x=document.createElement('button'); x.type='button'; x.textContent='✕';
+      x.setAttribute('aria-label','Remove area '+(i+1));
+      x.addEventListener('click',()=>{ regions.splice(i,1); syncChips(); render(); });
+      chip.appendChild(x);
+      regionList.appendChild(chip);
     });
   }
-  undoBtn.onclick=()=>{regions.pop();render();};
-  clearBtn.onclick=()=>{regions=[];render();};
 
-  function applyBlur(x, regions, radius){
-    // full-resolution blur: draw each region through a filter on a temp canvas
-    // (self-drawImage with filter blurs in place)
-    regions.forEach(rg=>{
-      x.save();
-      try{ x.filter=`blur(${radius}px)`; }catch(e){}
-      x.drawImage(x.canvas, rg.x, rg.y, rg.w, rg.h, rg.x, rg.y, rg.w, rg.h);
-      x.restore();
-    });
-    x.filter='none';
+  /* ---------- pointer interaction: draw new, or drag to move ---------- */
+  function evPos(e){
+    const rc=cv.getBoundingClientRect(), k=img.naturalWidth/rc.width;
+    return {x:(e.clientX-rc.left)*k, y:(e.clientY-rc.top)*k};
   }
-  dlBtn.onclick=()=>{
-    if(!img||!regions.length){alert('Mark at least one area first.');return;}
+  cv.addEventListener('pointerdown',e=>{
+    if(!img||previewMode) return;
+    cv.setPointerCapture(e.pointerId);
+    const p=evPos(e);
+    for(let i=regions.length-1;i>=0;i--){
+      if(hit(regions[i],p.x,p.y)){ drawState={mode:'move',region:regions[i],last:p}; cv.style.cursor='move'; return; }
+    }
+    drawState = shape==='free' ? {mode:'free',pts:[p]} : {mode:shape,x0:p.x,y0:p.y,x1:p.x,y1:p.y};
+  });
+  cv.addEventListener('pointermove',e=>{
+    if(!img||previewMode) return;
+    const p=evPos(e);
+    if(!drawState){
+      cv.style.cursor=regions.some(r=>hit(r,p.x,p.y))?'move':'crosshair';
+      return;
+    }
+    if(drawState.mode==='move'){
+      moveRegion(drawState.region,p.x-drawState.last.x,p.y-drawState.last.y);
+      drawState.last=p;
+    }else if(drawState.mode==='free'){
+      const lp=drawState.pts[drawState.pts.length-1];
+      if(Math.hypot(p.x-lp.x,p.y-lp.y)>img.naturalWidth/300) drawState.pts.push(p);
+    }else{ drawState.x1=p.x; drawState.y1=p.y; }
+    render();
+  });
+  cv.addEventListener('pointerup',()=>{
+    if(!drawState) return;
+    const d=drawState; drawState=null; cv.style.cursor='crosshair';
+    let r=null;
+    if(d.mode==='rect'||d.mode==='circle'){
+      const x=Math.min(d.x0,d.x1), y=Math.min(d.y0,d.y1),
+            w=Math.abs(d.x1-d.x0), h=Math.abs(d.y1-d.y0);
+      if(w>8&&h>8) r=d.mode==='rect'
+        ? {kind:'rect',x:x,y:y,w:w,h:h}
+        : {kind:'circle',cx:x+w/2,cy:y+h/2,rx:w/2,ry:h/2};
+    }else if(d.mode==='free'&&d.mode!=='move'){
+      if(d.pts.length>8){
+        const b=bbox({kind:'poly',pts:d.pts});
+        if(b.w>8&&b.h>8) r={kind:'poly',pts:d.pts};
+      }
+    }
+    if(r){ r.id=++seq; if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def; regions.push(r); syncChips(); }
+    render();
+  });
+  cv.addEventListener('pointercancel',()=>{ drawState=null; render(); });
+
+  /* ---------- buttons ---------- */
+  undoBtn.addEventListener('click',()=>{ regions.pop(); syncChips(); render(); });
+  clearBtn.addEventListener('click',()=>{ regions=[]; syncChips(); render(); });
+  if(master) master.addEventListener('input',()=>{
+    masterVal.textContent=master.value+'px';
+    regions.forEach(r=>{ r.value=Number(master.value); });
+    syncChips(); render();
+  });
+  function setPreviewUI(on){
+    document.querySelectorAll('.shape-btn').forEach(b=>{ b.disabled=on; });
+    if(master) master.disabled=on;
+  }
+  doneBtn.addEventListener('click',()=>{
+    if(!img) return;
+    previewMode=!previewMode;
+    doneBtn.textContent=previewMode?'✎ Back to editing':'✓ Done';
+    setPreviewUI(previewMode);
+    render();
+  });
+  dlBtn.addEventListener('click',()=>{
+    if(!img||!regions.length){alert('Add at least one area first.');return;}
     const c=document.createElement('canvas');
     c.width=img.naturalWidth; c.height=img.naturalHeight;
     const x=c.getContext('2d');
     x.drawImage(img,0,0);
-    applyBlur(x, regions, Number(strength.value));
+    paintRegions(x,img.naturalWidth,img.naturalHeight,1);
     const type=fmt.value, q=type==='image/jpeg'?0.92:undefined;
     c.toBlob(b=>{
       const a=document.createElement('a');
       a.href=URL.createObjectURL(b);
-      a.download=`${baseName}-blurred.${type==='image/jpeg'?'jpg':'png'}`;
+      a.download=baseName+'-'+TOOL.suffix+'.'+(type==='image/jpeg'?'jpg':'png');
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(()=>URL.revokeObjectURL(a.href),2000);
     },type,q);
-  };
+  });
+  updateCounts();
 })();
 </script>
+
 <script>
 (function(){
   const t=document.getElementById('themeToggle');
