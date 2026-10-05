@@ -74,6 +74,8 @@ body.dark-mode .content-page a{color:#93c5fd}
 .shape-label{font-size:14px;font-weight:600;color:var(--muted)}
 .shape-btn.active{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 .shape-btn:disabled{opacity:.45;cursor:default}
+.color-input{width:42px;height:34px;border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:2px;cursor:pointer}
+.chip-color{width:32px;height:26px;border:1px solid var(--border);border-radius:6px;background:var(--bg);padding:1px;cursor:pointer}
 select{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:14px}
 </style>
 <script type="application/ld+json">
@@ -158,17 +160,20 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         <button type="button" class="btn btn-ghost shape-btn active" data-shape="rect">▢ Box</button>
         <button type="button" class="btn btn-ghost shape-btn" data-shape="circle">◯ Circle</button>
         <button type="button" class="btn btn-ghost shape-btn" data-shape="free">✎ Free</button>
+        <label class="shape-label" for="fillColor">Fill:</label><input type="color" id="fillColor" value="#000000" class="color-input">
       </div>
       <div id="regionList"></div>
       <div class="tool-row">
         <button class="btn btn-ghost" id="undoBtn" type="button">↩ Undo</button>
         <button class="btn btn-ghost" id="clearBtn" type="button">Clear all</button>
+        <button class="btn btn-ghost" id="wholeBtn" type="button">▦ Whole image</button>
         <button class="btn btn-ghost" id="doneBtn" type="button">✓ Done</button>
         <select id="fmt" aria-label="Output format">
           <option value="image/png">PNG</option>
           <option value="image/jpeg">JPG</option>
         </select>
         <button class="btn btn-ghost" id="replaceBtn" type="button">🔄 Replace image</button>
+        <button class="btn btn-ghost" id="copyBtn" type="button">📋 Copy</button>
         <button class="btn btn-primary" id="dlBtn" type="button" disabled>⬇ Download redacted image</button>
       </div>
     </div>
@@ -245,14 +250,16 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   const $=id=>document.getElementById(id);
   const drop=$('drop'), file=$('file'), stage=$('stage'), cv=$('cv'), ctx=cv.getContext('2d');
   const regionList=$('regionList'), undoBtn=$('undoBtn'), clearBtn=$('clearBtn'),
-        dlBtn=$('dlBtn'), fmt=$('fmt'), replaceBtn=$('replaceBtn'), doneBtn=$('doneBtn'), hint=$('hint');
+        dlBtn=$('dlBtn'), fmt=$('fmt'), replaceBtn=$('replaceBtn'), doneBtn=$('doneBtn'), hint=$('hint'),
+        wholeBtn=$('wholeBtn'), copyBtn=$('copyBtn');
+  const fillPicker=TOOL.mode==='redact'?$('fillColor'):null;
   const master=TOOL.hasValue?$('master'):null, masterVal=TOOL.hasValue?$('masterVal'):null;
   let img=null, regions=[], drawState=null, shape='rect', previewMode=false, baseName='image', seq=0;
 
   const HINTS={
-    rect:'Drag on the image to draw a box. Drag an existing shape to move it.',
-    circle:'Drag on the image to draw a circle. Drag an existing shape to move it.',
-    free:'Draw freely on the image to outline an area. Drag an existing shape to move it.'
+    rect:'Draw a box on the image. Drag a shape to move it, a corner dot to resize.',
+    circle:'Draw a circle on the image. Drag a shape to move it, a corner dot to resize.',
+    free:'Draw freely on the image to outline an area. Drag a shape to move it, a corner dot to resize.'
   };
 
   /* ---------- file loading ---------- */
@@ -315,6 +322,20 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     else if(r.kind==='poly'){ r.pts.forEach(p=>{p.x+=dx;p.y+=dy;}); }
     else { r.x+=dx; r.y+=dy; }
   }
+  function corners(b){ return [{x:b.x,y:b.y},{x:b.x+b.w,y:b.y},{x:b.x,y:b.y+b.h},{x:b.x+b.w,y:b.y+b.h}]; }
+  function hitHandle(r,x,y,tol){
+    const c=corners(bbox(r));
+    for(let i=0;i<4;i++) if(Math.hypot(x-c[i].x,y-c[i].y)<=tol) return i;
+    return -1;
+  }
+  function applyBbox(r,from,to){
+    if(from.w<1||from.h<1) return;
+    const sx=to.w/from.w, sy=to.h/from.h;
+    const mapX=x=>to.x+(x-from.x)*sx, mapY=y=>to.y+(y-from.y)*sy;
+    if(r.kind==='rect'){ r.x=to.x; r.y=to.y; r.w=to.w; r.h=to.h; }
+    else if(r.kind==='circle'){ r.cx=mapX(from.x+from.w/2); r.cy=mapY(from.y+from.h/2); r.rx=Math.max(1,to.w/2); r.ry=Math.max(1,to.h/2); }
+    else r.pts.forEach(pt=>{ pt.x=mapX(pt.x); pt.y=mapY(pt.y); });
+  }
 
   /* ---------- effects ---------- */
   function blurInto(tc,srcCanvas,sx,sy,w,h,v){
@@ -333,7 +354,7 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
       const v=TOOL.hasValue?Math.max(0.5,r.value*k):0;
       if(TOOL.mode==='redact'){
         x.save(); x.setTransform(k,0,0,k,0,0);
-        x.fillStyle='#000'; tracePath(x,r); x.fill(); x.restore();
+        x.fillStyle=r.color||'#000'; tracePath(x,r); x.fill(); x.restore();
         return;
       }
       const b=bbox(r);
@@ -381,6 +402,11 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         const b=bbox(r);
         ctx.fillStyle='#fff'; ctx.font='700 '+(14/s)+'px sans-serif';
         ctx.fillText(String(i+1), b.x+8/s, b.y+20/s);
+        corners(b).forEach(pt=>{
+          ctx.beginPath(); ctx.arc(pt.x,pt.y,7/s,0,Math.PI*2);
+          ctx.fillStyle='#fff'; ctx.fill();
+          ctx.lineWidth=2/s; ctx.strokeStyle='#2563eb'; ctx.stroke();
+        });
       });
       if(drawState) drawInProgress(ctx,s);
       ctx.restore();
@@ -389,20 +415,22 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   }
   function drawInProgress(c,s){
     const d=drawState;
-    c.strokeStyle='#2563eb'; c.lineWidth=2/s; c.setLineDash([6/s,4/s]);
-    c.beginPath();
+    c.strokeStyle='#7c3aed'; c.lineWidth=2.5/s; c.lineCap='round'; c.lineJoin='round';
     if(d.mode==='free'&&d.pts.length>1){
-      c.moveTo(d.pts[0].x,d.pts[0].y);
-      for(let i=1;i<d.pts.length;i++) c.lineTo(d.pts[i].x,d.pts[i].y);
-      c.stroke();
+      const p=d.pts;
+      c.beginPath(); c.moveTo(p[0].x,p[0].y);
+      for(let i=1;i<p.length-1;i++){
+        c.quadraticCurveTo(p[i].x,p[i].y,(p[i].x+p[i+1].x)/2,(p[i].y+p[i+1].y)/2);
+      }
+      const l=p[p.length-1]; c.lineTo(l.x,l.y); c.stroke();
     }else if(d.mode==='rect'||d.mode==='circle'){
       const x=Math.min(d.x0,d.x1), y=Math.min(d.y0,d.y1),
             w=Math.abs(d.x1-d.x0), h=Math.abs(d.y1-d.y0);
+      c.beginPath();
       if(d.mode==='rect') c.rect(x,y,w,h);
       else c.ellipse(x+w/2,y+h/2,Math.max(0.5,w/2),Math.max(0.5,h/2),0,0,Math.PI*2);
       c.stroke();
     }
-    c.setLineDash([]);
   }
   function updateCounts(){
     const n=regions.length;
@@ -420,6 +448,13 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
       const kindName=r.kind==='rect'?'Box':r.kind==='circle'?'Circle':'Free';
       label.textContent=(i+1)+' · '+kindName+' · '+Math.round(b.w)+'×'+Math.round(b.h);
       chip.appendChild(label);
+      if(TOOL.mode==='redact'&&fillPicker){
+        const cp=document.createElement('input');
+        cp.type='color'; cp.value=r.color||'#000000'; cp.className='chip-color';
+        cp.setAttribute('aria-label','Fill color for area '+(i+1));
+        cp.addEventListener('input',()=>{ r.color=cp.value; render(); });
+        chip.appendChild(cp);
+      }
       if(TOOL.hasValue){
         const sl=document.createElement('input');
         sl.type='range'; sl.min=TOOL.min; sl.max=TOOL.max; sl.value=r.value; sl.className='chip-slider';
@@ -445,6 +480,12 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     if(!img||previewMode) return;
     cv.setPointerCapture(e.pointerId);
     const p=evPos(e);
+    const tol=16*img.naturalWidth/cv.getBoundingClientRect().width;
+    for(let i=regions.length-1;i>=0;i--){
+      const hi=hitHandle(regions[i],p.x,p.y,tol);
+      if(hi>=0){ drawState={mode:'resize',region:regions[i],corner:hi,orig:bbox(regions[i])};
+        cv.style.cursor=hi%3===0?'nwse-resize':'nesw-resize'; return; }
+    }
     for(let i=regions.length-1;i>=0;i--){
       if(hit(regions[i],p.x,p.y)){ drawState={mode:'move',region:regions[i],last:p}; cv.style.cursor='move'; return; }
     }
@@ -454,12 +495,24 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     if(!img||previewMode) return;
     const p=evPos(e);
     if(!drawState){
-      cv.style.cursor=regions.some(r=>hit(r,p.x,p.y))?'move':'crosshair';
+      const tol=16*img.naturalWidth/cv.getBoundingClientRect().width;
+      let cur='crosshair';
+      for(let i=regions.length-1;i>=0;i--){
+        const hi=hitHandle(regions[i],p.x,p.y,tol);
+        if(hi>=0){ cur=hi%3===0?'nwse-resize':'nesw-resize'; break; }
+        if(hit(regions[i],p.x,p.y)){ cur='move'; break; }
+      }
+      cv.style.cursor=cur;
       return;
     }
     if(drawState.mode==='move'){
       moveRegion(drawState.region,p.x-drawState.last.x,p.y-drawState.last.y);
       drawState.last=p;
+    }else if(drawState.mode==='resize'){
+      const r=drawState.region, b0=drawState.orig, opp=corners(b0)[3-drawState.corner];
+      const dirX=p.x>=opp.x?1:-1, dirY=p.y>=opp.y?1:-1;
+      const nw=Math.max(8,Math.abs(p.x-opp.x)), nh=Math.max(8,Math.abs(p.y-opp.y));
+      applyBbox(r,b0,{x:dirX>0?opp.x:opp.x-nw, y:dirY>0?opp.y:opp.y-nh, w:nw, h:nh});
     }else if(drawState.mode==='free'){
       const lp=drawState.pts[drawState.pts.length-1];
       if(Math.hypot(p.x-lp.x,p.y-lp.y)>img.naturalWidth/300) drawState.pts.push(p);
@@ -482,7 +535,8 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         if(b.w>8&&b.h>8) r={kind:'poly',pts:d.pts};
       }
     }
-    if(r){ r.id=++seq; if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def; regions.push(r); syncChips(); }
+    if(r){ r.id=++seq; if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def;
+    if(TOOL.mode==='redact'&&fillPicker) r.color=fillPicker.value; regions.push(r); syncChips(); }
     render();
   });
   cv.addEventListener('pointercancel',()=>{ drawState=null; render(); });
@@ -506,13 +560,34 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     setPreviewUI(previewMode);
     render();
   });
-  dlBtn.addEventListener('click',()=>{
-    if(!img||!regions.length){alert('Add at least one area first.');return;}
+  function renderExport(){
     const c=document.createElement('canvas');
     c.width=img.naturalWidth; c.height=img.naturalHeight;
     const x=c.getContext('2d');
     x.drawImage(img,0,0);
     paintRegions(x,img.naturalWidth,img.naturalHeight,1);
+    return c;
+  }
+  wholeBtn.addEventListener('click',()=>{
+    if(!img) return;
+    const r={kind:'rect',x:0,y:0,w:img.naturalWidth,h:img.naturalHeight,id:++seq};
+    if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def;
+    if(TOOL.mode==='redact'&&fillPicker) r.color=fillPicker.value;
+    regions.push(r); syncChips(); render();
+  });
+  copyBtn.addEventListener('click',()=>{
+    if(!img||!regions.length){alert('Add at least one area first.');return;}
+    renderExport().toBlob(async b=>{
+      try{
+        await navigator.clipboard.write([new ClipboardItem({'image/png':b})]);
+        const old=copyBtn.textContent; copyBtn.textContent='✓ Copied!';
+        setTimeout(()=>{copyBtn.textContent=old;},1500);
+      }catch(e){ alert('Copy is not available in this browser — use Download instead.'); }
+    },'image/png');
+  });
+  dlBtn.addEventListener('click',()=>{
+    if(!img||!regions.length){alert('Add at least one area first.');return;}
+    const c=renderExport();
     const type=fmt.value, q=type==='image/jpeg'?0.92:undefined;
     c.toBlob(b=>{
       const a=document.createElement('a');
