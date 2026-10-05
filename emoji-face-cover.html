@@ -14,20 +14,20 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blur Part of an Image Online Free — Faces, Plates, Text | JSM-Image.com</title>
-<meta name="description" content="Blur faces, license plates or any sensitive area of a photo in your browser. Draw boxes, tune the blur strength, download. Free, private, no upload.">
+<title>Cover Face with Emoji Online Free — Emoji Face Cover | JSM-Image.com</title>
+<meta name="description" content="Cover faces with emoji in your browser: pick an emoji, draw over any face, download. The fun private way to anonymize photos. Free, no upload.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://JSM-Image.com/blur-image.html">
+<link rel="canonical" href="https://JSM-Image.com/emoji-face-cover.html">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.svg"><meta property="og:type" content="website">
-<meta property="og:url" content="https://JSM-Image.com/blur-image.html">
-<meta property="og:title" content="Blur Part of an Image Online Free | JSM-Image.com">
-<meta property="og:description" content="Selectively blur faces, plates or text in any photo — right in your browser. Adjustable strength, free, no upload.">
+<meta property="og:url" content="https://JSM-Image.com/emoji-face-cover.html">
+<meta property="og:title" content="Cover Face with Emoji Online Free | JSM-Image.com">
+<meta property="og:description" content="Put an emoji over any face in your photo — right in your browser. Fun, fast, private. No upload, no account.">
 <meta property="og:image" content="https://JSM-Image.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blur Part of an Image Online Free | JSM-Image.com">
-<meta name="twitter:description" content="Selectively blur faces, plates or text in any photo — right in your browser. Free, private, no upload.">
+<meta name="twitter:title" content="Cover Face with Emoji Online Free | JSM-Image.com">
+<meta name="twitter:description" content="Cover faces with emoji in any photo — right in your browser. Free, private, no upload.">
 <meta name="twitter:image" content="https://JSM-Image.com/og-image.jpg">
 <link rel="stylesheet" href="styles.css?v=20261003a">
 <style>
@@ -76,9 +76,11 @@ body.dark-mode .content-page a{color:#93c5fd}
 .shape-btn:disabled{opacity:.45;cursor:default}
 .color-input{width:42px;height:34px;border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:2px;cursor:pointer}
 .chip-color{width:32px;height:26px;border:1px solid var(--border);border-radius:6px;background:var(--bg);padding:1px;cursor:pointer}
+.emoji-row{display:flex;gap:6px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.emoji-btn{font-size:22px;line-height:1;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:5px 9px;cursor:pointer}
+.emoji-btn.active{border-color:#2563eb;box-shadow:0 0 0 1px #2563eb}
+.chip-emoji{font-size:20px;line-height:1;background:transparent;border:1px solid var(--border);border-radius:8px;padding:2px 6px;cursor:pointer}
 select{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:14px}
-.slider-row{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:14px;font-weight:600;color:var(--text)}
-.slider-row input[type=range]{flex:1;max-width:280px;accent-color:#2563eb}
 </style>
 <script type="application/ld+json">
 {
@@ -87,34 +89,34 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I blur a face in a photo?",
+      "name": "How do I put an emoji over a face in a photo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Upload the photo, draw a box over each face, set the blur strength, and download. The blur is baked into the exported pixels locally in your browser — nothing is uploaded to a server."
+        "text": "Upload the photo, pick an emoji, and draw a shape over each face. You can move and resize the shapes, give each face a different emoji, and download the result. Everything runs in your browser — nothing is uploaded."
       }
     },
     {
       "@type": "Question",
-      "name": "How strong should the blur be to hide a license plate?",
+      "name": "Will the emoji stay in the downloaded image?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Stronger than you think. Light blur can sometimes be partially reversed by AI deblurring tools. For plates and text, use a high strength — or switch to solid redaction or heavy pixelation, which are safer."
+        "text": "Yes. The emoji is rendered directly into the exported pixels, so it works everywhere — social posts, stories, messages, prints — with no special app needed to view it."
       }
     },
     {
       "@type": "Question",
-      "name": "Can blurred areas be unblurred later?",
+      "name": "Is covering a face with emoji enough for privacy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A heavily blurred region cannot be perfectly restored — the detail is averaged away. But mild blur preserves enough structure that AI tools can sometimes make educated guesses. Treat blur as casual privacy, not as a guarantee; for documents and IDs, use black-box redaction instead."
+        "text": "For casual sharing, yes — the face is fully hidden behind the emoji. But an emoji cover is a playful choice, not a forensic one: for documents, IDs, or anything high-stakes, use solid black-box redaction instead."
       }
     },
     {
       "@type": "Question",
-      "name": "Does this tool upload my photo?",
+      "name": "Does this upload my photo to a server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Blurring runs entirely in your browser with local code. Your images never leave your device."
+        "text": "No. The emoji is drawn onto your photo locally in your browser. Your images never leave your device."
       }
     }
   ]
@@ -138,10 +140,10 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         <a href="/heic-to-jpg.html">HEIC</a>
         <a href="/pdf-tools.html">PDF</a>
         <a href="/redact-image.html">Redact</a>
-        <a href="/blur-image.html" class="nav-details">Blur</a>
+        <a href="/blur-image.html">Blur</a>
         <a href="/pixelate-image.html">Pixelate</a>
         <a href="/remove-exif.html">EXIF</a>
-        <a href="/emoji-face-cover.html">Emoji</a>
+        <a href="/emoji-face-cover.html" class="nav-details">Emoji</a>
         <a href="/how-to-resize-convert-crop-images.html">Guide</a>
       </nav>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color theme">☀ Light</button>
@@ -150,22 +152,23 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
 </header>
 <main class="content-page">
 
-  <h1>Blur Part of an Image Online — Free Selective Blur</h1>
-  <p class="lead">Blur faces, license plates, text, or any sensitive region of a photo — with adjustable strength, right in your browser. Free, private, no upload, no account.</p>
+  <h1>Cover Face with Emoji Online — Free Emoji Face Cover</h1>
+  <p class="lead">Put a 😎 over any face in your photo — the fun way to share pictures while keeping people anonymous. Pick an emoji, draw a shape over each face, move and resize freely, download. Free, private, nothing uploaded.</p>
 
   <div class="tool-card">
     <div class="drop" id="drop">📷 Drop an image here, or click to choose one<input type="file" id="file" accept="image/*"></div>
     <div id="stage">
       <canvas id="cv"></canvas>
-      <p class="hint" id="hint">Drag on the image to mark areas to blur. Tune the strength until text is unreadable.</p>
+      <p class="hint" id="hint">Pick an emoji, then draw on the image to cover a face. Drag a shape to move it, a corner dot to resize.</p>
       <div class="shape-row" role="group" aria-label="Selection shape">
         <span class="shape-label">Shape:</span>
         <button type="button" class="btn btn-ghost shape-btn active" data-shape="rect">▢ Box</button>
         <button type="button" class="btn btn-ghost shape-btn" data-shape="circle">◯ Circle</button>
         <button type="button" class="btn btn-ghost shape-btn" data-shape="free">✎ Free</button>
       </div>
-      <div class="slider-row"><label for="master">Blur strength — all areas</label><input type="range" id="master" min="2" max="30" value="12"><span id="masterVal">12px</span></div>
-      <div class="slider-row"><label for="strength">Blur strength</label><input type="range" id="strength" min="2" max="30" value="12"><span id="strengthVal">12px</span></div>
+      <div class="emoji-row" id="emojiRow" role="group" aria-label="Emoji picker">
+        <span class="shape-label">Emoji:</span>
+      </div>
       <div id="regionList"></div>
       <div class="tool-row">
         <button class="btn btn-ghost" id="undoBtn" type="button">↩ Undo</button>
@@ -178,41 +181,41 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         </select>
         <button class="btn btn-ghost" id="replaceBtn" type="button">🔄 Replace image</button>
         <button class="btn btn-ghost" id="copyBtn" type="button">📋 Copy</button>
-        <button class="btn btn-primary" id="dlBtn" type="button" disabled>⬇ Download blurred image</button>
+        <button class="btn btn-primary" id="dlBtn" type="button" disabled>⬇ Download</button>
       </div>
     </div>
   </div>
 
-  <h2>How to blur part of a photo in three steps</h2>
+  <h2>How to cover a face with emoji in three steps</h2>
   <ol>
-    <li><strong>Add your image.</strong> It opens directly in your browser — faces, plates, and documents never travel to a server.</li>
-    <li><strong>Draw boxes</strong> over everything you want hidden, then drag the <strong>strength slider</strong> until the content underneath is truly unreadable. Zoom in mentally: if you can guess a character, go stronger.</li>
-    <li><strong>Download.</strong> The blur is rendered into the exported pixels — a new, self-contained file with no hidden layers.</li>
+    <li><strong>Add your photo.</strong> It opens directly in your browser — the faces you are about to hide never travel to a server.</li>
+    <li><strong>Pick an emoji, then draw</strong> over each face — box, circle, or free-draw for odd angles. Drag a shape to move it, pull a corner dot to resize. Every face can have its own emoji: tap the emoji on an area chip to cycle through the palette.</li>
+    <li><strong>Download or copy.</strong> The emoji is baked into the exported pixels, so it shows up everywhere — posts, stories, messages, prints — with no special app needed.</li>
   </ol>
 
-  <h2>How much blur is enough?</h2>
-  <p>Blur works by averaging each pixel with its neighbors, destroying fine detail. The catch: <strong>mild blur preserves shapes</strong> — a lightly blurred plate can still be readable, and AI deblurring keeps improving at guessing what was there. Practical guidance:</p>
+  <h2>Why emoji instead of blur?</h2>
+  <p>Blur says "something is hidden here." An emoji says "we had fun here." For group photos, party shots, and kid pictures you want to share, emoji covers keep the vibe of the photo while the identity underneath is completely gone — there is no face left to reconstruct, deblur, or recognize.</p>
   <ul>
-    <li><strong>Faces in casual photos</strong> — medium blur is fine and looks natural.</li>
-    <li><strong>License plates and text</strong> — go heavy, or the characters survive. When in doubt, <a href="/pixelate-image.html">pixelate</a> or <a href="/redact-image.html">black-box redact</a> instead.</li>
-    <li><strong>Documents and IDs</strong> — do not rely on blur at all. Solid redaction is the only verifiable option.</li>
+    <li><strong>Social posts &amp; stories</strong> — the classic use: friends' faces in a group shot, kids at a birthday party.</li>
+    <li><strong>Memes &amp; screenshots</strong> — cover profile pictures and names with personality instead of gray boxes.</li>
+    <li><strong>Pet photos</strong> — because a 🙈 on a dog is objectively correct.</li>
   </ul>
 
-  <h2>Blur vs pixelate vs redact</h2>
-  <p>All three hide information, with different safety levels. <strong>Redaction</strong> (solid black) destroys the pixels completely — the gold standard. <strong>Pixelation</strong> at a coarse block size is nearly as safe and keeps a hint of context. <strong>Blur</strong> looks the most natural but is the weakest of the three at low strength. Pick the mildest option your situation allows — and when the stakes are high, pick the strongest.</p>
+  <h2>Fun, not forensic</h2>
+  <p>An emoji hides identity completely for casual sharing — but it is a playful choice, not a security tool. The shape, skin tone at the edges, or context can still hint at who is behind it. For documents, IDs, license plates, or anything high-stakes, use <a href="/redact-image.html">solid black-box redaction</a> instead. And remember: emoji covers do not remove <a href="/remove-exif.html">location metadata</a> — strip that too before posting.</p>
 
   <h2>Frequently asked questions</h2>
-  <h3>How do I blur a face in a photo?</h3>
-  <p>Upload the photo, draw a box over each face, set the blur strength, and download. The blur is baked into the exported pixels locally in your browser.</p>
-  <h3>How strong should the blur be to hide a license plate?</h3>
-  <p>Stronger than you think. Light blur can sometimes be partially reversed by AI deblurring. For plates and text, use a high strength — or switch to solid redaction or heavy pixelation.</p>
-  <h3>Can blurred areas be unblurred later?</h3>
-  <p>Heavy blur cannot be perfectly restored, but mild blur preserves enough structure for AI tools to make educated guesses. Treat blur as casual privacy; for documents and IDs use black-box redaction.</p>
-  <h3>Does this tool upload my photo?</h3>
-  <p>No. Blurring runs entirely in your browser. Your images never leave your device.</p>
+  <h3>How do I put an emoji over a face in a photo?</h3>
+  <p>Upload the photo, pick an emoji, and draw a shape over each face. Move and resize freely, give each face its own emoji, then download. Everything runs in your browser.</p>
+  <h3>Will the emoji stay in the downloaded image?</h3>
+  <p>Yes. The emoji is rendered directly into the exported pixels, so it works everywhere with no special app needed to view it.</p>
+  <h3>Is covering a face with emoji enough for privacy?</h3>
+  <p>For casual sharing, yes — the face is fully hidden. But for documents, IDs, or anything high-stakes, use solid black-box redaction instead.</p>
+  <h3>Does this upload my photo to a server?</h3>
+  <p>No. The emoji is drawn onto your photo locally in your browser. Your images never leave your device.</p>
 
 <div class="related">
-  <a href="/redact-image.html">Redact Image<span>Black out sensitive areas</span></a>
+  <a href="/blur-image.html">Blur Part of Image<span>Soften faces, plates, text</span></a>
   <a href="/pixelate-image.html">Pixelate Image<span>Mosaic sensitive areas</span></a>
   <a href="/remove-exif.html">Remove EXIF Data<span>Strip GPS &amp; metadata</span></a>
   <a href="/">Open Image Tool<span>Resize, crop, convert in browser</span></a>
@@ -250,13 +253,28 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
 </footer>
 <script>
 (function(){
-  const TOOL={mode:'blur',hasValue:true,min:2,max:30,def:12,unit:'Blur strength',suffix:'blurred'};
+  const TOOL={mode:'emoji',hasValue:false,min:0,max:0,def:0,unit:'',suffix:'emoji'};
   const $=id=>document.getElementById(id);
   const drop=$('drop'), file=$('file'), stage=$('stage'), cv=$('cv'), ctx=cv.getContext('2d');
   const regionList=$('regionList'), undoBtn=$('undoBtn'), clearBtn=$('clearBtn'),
         dlBtn=$('dlBtn'), fmt=$('fmt'), replaceBtn=$('replaceBtn'), doneBtn=$('doneBtn'), hint=$('hint'),
         wholeBtn=$('wholeBtn'), copyBtn=$('copyBtn');
   const fillPicker=TOOL.mode==='redact'?$('fillColor'):null;
+  const EMOJIS=['\U0001F60E','\U0001F648','\U0001F649','\U0001F64A','\U0001F60A','\U0001F602','\U0001F60D','\U0001F929','\U0001F973','\U0001F61C','\U0001F47B','\U0001F4A9','\U00002B50','\U00002764','\U0001F525','\U0001F63B'];
+  let currentEmoji=EMOJIS[0];
+  (function buildEmojiPicker(){
+    const row=$('emojiRow'); if(!row) return;
+    EMOJIS.forEach(e=>{
+      const b=document.createElement('button'); b.type='button'; b.className='emoji-btn'+(e===currentEmoji?' active':'');
+      b.textContent=e; b.setAttribute('aria-label','Use '+e);
+      b.addEventListener('click',()=>{
+        currentEmoji=e;
+        row.querySelectorAll('.emoji-btn').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+      });
+      row.appendChild(b);
+    });
+  })();
   const master=TOOL.hasValue?$('master'):null, masterVal=TOOL.hasValue?$('masterVal'):null;
   let img=null, regions=[], drawState=null, shape='rect', previewMode=false, baseName='image', seq=0;
 
@@ -356,9 +374,17 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   function paintRegions(x,imgW,imgH,k){
     regions.forEach(r=>{
       const v=TOOL.hasValue?Math.max(0.5,r.value*k):0;
-      if(TOOL.mode==='redact'){
+      if(TOOL.mode==='redact'||TOOL.mode==='emoji'){
         x.save(); x.setTransform(k,0,0,k,0,0);
-        x.fillStyle=r.color||'#000'; tracePath(x,r); x.fill(); x.restore();
+        if(TOOL.mode==='redact'){ x.fillStyle=r.color||'#000'; tracePath(x,r); x.fill(); }
+        else{
+          const b=bbox(r), fs=Math.max(b.w,b.h)*1.02;
+          tracePath(x,r); x.clip();
+          x.font=fs+'px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+          x.textAlign='center'; x.textBaseline='middle';
+          x.fillText(r.emoji||currentEmoji, b.x+b.w/2, b.y+b.h/2+fs*0.05);
+        }
+        x.restore();
         return;
       }
       const b=bbox(r);
@@ -459,6 +485,17 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         cp.addEventListener('input',()=>{ r.color=cp.value; render(); });
         chip.appendChild(cp);
       }
+      if(TOOL.mode==='emoji'){
+        const eb=document.createElement('button'); eb.type='button'; eb.className='chip-emoji';
+        eb.textContent=r.emoji||currentEmoji; eb.title='Tap to change emoji';
+        eb.setAttribute('aria-label','Change emoji for area '+(i+1));
+        eb.addEventListener('click',()=>{
+          const nx=EMOJIS.indexOf(r.emoji||currentEmoji);
+          r.emoji=EMOJIS[(nx+1)%EMOJIS.length];
+          eb.textContent=r.emoji; render();
+        });
+        chip.appendChild(eb);
+      }
       if(TOOL.hasValue){
         const sl=document.createElement('input');
         sl.type='range'; sl.min=TOOL.min; sl.max=TOOL.max; sl.value=r.value; sl.className='chip-slider';
@@ -540,7 +577,8 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
       }
     }
     if(r){ r.id=++seq; if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def;
-    if(TOOL.mode==='redact'&&fillPicker) r.color=fillPicker.value; regions.push(r); syncChips(); }
+    if(TOOL.mode==='redact'&&fillPicker) r.color=fillPicker.value;
+    if(TOOL.mode==='emoji') r.emoji=currentEmoji; regions.push(r); syncChips(); }
     render();
   });
   cv.addEventListener('pointercancel',()=>{ drawState=null; render(); });
@@ -580,6 +618,7 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     const r={kind:'rect',x:0,y:0,w:img.naturalWidth,h:img.naturalHeight,id:++seq};
     if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def;
     if(TOOL.mode==='redact'&&fillPicker) r.color=fillPicker.value;
+    if(TOOL.mode==='emoji') r.emoji=currentEmoji;
     regions.push(r); syncChips(); render();
   });
   copyBtn.addEventListener('click',()=>{
