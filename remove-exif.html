@@ -120,20 +120,26 @@ body.dark-mode .content-page a{color:#93c5fd}
     <span style="font-weight:800;font-size:20px;color:var(--text)">JSM-Image.com</span>
   </a></div>
     <div class="header-actions">
-      <nav>
+            <nav id="mainNav">
         <a href="/">Tool</a>
         <a href="/compress-image.html">Compress</a>
         <a href="/convert-to-webp.html">WebP</a>
         <a href="/batch-resize.html">Batch</a>
         <a href="/heic-to-jpg.html">HEIC</a>
         <a href="/pdf-tools.html">PDF</a>
-        <a href="/redact-image.html">Redact</a>
-        <a href="/blur-image.html">Blur</a>
-        <a href="/pixelate-image.html">Pixelate</a>
-        <a href="/remove-exif.html" class="nav-details">EXIF</a>
-        <a href="/emoji-face-cover.html">Emoji</a>
+        <div class="nav-drop">
+          <button type="button" class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Privacy ▾</button>
+          <div class="nav-drop-menu">
+                    <a href="/redact-image.html">Redact</a>
+                    <a href="/blur-image.html">Blur</a>
+                    <a href="/pixelate-image.html">Pixelate</a>
+                    <a href="/remove-exif.html" class="nav-details">EXIF</a>
+                    <a href="/emoji-face-cover.html">Emoji</a>
+          </div>
+        </div>
         <a href="/how-to-resize-convert-crop-images.html">Guide</a>
       </nav>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch color theme">☀ Light</button>
     </div>
   </div>
@@ -379,6 +385,28 @@ body.dark-mode .content-page a{color:#93c5fd}
   }
   setTheme(saved);
   t&&t.addEventListener('click',()=>setTheme(document.body.classList.contains('dark-mode')?'light':'dark'));
+})();
+</script>
+
+<script>
+(function(){
+  const ham=document.getElementById('hamburger'), nav=document.getElementById('mainNav');
+  if(!ham||!nav) return;
+  const drop=nav.querySelector('.nav-drop'), btn=nav.querySelector('.nav-drop-btn');
+  if(drop&&btn&&drop.querySelector('a.nav-details')) btn.classList.add('nav-details');
+  ham.addEventListener('click',e=>{ e.stopPropagation();
+    const open=nav.classList.toggle('mobile-open');
+    ham.setAttribute('aria-expanded',String(open));
+    ham.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  if(btn) btn.addEventListener('click',e=>{ e.stopPropagation();
+    const open=drop.classList.toggle('open'); btn.setAttribute('aria-expanded',String(open));
+  });
+  document.addEventListener('click',()=>{ if(drop) drop.classList.remove('open'); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){
+    if(drop) drop.classList.remove('open');
+    nav.classList.remove('mobile-open'); ham.setAttribute('aria-expanded','false');
+  }});
 })();
 </script>
 </body>
