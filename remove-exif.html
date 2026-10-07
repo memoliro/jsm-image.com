@@ -120,6 +120,22 @@ body.dark-mode .content-page a{color:#93c5fd}
         "@type": "Answer",
         "text": "Yes. After uploading, the 'Show metadata details' section lists every field: camera model, timestamps, exposure settings, and GPS coordinates. Coordinates are shown as plain text only and are never sent to a map service."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Will stripping EXIF also remove the location from a photo I already posted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — it only cleans the file you download here. Copies already uploaded, emailed, or shared keep whatever metadata they had. Strip before you share, not after."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do screenshots contain EXIF location data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally no. Screenshots capture pixels, not camera metadata, so they rarely carry GPS. The risk is with original camera photos shared as files — email attachments, messaging apps, cloud links, and forum uploads."
+      }
     }
   ]
 }
@@ -202,6 +218,25 @@ body.dark-mode .content-page a{color:#93c5fd}
   <h2>How the stripping works</h2>
   <p>For JPEGs, this tool removes the metadata <strong>losslessly</strong>: it deletes only the APP1 segments (EXIF and XMP) from the file structure. Every pixel stays byte-identical — the download is the same photo, minus the hidden data. For PNG and WebP, which rarely carry EXIF, the file is re-saved clean.</p>
 
+  <h2>How to check whether your photos carry GPS</h2>
+  <p>Before you strip anything, it helps to know what you are dealing with. The quickest check is right here: upload a photo and click <strong>"Show metadata details"</strong> — you will see every field the file contains, including GPS coordinates displayed as plain text (never sent to a map service, unlike some online checkers that plot your location on a map the moment you upload).</p>
+  <p>On your phone, you can also look directly:</p>
+  <ul>
+    <li><strong>iPhone:</strong> open the photo, swipe up — the map thumbnail and location name appear under the image info if location was recorded.</li>
+    <li><strong>Android:</strong> open in Google Photos, swipe up for Details — "Location" shows the captured coordinates.</li>
+    <li><strong>Windows:</strong> right-click the file → Properties → Details tab, and look for the GPS section.</li>
+    <li><strong>Mac:</strong> open in Preview → Tools → Show Inspector → EXIF tab.</li>
+  </ul>
+  <p>If you would rather your phone stopped recording location in the first place: on iPhone go to Settings → Privacy &amp; Security → Location Services → Camera and set it to <strong>Never</strong>; on Android, open the Camera app settings and turn off <strong>location tags</strong>. Stripping after the fact remains useful for older photos and for files other people send you.</p>
+  <h2>What stripping does not do</h2>
+  <p>Removing EXIF is one layer of privacy, not the whole job. Be honest with yourself about its limits:</p>
+  <ul>
+    <li><strong>It does not hide visible content.</strong> A house number in the frame, a street sign, or a recognizable landmark still gives away location. Pair metadata stripping with <a href="/blur-image.html">blurring</a> or <a href="/redact-image.html">redaction</a> when the pixels themselves leak information.</li>
+    <li><strong>It does not remove watermarks or embedded thumbnails.</strong> Some cameras store a small preview JPEG inside the EXIF; this tool removes the whole segment, thumbnail included — but files edited in other software occasionally carry metadata in non-standard places. When in doubt, re-check the download with "Show metadata details."</li>
+    <li><strong>It does not anonymize the image itself.</strong> Reverse image search can still match a photo to other copies online. EXIF stripping protects the hidden data layer; it is not invisibility.</li>
+    <li><strong>It cannot strip what was never there.</strong> Screenshots, downloaded images, and photos already processed by most social networks typically arrive with no EXIF at all — running them through the tool changes nothing, which is fine.</li>
+  </ul>
+
   <h2>Frequently asked questions</h2>
   <h3>What is EXIF data in a photo?</h3>
   <p>Metadata your camera or phone embeds in the file: date and time, camera model, exposure settings, and — on phones, unless disabled — precise GPS coordinates of where the photo was taken.</p>
@@ -213,6 +248,10 @@ body.dark-mode .content-page a{color:#93c5fd}
   <p>No. Everything runs in your browser — uploading a photo to remove its location data would defeat the purpose.</p>
   <h3>Can I see exactly what metadata is in my photo?</h3>
   <p>Yes. After uploading, click "Show metadata details" to inspect every field: camera model, timestamps, exposure settings, and GPS coordinates. Coordinates are shown as plain text only — they are never sent to a map service.</p>
+  <h3>Will stripping EXIF also remove the location from a photo I already posted?</h3>
+  <p>No — it only cleans the file you download here. Copies already uploaded, emailed, or shared keep whatever metadata they had. Strip before you share, not after.</p>
+  <h3>Do screenshots contain EXIF location data?</h3>
+  <p>Generally no. Screenshots capture pixels, not camera metadata, so they rarely carry GPS. The risk is with original camera photos shared as files — email attachments, messaging apps, cloud links, and forum uploads.</p>
 
 <div class="related">
   <a href="/redact-image.html">Redact Image<span>Black out sensitive areas</span></a>

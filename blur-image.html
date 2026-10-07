@@ -116,6 +116,22 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         "@type": "Answer",
         "text": "No. Blurring runs entirely in your browser with local code. Your images never leave your device."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my blur look fine zoomed out but readable zoomed in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blur strength is relative to image resolution. A blur that looks thorough on a phone screen can leave characters legible at full resolution on a monitor. Always check the exported file at 100% zoom before sharing — if you can guess a single character, increase the strength."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I blur multiple areas with different strengths?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each box you draw gets its own chip below the image with an independent strength slider. Blur faces lightly for a natural look while hitting a license plate in the same photo much harder."
+      }
     }
   ]
 }
@@ -207,6 +223,19 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   <h2>Blur vs pixelate vs redact</h2>
   <p>All three hide information, with different safety levels. <strong>Redaction</strong> (solid black) destroys the pixels completely — the gold standard. <strong>Pixelation</strong> at a coarse block size is nearly as safe and keeps a hint of context. <strong>Blur</strong> looks the most natural but is the weakest of the three at low strength. Pick the mildest option your situation allows — and when the stakes are high, pick the strongest.</p>
 
+  <h2>Blur strength by use case</h2>
+  <p>There is no single "correct" blur amount — it depends on what you are hiding and who might try to recover it. Use this as a starting point, then verify by zooming into the exported image at full size:</p>
+  <ul>
+    <li><strong>Background faces in event photos</strong> — light to medium. You want the crowd to read as a crowd, not as identifiable individuals. The goal is breaking facial recognition, not erasing the scene.</li>
+    <li><strong>A face you are featuring but anonymizing</strong> — medium to heavy. Think news interviews with protected sources: the blur should make the person unrecognizable to someone who knows them, which takes more than most people expect.</li>
+    <li><strong>License plates</strong> — heavy. Characters are high-contrast and geometrically simple, which makes them the easiest thing to partially recover. If heavy blur still leaves letter shapes visible, switch to <a href="/pixelate-image.html">pixelation</a> or <a href="/redact-image.html">redaction</a>.</li>
+    <li><strong>Screens and documents in the background</strong> — heavy, or do not use blur at all. Text survives blur far better than faces do. A whiteboard or monitor caught behind your subject deserves redaction.</li>
+    <li><strong>Tattoos, logos, and distinctive marks</strong> — medium. These identify people the way faces do, but they are simpler shapes, so err on the stronger side.</li>
+  </ul>
+  <h2>When blur is the right choice</h2>
+  <p>Blur has one big advantage over black boxes: it preserves the <em>feel</em> of the photo. A blurred face in a wedding album looks like a privacy choice; a black rectangle looks like a police file. For social sharing, journalism, and real-estate photography, that aesthetic difference matters — people accept blur as normal and barely notice it, while redaction draws the eye straight to what you were hiding.</p>
+  <p>Blur also keeps spatial context. A blurred license plate still reads as "there is a car here," and a blurred background face still reads as "this was a busy street." When the story of the photo matters but the identities do not, blur hides the who while keeping the what. Just remember the trade-off: every bit of naturalness you keep is information you did not destroy. Match the strength to the stakes, and when the stakes involve legal documents, account numbers, or anything an adversary might specifically target, choose <a href="/redact-image.html">solid redaction</a> and do not look back.</p>
+
   <h2>Frequently asked questions</h2>
   <h3>How do I blur a face in a photo?</h3>
   <p>Upload the photo, draw a box over each face, set the blur strength, and download. The blur is baked into the exported pixels locally in your browser.</p>
@@ -216,6 +245,10 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   <p>Heavy blur cannot be perfectly restored, but mild blur preserves enough structure for AI tools to make educated guesses. Treat blur as casual privacy; for documents and IDs use black-box redaction.</p>
   <h3>Does this tool upload my photo?</h3>
   <p>No. Blurring runs entirely in your browser. Your images never leave your device.</p>
+  <h3>Why does my blur look fine zoomed out but readable zoomed in?</h3>
+  <p>Blur strength is relative to image resolution. A blur that looks thorough on a phone screen can leave characters legible at full resolution on a monitor. Always check the exported file at 100% zoom before sharing — if you can guess a single character, increase the strength.</p>
+  <h3>Can I blur multiple areas with different strengths?</h3>
+  <p>Yes. Each box you draw gets its own chip below the image with an independent strength slider. Blur faces lightly for a natural look while hitting a license plate in the same photo much harder.</p>
 
 <div class="related">
   <a href="/redact-image.html">Redact Image<span>Black out sensitive areas</span></a>

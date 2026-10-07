@@ -116,6 +116,22 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         "@type": "Answer",
         "text": "No. The mosaic is computed locally in your browser. Your photos never leave your device."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do news channels pixelate instead of blur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convention and safety. The mosaic is the universally recognized censored look, and coarse blocks give AI reconstruction tools almost nothing to work with — no smooth gradients, just flat colors. For broadcast, it is both the expected visual and the safer technical choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pixelate just part of the image and leave the rest sharp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — that is exactly what the box tool is for. Draw boxes only over the sensitive areas; everything outside them exports at full original sharpness. Each box can also have its own block size via its chip slider."
+      }
     }
   ]
 }
@@ -207,6 +223,20 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   <h2>Pixelate vs blur vs redact</h2>
   <p><strong>Redaction</strong> destroys pixels completely — the safest option. <strong>Pixelation</strong> at a coarse block size is a close second and keeps the classic "censored" look. <strong>Blur</strong> looks most natural but is the weakest at low strength. All three run locally here; pick the strongest your situation calls for.</p>
 
+  <h2>Why pixelation feels more trustworthy than blur</h2>
+  <p>There is a reason news broadcasts pixelate faces instead of blurring them: the mosaic is an unmistakable visual signal that says "this was deliberately hidden." Blur can look accidental — like a focus miss or a compression artifact — which invites viewers to squint and guess. A chunky mosaic leaves no doubt that the information was intentionally removed, and paradoxically that makes viewers <em>less</em> curious about what is underneath.</p>
+  <p>Pixelation also degrades gracefully. If you pick blocks slightly too small, the result still looks obviously censored; a viewer's eye does not try to "read through" it the way it does with light blur. And unlike blur, there is no smooth gradient for AI upscaling to latch onto — each block is a flat color, so reconstruction tools have far less structure to work with. That is why, block-for-block, a coarse mosaic is meaningfully safer than an equivalent-strength blur.</p>
+  <h2>Pixelation in the wild</h2>
+  <p>You already know this visual language — it is everywhere once you notice it:</p>
+  <ul>
+    <li><strong>News and documentaries</strong> — faces of minors, bystanders, and protected sources get the mosaic treatment as a matter of editorial policy.</li>
+    <li><strong>Court and police footage</strong> — bodycam and surveillance releases pixelate uninvolved people, plates, and house numbers before publication.</li>
+    <li><strong>Social media</strong> — creators mosaic children's faces, addresses on packages, and account numbers in "unboxing" or "mail day" posts.</li>
+    <li><strong>Real estate and rentals</strong> — listing photos pixelate family photos on walls, diplomas with names, and car plates in driveways.</li>
+    <li><strong>Gaming and streaming</strong> — streamers pixelate chat handles, donation messages with real names, and anything on a second monitor.</li>
+  </ul>
+  <p>In all of these, the mosaic does double duty: it hides the sensitive detail <em>and</em> signals to the audience that the creator took privacy seriously. That signal has value — it builds trust with viewers, sources, and subjects.</p>
+
   <h2>Frequently asked questions</h2>
   <h3>How do I pixelate a face in a picture?</h3>
   <p>Upload the picture, draw a box over each face, choose a block size, and download. The mosaic is rendered into the exported pixels in your browser.</p>
@@ -216,6 +246,10 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   <p>Coarse pixelation destroys the underlying detail and cannot be reversed. Fine pixelation preserves shapes, so always use blocks large enough that the content is unrecognizable.</p>
   <h3>Does pixelating here send my photo to a server?</h3>
   <p>No. Everything runs locally in your browser. Your photos never leave your device.</p>
+  <h3>Why do news channels pixelate instead of blur?</h3>
+  <p>Convention and safety. The mosaic is the universally recognized "censored" look, and coarse blocks give AI reconstruction tools almost nothing to work with — no smooth gradients, just flat colors. For broadcast, it is both the expected visual and the safer technical choice.</p>
+  <h3>Can I pixelate just part of the image and leave the rest sharp?</h3>
+  <p>Yes — that is exactly what the box tool is for. Draw boxes only over the sensitive areas; everything outside them exports at full original sharpness. Each box can also have its own block size via its chip slider.</p>
 
 <div class="related">
   <a href="/redact-image.html">Redact Image<span>Black out sensitive areas</span></a>

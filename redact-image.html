@@ -114,6 +114,22 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         "@type": "Answer",
         "text": "Black-box redaction is the safest: the information is verifiably gone. Heavy blur and strong pixelation are usually fine, but light blur can sometimes be partially reversed with AI deblurring. When the stakes are high — legal documents, IDs — use solid redaction."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the redaction color from black?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — use the color picker next to the shape buttons, or set a different fill per area from its chip below the image. White suits light documents, and custom colors can code categories in legal or compliance work. Security does not depend on the color, only on the fill being fully opaque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I also remove EXIF data after redacting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often, yes. Redaction cleans the visible pixels, but the file's metadata can still carry GPS coordinates, timestamps, and device info that defeat the purpose. Run the redacted download through an EXIF remover before sharing."
+      }
     }
   ]
 }
@@ -205,6 +221,18 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     <li><strong>Barcodes &amp; QR codes</strong> — they encode data you probably did not intend to share.</li>
   </ul>
 
+  <h2>Choosing the right shape and fill color</h2>
+  <p>The tool offers three shapes, and each suits different situations. <strong>Boxes</strong> are the workhorse: fast to draw, easy to align with text lines, document fields, and license plates. <strong>Circles</strong> fit faces and round objects like stickers or badges better than a box, hugging the outline with less wasted coverage. <strong>Free-draw</strong> handles irregular shapes — a signature sprawling across a page, a tattoo, or a QR code printed at an angle — where neither a box nor a circle sits cleanly.</p>
+  <p>Black is the default fill for a reason: it reads unmistakably as "information removed" and photographs well in every context. But the color picker is there for practical reasons. White boxes blend into light documents and scanned paperwork, looking cleaner in a shared PDF. A custom color can match a brand background in marketing screenshots, or signal different redaction categories in legal review (black for privileged, gray for confidential, for example). The security is identical regardless of color — what matters is that the fill is <strong>fully opaque</strong>. Never use a semi-transparent highlight: anyone can boost the contrast underneath and read what you covered.</p>
+  <h2>Redaction mistakes that leak information</h2>
+  <ul>
+    <li><strong>Covering only part of the sensitive text.</strong> A box that clips the edge of a name or number still leaves enough for guessing — "J_n Smith, 555-01__" narrows things down fast. Give every box a comfortable margin around the text.</li>
+    <li><strong>Forgetting the metadata.</strong> Blacking out an address in the pixels does nothing if the photo's EXIF data still contains GPS coordinates pointing at the same house. Strip EXIF after redacting — the <a href="/remove-exif.html">EXIF removal tool</a> does it in one click.</li>
+    <li><strong>Redacting a thumbnail or preview instead of the file you share.</strong> Some apps generate smaller previews; make sure the exported, full-resolution file is the one you checked. Open the download and zoom in before posting.</li>
+    <li><strong>Using the same box positions across a document set.</strong> If you redact ten pages of a contract and the boxes sit in identical spots, the layout itself hints at what was hidden. Vary placement where the surrounding content allows it.</li>
+    <li><strong>Trusting "blur" sliders inside other apps.</strong> Many built-in markup tools apply a light blur or a translucent marker that looks safe at a glance. If the stakes are real, re-do it here with solid fills and verify at full zoom.</li>
+  </ul>
+
   <h2>Frequently asked questions</h2>
   <h3>Is blacking out parts of an image truly permanent?</h3>
   <p>Yes — when done correctly. This tool paints solid black pixels over the selected areas and exports a brand-new image file. The original pixels are destroyed, not hidden under a layer, so nobody can remove the black boxes to see underneath.</p>
@@ -214,6 +242,10 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   <p>No. Everything runs locally in your browser. The image is never sent to a server — exactly what you want when the whole point is removing sensitive information.</p>
   <h3>Redact vs blur vs pixelate — which should I use?</h3>
   <p>Black-box redaction is the safest: the information is verifiably gone. Heavy blur and strong pixelation are usually fine, but light blur can sometimes be partially reversed with AI deblurring. For high-stakes content, use solid redaction.</p>
+  <h3>Can I change the redaction color from black?</h3>
+  <p>Yes — use the color picker next to the shape buttons, or set a different fill per area from its chip below the image. White suits light documents, and custom colors can code categories in legal or compliance work. Security does not depend on the color, only on the fill being fully opaque.</p>
+  <h3>Should I also remove EXIF data after redacting?</h3>
+  <p>Often, yes. Redaction cleans the visible pixels, but the file's metadata can still carry GPS coordinates, timestamps, and device info that defeat the purpose. Run the redacted download through the <a href="/remove-exif.html">EXIF remover</a> before sharing — it takes seconds and closes the loop.</p>
 
 <div class="related">
   <a href="/blur-image.html">Blur Part of Image<span>Soften faces, plates, text</span></a>

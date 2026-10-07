@@ -118,6 +118,22 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         "@type": "Answer",
         "text": "No. The emoji is drawn onto your photo locally in your browser. Your images never leave your device."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a different emoji for each face?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After drawing an area, tap the emoji on its chip below the image to cycle through the palette. Give everyone in the group shot their own personality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the emoji cover work on printed photos or screenshots?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the emoji becomes part of the image pixels on export, so it survives screenshots, prints, re-uploads, and format conversions. Nothing downstream can remove it."
+      }
     }
   ]
 }
@@ -210,6 +226,24 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   <h2>Fun, not forensic</h2>
   <p>An emoji hides identity completely for casual sharing — but it is a playful choice, not a security tool. The shape, skin tone at the edges, or context can still hint at who is behind it. For documents, IDs, license plates, or anything high-stakes, use <a href="/redact-image.html">solid black-box redaction</a> instead. And remember: emoji covers do not remove <a href="/remove-exif.html">location metadata</a> — strip that too before posting.</p>
 
+  <h2>Picking the right emoji for the job</h2>
+  <p>The palette is bigger than you think, and the choice changes how the photo reads:</p>
+  <ul>
+    <li><strong>Classic smileys (😎 🤩 😜)</strong> — the default for group shots and party photos. They keep things light and nobody reads anything into them.</li>
+    <li><strong>Animals (🙈 🙉 🙊)</strong> — the "see no evil" trio is the internet's native face-cover. Great for kids' photos, where a smiley can feel oddly corporate.</li>
+    <li><strong>Objects (⭐ 🔥 💯)</strong> — use these when the face is small in the frame or partially turned; a bold shape reads better at tiny sizes than a detailed face emoji.</li>
+    <li><strong>Matching the mood</strong> — a 😴 on a sleeping baby, a 🤠 at a festival, a 🎃 on a Halloween group shot. The cover becomes part of the joke instead of an interruption.</li>
+  </ul>
+  <p>One practical tip: <strong>size the emoji slightly larger than the face</strong>, not exactly face-sized. Hair, ears, and the jawline all carry identifying information, and an emoji that just covers the eyes leaves plenty for facial recognition — or a nosy acquaintance — to work with. When in doubt, go one size up.</p>
+  <h2>Emoji covers vs the other options</h2>
+  <ul>
+    <li><strong>Emoji</strong> — fully hides the face, keeps the photo fun. Best for social sharing, memes, kid photos. Not for anything requiring real security.</li>
+    <li><strong><a href="/blur-image.html">Blur</a></strong> — looks more "serious" and preserves the scene's mood, but light blur can be partially reversed. Good middle ground for journalism and street photography.</li>
+    <li><strong><a href="/pixelate-image.html">Pixelation</a></strong> — the broadcast-news look. Unmistakably deliberate, very hard to reverse at coarse block sizes.</li>
+    <li><strong><a href="/redact-image.html">Black-box redaction</a></strong> — total, verifiable destruction of the pixels. The only choice for documents, IDs, and legal material.</li>
+  </ul>
+  <p>For the specific job of "I want to post this group photo but not everyone consented to be identified," emoji wins on every axis that matters: it is instant, it is obvious, and nobody mistakes it for a glitch.</p>
+
   <h2>Frequently asked questions</h2>
   <h3>How do I put an emoji over a face in a photo?</h3>
   <p>Upload the photo, pick an emoji, and draw a shape over each face. Move and resize freely, give each face its own emoji, then download. Everything runs in your browser.</p>
@@ -219,6 +253,10 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   <p>For casual sharing, yes — the face is fully hidden. But for documents, IDs, or anything high-stakes, use solid black-box redaction instead.</p>
   <h3>Does this upload my photo to a server?</h3>
   <p>No. The emoji is drawn onto your photo locally in your browser. Your images never leave your device.</p>
+  <h3>Can I use a different emoji for each face?</h3>
+  <p>Yes. After drawing an area, tap the emoji on its chip below the image to cycle through the palette. Give everyone in the group shot their own personality.</p>
+  <h3>Does the emoji cover work on printed photos or screenshots?</h3>
+  <p>Yes — the emoji becomes part of the image pixels on export, so it survives screenshots, prints, re-uploads, and format conversions. Nothing downstream can remove it.</p>
 
 <div class="related">
   <a href="/blur-image.html">Blur Part of Image<span>Soften faces, plates, text</span></a>
