@@ -390,6 +390,7 @@ footer{
 .footer-col li{margin:0 0 10px}
 .footer-col a{color:var(--muted);text-decoration:none;font-size:13px}
 .footer-col a:hover{color:#2563eb;text-decoration:underline}
+.paid-note{font-size:11px;color:var(--muted);opacity:.75;white-space:nowrap}
 .footer-brand{font-size:19px;font-weight:800;color:var(--text);margin:0 0 10px;letter-spacing:-.01em}
 .footer-tag{margin:0 0 14px;font-size:13px}
 .footer-copy{font-size:12px}
