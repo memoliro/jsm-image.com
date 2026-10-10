@@ -32,6 +32,12 @@
 <link rel="stylesheet" href="styles.css?v=20261005a">
 <style>
 .content-page{max-width:800px;margin:0 auto;padding:28px 20px 60px}
+/* privacy hub: use the full screen width for the 2-card editor layout */
+.content-page.privacy-wide{max-width:min(1600px,100%)}
+.privacy-grid{grid-template-columns:minmax(0,1fr) minmax(280px,340px)}
+.privacy-grid canvas#cv{width:100%;height:auto}
+@media(max-width:900px){.privacy-grid{grid-template-columns:minmax(0,1fr) minmax(240px,300px)}}
+@media(max-width:700px){.privacy-grid{grid-template-columns:1fr}}
 .content-page h1{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.25;margin:0 0 12px;color:var(--text)}
 .content-page .lead{font-size:1.05rem;color:var(--muted);line-height:1.6;margin:0 0 24px}
 .content-page h2{font-size:1.25rem;margin:28px 0 10px;color:var(--text)}
@@ -92,14 +98,13 @@ body.dark-mode .effect-tab.active{background:#f5f5f5;color:#111}
 .emoji-btn{font-size:22px;line-height:1;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:5px 9px;cursor:pointer}
 .emoji-btn.active{border-color:#2563eb;box-shadow:0 0 0 1px #2563eb}
 /* privacy hub: two cards side by side — image left, tools right */
-.privacy-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start;margin:0 0 28px}
+.privacy-grid{display:grid;gap:20px;align-items:start;margin:0 0 28px}
 .privacy-grid .tool-card{margin:0;min-width:0}
 .privacy-grid .tool-card:last-child{display:flex;flex-direction:column;gap:12px}
 .privacy-grid .tool-card:last-child .effect-bar{margin:0}
 #stage.privacy-grid{margin-top:16px}
 .fill-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .strength-row{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
-@media(max-width:820px){.privacy-grid{grid-template-columns:1fr}}
 select{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:14px}
 </style>
 <script type="application/ld+json">
@@ -193,7 +198,7 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     </div>
   </div>
 </header>
-<main class="content-page">
+<main class="content-page privacy-wide">
 
   <h1>Privacy Tools — Blur, Pixelate, Redact &amp; Cover Faces in One Place</h1>
   <p class="lead">One editor for every privacy job. Pick <strong>Blur</strong>, <strong>Pixelate</strong>, <strong>Solid box</strong>, or <strong>Emoji</strong> — a different effect for each area you draw — then export a clean image. Blur a face, pixelate a plate, black out a document, all in the same photo. Everything happens in your browser; nothing is uploaded.</p>
