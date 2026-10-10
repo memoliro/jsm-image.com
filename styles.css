@@ -373,19 +373,28 @@ footer{
   line-height:1.65;
   box-sizing:border-box;
 }
-footer > div{max-width:760px;margin:0 auto}
-.footer-links{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:8px 16px;
-  margin-top:12px;
+/* ===== Professional multi-column footer ===== */
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;
+  gap:40px;
+  max-width:1200px;
+  margin:0 auto;
+  text-align:left;
 }
-.footer-link{
-  background:none;border:0;color:var(--muted);
-  text-decoration:underline;cursor:pointer;font:inherit;padding:4px 2px;
+.footer-col h4{
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text);margin:0 0 14px;
 }
-.footer-link:hover{color:#2563eb}
+.footer-col ul{list-style:none;margin:0;padding:0}
+.footer-col li{margin:0 0 10px}
+.footer-col a{color:var(--muted);text-decoration:none;font-size:13px}
+.footer-col a:hover{color:#2563eb;text-decoration:underline}
+.footer-brand{font-size:19px;font-weight:800;color:var(--text);margin:0 0 10px;letter-spacing:-.01em}
+.footer-tag{margin:0 0 14px;font-size:13px}
+.footer-copy{font-size:12px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr;gap:28px}}
 
 .how-it-works-title{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
 .details-btn{
