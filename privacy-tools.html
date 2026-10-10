@@ -14,20 +14,20 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cover Face with Emoji Online Free — Emoji Face Cover | JSM-Image.com</title>
-<meta name="description" content="Cover faces with emoji in your browser: pick an emoji, draw over any face, download. The fun private way to anonymize photos. Free, no upload.">
+<title>Privacy Tools — Blur, Pixelate, Redact &amp; Cover Faces in One Place | JSM-Image.com</title>
+<meta name="description" content="One free privacy editor: blur faces, pixelate plates, black out text, or cover with emoji — a different effect per area, in your browser. No upload, no account.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://JSM-Image.com/emoji-face-cover.html">
+<link rel="canonical" href="https://JSM-Image.com/privacy-tools.html">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.svg"><meta property="og:type" content="website">
-<meta property="og:url" content="https://JSM-Image.com/emoji-face-cover.html">
-<meta property="og:title" content="Cover Face with Emoji Online Free | JSM-Image.com">
-<meta property="og:description" content="Put an emoji over any face in your photo — right in your browser. Fun, fast, private. No upload, no account.">
+<meta property="og:url" content="https://JSM-Image.com/privacy-tools.html">
+<meta property="og:title" content="Privacy Tools — Blur, Pixelate, Redact &amp; Cover Faces in One Place | JSM-Image.com">
+<meta property="og:description" content="Blur, pixelate, black out, or emoji-cover any part of a photo — each area with its own effect. Free, private, runs in your browser.">
 <meta property="og:image" content="https://JSM-Image.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cover Face with Emoji Online Free | JSM-Image.com">
-<meta name="twitter:description" content="Cover faces with emoji in any photo — right in your browser. Free, private, no upload.">
+<meta name="twitter:title" content="Privacy Tools — Blur, Pixelate, Redact &amp; Cover Faces in One Place | JSM-Image.com">
+<meta name="twitter:description" content="One editor for every privacy job: blur, pixelate, solid box, or emoji per area. Free, private, no upload.">
 <meta name="twitter:image" content="https://JSM-Image.com/og-image.jpg">
 <link rel="stylesheet" href="styles.css?v=20261005a">
 <style>
@@ -67,9 +67,21 @@ body.dark-mode .content-page a{color:#93c5fd}
 .region-chip .chip-slider{flex:1;min-width:120px;accent-color:#2563eb}
 .region-chip .chip-val{min-width:44px;text-align:right}
 .region-chip button{border:0;background:transparent;color:var(--muted);cursor:pointer;font-weight:800}
-
-
+.chip-effect{font-size:15px;min-width:24px;text-align:center}
+.chip-emoji{font-size:20px;line-height:1;background:transparent;border:1px solid var(--border);border-radius:8px;padding:2px 6px;cursor:pointer}
 .hint{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5}
+.area-count{font-size:13px;font-weight:700;color:var(--text);margin:12px 0 0}
+/* effect tabs */
+.effect-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.effect-tabs{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--bg)}
+.effect-tab{border:0;background:transparent;padding:9px 16px;font-size:14px;font-weight:700;color:var(--text);cursor:pointer}
+.effect-tab+.effect-tab{border-left:1px solid var(--border)}
+.effect-tab.active{background:#111;color:#fff}
+body.dark-mode .effect-tab.active{background:#f5f5f5;color:#111}
+.effect-tab:disabled{opacity:.45;cursor:default}
+.strength-label{font-size:14px;font-weight:600;color:var(--muted)}
+#strength{accent-color:#7c3aed;flex:1;min-width:120px;max-width:220px}
+#strengthVal{font-size:13px;color:var(--muted);min-width:44px}
 .shape-row{display:flex;gap:8px;align-items:center;margin-top:14px;flex-wrap:wrap}
 .shape-label{font-size:14px;font-weight:600;color:var(--muted)}
 .shape-btn.active{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
@@ -79,7 +91,6 @@ body.dark-mode .content-page a{color:#93c5fd}
 .emoji-row{display:flex;gap:6px;align-items:center;margin-top:12px;flex-wrap:wrap}
 .emoji-btn{font-size:22px;line-height:1;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:5px 9px;cursor:pointer}
 .emoji-btn.active{border-color:#2563eb;box-shadow:0 0 0 1px #2563eb}
-.chip-emoji{font-size:20px;line-height:1;background:transparent;border:1px solid var(--border);border-radius:8px;padding:2px 6px;cursor:pointer}
 select{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:14px}
 </style>
 <script type="application/ld+json">
@@ -89,50 +100,50 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I put an emoji over a face in a photo?",
+      "name": "Can I mix blur, pixelate, and solid boxes in one photo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Upload the photo, pick an emoji, and draw a shape over each face. You can move and resize the shapes, give each face a different emoji, and download the result. Everything runs in your browser — nothing is uploaded."
+        "text": "Yes — that is the point of this editor. Pick an effect from the tabs (or press B, P, S, E), draw an area, and that area keeps its effect. Blur a face, pixelate a plate, and black out a document in the same image, each with its own strength."
       }
     },
     {
       "@type": "Question",
-      "name": "Will the emoji stay in the downloaded image?",
+      "name": "Is blacking out parts of an image truly permanent?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The emoji is rendered directly into the exported pixels, so it works everywhere — social posts, stories, messages, prints — with no special app needed to view it."
+        "text": "Yes — when done correctly. The Solid box effect paints fully opaque pixels over the selected areas and exports a brand-new image file. The original pixels are destroyed, not hidden under a layer, so nobody can remove the boxes to see underneath. Never rely on semi-transparent highlights."
       }
     },
     {
       "@type": "Question",
-      "name": "Is covering a face with emoji enough for privacy?",
+      "name": "What should I cover before sharing a photo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For casual sharing, yes — the face is fully hidden behind the emoji. But an emoji cover is a playful choice, not a forensic one: for documents, IDs, or anything high-stakes, use solid black-box redaction instead."
+        "text": "Common candidates: names and addresses on documents or mail, license plates, ID numbers, faces of people who did not consent (especially children), QR codes and barcodes, computer screens showing private data, and house numbers visible in real-estate photos."
       }
     },
     {
       "@type": "Question",
-      "name": "Does this upload my photo to a server?",
+      "name": "Does this upload my image anywhere?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The emoji is drawn onto your photo locally in your browser. Your images never leave your device."
+        "text": "No. Everything runs locally in your browser. The image is never sent to a server, which is exactly what you want when the whole point is removing sensitive information."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I use a different emoji for each face?",
+      "name": "Blur vs pixelate vs solid box — which should I use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. After drawing an area, tap the emoji on its chip below the image to cycle through the palette. Give everyone in the group shot their own personality."
+        "text": "Solid box is the safest: the information is verifiably gone. Heavy blur and coarse pixelation are usually fine for casual sharing, but light blur can sometimes be partially reversed with AI deblurring. For documents, IDs, passwords, and anything legal, use Solid box."
       }
     },
     {
       "@type": "Question",
-      "name": "Does the emoji cover work on printed photos or screenshots?",
+      "name": "Should I also remove EXIF data after editing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — the emoji becomes part of the image pixels on export, so it survives screenshots, prints, re-uploads, and format conversions. Nothing downstream can remove it."
+        "text": "Often, yes. Covering pixels cleans what is visible, but the file's metadata can still carry GPS coordinates, timestamps, and device info that defeat the purpose. Exports from this editor are re-drawn from pixels, so EXIF is already stripped — nothing extra to do."
       }
     }
   ]
@@ -163,7 +174,7 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
                     <a href="/blur-image.html">Blur</a>
                     <a href="/pixelate-image.html">Pixelate</a>
                     <a href="/remove-exif.html">EXIF</a>
-                    <a href="/emoji-face-cover.html" class="nav-details">Emoji</a>
+                    <a href="/emoji-face-cover.html">Emoji</a>
           </div>
         </div>
         <a href="/how-to-resize-convert-crop-images.html">Guide</a>
@@ -175,97 +186,108 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
 </header>
 <main class="content-page">
 
-  <h1>Cover Face with Emoji Online — Free Emoji Face Cover</h1>
-  <p class="lead">Put a 😎 over any face in your photo — the fun way to share pictures while keeping people anonymous. Pick an emoji, draw a shape over each face, move and resize freely, download. Free, private, nothing uploaded.</p>
+  <h1>Privacy Tools — Blur, Pixelate, Redact &amp; Cover Faces in One Place</h1>
+  <p class="lead">One editor for every privacy job. Pick <strong>Blur</strong>, <strong>Pixelate</strong>, <strong>Solid box</strong>, or <strong>Emoji</strong> — a different effect for each area you draw — then export a clean image. Blur a face, pixelate a plate, black out a document, all in the same photo. Everything happens in your browser; nothing is uploaded.</p>
 
   <div class="tool-card">
     <div class="drop" id="drop">📷 Drop an image here, or click to choose one<input type="file" id="file" accept="image/*"></div>
     <div id="stage">
+      <div class="effect-bar">
+        <div class="effect-tabs" role="group" aria-label="Effect for new areas">
+          <button type="button" class="effect-tab" data-effect="blur">Blur</button>
+          <button type="button" class="effect-tab" data-effect="pixelate">Pixelate</button>
+          <button type="button" class="effect-tab active" data-effect="solid">Solid box</button>
+          <button type="button" class="effect-tab" data-effect="emoji">Emoji</button>
+        </div>
+        <label class="strength-label" for="strength">Block strength</label>
+        <input type="range" id="strength" min="2" max="30" value="12">
+        <span id="strengthVal">12px</span>
+      </div>
       <canvas id="cv"></canvas>
-      <p class="hint" id="hint">Pick an emoji, then draw on the image to cover a face. Drag a shape to move it, a corner dot to resize.</p>
+      <p class="hint" id="hint">Pick an effect above (keys B / P / S / E), then drag across anything you want hidden. Drag a shape to move it, a corner dot to resize.</p>
       <div class="shape-row" role="group" aria-label="Selection shape">
         <span class="shape-label">Shape:</span>
         <button type="button" class="btn btn-ghost shape-btn active" data-shape="rect">▢ Box</button>
         <button type="button" class="btn btn-ghost shape-btn" data-shape="circle">◯ Circle</button>
         <button type="button" class="btn btn-ghost shape-btn" data-shape="free">✎ Free</button>
+        <label class="shape-label" for="fillColor">Fill:</label><input type="color" id="fillColor" value="#000000" class="color-input">
       </div>
-      <div class="emoji-row" id="emojiRow" role="group" aria-label="Emoji picker">
+      <div class="emoji-row" id="emojiRow" style="display:none" role="group" aria-label="Emoji picker">
         <span class="shape-label">Emoji:</span>
       </div>
+      <p class="area-count" id="areaCount">0 areas covered</p>
       <div id="regionList"></div>
       <div class="tool-row">
         <button class="btn btn-ghost" id="undoBtn" type="button">↩ Undo</button>
-        <button class="btn btn-ghost" id="clearBtn" type="button">Clear all</button>
+        <button class="btn btn-ghost" id="delBoxBtn" type="button">Delete box</button>
         <button class="btn btn-ghost" id="wholeBtn" type="button">▦ Whole image</button>
-        <button class="btn btn-ghost" id="doneBtn" type="button">✓ Done</button>
+        <button class="btn btn-ghost" id="clearBtn" type="button">Clear all</button>
+        <button class="btn btn-ghost" id="replaceBtn" type="button">🔄 Replace image</button>
+        <button class="btn btn-ghost" id="compareBtn" type="button">Hold to compare</button>
+        <button class="btn btn-ghost" id="copyBtn" type="button">📋 Copy</button>
         <select id="fmt" aria-label="Output format">
           <option value="image/png">PNG</option>
           <option value="image/jpeg">JPG</option>
         </select>
-        <button class="btn btn-ghost" id="replaceBtn" type="button">🔄 Replace image</button>
-        <button class="btn btn-ghost" id="copyBtn" type="button">📋 Copy</button>
         <button class="btn btn-primary" id="dlBtn" type="button" disabled>⬇ Download</button>
       </div>
+      <p class="hint">Exports are re-drawn from pixels, so EXIF, GPS, camera and editing metadata are not carried over. For passwords, card numbers and IDs, use Solid box: a blur can sometimes be reversed.</p>
     </div>
   </div>
 
-  <h2>How to cover a face with emoji in three steps</h2>
+  <h2>How to protect privacy in a photo in three steps</h2>
   <ol>
-    <li><strong>Add your photo.</strong> It opens directly in your browser — the faces you are about to hide never travel to a server.</li>
-    <li><strong>Pick an emoji, then draw</strong> over each face — box, circle, or free-draw for odd angles. Drag a shape to move it, pull a corner dot to resize. Every face can have its own emoji: tap the emoji on an area chip to cycle through the palette.</li>
-    <li><strong>Download or copy.</strong> The emoji is baked into the exported pixels, so it shows up everywhere — posts, stories, messages, prints — with no special app needed.</li>
+    <li><strong>Add your photo.</strong> Drop it above or click to browse. It is read directly by your browser — sensitive content never leaves your device, which is the entire point of editing locally.</li>
+    <li><strong>Pick an effect and draw.</strong> Choose Blur, Pixelate, Solid box, or Emoji from the tabs (or press B / P / S / E), then draw over each sensitive area. Every area keeps its own effect and strength — blur a face, pixelate a plate, black out a document in one pass. Drag a shape to move it, pull a corner dot to resize.</li>
+    <li><strong>Download.</strong> The exported file has the effects baked into fresh pixels. Solid boxes destroy the information underneath; blur and pixelation are re-drawn too, so the original can never be recovered from the file.</li>
   </ol>
 
-  <h2>Why emoji instead of blur?</h2>
-  <p>Blur says "something is hidden here." An emoji says "we had fun here." For group photos, party shots, and kid pictures you want to share, emoji covers keep the vibe of the photo while the identity underneath is completely gone — there is no face left to reconstruct, deblur, or recognize.</p>
+  <h2>Why solid black beats blur for real redaction</h2>
+  <p>Blur and pixelation <em>look</em> safe, but light blur can sometimes be partially reversed — modern AI deblurring keeps getting better at guessing what was underneath. A solid black box has no information left to recover: every pixel is gone, verifiably. Rule of thumb: <strong>documents, IDs, passwords, and anything legal → Solid box; casual privacy (a face in a crowd) → Blur or Pixelate is fine.</strong></p>
+
+  <h2>Common things people cover</h2>
   <ul>
-    <li><strong>Social posts &amp; stories</strong> — the classic use: friends' faces in a group shot, kids at a birthday party.</li>
-    <li><strong>Memes &amp; screenshots</strong> — cover profile pictures and names with personality instead of gray boxes.</li>
-    <li><strong>Pet photos</strong> — because a 🙈 on a dog is objectively correct.</li>
+    <li><strong>Mail and documents</strong> — names, addresses, account and ID numbers before posting photos of letters or paperwork.</li>
+    <li><strong>License plates</strong> — in car-sale listings, dashcam clips, and street photography.</li>
+    <li><strong>Screens</strong> — screenshots that caught private messages, emails, or dashboards in the background.</li>
+    <li><strong>Faces</strong> — especially children, or anyone who did not agree to appear in a published photo. Emoji covers keep group shots fun.</li>
+    <li><strong>Barcodes &amp; QR codes</strong> — they encode data you probably did not intend to share.</li>
   </ul>
 
-  <h2>Fun, not forensic</h2>
-  <p>An emoji hides identity completely for casual sharing — but it is a playful choice, not a security tool. The shape, skin tone at the edges, or context can still hint at who is behind it. For documents, IDs, license plates, or anything high-stakes, use <a href="/redact-image.html">solid black-box redaction</a> instead. And remember: emoji covers do not remove <a href="/remove-exif.html">location metadata</a> — strip that too before posting.</p>
+  <h2>Choosing the right effect for each area</h2>
+  <p>This editor gives you four effects because no single one fits every situation. <strong>Solid box</strong> is the security choice: fully opaque, verifiable, the only option for documents, IDs, and legal material. Pick a fill color that suits the image — black reads as "removed", white blends into light paperwork. <strong>Blur</strong> softens an area while keeping the scene's mood; good for faces in street photography or backgrounds that give away a location. <strong>Pixelate</strong> is the broadcast-news look — unmistakably deliberate, very hard to reverse at coarse block sizes. <strong>Emoji</strong> is for social sharing: it hides identity completely while keeping the photo playful.</p>
+  <p>The <strong>Block strength</strong> slider sets the blur radius or pixel block size for new areas (2–30). When the stakes are real, go stronger rather than weaker — and for anything truly sensitive, skip the slider and use Solid box.</p>
 
-  <h2>Picking the right emoji for the job</h2>
-  <p>The palette is bigger than you think, and the choice changes how the photo reads:</p>
+  <h2>Privacy mistakes that leak information</h2>
   <ul>
-    <li><strong>Classic smileys (😎 🤩 😜)</strong> — the default for group shots and party photos. They keep things light and nobody reads anything into them.</li>
-    <li><strong>Animals (🙈 🙉 🙊)</strong> — the "see no evil" trio is the internet's native face-cover. Great for kids' photos, where a smiley can feel oddly corporate.</li>
-    <li><strong>Objects (⭐ 🔥 💯)</strong> — use these when the face is small in the frame or partially turned; a bold shape reads better at tiny sizes than a detailed face emoji.</li>
-    <li><strong>Matching the mood</strong> — a 😴 on a sleeping baby, a 🤠 at a festival, a 🎃 on a Halloween group shot. The cover becomes part of the joke instead of an interruption.</li>
+    <li><strong>Covering only part of the sensitive text.</strong> A box that clips the edge of a name or number still leaves enough for guessing. Give every area a comfortable margin.</li>
+    <li><strong>Forgetting the metadata.</strong> Covering an address in the pixels does nothing if the photo's EXIF still contains GPS coordinates. Exports from this editor are re-drawn from pixels, so EXIF is stripped automatically.</li>
+    <li><strong>Editing a thumbnail instead of the file you share.</strong> Make sure the exported, full-resolution file is the one you checked — open the download and zoom in before posting.</li>
+    <li><strong>Trusting light blur for high-stakes content.</strong> If a password, card number, or ID is involved, blur is the wrong tool no matter how strong the slider. Use Solid box.</li>
+    <li><strong>Using the same box positions across a document set.</strong> Identical box placement across pages hints at what was hidden. Vary placement where the surrounding content allows it.</li>
   </ul>
-  <p>One practical tip: <strong>size the emoji slightly larger than the face</strong>, not exactly face-sized. Hair, ears, and the jawline all carry identifying information, and an emoji that just covers the eyes leaves plenty for facial recognition — or a nosy acquaintance — to work with. When in doubt, go one size up.</p>
-  <h2>Emoji covers vs the other options</h2>
-  <ul>
-    <li><strong>Emoji</strong> — fully hides the face, keeps the photo fun. Best for social sharing, memes, kid photos. Not for anything requiring real security.</li>
-    <li><strong><a href="/blur-image.html">Blur</a></strong> — looks more "serious" and preserves the scene's mood, but light blur can be partially reversed. Good middle ground for journalism and street photography.</li>
-    <li><strong><a href="/pixelate-image.html">Pixelation</a></strong> — the broadcast-news look. Unmistakably deliberate, very hard to reverse at coarse block sizes.</li>
-    <li><strong><a href="/redact-image.html">Black-box redaction</a></strong> — total, verifiable destruction of the pixels. The only choice for documents, IDs, and legal material.</li>
-  </ul>
-  <p>For the specific job of "I want to post this group photo but not everyone consented to be identified," emoji wins on every axis that matters: it is instant, it is obvious, and nobody mistakes it for a glitch.</p>
 
   <h2>Frequently asked questions</h2>
-  <h3>How do I put an emoji over a face in a photo?</h3>
-  <p>Upload the photo, pick an emoji, and draw a shape over each face. Move and resize freely, give each face its own emoji, then download. Everything runs in your browser.</p>
-  <h3>Will the emoji stay in the downloaded image?</h3>
-  <p>Yes. The emoji is rendered directly into the exported pixels, so it works everywhere with no special app needed to view it.</p>
-  <h3>Is covering a face with emoji enough for privacy?</h3>
-  <p>For casual sharing, yes — the face is fully hidden. But for documents, IDs, or anything high-stakes, use solid black-box redaction instead.</p>
-  <h3>Does this upload my photo to a server?</h3>
-  <p>No. The emoji is drawn onto your photo locally in your browser. Your images never leave your device.</p>
-  <h3>Can I use a different emoji for each face?</h3>
-  <p>Yes. After drawing an area, tap the emoji on its chip below the image to cycle through the palette. Give everyone in the group shot their own personality.</p>
-  <h3>Does the emoji cover work on printed photos or screenshots?</h3>
-  <p>Yes — the emoji becomes part of the image pixels on export, so it survives screenshots, prints, re-uploads, and format conversions. Nothing downstream can remove it.</p>
+  <h3>Can I mix blur, pixelate, and solid boxes in one photo?</h3>
+  <p>Yes — that is the point of this editor. Pick an effect from the tabs (or press B, P, S, E), draw an area, and that area keeps its effect. Blur a face, pixelate a plate, and black out a document in the same image, each with its own strength.</p>
+  <h3>Is blacking out parts of an image truly permanent?</h3>
+  <p>Yes — when done correctly. The Solid box effect paints fully opaque pixels over the selected areas and exports a brand-new image file. The original pixels are destroyed, not hidden under a layer, so nobody can remove the boxes to see underneath.</p>
+  <h3>What should I cover before sharing a photo?</h3>
+  <p>Names and addresses on documents or mail, license plates, ID numbers, faces of people who did not consent, QR codes and barcodes, screens showing private data, and house numbers in real-estate photos.</p>
+  <h3>Does this upload my image anywhere?</h3>
+  <p>No. Everything runs locally in your browser. The image is never sent to a server — exactly what you want when the whole point is removing sensitive information.</p>
+  <h3>Blur vs pixelate vs solid box — which should I use?</h3>
+  <p>Solid box is the safest: the information is verifiably gone. Heavy blur and coarse pixelation are usually fine for casual sharing, but light blur can sometimes be partially reversed with AI deblurring. For high-stakes content, use Solid box.</p>
+  <h3>Should I also remove EXIF data after editing?</h3>
+  <p>Often, yes. Covering pixels cleans what is visible, but the file's metadata can still carry GPS coordinates, timestamps, and device info. Exports from this editor are re-drawn from pixels, so EXIF is already stripped — nothing extra to do.</p>
 
 <div class="related">
+  <a href="/redact-image.html">Redact Image<span>Black out sensitive areas</span></a>
   <a href="/blur-image.html">Blur Part of Image<span>Soften faces, plates, text</span></a>
   <a href="/pixelate-image.html">Pixelate Image<span>Mosaic sensitive areas</span></a>
+  <a href="/emoji-face-cover.html">Emoji Face Cover<span>Fun face anonymizing</span></a>
   <a href="/remove-exif.html">Remove EXIF Data<span>Strip GPS &amp; metadata</span></a>
   <a href="/">Open Image Tool<span>Resize, crop, convert in browser</span></a>
-  <a href="/compress-image.html">Compress Images<span>Shrink JPG, WebP, AVIF</span></a>
-  <a href="/convert-to-webp.html">Convert to WebP<span>Smaller web images</span></a>
 </div>
 </main>
 <footer>
@@ -299,29 +321,44 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
 </footer>
 <script>
 (function(){
-  const TOOL={mode:'emoji',hasValue:false,min:0,max:0,def:0,unit:'',suffix:'emoji'};
+  const TOOL={mode:'redact',hasValue:true,min:2,max:30,def:12,unit:'Block strength',suffix:'privacy'};
   const $=id=>document.getElementById(id);
   const drop=$('drop'), file=$('file'), stage=$('stage'), cv=$('cv'), ctx=cv.getContext('2d');
   const regionList=$('regionList'), undoBtn=$('undoBtn'), clearBtn=$('clearBtn'),
-        dlBtn=$('dlBtn'), fmt=$('fmt'), replaceBtn=$('replaceBtn'), doneBtn=$('doneBtn'), hint=$('hint'),
-        wholeBtn=$('wholeBtn'), copyBtn=$('copyBtn');
-  const fillPicker=TOOL.mode==='redact'?$('fillColor'):null;
-  const EMOJIS=['😎','🙈','🙉','🙊','😊','😂','😍','🤩','🥳','😜','👻','💩','⭐','❤','🔥','😻'];
-  let currentEmoji=EMOJIS[0];
+        dlBtn=$('dlBtn'), fmt=$('fmt'), replaceBtn=$('replaceBtn'), hint=$('hint'),
+        wholeBtn=$('wholeBtn'), copyBtn=$('copyBtn'), delBoxBtn=$('delBoxBtn'),
+        compareBtn=$('compareBtn'), areaCount=$('areaCount');
+  const fillPicker=$('fillColor');
+  const master=$('strength'), masterVal=$('strengthVal'), emojiRow=$('emojiRow');
+  const EMOJIS=['😎','🙂','😀','😍','🤣','😴','🤖','👻','💩','🎃'];
+  let currentEmoji=EMOJIS[0], currentEffect='solid';
+  const EFFECT_ICON={blur:'~',pixelate:'▦',solid:'⬛'};
+  const EFFECT_LABEL={blur:'Blur',pixelate:'Pixelate',solid:'Solid box',emoji:'Emoji'};
+  const hasStrength=eff=>eff==='blur'||eff==='pixelate';
+
+  /* ---------- emoji picker ---------- */
   (function buildEmojiPicker(){
-    const row=$('emojiRow'); if(!row) return;
+    if(!emojiRow) return;
     EMOJIS.forEach(e=>{
       const b=document.createElement('button'); b.type='button'; b.className='emoji-btn'+(e===currentEmoji?' active':'');
       b.textContent=e; b.setAttribute('aria-label','Use '+e);
       b.addEventListener('click',()=>{
         currentEmoji=e;
-        row.querySelectorAll('.emoji-btn').forEach(x=>x.classList.remove('active'));
+        emojiRow.querySelectorAll('.emoji-btn').forEach(x=>x.classList.remove('active'));
         b.classList.add('active');
       });
-      row.appendChild(b);
+      emojiRow.appendChild(b);
     });
   })();
-  const master=TOOL.hasValue?$('master'):null, masterVal=TOOL.hasValue?$('masterVal'):null;
+
+  /* ---------- effect tabs ---------- */
+  function setEffect(eff){
+    currentEffect=eff;
+    document.querySelectorAll('.effect-tab').forEach(x=>x.classList.toggle('active',x.dataset.effect===eff));
+    if(emojiRow) emojiRow.style.display=eff==='emoji'?'flex':'none';
+  }
+  document.querySelectorAll('.effect-tab').forEach(b=>b.addEventListener('click',()=>setEffect(b.dataset.effect)));
+
   let img=null, regions=[], drawState=null, shape='rect', previewMode=false, baseName='image', seq=0;
 
   const HINTS={
@@ -344,7 +381,7 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     const url=URL.createObjectURL(f), im=new Image();
     im.onload=()=>{
       URL.revokeObjectURL(url); img=im; regions=[]; seq=0; previewMode=false;
-      doneBtn.textContent='✓ Done'; setPreviewUI(false);
+      setPreviewUI(false);
       syncChips(); render(); stage.style.display='block';
       stage.scrollIntoView({behavior:'smooth',block:'center'});
     };
@@ -405,7 +442,7 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
     else r.pts.forEach(pt=>{ pt.x=mapX(pt.x); pt.y=mapY(pt.y); });
   }
 
-  /* ---------- effects ---------- */
+  /* ---------- effects (per-region) ---------- */
   function blurInto(tc,srcCanvas,sx,sy,w,h,v){
     if('filter' in tc){
       try{ tc.filter='blur('+v+'px)'; tc.drawImage(srcCanvas,sx,sy,w,h,0,0,w,h); tc.filter='none'; return; }catch(e){}
@@ -419,22 +456,25 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   }
   function paintRegions(x,imgW,imgH,k){
     regions.forEach(r=>{
-      const v=TOOL.hasValue?Math.max(0.5,r.value*k):0;
-      if(TOOL.mode==='redact'||TOOL.mode==='emoji'){
+      const eff=r.effect||'solid';
+      if(eff==='solid'){
         x.save(); x.setTransform(k,0,0,k,0,0);
-        if(TOOL.mode==='redact'){ x.fillStyle=r.color||'#000'; tracePath(x,r); x.fill(); }
-        else{
-          const b=bbox(r), fs=Math.max(b.w,b.h)*1.02;
-          tracePath(x,r); x.clip();
-          x.font=fs+'px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
-          x.textAlign='center'; x.textBaseline='middle';
-          x.fillText(r.emoji||currentEmoji, b.x+b.w/2, b.y+b.h/2+fs*0.05);
-        }
+        x.fillStyle=r.color||'#000'; tracePath(x,r); x.fill(); x.restore();
+        return;
+      }
+      if(eff==='emoji'){
+        x.save(); x.setTransform(k,0,0,k,0,0);
+        const b=bbox(r), fs=Math.max(b.w,b.h)*1.02;
+        tracePath(x,r); x.clip();
+        x.font=fs+'px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+        x.textAlign='center'; x.textBaseline='middle';
+        x.fillText(r.emoji||currentEmoji, b.x+b.w/2, b.y+b.h/2+fs*0.05);
         x.restore();
         return;
       }
+      const v=Math.max(0.5,(r.value||TOOL.def)*k);
       const b=bbox(r);
-      const pad=TOOL.mode==='blur'?Math.ceil(v*2.5)+2:0;
+      const pad=eff==='blur'?Math.ceil(v*2.5)+2:0;
       const sx=Math.max(0,Math.floor(b.x*k-pad)), sy=Math.max(0,Math.floor(b.y*k-pad));
       const ex=Math.min(Math.round(imgW*k),Math.ceil(b.x*k+b.w*k+pad));
       const ey=Math.min(Math.round(imgH*k),Math.ceil(b.y*k+b.h*k+pad));
@@ -442,7 +482,7 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
       if(w<2||h<2) return;
       const t=document.createElement('canvas'); t.width=w; t.height=h;
       const tc=t.getContext('2d');
-      if(TOOL.mode==='blur') blurInto(tc,x.canvas,sx,sy,w,h,v);
+      if(eff==='blur') blurInto(tc,x.canvas,sx,sy,w,h,v);
       else{
         const bs=Math.max(2,v);
         const tw=Math.max(1,Math.round(w/bs)), th=Math.max(1,Math.round(h/bs));
@@ -511,27 +551,32 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   function updateCounts(){
     const n=regions.length;
     dlBtn.disabled=!img||!n;
-    undoBtn.disabled=!n; clearBtn.disabled=!n;
+    undoBtn.disabled=!n; clearBtn.disabled=!n; delBoxBtn.disabled=!n;
+    areaCount.textContent=n+(n===1?' area covered':' areas covered');
   }
 
-  /* ---------- region chips (with per-area sliders) ---------- */
+  /* ---------- region chips ---------- */
   function syncChips(){
     regionList.innerHTML='';
     regions.forEach((r,i)=>{
       const b=bbox(r);
+      const eff=r.effect||'solid';
       const chip=document.createElement('div'); chip.className='region-chip';
+      const icon=document.createElement('span'); icon.className='chip-effect';
+      icon.textContent=EFFECT_ICON[eff]||''; icon.title=EFFECT_LABEL[eff]||eff;
+      chip.appendChild(icon);
       const label=document.createElement('span');
       const kindName=r.kind==='rect'?'Box':r.kind==='circle'?'Circle':'Free';
-      label.textContent=(i+1)+' · '+kindName+' · '+Math.round(b.w)+'×'+Math.round(b.h);
+      label.textContent=(i+1)+' · '+(EFFECT_LABEL[eff]||eff)+' · '+kindName+' · '+Math.round(b.w)+'×'+Math.round(b.h);
       chip.appendChild(label);
-      if(TOOL.mode==='redact'&&fillPicker){
+      if(eff==='solid'){
         const cp=document.createElement('input');
         cp.type='color'; cp.value=r.color||'#000000'; cp.className='chip-color';
         cp.setAttribute('aria-label','Fill color for area '+(i+1));
         cp.addEventListener('input',()=>{ r.color=cp.value; render(); });
         chip.appendChild(cp);
       }
-      if(TOOL.mode==='emoji'){
+      if(eff==='emoji'){
         const eb=document.createElement('button'); eb.type='button'; eb.className='chip-emoji';
         eb.textContent=r.emoji||currentEmoji; eb.title='Tap to change emoji';
         eb.setAttribute('aria-label','Change emoji for area '+(i+1));
@@ -542,11 +587,11 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         });
         chip.appendChild(eb);
       }
-      if(TOOL.hasValue){
+      if(hasStrength(eff)){
         const sl=document.createElement('input');
-        sl.type='range'; sl.min=TOOL.min; sl.max=TOOL.max; sl.value=r.value; sl.className='chip-slider';
+        sl.type='range'; sl.min=TOOL.min; sl.max=TOOL.max; sl.value=r.value||TOOL.def; sl.className='chip-slider';
         sl.setAttribute('aria-label',TOOL.unit+' for area '+(i+1));
-        const vv=document.createElement('span'); vv.className='chip-val'; vv.textContent=r.value+'px';
+        const vv=document.createElement('span'); vv.className='chip-val'; vv.textContent=sl.value+'px';
         sl.addEventListener('input',()=>{ r.value=Number(sl.value); vv.textContent=sl.value+'px'; render(); });
         chip.appendChild(sl); chip.appendChild(vv);
       }
@@ -622,38 +667,46 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
         if(b.w>8&&b.h>8) r={kind:'poly',pts:d.pts};
       }
     }
-    if(r){ r.id=++seq; if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def;
-    if(TOOL.mode==='redact'&&fillPicker) r.color=fillPicker.value;
-    if(TOOL.mode==='emoji') r.emoji=currentEmoji; regions.push(r); syncChips(); }
+    if(r){
+      r.id=++seq; r.effect=currentEffect;
+      if(hasStrength(currentEffect)) r.value=Number(master.value);
+      if(currentEffect==='solid') r.color=fillPicker.value;
+      if(currentEffect==='emoji') r.emoji=currentEmoji;
+      regions.push(r); syncChips();
+    }
     render();
   });
   cv.addEventListener('pointercancel',()=>{ drawState=null; render(); });
 
   /* ---------- buttons ---------- */
-  undoBtn.addEventListener('click',()=>{ regions.pop(); syncChips(); render(); });
+  function removeLast(){ regions.pop(); syncChips(); render(); }
+  undoBtn.addEventListener('click',removeLast);
+  delBoxBtn.addEventListener('click',removeLast);
   document.addEventListener('keydown',e=>{
-    if((e.ctrlKey||e.metaKey)&&!e.shiftKey&&e.key.toLowerCase()==='z'){ e.preventDefault(); undoBtn.click(); }
-    if((e.key==='Delete'||e.key==='Backspace')&&!/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement||{}).tagName||'')){
-      e.preventDefault(); undoBtn.click();
-    }
+    if((e.ctrlKey||e.metaKey)&&!e.shiftKey&&e.key.toLowerCase()==='z'){ e.preventDefault(); undoBtn.click(); return; }
+    const tag=((document.activeElement||{}).tagName||'');
+    if(/^(INPUT|TEXTAREA|SELECT)$/.test(tag)) return;
+    if(e.ctrlKey||e.metaKey||e.altKey) return;
+    const map={b:'blur',p:'pixelate',s:'solid',e:'emoji'};
+    const eff=map[e.key.toLowerCase()];
+    if(eff){ setEffect(eff); return; }
+    if(e.key==='Delete'||e.key==='Backspace'){ e.preventDefault(); undoBtn.click(); }
   });
   clearBtn.addEventListener('click',()=>{ regions=[]; syncChips(); render(); });
-  if(master) master.addEventListener('input',()=>{
+  master.addEventListener('input',()=>{
     masterVal.textContent=master.value+'px';
-    regions.forEach(r=>{ r.value=Number(master.value); });
+    regions.forEach(r=>{ if(hasStrength(r.effect||'solid')) r.value=Number(master.value); });
     syncChips(); render();
   });
   function setPreviewUI(on){
     document.querySelectorAll('.shape-btn').forEach(b=>{ b.disabled=on; });
+    document.querySelectorAll('.effect-tab').forEach(b=>{ b.disabled=on; });
     if(master) master.disabled=on;
   }
-  doneBtn.addEventListener('click',()=>{
-    if(!img) return;
-    previewMode=!previewMode;
-    doneBtn.textContent=previewMode?'✎ Back to editing':'✓ Done';
-    setPreviewUI(previewMode);
-    render();
-  });
+  /* hold to compare: press-and-hold shows the finished image without editing overlays */
+  function setCompare(on){ if(!img) return; previewMode=on; setPreviewUI(on); render(); }
+  compareBtn.addEventListener('pointerdown',e=>{ e.preventDefault(); setCompare(true); });
+  ['pointerup','pointerleave','pointercancel'].forEach(ev=>compareBtn.addEventListener(ev,()=>setCompare(false)));
   function renderExport(){
     const c=document.createElement('canvas');
     c.width=img.naturalWidth; c.height=img.naturalHeight;
@@ -664,10 +717,10 @@ select{background:var(--bg);color:var(--text);border:1px solid var(--border);bor
   }
   wholeBtn.addEventListener('click',()=>{
     if(!img) return;
-    const r={kind:'rect',x:0,y:0,w:img.naturalWidth,h:img.naturalHeight,id:++seq};
-    if(TOOL.hasValue) r.value=master?Number(master.value):TOOL.def;
-    if(TOOL.mode==='redact'&&fillPicker) r.color=fillPicker.value;
-    if(TOOL.mode==='emoji') r.emoji=currentEmoji;
+    const r={kind:'rect',x:0,y:0,w:img.naturalWidth,h:img.naturalHeight,id:++seq,effect:currentEffect};
+    if(hasStrength(currentEffect)) r.value=Number(master.value);
+    if(currentEffect==='solid') r.color=fillPicker.value;
+    if(currentEffect==='emoji') r.emoji=currentEmoji;
     regions.push(r); syncChips(); render();
   });
   copyBtn.addEventListener('click',()=>{
