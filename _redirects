@@ -1,0 +1,4 @@
+# Redirect www -> apex so all ranking signals consolidate on the canonical host
+# (canonical tags and sitemap already point to https://jsm-image.com).
+# Added 2026-10-13 as pre-launch SEO pre-flight for the Oct 15 Product Hunt launch.
+https://www.jsm-image.com/* https://jsm-image.com/:splat 301
