@@ -61,7 +61,7 @@
 <meta name="robots" content="index, follow">
 
 <link rel="robots" href="robots.txt">
-<link rel="canonical" href="https://JSM-Image.com/">
+<link rel="canonical" href="https://jsm-image.com/">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
@@ -70,10 +70,10 @@
 
 <!-- Open Graph / Social Media SEO -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://JSM-Image.com/">
+<meta property="og:url" content="https://jsm-image.com/">
 <meta property="og:title" content="Resize &amp; Convert Images Online — Free Image Resizer, Converter &amp; Compressor">
 <meta property="og:description" content="Resize, convert, and compress images locally in your browser with live preview and batch export. Fast, secure, and private.">
-<meta property="og:image" content="https://JSM-Image.com/og-image.jpg">
+<meta property="og:image" content="https://jsm-image.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="JSM-Image.com — free online image resizer and converter">
@@ -82,7 +82,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="JSM-Image.com - Free Online Image Resizer, Converter & Batch Compressor">
 <meta name="twitter:description" content="Fast, local, and private image resizing, cropping, and conversion in your browser.">
-<meta name="twitter:image" content="https://JSM-Image.com/og-image.jpg">
+<meta name="twitter:image" content="https://jsm-image.com/og-image.jpg">
 
 <!-- Structured Data (JSON-LD) for Search Engines -->
 <script type="application/ld+json">
@@ -90,8 +90,8 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "JSM-Image.com",
-  "@id": "https://JSM-Image.com/#app",
-  "url": "https://JSM-Image.com/",
+  "@id": "https://jsm-image.com/#app",
+  "url": "https://jsm-image.com/",
   "description": "Free web-based tool for resizing, converting, cropping, and compressing images locally in your browser.",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "All",
@@ -134,10 +134,10 @@
   "@type": "Article",
   "headline": "How to Resize, Convert & Crop Images",
   "description": "Complete guide to resizing, converting, cropping, compressing images with JSM-Image.com - including presets, formats, and batch processing.",
-  "url": "https://JSM-Image.com/how-to-resize-convert-crop-images.html",
+  "url": "https://jsm-image.com/how-to-resize-convert-crop-images",
   "author": {"@type": "Organization", "name": "JSM-Image.com"},
-  "publisher": {"@type": "Organization", "name": "JSM-Image.com", "logo": {"@type": "ImageObject", "url": "https://JSM-Image.com/og-image.jpg"}},
-  "mainEntityOfPage": "https://JSM-Image.com/how-to-resize-convert-crop-images.html"
+  "publisher": {"@type": "Organization", "name": "JSM-Image.com", "logo": {"@type": "ImageObject", "url": "https://jsm-image.com/og-image.jpg"}},
+  "mainEntityOfPage": "https://jsm-image.com/how-to-resize-convert-crop-images"
 }
 </script>
 
@@ -229,6 +229,21 @@ body.dark-mode .crop-live-info {
   <h1>Resize &amp; Convert Images Online</h1>
   <p>Resize JPG, PNG, WebP, AVIF, GIF, SVG and HEIC images — convert formats, crop, rotate, flip, compress, and batch process instantly. Free, private, right in your browser.</p>
 </section>
+
+<!-- Before/after demo moved above the upload box as the visual hook -->
+<section class="demo-section" aria-label="Compression quality demo">
+  <h2 class="section-title">Can you tell the difference?</h2>
+  <p class="section-subtitle">Drag the slider. Left is the original photo, right is the same photo compressed right in your browser — <span id="baSaving">much</span> smaller.</p>
+  <div class="ba-wrap" id="baWrap">
+    <img class="ba-img" id="baOriginal" src="/assets/demo-original.jpg" alt="Original photo before compression" loading="lazy">
+    <img class="ba-img ba-after" id="baCompressed" alt="Same photo after browser compression">
+    <input class="ba-slider" id="baSlider" type="range" min="0" max="100" value="50" aria-label="Drag to compare original and compressed photo">
+    <div class="ba-divider" id="baDivider"></div>
+    <span class="ba-tag ba-tag-left">Original · <b id="baOrigSize">…</b></span>
+    <span class="ba-tag ba-tag-right">Compressed · <b id="baCompSize">…</b></span>
+  </div>
+</section>
+
 <div class="upload-layout" id="uploadWorkflow">
   <!-- Left skyscraper ad intentionally disabled for a cleaner launch layout. -->
 
@@ -244,7 +259,7 @@ body.dark-mode .crop-live-info {
 
     <!-- How It Works Inline -->
     <div class="how-it-works-inline">
-      <h3 class="inline-title">How It Works <a href="https://JSM-Image.com/how-to-resize-convert-crop-images.html" style="font-size:0.8em; font-weight:400; margin-left:0.5rem; text-decoration:underline;">Full Guide</a></h3>
+      <h3 class="inline-title">How It Works <a href="https://jsm-image.com/how-to-resize-convert-crop-images" style="font-size:0.8em; font-weight:400; margin-left:0.5rem; text-decoration:underline;">Full Guide</a></h3>
       <div class="steps-grid-inline">
         <div class="step-inline">
           <div class="step-num-inline">1</div>
@@ -495,19 +510,6 @@ body.dark-mode .crop-live-info {
 <!-- How-To Guide CTA -->
 
 <!-- Bottom content: stacked full-width (guide → FAQ → ad → footer) -->
-<section class="demo-section" aria-label="Compression quality demo">
-  <h2 class="section-title">Can you tell the difference?</h2>
-  <p class="section-subtitle">Drag the slider. Left is the original photo, right is the same photo compressed right in your browser — <span id="baSaving">much</span> smaller.</p>
-  <div class="ba-wrap" id="baWrap">
-    <img class="ba-img" id="baOriginal" src="/assets/demo-original.jpg" alt="Original photo before compression" loading="lazy">
-    <img class="ba-img ba-after" id="baCompressed" alt="Same photo after browser compression">
-    <input class="ba-slider" id="baSlider" type="range" min="0" max="100" value="50" aria-label="Drag to compare original and compressed photo">
-    <div class="ba-divider" id="baDivider"></div>
-    <span class="ba-tag ba-tag-left">Original · <b id="baOrigSize">…</b></span>
-    <span class="ba-tag ba-tag-right">Compressed · <b id="baCompSize">…</b></span>
-  </div>
-</section>
-
 <section class="tools-grid-section" aria-label="All image tools">
   <h2 class="section-title">Every image tool, in one place</h2>
   <p class="section-subtitle">Each tool runs entirely in your browser — no uploads, no waiting rooms.</p>
@@ -538,7 +540,7 @@ body.dark-mode .crop-live-info {
   <div class="guide-cta-inner">
     <h2 class="section-title">Learn How to Resize, Convert &amp; Crop Like a Pro</h2>
     <p class="section-subtitle">Step-by-step tutorial with examples, tips for social media sizes, format comparison (JPG vs PNG vs WebP vs AVIF), and batch workflow.</p>
-    <a href="https://JSM-Image.com/how-to-resize-convert-crop-images.html" class="btn">Read the Complete Guide →</a>
+    <a href="https://jsm-image.com/how-to-resize-convert-crop-images" class="btn">Read the Complete Guide →</a>
   </div>
 </section>
 
@@ -567,7 +569,7 @@ body.dark-mode .crop-live-info {
 <p>AVIF often produces files 40–50% smaller than JPEG at similar quality. Encoding runs locally via WebAssembly, which is slower than JPG or WebP but keeps processing private in your browser.</p>
 </details>
 </div>
-<div class="compatibility-note"><strong>Browser compatibility:</strong> JSM-Image.com works best in current Chrome, Edge, Firefox, and Safari. HEIC/HEIF conversion and some features may depend on browser support and memory. Animated GIFs export as a single frame. AVIF export loads a WASM encoder on first use. New to image editing? <a href="https://JSM-Image.com/how-to-resize-convert-crop-images.html">See our how to resize, convert & crop guide</a>.</div>
+<div class="compatibility-note"><strong>Browser compatibility:</strong> JSM-Image.com works best in current Chrome, Edge, Firefox, and Safari. HEIC/HEIF conversion and some features may depend on browser support and memory. Animated GIFs export as a single frame. AVIF export loads a WASM encoder on first use. New to image editing? <a href="https://jsm-image.com/how-to-resize-convert-crop-images">See our how to resize, convert & crop guide</a>.</div>
 </section>
 
 
